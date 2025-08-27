@@ -148,9 +148,8 @@ const handleMobileAbout = () => {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: var(--color-surface);
-  border-bottom: 1px solid var(--color-border);
-  backdrop-filter: blur(8px);
+  // border-bottom: 1px solid var(--color-border);
+  backdrop-filter: blur(16px);
   transition: all var(--duration-normal) var(--ease-out);
 }
 

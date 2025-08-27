@@ -1,64 +1,6 @@
 <template>
   <div class="projects">
     <div class="container">
-      <!-- Filters and Search -->
-      <div class="projects-controls">
-        <!-- <div class="search-container">
-          <label for="project-search" class="visually-hidden">Search projects</label>
-          <input
-            id="project-search"
-            type="text"
-            placeholder="Search projects..."
-            class="search-input"
-            v-model="searchQuery"
-          >
-        </div> -->
-
-        <div class="controls-group">
-          <div class="filters">
-            <label for="category-filter" class="filter-label">Filter by:</label>
-            <select 
-              id="category-filter"
-              v-model="selectedCategory"
-              class="filter-select"
-            >
-              <option value="">All Categories</option>
-              <option 
-                v-for="category in categories" 
-                :key="category.id" 
-                :value="category.id"
-              >
-                {{ category.name }} ({{ category.count }})
-              </option>
-            </select>
-          </div>
-
-          <div class="view-toggle">
-            <label class="filter-label">View:</label>
-            <div class="toggle-buttons">
-              <button
-                type="button"
-                class="toggle-btn"
-                :class="{ 'toggle-btn--active': viewMode === 'grid' }"
-                @click="viewMode = 'grid'"
-                aria-label="Grid view"
-              >
-                <GridIcon />
-              </button>
-              <button
-                type="button"
-                class="toggle-btn"
-                :class="{ 'toggle-btn--active': viewMode === 'list' }"
-                @click="viewMode = 'list'"
-                aria-label="List view"
-              >
-                <ListIcon />
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <!-- Loading State -->
       <div v-if="isLoading" class="loading-state">
         <div class="loading-spinner"></div>
@@ -154,28 +96,39 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed, onMounted, toRefs } from 'vue'
 import { MarkdownLoader, ProjectUtils, type Project, type ProjectCategory } from '@/utils/projects'
-import GridIcon from '../components/icons/GridIcon.vue'
-import ListIcon from '../components/icons/ListIcon.vue'
+
+interface Props {
+  selectedCategory?: string
+  viewMode?: 'grid' | 'list'
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  selectedCategory: '',
+  viewMode: 'grid'
+})
+
+const emit = defineEmits<{
+  'update-project-filters': [data: { categories: ProjectCategory[] }]
+}>()
 
 const searchQuery = ref('')
-const selectedCategory = ref('')
-const viewMode = ref<'grid' | 'list'>('grid')
 const projects = ref<Project[]>([])
 const categories = ref<ProjectCategory[]>([])
 const isLoading = ref(false)
 const error = ref<string | null>(null)
 
+// Use props for filtering
 const filteredProjects = computed(() => {
   let filtered = projects.value
 
-  // Filter by category
-  if (selectedCategory.value) {
-    filtered = ProjectUtils.getProjectsByCategory(filtered, selectedCategory.value)
+  // Filter by category from props
+  if (props.selectedCategory) {
+    filtered = ProjectUtils.getProjectsByCategory(filtered, props.selectedCategory)
   }
 
-  // Filter by search query
+  // Filter by search query (local state)
   if (searchQuery.value) {
     filtered = ProjectUtils.searchProjects(filtered, searchQuery.value)
   }
@@ -184,9 +137,11 @@ const filteredProjects = computed(() => {
   return ProjectUtils.sortProjects(filtered, 'date')
 })
 
+// Expose computed props for parent component access
+const { selectedCategory, viewMode } = toRefs(props)
+
 const clearFilters = () => {
   searchQuery.value = ''
-  selectedCategory.value = ''
 }
 
 const loadProjects = async () => {
@@ -197,6 +152,9 @@ const loadProjects = async () => {
     const data = await MarkdownLoader.loadProjectsData()
     projects.value = data.projects
     categories.value = data.categories
+    
+    // Emit categories to parent for use in StickyHeader
+    emit('update-project-filters', { categories: data.categories })
   } catch (err) {
     error.value = 'Failed to load projects. Please try again later.'
     console.error('Error loading projects:', err)
@@ -212,7 +170,7 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 .projects {
-  padding: var(--space-8) 0 var(--space-16);
+  padding: var(--space-8) 0 var(--space-14);
 }
 
 .page-header {
@@ -231,130 +189,12 @@ onMounted(() => {
   margin: 0 auto;
 }
 
-.projects-controls {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-4);
-  margin-bottom: var(--space-12);
-  
-  @media (min-width: 768px) {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-}
-
-.controls-group {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-4);
-  
-  @media (min-width: 768px) {
-    flex-direction: row;
-    align-items: center;
-    gap: var(--space-6);
-  }
-}
-
-.search-container {
-  flex: 1;
-  max-width: 400px;
-}
-
-.search-input {
-  width: 100%;
-  padding: var(--space-3) var(--space-4);
-  border: 1px solid var(--color-border);
-  font-size: var(--font-size-base);
-  background: var(--color-surface);
-  color: var(--color-text-primary);
-  transition: border-color var(--duration-fast) var(--ease-out);
-  
-  &:focus {
-    border-color: var(--color-primary-500);
-    outline: none;
-  }
-  
-  &::placeholder {
-    color: var(--color-text-tertiary);
-  }
-}
-
-.filters {
-  display: flex;
-  align-items: center;
-  gap: var(--space-3);
-}
-
-.filter-label {
-  font-weight: var(--font-weight-medium);
-  color: var(--color-text-secondary);
-}
-
-.filter-select {
-  padding: var(--space-2) var(--space-3);
-  border: 1px solid var(--color-border);
-  background: var(--color-surface);
-  color: var(--color-text-primary);
-  font-size: var(--font-size-sm);
-  cursor: pointer;
-  
-  &:focus {
-    border-color: var(--color-primary-500);
-    outline: none;
-  }
-}
-
-.view-toggle {
-  display: flex;
-  align-items: center;
-  gap: var(--space-3);
-}
-
-.toggle-buttons {
-  display: flex;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  overflow: hidden;
-}
-
-.toggle-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: var(--space-2);
-  background: var(--color-surface);
-  border: none;
-  color: var(--color-text-secondary);
-  cursor: pointer;
-  transition: all var(--duration-fast) var(--ease-out);
-  
-  &:hover {
-    background: var(--color-primary-50);
-    color: var(--color-primary-600);
-  }
-  
-  &--active {
-    background: var(--color-primary-600);
-    color: var(--color-white);
-    
-    &:hover {
-      background: var(--color-primary-700);
-    }
-  }
-  
-  &:focus {
-    outline: 2px solid var(--color-primary-500);
-    outline-offset: 2px;
-  }
-}
-
 .projects-container {
   margin-bottom: var(--space-12);
   
   &.projects-grid {
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
+    border-left: 1px solid var(--color-border);
+    border-top: 1px solid var(--color-border);
     overflow: hidden;
     padding: 1px; /* Prevents border collapse issues */
   }
@@ -364,29 +204,23 @@ onMounted(() => {
   display: flex;
   flex-direction: column;
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
   overflow: hidden;
 }
 
 .project-card {
-  background: var(--color-surface);
   border: none;
   border-radius: 0;
   overflow: hidden;
   transition: all var(--duration-normal) var(--ease-out);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   
   /* Grid view borders */
   .projects-grid & {
     border-right: 1px solid var(--color-border);
     border-bottom: 1px solid var(--color-border);
     margin: -1px -1px -1px 0; /* Overlap borders */
-  }
-  
-  &:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
-    z-index: 1;
-    position: relative;
   }
   
   &--list {
@@ -402,10 +236,6 @@ onMounted(() => {
     
     @media (max-width: 767px) {
       flex-direction: column;
-    }
-    
-    &:hover {
-      transform: translateY(-2px);
     }
   }
 }
@@ -429,22 +259,23 @@ onMounted(() => {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform var(--duration-normal) var(--ease-out);
+    // transition: transform var(--duration-normal) var(--ease-out);
   }
-}
-
-.project-card:hover .project-image img {
-  transform: scale(1.05);
 }
 
 .project-content {
   padding: var(--space-6);
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--color-border);
   
   .project-card--list & {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    border-top: none;
+    border-left: 1px solid var(--color-border);
   }
 }
 
@@ -465,6 +296,7 @@ onMounted(() => {
   margin-bottom: var(--space-4);
   color: var(--color-text-secondary);
   line-height: var(--line-height-relaxed);
+  flex-grow: 1;
 }
 
 .project-meta {

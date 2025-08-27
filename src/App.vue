@@ -7,16 +7,26 @@
   >
     <a href="#main-content" class="skip-link">Skip to main content</a>
     
-    <AppHeader 
+    <StickyHeader 
       :theme="theme"
       :performance-mode="performanceMode"
+      :show-project-controls="isProjectsPage"
+      :selected-category="selectedCategory"
+      :view-mode="viewMode"
+      :categories="categories"
       @toggle-theme="toggleTheme"
       @toggle-performance="togglePerformance"
       @open-about="openAboutModal"
+      @update:selected-category="updateSelectedCategory"
+      @update:view-mode="updateViewMode"
     />
     
     <main id="main-content" class="main" role="main">
-      <router-view />
+      <router-view 
+        :selected-category="selectedCategory"
+        :view-mode="viewMode"
+        @update-project-filters="updateProjectFilters"
+      />
     </main>
     
     <AboutModal 
@@ -27,14 +37,24 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted, watch } from 'vue'
-import AppHeader from './components/AppHeader.vue'
+import { ref, onMounted, onUnmounted, watch, computed } from 'vue'
+import { useRoute } from 'vue-router'
+import StickyHeader from './components/StickyHeader.vue'
 import AboutModal from './components/AboutModal.vue'
+
+// Route management
+const route = useRoute()
+const isProjectsPage = computed(() => route.name === 'Projects')
 
 // Theme management
 const theme = ref<'light' | 'dark'>('light')
 const performanceMode = ref<'full' | 'power-saver'>('full')
 const aboutModalOpen = ref(false)
+
+// Project controls state
+const selectedCategory = ref('')
+const viewMode = ref<'grid' | 'list'>('grid')
+const categories = ref<Array<{ id: string; name: string; count: number }>>([])
 
 // Theme detection and persistence
 const initializeTheme = () => {
@@ -65,6 +85,19 @@ const openAboutModal = () => {
 
 const closeAboutModal = () => {
   aboutModalOpen.value = false
+}
+
+// Project controls handlers
+const updateSelectedCategory = (value: string) => {
+  selectedCategory.value = value
+}
+
+const updateViewMode = (value: 'grid' | 'list') => {
+  viewMode.value = value
+}
+
+const updateProjectFilters = (data: { categories: Array<{ id: string; name: string; count: number }> }) => {
+  categories.value = data.categories
 }
 
 // Persist preferences
@@ -100,12 +133,10 @@ onUnmounted(() => {
 
 .main {
   flex: 1;
-  padding-top: var(--space-20); // Account for fixed header
-}
-
-@media (max-width: 767px) {
-  .main {
-    padding-top: var(--space-16);
+  padding-top: calc(4rem + 4rem + var(--space-4)); // Nav height + controls height + padding
+  
+  @media (min-width: 768px) {
+    padding-top: calc(5rem + 4rem + var(--space-4)); // Larger nav + controls + padding
   }
 }
 </style>
