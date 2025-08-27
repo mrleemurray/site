@@ -5,7 +5,7 @@ subtitle: Comprehensive fitness tracking mobile app
 description: Cross-platform fitness tracking application with workout logging, progress analytics, social features, and health integration.
 category: mobile
 tags: [React Native, TypeScript, Expo, MongoDB, Firebase]
-image: https://via.placeholder.com/800x400/11140c/f6f1d1?text=Fitness+App
+image: /images/react-native-fitness.svg
 featured: false
 liveUrl: ""
 sourceUrl: https://github.com/username/fitness-app
@@ -17,7 +17,7 @@ duration: 5 weeks
 
 A comprehensive fitness tracking mobile application built with React Native and Expo.
 
-![Fitness App Screenshots](https://via.placeholder.com/800x400/11140c/f6f1d1?text=Fitness+App)
+![Fitness App Screenshots](/images/react-native-fitness.svg)
 
 ## Overview
 

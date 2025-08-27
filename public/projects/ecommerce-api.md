@@ -5,7 +5,7 @@ subtitle: Robust RESTful API for online stores
 description: Complete backend solution for e-commerce applications featuring user authentication, product management, order processing, and payment integration.
 category: api
 tags: [Node.js, Express, PostgreSQL, JWT, Stripe]
-image: https://via.placeholder.com/800x400/638475/fff8f0?text=E-commerce+API
+image: /images/ecommerce-api.svg
 featured: true
 liveUrl: https://api.example-store.com/docs
 sourceUrl: https://github.com/username/ecommerce-api
@@ -17,7 +17,7 @@ duration: 4 weeks
 
 A robust RESTful API for e-commerce applications built with Node.js, Express, and PostgreSQL.
 
-![API Architecture Diagram](https://via.placeholder.com/800x400/638475/fff8f0?text=E-commerce+API)
+![API Architecture Diagram](/images/ecommerce-api.svg)
 
 ## Overview
 

@@ -158,13 +158,9 @@ a {
 // Responsive grid
 .grid {
   display: grid;
-  gap: var(--space-6);
   
   &.grid-responsive {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   }
-  
-  @media (min-width: 768px) {
-    gap: var(--space-8);
-  }
+
 }

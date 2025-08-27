@@ -39,7 +39,7 @@ subtitle: A brief tagline that describes the project
 description: Detailed description for project cards and SEO
 category: web
 tags: [Vue.js, TypeScript, SCSS, API]
-image: https://via.placeholder.com/800x400/fe5f55/fff8f0?text=My+Project
+image: /images/my-project.svg
 featured: true
 liveUrl: https://my-project.com
 sourceUrl: https://github.com/username/my-project
@@ -89,7 +89,7 @@ Use this template for your markdown files:
 
 Brief project description and what it accomplishes.
 
-![Project Screenshot](https://via.placeholder.com/800x400/fe5f55/fff8f0?text=Project+Name)
+![Project Screenshot](/images/my-project.svg)
 
 ## Overview
 
@@ -221,7 +221,8 @@ SELECT * FROM users WHERE active = true;
 ### Images and Media
 
 - Use high-quality screenshots (recommended: 800x400px)
-- Placeholder service: `https://via.placeholder.com/800x400/color1/color2?text=Your+Text`
+- Local images: `/images/my-project.svg` (recommended for portfolio projects)
+- External URLs: `https://example.com/image.jpg`
 - Images are automatically responsive and styled
 
 ## 🎨 Styling and Theming

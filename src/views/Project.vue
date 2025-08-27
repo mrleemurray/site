@@ -11,7 +11,7 @@
       <div v-else-if="error" class="error-state">
         <h1>Project Not Found</h1>
         <p>{{ error }}</p>
-        <router-link to="/projects" class="btn btn-primary">
+        <router-link to="/" class="btn btn-primary">
           Back to Projects
         </router-link>
       </div>
@@ -20,7 +20,7 @@
       <div v-else-if="project">
         <!-- Back Navigation -->
         <nav class="breadcrumb" aria-label="Breadcrumb">
-          <router-link to="/projects" class="back-link">
+          <router-link to="/" class="back-link">
             ← Back to Projects
           </router-link>
         </nav>

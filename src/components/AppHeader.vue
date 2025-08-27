@@ -4,12 +4,12 @@
       <nav class="nav" role="navigation" aria-label="Main navigation">
         <!-- Logo/Brand -->
         <router-link to="/" class="brand" aria-label="Go to projects">
-          <span class="brand-text">Portfolio</span>
+          <span class="brand-text">LM</span>
         </router-link>
 
         <!-- Desktop Navigation -->
         <ul class="nav-links" role="menubar">
-          <li role="none">
+          <!-- <li role="none">
             <router-link 
               to="/" 
               class="nav-link" 
@@ -18,8 +18,8 @@
             >
               Projects
             </router-link>
-          </li>
-          <li role="none">
+          </li> -->
+          <!-- <li role="none">
             <button 
               class="nav-link nav-button" 
               role="menuitem"
@@ -28,11 +28,19 @@
             >
               About
             </button>
-          </li>
+          </li> -->
         </ul>
 
         <!-- Controls -->
         <div class="controls">
+            <button 
+              class="nav-link nav-button" 
+              role="menuitem"
+              @click="$emit('open-about')"
+              type="button"
+            >
+              About
+            </button>
           <button 
             class="control-btn" 
             @click="$emit('toggle-theme')"
