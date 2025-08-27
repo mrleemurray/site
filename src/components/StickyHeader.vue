@@ -192,7 +192,6 @@ const handleMobileAbout = () => {
   right: 0;
   z-index: 1000;
   background: color-mix(in srgb, var(--color-background) 60%, transparent);
-    // background: var(--color-background);
   backdrop-filter: blur(16px);
   transition: all var(--duration-normal) var(--ease-out);
 }
@@ -202,10 +201,6 @@ const handleMobileAbout = () => {
   align-items: center;
   justify-content: space-between;
   height: 4rem;
-  
-  @media (min-width: 768px) {
-    height: 5rem;
-  }
 }
 
 .brand {
@@ -352,7 +347,7 @@ const handleMobileAbout = () => {
 }
 
 .controls-section {
-  padding: var(--space-4) 0;
+  padding: var(--space-2) 0;
 }
 
 .projects-controls {
@@ -382,7 +377,6 @@ const handleMobileAbout = () => {
 .filters {
   display: flex;
   align-items: center;
-  gap: var(--space-3);
 }
 
 .filter-label {

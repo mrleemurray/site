@@ -196,7 +196,7 @@ onMounted(() => {
     border-left: 1px solid var(--color-border);
     border-top: 1px solid var(--color-border);
     overflow: hidden;
-    padding: 1px; /* Prevents border collapse issues */
+    padding-right: 1px; /* Prevents border collapse issues */
   }
 }
 
