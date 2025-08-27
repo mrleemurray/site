@@ -1,22 +1,22 @@
 # Portfolio Markdown System Guide
 
-This guide explains how to use the markdown system to add and manage projects in your Vue 3 portfolio website.
+This guide explains how to use the markdown system with YAML frontmatter to add and manage projects in your Vue 3 portfolio website.
 
 ## 📁 Project Structure
 
 ```
 public/
 ├── projects/
-│   ├── projects.json          # Project metadata and configuration
-│   ├── vue-task-manager.md    # Example: Vue.js project
-│   ├── ecommerce-api.md       # Example: API project
-│   └── react-native-fitness.md # Example: Mobile app project
+│   ├── vue-task-manager.md      # Example: Vue.js project with frontmatter
+│   ├── ecommerce-api.md         # Example: API project with frontmatter
+│   └── react-native-fitness.md  # Example: Mobile app project with frontmatter
 src/
 ├── utils/
-│   └── projects.ts            # Utilities for loading and parsing projects
+│   ├── projects.ts              # Utilities for loading and parsing projects
+│   └── project-registry.ts      # Registry of available projects
 ├── views/
-│   ├── Projects.vue           # Projects listing page
-│   └── Project.vue            # Individual project detail page
+│   ├── Projects.vue             # Projects listing page
+│   └── Project.vue              # Individual project detail page
 ```
 
 ## 🚀 Quick Start
@@ -24,32 +24,63 @@ src/
 ### 1. Add a New Project
 
 1. **Create a markdown file** in `public/projects/` (e.g., `my-awesome-project.md`)
-2. **Add project metadata** to `public/projects/projects.json`
-3. **Write your project content** using the markdown format below
+2. **Add the project ID** to `src/utils/project-registry.ts`
+3. **Write your project content** using YAML frontmatter and markdown
 
-### 2. Project Metadata (projects.json)
+### 2. YAML Frontmatter Format
 
-Add your project to the `projects` array in `projects.json`:
+Every project markdown file must start with YAML frontmatter containing metadata:
 
-```json
-{
-  "id": "my-awesome-project",           // Unique identifier (URL slug)
-  "title": "My Awesome Project",        // Project name
-  "subtitle": "A brief tagline",        // Short description
-  "description": "Detailed description for project cards",
-  "category": "web",                    // Category: web, mobile, api, tools
-  "tags": ["Vue.js", "TypeScript"],     // Technology tags
-  "image": "https://...",               // Project screenshot/image
-  "featured": true,                     // Show on homepage
-  "liveUrl": "https://...",             // Live demo URL (optional)
-  "sourceUrl": "https://...",           // Source code URL (optional)
-  "markdownFile": "/projects/my-awesome-project.md",
-  "completedAt": "2024-03-15",          // Completion date
-  "duration": "2 weeks"                 // Development time
-}
+```markdown
+---
+id: my-awesome-project
+title: My Awesome Project
+subtitle: A brief tagline that describes the project
+description: Detailed description for project cards and SEO
+category: web
+tags: [Vue.js, TypeScript, SCSS, API]
+image: https://via.placeholder.com/800x400/fe5f55/fff8f0?text=My+Project
+featured: true
+liveUrl: https://my-project.com
+sourceUrl: https://github.com/username/my-project
+completedAt: 2024-03-15
+duration: 2 weeks
+---
+
+# My Awesome Project
+
+Your markdown content starts here...
 ```
 
-### 3. Markdown Content Structure
+### 3. Frontmatter Fields
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `id` | string | ✅ | Unique identifier (matches filename without .md) |
+| `title` | string | ✅ | Project name |
+| `subtitle` | string | ✅ | Short tagline |
+| `description` | string | ✅ | Detailed description for cards |
+| `category` | string | ✅ | Category: `web`, `mobile`, `api`, `tools` |
+| `tags` | array | ⚪ | Technology tags: `[Vue.js, TypeScript]` |
+| `image` | string | ⚪ | Project screenshot URL |
+| `featured` | boolean | ⚪ | Show on homepage: `true` or `false` |
+| `liveUrl` | string | ⚪ | Live demo URL |
+| `sourceUrl` | string | ⚪ | Source code URL |
+| `completedAt` | string | ⚪ | Completion date: `YYYY-MM-DD` |
+| `duration` | string | ⚪ | Development time: `3 weeks` |
+
+### 4. Register Your Project
+
+Add the project ID to `src/utils/project-registry.ts`:
+
+```typescript
+export const PROJECT_REGISTRY = [
+  'vue-task-manager',
+  'ecommerce-api',
+  'react-native-fitness',
+  'my-awesome-project'  // Add your new project here
+]
+```
 
 Use this template for your markdown files:
 
@@ -135,7 +166,27 @@ Describe how the project is deployed and any CI/CD processes.
 *Brief footer note about the project.*
 ```
 
-## 📝 Markdown Features
+## ✨ Benefits of YAML Frontmatter
+
+### **Single Source of Truth**
+- All project data lives in the markdown file itself
+- No need to maintain separate JSON configuration
+- Metadata stays with content naturally
+
+### **Developer Experience**
+- Standard approach used by Jekyll, Hugo, Gatsby, etc.
+- Easy to copy/move projects between systems
+- Version control friendly (all changes in one file)
+
+### **Flexibility**
+- Add custom frontmatter fields as needed
+- No schema restrictions
+- Easy to extend with new metadata
+
+### **Maintainability**
+- Fewer files to manage
+- Content and metadata can't get out of sync
+- Simpler project structure
 
 ### Supported Elements
 

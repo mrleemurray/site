@@ -170,23 +170,17 @@ const loadProject = async () => {
   tableOfContents.value = []
 
   try {
-    // Load all projects data
+    // Load all projects data first (for related projects)
     const data = await MarkdownLoader.loadProjectsData()
     allProjects.value = data.projects
 
-    // Find the specific project
-    const foundProject = ProjectUtils.getProjectById(data.projects, props.slug)
-    
-    if (!foundProject) {
-      throw new Error(`Project "${props.slug}" not found`)
-    }
+    // Load the specific project with its content
+    const parsed = await MarkdownLoader.loadProjectContent(props.slug)
+    project.value = parsed.frontmatter
 
-    project.value = foundProject
-
-    // Load markdown content
-    const rawMarkdown = await MarkdownLoader.loadProjectContent(foundProject.markdownFile)
-    markdownContent.value = MarkdownLoader.parseMarkdownToHTML(rawMarkdown)
-    tableOfContents.value = MarkdownLoader.extractTableOfContents(rawMarkdown)
+    // Process the markdown content
+    markdownContent.value = MarkdownLoader.parseMarkdownToHTML(parsed.content)
+    tableOfContents.value = MarkdownLoader.extractTableOfContents(parsed.content)
 
   } catch (err) {
     error.value = err instanceof Error ? err.message : 'Failed to load project'

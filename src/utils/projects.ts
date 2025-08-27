@@ -10,7 +10,6 @@ export interface Project {
   featured: boolean
   liveUrl: string
   sourceUrl: string
-  markdownFile: string
   completedAt: string
   duration: string
 }
@@ -26,42 +25,159 @@ export interface ProjectsData {
   categories: ProjectCategory[]
 }
 
+export interface ParsedMarkdown {
+  frontmatter: Project
+  content: string
+}
+
+// YAML frontmatter parsing utility
+export class FrontmatterParser {
+  static parseYAML(yamlString: string): Record<string, any> {
+    const lines = yamlString.split('\n')
+    const result: Record<string, any> = {}
+
+    for (const line of lines) {
+      const trimmed = line.trim()
+      if (!trimmed || trimmed.startsWith('#')) continue
+
+      const colonIndex = trimmed.indexOf(':')
+      if (colonIndex === -1) continue
+
+      const key = trimmed.substring(0, colonIndex).trim()
+      let rawValue = trimmed.substring(colonIndex + 1).trim()
+
+      // Handle different value types
+      let parsedValue: any
+      if (rawValue.startsWith('[') && rawValue.endsWith(']')) {
+        // Array value
+        parsedValue = rawValue.slice(1, -1)
+          .split(',')
+          .map(item => item.trim().replace(/^["']|["']$/g, ''))
+      } else if (rawValue === 'true' || rawValue === 'false') {
+        // Boolean value
+        parsedValue = rawValue === 'true'
+      } else if (!isNaN(Number(rawValue)) && rawValue !== '') {
+        // Number value
+        parsedValue = Number(rawValue)
+      } else {
+        // String value - remove quotes if present
+        parsedValue = rawValue.replace(/^["']|["']$/g, '')
+      }
+
+      result[key] = parsedValue
+    }
+
+    return result
+  }
+
+  static parseMarkdownWithFrontmatter(markdown: string): ParsedMarkdown {
+    const frontmatterRegex = /^---\s*\n([\s\S]*?)\n---\s*\n([\s\S]*)$/
+    const match = markdown.match(frontmatterRegex)
+
+    if (!match) {
+      throw new Error('No frontmatter found in markdown file')
+    }
+
+    const [, yamlString, content] = match
+    const frontmatter = this.parseYAML(yamlString) as Project
+
+    // Validate required fields
+    const requiredFields = ['id', 'title', 'subtitle', 'description', 'category']
+    for (const field of requiredFields) {
+      if (!frontmatter[field as keyof Project]) {
+        throw new Error(`Missing required frontmatter field: ${field}`)
+      }
+    }
+
+    // Set defaults for optional fields
+    frontmatter.tags = frontmatter.tags || []
+    frontmatter.image = frontmatter.image || ''
+    frontmatter.featured = frontmatter.featured || false
+    frontmatter.liveUrl = frontmatter.liveUrl || ''
+    frontmatter.sourceUrl = frontmatter.sourceUrl || ''
+    frontmatter.completedAt = frontmatter.completedAt || ''
+    frontmatter.duration = frontmatter.duration || ''
+
+    return { frontmatter, content }
+  }
+}
+
 // Markdown parsing utility
 export class MarkdownLoader {
-  private static cache = new Map<string, string>()
+  private static cache = new Map<string, ParsedMarkdown>()
+  private static projectsCache: ProjectsData | null = null
 
-  static async loadProjectContent(markdownFile: string): Promise<string> {
+  static async loadProjectContent(projectId: string): Promise<ParsedMarkdown> {
+    const markdownPath = `/projects/${projectId}.md`
+    
     // Check cache first
-    if (this.cache.has(markdownFile)) {
-      return this.cache.get(markdownFile)!
+    if (this.cache.has(markdownPath)) {
+      return this.cache.get(markdownPath)!
     }
 
     try {
-      const response = await fetch(markdownFile)
+      const response = await fetch(markdownPath)
       if (!response.ok) {
         throw new Error(`Failed to load markdown: ${response.statusText}`)
       }
       
-      const content = await response.text()
+      const rawMarkdown = await response.text()
+      const parsed = FrontmatterParser.parseMarkdownWithFrontmatter(rawMarkdown)
       
-      // Cache the content
-      this.cache.set(markdownFile, content)
+      // Cache the parsed content
+      this.cache.set(markdownPath, parsed)
       
-      return content
+      return parsed
     } catch (error) {
       console.error('Error loading markdown:', error)
-      return `# Error Loading Project\n\nSorry, there was an error loading the project content. Please try again later.`
+      throw new Error(`Failed to load project: ${projectId}`)
     }
   }
 
   static async loadProjectsData(): Promise<ProjectsData> {
+    // Return cached data if available
+    if (this.projectsCache) {
+      return this.projectsCache
+    }
+
     try {
-      const response = await fetch('/projects/projects.json')
-      if (!response.ok) {
-        throw new Error(`Failed to load projects data: ${response.statusText}`)
+      // Import the project registry
+      const { PROJECT_REGISTRY } = await import('./project-registry')
+
+      const projects: Project[] = []
+      const categories: Map<string, number> = new Map()
+
+      // Load each project's frontmatter
+      for (const projectId of PROJECT_REGISTRY) {
+        try {
+          const parsed = await this.loadProjectContent(projectId)
+          projects.push(parsed.frontmatter)
+          
+          // Count categories
+          const category = parsed.frontmatter.category
+          categories.set(category, (categories.get(category) || 0) + 1)
+        } catch (error) {
+          console.warn(`Failed to load project ${projectId}:`, error)
+        }
       }
+
+      // Convert categories map to array
+      const categoryData: ProjectCategory[] = [
+        { id: 'web', name: 'Web Development', count: categories.get('web') || 0 },
+        { id: 'mobile', name: 'Mobile', count: categories.get('mobile') || 0 },
+        { id: 'api', name: 'APIs', count: categories.get('api') || 0 },
+        { id: 'tools', name: 'Tools', count: categories.get('tools') || 0 }
+      ]
+
+      const result: ProjectsData = {
+        projects,
+        categories: categoryData
+      }
+
+      // Cache the result
+      this.projectsCache = result
       
-      return await response.json()
+      return result
     } catch (error) {
       console.error('Error loading projects data:', error)
       return {

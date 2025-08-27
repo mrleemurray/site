@@ -1,3 +1,18 @@
+---
+id: vue-task-manager
+title: Vue Task Manager
+subtitle: Modern task management with Vue 3 and TypeScript
+description: A full-featured productivity application demonstrating modern Vue.js development practices with drag & drop, real-time collaboration, and offline support.
+category: web
+tags: [Vue.js, TypeScript, Pinia, SCSS, PWA]
+image: https://via.placeholder.com/800x400/fe5f55/fff8f0?text=Vue+Task+Manager
+featured: true
+liveUrl: https://vue-task-manager.netlify.app
+sourceUrl: https://github.com/username/vue-task-manager
+completedAt: 2024-01-15
+duration: 3 weeks
+---
+
 # Vue Task Manager
 
 A modern, responsive task management application built with Vue 3, TypeScript, and Pinia for state management.
