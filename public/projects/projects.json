@@ -1,0 +1,55 @@
+{
+  "projects": [
+    {
+      "id": "vue-task-manager",
+      "title": "Vue Task Manager",
+      "subtitle": "Modern task management with Vue 3 and TypeScript",
+      "description": "A full-featured productivity application demonstrating modern Vue.js development practices with drag & drop, real-time collaboration, and offline support.",
+      "category": "web",
+      "tags": ["Vue.js", "TypeScript", "Pinia", "SCSS", "PWA"],
+      "image": "https://via.placeholder.com/400x250/fe5f55/fff8f0?text=Vue+Task+Manager",
+      "featured": true,
+      "liveUrl": "https://vue-task-manager.netlify.app",
+      "sourceUrl": "https://github.com/username/vue-task-manager",
+      "markdownFile": "/projects/vue-task-manager.md",
+      "completedAt": "2024-01-15",
+      "duration": "3 weeks"
+    },
+    {
+      "id": "ecommerce-api",
+      "title": "E-commerce API",
+      "subtitle": "Robust RESTful API for online stores",
+      "description": "Complete backend solution for e-commerce applications featuring user authentication, product management, order processing, and payment integration.",
+      "category": "api",
+      "tags": ["Node.js", "Express", "PostgreSQL", "JWT", "Stripe"],
+      "image": "https://via.placeholder.com/400x250/638475/fff8f0?text=E-commerce+API",
+      "featured": true,
+      "liveUrl": "https://api.example-store.com/docs",
+      "sourceUrl": "https://github.com/username/ecommerce-api",
+      "markdownFile": "/projects/ecommerce-api.md",
+      "completedAt": "2024-02-20",
+      "duration": "4 weeks"
+    },
+    {
+      "id": "react-native-fitness",
+      "title": "React Native Fitness App",
+      "subtitle": "Comprehensive fitness tracking mobile app",
+      "description": "Cross-platform fitness tracking application with workout logging, progress analytics, social features, and health integration.",
+      "category": "mobile",
+      "tags": ["React Native", "TypeScript", "Expo", "MongoDB", "Firebase"],
+      "image": "https://via.placeholder.com/400x250/11140c/f6f1d1?text=Fitness+App",
+      "featured": false,
+      "liveUrl": "",
+      "sourceUrl": "https://github.com/username/fitness-app",
+      "markdownFile": "/projects/react-native-fitness.md",
+      "completedAt": "2024-03-10",
+      "duration": "5 weeks"
+    }
+  ],
+  "categories": [
+    { "id": "web", "name": "Web Development", "count": 1 },
+    { "id": "mobile", "name": "Mobile", "count": 1 },
+    { "id": "api", "name": "APIs", "count": 1 },
+    { "id": "tools", "name": "Tools", "count": 0 }
+  ]
+}

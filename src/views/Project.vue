@@ -1,139 +1,209 @@
 <template>
   <div class="project-detail">
     <div class="container">
-      <!-- Back Navigation -->
-      <nav class="breadcrumb" aria-label="Breadcrumb">
-        <router-link to="/projects" class="back-link">
-          ← Back to Projects
+      <!-- Loading State -->
+      <div v-if="isLoading" class="loading-state">
+        <div class="loading-spinner"></div>
+        <p>Loading project...</p>
+      </div>
+
+      <!-- Error State -->
+      <div v-else-if="error" class="error-state">
+        <h1>Project Not Found</h1>
+        <p>{{ error }}</p>
+        <router-link to="/projects" class="btn btn-primary">
+          Back to Projects
         </router-link>
-      </nav>
-
-      <!-- Project Header -->
-      <header class="project-header">
-        <h1 class="project-title">{{ projectTitle }}</h1>
-        <p class="project-subtitle">{{ projectSubtitle }}</p>
-        
-        <div class="project-meta">
-          <div class="project-links">
-            <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">
-              View Live Site
-            </a>
-            <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">
-              View Source
-            </a>
-          </div>
-          
-          <div class="project-tags">
-            <span class="tag">Vue.js</span>
-            <span class="tag">TypeScript</span>
-            <span class="tag">SCSS</span>
-          </div>
-        </div>
-      </header>
-
-      <!-- Project Image -->
-      <div class="project-image">
-        <div class="image-placeholder">
-          Project Screenshot
-        </div>
       </div>
 
       <!-- Project Content -->
-      <div class="project-content">
-        <div class="content-main">
-          <!-- This is where markdown content will be rendered -->
-          <section class="project-section">
-            <h2>Overview</h2>
-            <p>
-              This is placeholder content. Replace this with your actual project description 
-              written in markdown. The markdown parser will convert it to HTML automatically.
-            </p>
-          </section>
+      <div v-else-if="project">
+        <!-- Back Navigation -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <router-link to="/projects" class="back-link">
+            ← Back to Projects
+          </router-link>
+        </nav>
 
-          <section class="project-section">
-            <h2>Features</h2>
-            <ul>
-              <li>Feature 1 description</li>
-              <li>Feature 2 description</li>
-              <li>Feature 3 description</li>
-            </ul>
-          </section>
-
-          <section class="project-section">
-            <h2>Technical Details</h2>
-            <p>
-              Describe the technical implementation, challenges overcome, 
-              and lessons learned during development.
-            </p>
-          </section>
-
-          <section class="project-section">
-            <h2>Code Example</h2>
-            <pre><code class="language-javascript">
-// Example code snippet
-function example() {
-  console.log('This is where code examples go');
-}
-            </code></pre>
-          </section>
-        </div>
-
-        <!-- Table of Contents -->
-        <aside class="content-sidebar">
-          <nav class="toc" aria-label="Table of contents">
-            <h3>Table of Contents</h3>
-            <ul>
-              <li><a href="#overview">Overview</a></li>
-              <li><a href="#features">Features</a></li>
-              <li><a href="#technical-details">Technical Details</a></li>
-              <li><a href="#code-example">Code Example</a></li>
-            </ul>
-          </nav>
-        </aside>
-      </div>
-
-      <!-- Related Projects -->
-      <section class="related-projects">
-        <h2>Related Projects</h2>
-        <div class="related-grid grid grid-responsive">
-          <article class="related-card">
-            <h3>
-              <router-link to="/projects/related-1">
-                Related Project 1
-              </router-link>
-            </h3>
-            <p>Brief description of related project.</p>
-          </article>
+        <!-- Project Header -->
+        <header class="project-header">
+          <h1 class="project-title">{{ project.title }}</h1>
+          <p class="project-subtitle">{{ project.subtitle }}</p>
           
-          <article class="related-card">
-            <h3>
-              <router-link to="/projects/related-2">
-                Related Project 2
-              </router-link>
-            </h3>
-            <p>Brief description of related project.</p>
-          </article>
+          <div class="project-meta">
+            <div class="project-links">
+              <a 
+                v-if="project.liveUrl"
+                :href="project.liveUrl" 
+                class="project-link" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                View Live Site
+              </a>
+              <a 
+                v-if="project.sourceUrl"
+                :href="project.sourceUrl" 
+                class="project-link" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                View Source
+              </a>
+            </div>
+            
+            <div class="project-tags">
+              <span 
+                v-for="tag in project.tags" 
+                :key="tag"
+                class="tag"
+              >
+                {{ tag }}
+              </span>
+            </div>
+          </div>
+        </header>
+
+        <!-- Project Image -->
+        <div class="project-image">
+          <img :src="project.image" :alt="project.title" />
         </div>
-      </section>
+
+        <!-- Project Content -->
+        <div class="project-content">
+          <div class="content-main">
+            <!-- Markdown content will be rendered here -->
+            <div 
+              v-if="markdownContent"
+              class="markdown-content"
+              v-html="markdownContent"
+            ></div>
+            <div v-else class="content-loading">
+              <p>Loading project details...</p>
+            </div>
+          </div>
+
+          <!-- Table of Contents -->
+          <aside v-if="tableOfContents.length > 0" class="content-sidebar">
+            <nav class="toc" aria-label="Table of contents">
+              <h3>Table of Contents</h3>
+              <ul>
+                <li 
+                  v-for="heading in tableOfContents" 
+                  :key="heading.id"
+                  :class="`toc-level-${heading.level}`"
+                >
+                  <a :href="`#${heading.id}`">{{ heading.text }}</a>
+                </li>
+              </ul>
+            </nav>
+          </aside>
+        </div>
+
+        <!-- Related Projects -->
+        <section v-if="relatedProjects.length > 0" class="related-projects">
+          <h2>Related Projects</h2>
+          <div class="related-grid grid grid-responsive">
+            <article 
+              v-for="relatedProject in relatedProjects" 
+              :key="relatedProject.id"
+              class="related-card"
+            >
+              <h3>
+                <router-link :to="`/projects/${relatedProject.id}`">
+                  {{ relatedProject.title }}
+                </router-link>
+              </h3>
+              <p>{{ relatedProject.description }}</p>
+              <div class="related-tags">
+                <span 
+                  v-for="tag in relatedProject.tags.slice(0, 3)" 
+                  :key="tag"
+                  class="tag"
+                >
+                  {{ tag }}
+                </span>
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { ref, computed, onMounted, watch } from 'vue'
+import { useRoute } from 'vue-router'
+import { MarkdownLoader, ProjectUtils, type Project } from '@/utils/projects'
 
 interface Props {
   slug: string
 }
 
 const props = defineProps<Props>()
+const route = useRoute()
 
-// Placeholder data - replace with actual project loading logic
-const projectTitle = computed(() => `Project: ${props.slug}`)
-const projectSubtitle = computed(() => 'A sample project description')
+const project = ref<Project | null>(null)
+const allProjects = ref<Project[]>([])
+const markdownContent = ref('')
+const tableOfContents = ref<Array<{ id: string; text: string; level: number }>>([])
+const isLoading = ref(false)
+const error = ref<string | null>(null)
 
-// This is where you would load actual project content based on the slug
-// and render markdown content using your markdown parser
+const relatedProjects = computed(() => {
+  if (!project.value || !allProjects.value.length) return []
+  
+  return allProjects.value
+    .filter(p => 
+      p.id !== project.value!.id && 
+      (p.category === project.value!.category || 
+       p.tags.some(tag => project.value!.tags.includes(tag)))
+    )
+    .slice(0, 4)
+})
+
+const loadProject = async () => {
+  isLoading.value = true
+  error.value = null
+  markdownContent.value = ''
+  tableOfContents.value = []
+
+  try {
+    // Load all projects data
+    const data = await MarkdownLoader.loadProjectsData()
+    allProjects.value = data.projects
+
+    // Find the specific project
+    const foundProject = ProjectUtils.getProjectById(data.projects, props.slug)
+    
+    if (!foundProject) {
+      throw new Error(`Project "${props.slug}" not found`)
+    }
+
+    project.value = foundProject
+
+    // Load markdown content
+    const rawMarkdown = await MarkdownLoader.loadProjectContent(foundProject.markdownFile)
+    markdownContent.value = MarkdownLoader.parseMarkdownToHTML(rawMarkdown)
+    tableOfContents.value = MarkdownLoader.extractTableOfContents(rawMarkdown)
+
+  } catch (err) {
+    error.value = err instanceof Error ? err.message : 'Failed to load project'
+    console.error('Error loading project:', err)
+  } finally {
+    isLoading.value = false
+  }
+}
+
+// Watch for route changes
+watch(() => props.slug, () => {
+  loadProject()
+})
+
+onMounted(() => {
+  loadProject()
+})
 </script>
 
 <style lang="scss" scoped>
@@ -225,16 +295,12 @@ const projectSubtitle = computed(() => 'A sample project description')
   border-radius: var(--radius-xl);
   overflow: hidden;
   box-shadow: var(--shadow-lg);
-}
-
-.image-placeholder {
-  aspect-ratio: 16 / 9;
-  background: var(--color-neutral-100);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-text-tertiary);
-  font-size: var(--font-size-lg);
+  
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
 }
 
 .project-content {
@@ -252,22 +318,31 @@ const projectSubtitle = computed(() => 'A sample project description')
   min-width: 0; // Prevent grid overflow
 }
 
-.project-section {
-  margin-bottom: var(--space-12);
+.markdown-content {
+  line-height: var(--line-height-relaxed);
   
-  h2 {
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: var(--space-12);
     margin-bottom: var(--space-6);
     color: var(--color-text-primary);
+    
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  
+  h2 {
     border-bottom: 2px solid var(--color-border);
     padding-bottom: var(--space-4);
   }
   
   p {
-    line-height: var(--line-height-relaxed);
     margin-bottom: var(--space-4);
+    color: var(--color-text-secondary);
   }
   
-  ul {
+  ul, ol {
+    margin-bottom: var(--space-4);
     margin-left: var(--space-6);
     
     li {
@@ -277,16 +352,84 @@ const projectSubtitle = computed(() => 'A sample project description')
   }
   
   pre {
-    background: var(--color-neutral-100);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
     padding: var(--space-6);
     border-radius: var(--radius-lg);
     overflow-x: auto;
+    margin-bottom: var(--space-6);
     
     code {
       font-family: var(--font-family-mono);
       font-size: var(--font-size-sm);
+      color: var(--color-text-primary);
     }
   }
+  
+  code:not(pre code) {
+    background: var(--color-surface);
+    padding: var(--space-1) var(--space-2);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-family-mono);
+    font-size: 0.9em;
+    color: var(--color-primary-700);
+  }
+  
+  blockquote {
+    border-left: 4px solid var(--color-primary-500);
+    margin: var(--space-6) 0;
+    padding: var(--space-4) var(--space-6);
+    background: var(--color-surface);
+    font-style: italic;
+    
+    p {
+      margin-bottom: 0;
+    }
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius-lg);
+    margin: var(--space-6) 0;
+    box-shadow: var(--shadow-md);
+  }
+  
+  a {
+    color: var(--color-primary-600);
+    
+    &:hover, &:focus {
+      color: var(--color-primary-700);
+    }
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: var(--space-6) 0;
+    
+    th, td {
+      padding: var(--space-3) var(--space-4);
+      text-align: left;
+      border-bottom: 1px solid var(--color-border);
+    }
+    
+    th {
+      background: var(--color-surface);
+      font-weight: var(--font-weight-semibold);
+      color: var(--color-text-primary);
+    }
+    
+    td {
+      color: var(--color-text-secondary);
+    }
+  }
+}
+
+.content-loading {
+  text-align: center;
+  padding: var(--space-16);
+  color: var(--color-text-secondary);
 }
 
 .content-sidebar {
@@ -314,6 +457,13 @@ const projectSubtitle = computed(() => 'A sample project description')
     
     li {
       margin-bottom: var(--space-2);
+      
+      &.toc-level-1 { margin-left: 0; }
+      &.toc-level-2 { margin-left: var(--space-4); }
+      &.toc-level-3 { margin-left: var(--space-8); }
+      &.toc-level-4 { margin-left: var(--space-12); }
+      &.toc-level-5 { margin-left: var(--space-16); }
+      &.toc-level-6 { margin-left: var(--space-20); }
       
       a {
         color: var(--color-text-secondary);
@@ -345,6 +495,12 @@ const projectSubtitle = computed(() => 'A sample project description')
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-xl);
+  transition: all var(--duration-normal) var(--ease-out);
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
   
   h3 {
     margin-bottom: var(--space-3);
@@ -362,6 +518,43 @@ const projectSubtitle = computed(() => 'A sample project description')
   p {
     color: var(--color-text-secondary);
     font-size: var(--font-size-sm);
+    margin-bottom: var(--space-4);
   }
+}
+
+.related-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  
+  .tag {
+    font-size: var(--font-size-xs);
+    padding: var(--space-1) var(--space-2);
+  }
+}
+
+.loading-state, .error-state {
+  text-align: center;
+  padding: var(--space-16);
+  color: var(--color-text-secondary);
+  
+  h1 {
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-4);
+  }
+  
+  p {
+    margin-bottom: var(--space-6);
+  }
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--color-neutral-200);
+  border-top: 3px solid var(--color-primary-600);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto var(--space-4);
 }
 </style>

@@ -30,78 +30,155 @@
             class="filter-select"
           >
             <option value="">All Categories</option>
-            <option value="web">Web Development</option>
-            <option value="mobile">Mobile</option>
-            <option value="api">APIs</option>
-            <option value="tools">Tools</option>
+            <option 
+              v-for="category in categories" 
+              :key="category.id" 
+              :value="category.id"
+            >
+              {{ category.name }} ({{ category.count }})
+            </option>
           </select>
         </div>
       </div>
 
-      <!-- Projects Grid -->
-      <div class="projects-grid grid grid-responsive">
-        <!-- Project placeholders - will be populated with actual project data -->
-        <article class="project-card">
-          <div class="project-image">
-            <div class="image-placeholder">Project Image</div>
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">
-              <router-link to="/projects/sample-project">
-                Sample Project
-              </router-link>
-            </h3>
-            <p class="project-description">
-              This is a placeholder for project descriptions. Replace with actual project content.
-            </p>
-            <div class="project-tags">
-              <span class="tag">Vue.js</span>
-              <span class="tag">TypeScript</span>
-              <span class="tag">SCSS</span>
-            </div>
-          </div>
-        </article>
+      <!-- Loading State -->
+      <div v-if="isLoading" class="loading-state">
+        <div class="loading-spinner"></div>
+        <p>Loading projects...</p>
+      </div>
 
-        <article class="project-card">
+      <!-- Error State -->
+      <div v-else-if="error" class="error-state">
+        <p>{{ error }}</p>
+        <button @click="loadProjects" class="btn btn-primary">Try Again</button>
+      </div>
+
+      <!-- Projects Grid -->
+      <div v-else-if="filteredProjects.length > 0" class="projects-grid grid grid-responsive">
+        <article 
+          v-for="project in filteredProjects" 
+          :key="project.id"
+          class="project-card"
+        >
           <div class="project-image">
-            <div class="image-placeholder">Project Image</div>
+            <img :src="project.image" :alt="project.title" loading="lazy" />
           </div>
           <div class="project-content">
             <h3 class="project-title">
-              <router-link to="/projects/another-project">
-                Another Project
+              <router-link :to="`/projects/${project.id}`">
+                {{ project.title }}
               </router-link>
             </h3>
             <p class="project-description">
-              Another placeholder project description. Customize with your actual projects.
+              {{ project.description }}
             </p>
-            <div class="project-tags">
-              <span class="tag">React</span>
-              <span class="tag">Node.js</span>
-              <span class="tag">API</span>
+            <div class="project-meta">
+              <div class="project-tags">
+                <span 
+                  v-for="tag in project.tags" 
+                  :key="tag"
+                  class="tag"
+                >
+                  {{ tag }}
+                </span>
+              </div>
+              <div class="project-links">
+                <a 
+                  v-if="project.liveUrl" 
+                  :href="project.liveUrl" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  class="project-link"
+                >
+                  Live Demo
+                </a>
+                <a 
+                  v-if="project.sourceUrl" 
+                  :href="project.sourceUrl" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  class="project-link"
+                >
+                  Source Code
+                </a>
+              </div>
             </div>
           </div>
         </article>
       </div>
 
       <!-- Empty State -->
-      <div v-if="filteredProjects.length === 0" class="empty-state">
-        <p>No projects found matching your criteria.</p>
+      <div v-else class="empty-state">
+        <h3>No projects found</h3>
+        <p v-if="searchQuery || selectedCategory">
+          Try adjusting your search criteria or browse all projects.
+        </p>
+        <p v-else>
+          Projects are coming soon! Check back later.
+        </p>
+        <button 
+          v-if="searchQuery || selectedCategory"
+          @click="clearFilters"
+          class="btn btn-primary"
+        >
+          Clear Filters
+        </button>
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted } from 'vue'
+import { MarkdownLoader, ProjectUtils, type Project, type ProjectCategory } from '@/utils/projects'
 
 const searchQuery = ref('')
 const selectedCategory = ref('')
+const projects = ref<Project[]>([])
+const categories = ref<ProjectCategory[]>([])
+const isLoading = ref(false)
+const error = ref<string | null>(null)
 
-// Placeholder computed property - replace with actual project data
 const filteredProjects = computed(() => {
-  // This will be implemented when you add actual project data
-  return []
+  let filtered = projects.value
+
+  // Filter by category
+  if (selectedCategory.value) {
+    filtered = ProjectUtils.getProjectsByCategory(filtered, selectedCategory.value)
+  }
+
+  // Filter by search query
+  if (searchQuery.value) {
+    filtered = ProjectUtils.searchProjects(filtered, searchQuery.value)
+  }
+
+  // Sort by date (newest first)
+  return ProjectUtils.sortProjects(filtered, 'date')
+})
+
+const clearFilters = () => {
+  searchQuery.value = ''
+  selectedCategory.value = ''
+}
+
+const loadProjects = async () => {
+  isLoading.value = true
+  error.value = null
+
+  try {
+    const data = await MarkdownLoader.loadProjectsData()
+    projects.value = data.projects
+    categories.value = data.categories
+  } catch (err) {
+    error.value = 'Failed to load projects. Please try again later.'
+    console.error('Error loading projects:', err)
+  } finally {
+    isLoading.value = false
+  }
+}
+
+onMounted(() => {
+  loadProjects()
 })
 </script>
 
@@ -210,17 +287,17 @@ const filteredProjects = computed(() => {
 .project-image {
   aspect-ratio: 16 / 9;
   overflow: hidden;
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--duration-normal) var(--ease-out);
+  }
 }
 
-.image-placeholder {
-  width: 100%;
-  height: 100%;
-  background: var(--color-neutral-100);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-text-tertiary);
-  font-size: var(--font-size-sm);
+.project-card:hover .project-image img {
+  transform: scale(1.05);
 }
 
 .project-content {
@@ -246,10 +323,33 @@ const filteredProjects = computed(() => {
   line-height: var(--line-height-relaxed);
 }
 
+.project-meta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
 .project-tags {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-2);
+}
+
+.project-links {
+  display: flex;
+  gap: var(--space-3);
+  
+  a {
+    font-size: var(--font-size-sm);
+    color: var(--color-primary-600);
+    text-decoration: none;
+    font-weight: var(--font-weight-medium);
+    
+    &:hover, &:focus {
+      color: var(--color-primary-700);
+      text-decoration: underline;
+    }
+  }
 }
 
 .tag {
@@ -262,9 +362,34 @@ const filteredProjects = computed(() => {
   font-weight: var(--font-weight-medium);
 }
 
+.loading-state, .error-state {
+  text-align: center;
+  padding: var(--space-16);
+  color: var(--color-text-secondary);
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--color-neutral-200);
+  border-top: 3px solid var(--color-primary-600);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto var(--space-4);
+}
+
 .empty-state {
   text-align: center;
   padding: var(--space-16);
   color: var(--color-text-secondary);
+  
+  h3 {
+    margin-bottom: var(--space-4);
+    color: var(--color-text-primary);
+  }
+  
+  p {
+    margin-bottom: var(--space-6);
+  }
 }
 </style>
