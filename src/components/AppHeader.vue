@@ -3,7 +3,7 @@
     <div class="container">
       <nav class="nav" role="navigation" aria-label="Main navigation">
         <!-- Logo/Brand -->
-        <router-link to="/" class="brand" aria-label="Go to homepage">
+        <router-link to="/" class="brand" aria-label="Go to projects">
           <span class="brand-text">Portfolio</span>
         </router-link>
 
@@ -12,16 +12,6 @@
           <li role="none">
             <router-link 
               to="/" 
-              class="nav-link" 
-              role="menuitem"
-              :aria-current="$route.name === 'Home' ? 'page' : undefined"
-            >
-              Home
-            </router-link>
-          </li>
-          <li role="none">
-            <router-link 
-              to="/projects" 
               class="nav-link" 
               role="menuitem"
               :aria-current="$route.name === 'Projects' ? 'page' : undefined"
@@ -85,16 +75,6 @@
           <li role="none">
             <router-link 
               to="/" 
-              class="mobile-nav-link" 
-              role="menuitem"
-              @click="closeMobileMenu"
-            >
-              Home
-            </router-link>
-          </li>
-          <li role="none">
-            <router-link 
-              to="/projects" 
               class="mobile-nav-link" 
               role="menuitem"
               @click="closeMobileMenu"
