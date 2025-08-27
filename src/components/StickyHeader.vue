@@ -347,7 +347,7 @@ const handleMobileAbout = () => {
 }
 
 .controls-section {
-  padding: var(--space-2) 0;
+  padding: var(--space-3) 0;
 }
 
 .projects-controls {
@@ -391,7 +391,6 @@ const handleMobileAbout = () => {
   color: var(--color-text-primary);
   font-size: var(--font-size-sm);
   cursor: pointer;
-  border-radius: var(--radius-md);
   
   &:focus {
     border-color: var(--color-primary-500);
@@ -408,7 +407,6 @@ const handleMobileAbout = () => {
 .toggle-buttons {
   display: flex;
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
   overflow: hidden;
 }
 

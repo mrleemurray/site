@@ -339,11 +339,11 @@ onMounted(() => {
 .tag {
   display: inline-block;
   padding: var(--space-1) var(--space-3);
-  background: var(--color-primary-50);
   color: var(--color-primary-700);
   font-size: var(--font-size-xs);
-  border-radius: var(--radius-full);
   font-weight: var(--font-weight-medium);
+  border: 1px solid color-mix(in srgb, var(--color-primary-700) 20%, transparent);
+  cursor: default;
 }
 
 .loading-state, .error-state {
