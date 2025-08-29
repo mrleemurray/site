@@ -2,15 +2,14 @@
   <div class="sticky-header">
     <!-- Navigation Section -->
     <div class="nav-section">
-      <div class="container">
-        <nav class="nav" role="navigation" aria-label="Main navigation">
-          <!-- Logo/Brand -->
-          <router-link to="/" class="brand" aria-label="Go to projects">
-            <span class="brand-text">LM</span>
-          </router-link>
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <!-- Logo/Brand -->
+        <router-link to="/" class="brand" aria-label="Go to projects">
+          <span class="brand-text">LM</span>
+        </router-link>
 
-          <!-- Controls -->
-          <div class="nav-controls">
+        <!-- Controls -->
+        <div class="nav-controls">
             <button 
                 class="nav-link nav-button" 
                 role="menuitem"
@@ -80,13 +79,11 @@
             </li>
           </ul>
         </div>
-      </div>
     </div>
 
     <!-- Projects Controls Section -->
     <div v-if="showProjectControls" class="controls-section">
-      <div class="container">
-        <div class="projects-controls">
+      <div class="projects-controls">
           <div class="controls-group">
             <div class="filters">
               <label for="category-filter" class="filter-label"></label>
@@ -131,7 +128,6 @@
             </div>
           </div>
         </div>
-      </div>
     </div>
   </div>
 </template>
@@ -188,19 +184,33 @@ const handleMobileAbout = () => {
 .sticky-header {
   position: fixed;
   top: 0;
-  left: 0;
-  right: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1280px;
   z-index: 1000;
-  background: color-mix(in srgb, var(--color-background) 60%, transparent);
-  backdrop-filter: blur(16px);
+  // background: color-mix(in srgb, var(--color-background) 60%, transparent);
+  background: var(--color-background);
+  // backdrop-filter: blur(16px);
   transition: all var(--duration-normal) var(--ease-out);
+  margin: 0 auto;
+  padding: var(--space-2) var(--space-2) 0 var(--space-2);
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.nav-section {
+  border-left: 1px solid var(--color-border);
+  border-right: 1px solid var(--color-border);
+  border-top: 1px solid var(--color-border);
+  padding: 0 var(--space-2);
 }
 
 .nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 4rem;
+  height: 3rem;
 }
 
 .brand {
@@ -347,7 +357,9 @@ const handleMobileAbout = () => {
 }
 
 .controls-section {
-  padding: var(--space-3) 0;
+  // margin: 0 calc(var(--space-4) + 1px);
+  padding: var(--space-2) var(--space-2);
+  border: 1px solid var(--color-border);
 }
 
 .projects-controls {

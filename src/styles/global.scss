@@ -63,15 +63,15 @@ a {
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 var(--space-4);
+  padding: 0 var(--space-2);
   
-  @media (min-width: 768px) {
-    padding: 0 var(--space-6);
-  }
+  // @media (min-width: 768px) {
+  //   padding: 0 var(--space-6);
+  // }
   
-  @media (min-width: 1024px) {
-    padding: 0 var(--space-8);
-  }
+  // @media (min-width: 1024px) {
+  //   padding: 0 var(--space-8);
+  // }
 }
 
 .visually-hidden {
