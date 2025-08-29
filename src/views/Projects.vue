@@ -259,12 +259,11 @@ onMounted(() => {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    // transition: transform var(--duration-normal) var(--ease-out);
   }
 }
 
 .project-content {
-  padding: var(--space-6);
+  padding: var(--space-4) 0;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -280,7 +279,9 @@ onMounted(() => {
 }
 
 .project-title {
-  margin-bottom: var(--space-3);
+  margin-bottom: var(--space-4);
+  padding: 0 var(--space-4) var(--space-4);
+  border-bottom: 1px solid var(--color-border);
   
   a {
     color: var(--color-text-primary);
@@ -293,16 +294,19 @@ onMounted(() => {
 }
 
 .project-description {
+  padding: 0 var(--space-4) var(--space-4);
   margin-bottom: var(--space-4);
   color: var(--color-text-secondary);
   line-height: var(--line-height-relaxed);
   flex-grow: 1;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .project-meta {
   display: flex;
   flex-direction: column;
   gap: var(--space-4);
+  padding: 0 var(--space-4);
   
   .project-card--list & {
     @media (min-width: 768px) {
