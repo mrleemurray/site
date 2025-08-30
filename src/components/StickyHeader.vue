@@ -62,6 +62,29 @@
             >
               <PerformanceIcon :mode="performanceMode" />
             </button>
+
+            <div class="view-toggle">
+              <div class="toggle-buttons">
+                <button
+                  type="button"
+                  class="toggle-btn"
+                  :class="{ 'toggle-btn--active': viewMode === 'grid' }"
+                  @click="$emit('update:viewMode', 'grid')"
+                  aria-label="Grid view"
+                >
+                  <GridIcon />
+                </button>
+                <button
+                  type="button"
+                  class="toggle-btn"
+                  :class="{ 'toggle-btn--active': viewMode === 'list' }"
+                  @click="$emit('update:viewMode', 'list')"
+                  aria-label="List view"
+                >
+                  <ListIcon />
+                </button>
+              </div>
+            </div>
             
             <button 
               class="mobile-menu-btn" 
@@ -105,63 +128,6 @@
               </button>
             </li>
           </ul>
-        </div>
-    </div>
-
-    <!-- Projects Controls Section -->
-    <div v-if="showProjectControls" class="controls-section">
-      <div class="projects-controls">
-          <div class="controls-group">
-            <!-- <div class="category-switch">
-              <button
-                type="button"
-                class="category-btn"
-                :class="{ 'category-btn--active': selectedCategory === '' }"
-                @click="$emit('update:selectedCategory', '')"
-              >
-                All
-              </button>
-              <button
-                type="button"
-                class="category-btn"
-                :class="{ 'category-btn--active': selectedCategory === 'work' }"
-                @click="$emit('update:selectedCategory', 'work')"
-              >
-                Work
-              </button>
-              <button
-                type="button"
-                class="category-btn"
-                :class="{ 'category-btn--active': selectedCategory === 'experiments' }"
-                @click="$emit('update:selectedCategory', 'experiments')"
-              >
-                Experiments
-              </button>
-            </div> -->
-
-            <div class="view-toggle">
-              <div class="toggle-buttons">
-                <button
-                  type="button"
-                  class="toggle-btn"
-                  :class="{ 'toggle-btn--active': viewMode === 'grid' }"
-                  @click="$emit('update:viewMode', 'grid')"
-                  aria-label="Grid view"
-                >
-                  <GridIcon />
-                </button>
-                <button
-                  type="button"
-                  class="toggle-btn"
-                  :class="{ 'toggle-btn--active': viewMode === 'list' }"
-                  @click="$emit('update:viewMode', 'list')"
-                  aria-label="List view"
-                >
-                  <ListIcon />
-                </button>
-              </div>
-            </div>
-          </div>
         </div>
     </div>
   </div>
@@ -233,9 +199,7 @@ const handleMobileAbout = () => {
 }
 
 .nav-section {
-  border-left: 1px solid var(--color-border);
-  border-right: 1px solid var(--color-border);
-  border-top: 1px solid var(--color-border);
+  border: 1px solid var(--color-border);
   padding: 0 var(--space-2);
 }
 

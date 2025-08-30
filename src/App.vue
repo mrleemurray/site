@@ -126,7 +126,7 @@ onUnmounted(() => {
 
 .main {
   flex: 1;
-  padding-top: calc(4rem + 4rem - var(--space-4)); // Nav height + controls height + padding
+  padding-top: calc(4rem - var(--space-4)); // Nav height + controls height + padding
   
   // @media (min-width: 768px) {
   //   padding-top: calc(5rem + 4rem + var(--space-4)); // Larger nav + controls + padding
