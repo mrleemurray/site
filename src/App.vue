@@ -1,7 +1,7 @@
 <template>
   <div 
     id="app" 
-    :data-theme="theme" 
+    :data-theme="theme"
     :data-performance="performanceMode"
     class="app"
   >
@@ -13,7 +13,6 @@
       :show-project-controls="isProjectsPage"
       :selected-category="selectedCategory"
       :view-mode="viewMode"
-      :categories="categories"
       @toggle-theme="toggleTheme"
       @toggle-performance="togglePerformance"
       @open-about="openAboutModal"
@@ -25,7 +24,6 @@
       <router-view 
         :selected-category="selectedCategory"
         :view-mode="viewMode"
-        @update-project-filters="updateProjectFilters"
       />
     </main>
     
@@ -54,7 +52,6 @@ const aboutModalOpen = ref(false)
 // Project controls state
 const selectedCategory = ref('')
 const viewMode = ref<'grid' | 'list'>('grid')
-const categories = ref<Array<{ id: string; name: string; count: number }>>([])
 
 // Theme detection and persistence
 const initializeTheme = () => {
@@ -94,10 +91,6 @@ const updateSelectedCategory = (value: string) => {
 
 const updateViewMode = (value: 'grid' | 'list') => {
   viewMode.value = value
-}
-
-const updateProjectFilters = (data: { categories: Array<{ id: string; name: string; count: number }> }) => {
-  categories.value = data.categories
 }
 
 // Persist preferences

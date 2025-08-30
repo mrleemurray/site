@@ -8,6 +8,33 @@
           <span class="brand-text">LM</span>
         </router-link>
 
+        <div class="category-switch">
+          <button
+            type="button"
+            class="category-btn"
+            :class="{ 'category-btn--active': selectedCategory === '' }"
+            @click="$emit('update:selectedCategory', '')"
+          >
+            All
+          </button>
+          <button
+            type="button"
+            class="category-btn"
+            :class="{ 'category-btn--active': selectedCategory === 'work' }"
+            @click="$emit('update:selectedCategory', 'work')"
+          >
+            Work
+          </button>
+          <button
+            type="button"
+            class="category-btn"
+            :class="{ 'category-btn--active': selectedCategory === 'experiments' }"
+            @click="$emit('update:selectedCategory', 'experiments')"
+          >
+            Experiments
+          </button>
+        </div>
+
         <!-- Controls -->
         <div class="nav-controls">
             <button 
@@ -85,24 +112,32 @@
     <div v-if="showProjectControls" class="controls-section">
       <div class="projects-controls">
           <div class="controls-group">
-            <div class="filters">
-              <label for="category-filter" class="filter-label"></label>
-              <select 
-                id="category-filter"
-                :value="selectedCategory"
-                @change="(event) => $emit('update:selectedCategory', (event.target as HTMLSelectElement).value)"
-                class="filter-select"
+            <!-- <div class="category-switch">
+              <button
+                type="button"
+                class="category-btn"
+                :class="{ 'category-btn--active': selectedCategory === '' }"
+                @click="$emit('update:selectedCategory', '')"
               >
-                <option value="">All Categories</option>
-                <option 
-                  v-for="category in categories" 
-                  :key="category.id" 
-                  :value="category.id"
-                >
-                  {{ category.name }} ({{ category.count }})
-                </option>
-              </select>
-            </div>
+                All
+              </button>
+              <button
+                type="button"
+                class="category-btn"
+                :class="{ 'category-btn--active': selectedCategory === 'work' }"
+                @click="$emit('update:selectedCategory', 'work')"
+              >
+                Work
+              </button>
+              <button
+                type="button"
+                class="category-btn"
+                :class="{ 'category-btn--active': selectedCategory === 'experiments' }"
+                @click="$emit('update:selectedCategory', 'experiments')"
+              >
+                Experiments
+              </button>
+            </div> -->
 
             <div class="view-toggle">
               <div class="toggle-buttons">
@@ -146,14 +181,12 @@ interface Props {
   showProjectControls?: boolean
   selectedCategory?: string
   viewMode?: 'grid' | 'list'
-  categories?: Array<{ id: string; name: string; count: number }>
 }
 
 withDefaults(defineProps<Props>(), {
   showProjectControls: false,
   selectedCategory: '',
-  viewMode: 'grid',
-  categories: () => []
+  viewMode: 'grid'
 })
 
 const emit = defineEmits<{
@@ -211,6 +244,42 @@ const handleMobileAbout = () => {
   align-items: center;
   justify-content: space-between;
   height: 3rem;
+}
+
+.category-switch {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  background-color: var(--color-surface);
+  overflow: hidden;
+  padding-top: 3px;
+}
+
+.category-btn {
+  background: none;
+  border: none;
+  font-size: var(--font-size-base);
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-bottom: 3px solid transparent;
+
+
+  &:last-child {
+    border-right: none;
+  }
+
+  &:hover {
+    border-color: var(--color-border);
+  }
+
+  &--active {
+    border-color: var(--color-primary-600);
+  }
 }
 
 .brand {
@@ -363,50 +432,22 @@ const handleMobileAbout = () => {
 }
 
 .projects-controls {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-4);
-  
-  @media (min-width: 768px) {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-}
-
-.controls-group {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-4);
-  
-  @media (min-width: 768px) {
-    flex-direction: row;
-    align-items: center;
-    gap: var(--space-6);
-  }
-}
-
-.filters {
+  width: var(--container-width);
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+  box-sizing: border-box;
   display: flex;
   align-items: center;
-}
+  justify-content: space-between;
+  min-height: var(--space-xl);
 
-.filter-label {
-  font-weight: var(--font-weight-medium);
-  color: var(--color-text-secondary);
-}
-
-.filter-select {
-  padding: var(--space-2) var(--space-3);
-  border: 1px solid var(--color-border);
-  background: var(--color-surface);
-  color: var(--color-text-primary);
-  font-size: var(--font-size-sm);
-  cursor: pointer;
-  
-  &:focus {
-    border-color: var(--color-primary-500);
-    outline: none;
+  .controls-group {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    flex: 1;
+    justify-content: center;
   }
 }
 
