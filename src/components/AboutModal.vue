@@ -9,7 +9,7 @@
       aria-labelledby="about-title"
     >
       <div class="modal-container" ref="modalContainer">
-        <header class="modal-header">
+        <!-- <header class="modal-header">
           <h1 id="about-title" class="modal-title">About Me</h1>
           <button 
             class="close-button"
@@ -22,28 +22,26 @@
               <line x1="6" y1="6" x2="18" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
             </svg>
           </button>
-        </header>
+        </header> -->
 
         <div class="modal-content">
           <!-- Personal Introduction -->
           <section class="intro-section">
             <div class="intro-grid">
               <div class="intro-content">
-                <h2>Hello, I'm [Your Name]</h2>
+                <h2>Lee Murray</h2>
                 <p>
-                  This is where you'll write your personal introduction. Talk about your journey 
-                  into development, what you're passionate about, and what makes you unique as a developer.
+                  My interests & skills blend the boundary between designer & developer, using technology to evolve the design experience to the highest standards; from simple test mock-ups to hardware preproduction prototypes, my unusual hybrid skillsets combine hardware design with software as well as web technology.
                 </p>
                 <p>
-                  Share your story, your motivations, and give visitors a sense of who you are 
-                  beyond just your technical skills.
+                  I thrive in teams where I can lead hardware & software prototyping efforts in an organisation, promoting the mindset of rapid design iterations, learning from mistakes & crafting experiences. With this ideal in mind, my passion is to harmonise design & engineering teams to allow for seamless collaborations, culminating in incredibly well crafted, compelling products & services.
                 </p>
               </div>
-              <div class="intro-image">
+              <!-- <div class="intro-image">
                 <div class="image-placeholder">
                   Your Photo
                 </div>
-              </div>
+              </div> -->
             </div>
           </section>
 
@@ -328,23 +326,23 @@ watch(() => props.isOpen, (isOpen) => {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.8);
+  background: color-mix(in srgb, var(--color-background) 20%, transparent);
   backdrop-filter: blur(4px);
   z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--space-4);
+  // padding: var(--space-4);
   animation: fadeIn var(--duration-normal) var(--ease-out);
 }
 
 .modal-container {
-  background: var(--color-surface);
-  border-radius: var(--radius-2xl);
-  box-shadow: var(--shadow-xl);
+  background: var(--color-background);
+  // box-shadow: var(--shadow-xl);
   width: 100%;
-  max-width: 900px;
-  max-height: 90vh;
+  max-width: 1280px;
+  max-height: 100vh;
+  margin: 0 auto;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -394,7 +392,12 @@ watch(() => props.isOpen, (isOpen) => {
 .modal-content {
   flex: 1;
   overflow-y: auto;
-  padding: var(--space-8);
+  max-width: 1280px;
+  margin: calc(3rem + var(--space-2)) var(--space-2) var(--space-2);
+  padding: var(--space-4);
+  border-left: 1px solid var(--color-border);
+  border-right: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
   
   &::-webkit-scrollbar {
     width: 8px;
@@ -440,9 +443,9 @@ watch(() => props.isOpen, (isOpen) => {
   gap: var(--space-8);
   align-items: center;
   
-  @media (min-width: 768px) {
-    grid-template-columns: 2fr 1fr;
-  }
+  // @media (min-width: 768px) {
+  //   grid-template-columns: 2fr 1fr;
+  // }
 }
 
 .intro-content {
