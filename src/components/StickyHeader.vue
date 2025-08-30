@@ -108,16 +108,6 @@
         >
           <ul class="mobile-nav-links" role="menu">
             <li role="none">
-              <router-link 
-                to="/" 
-                class="mobile-nav-link" 
-                role="menuitem"
-                @click="closeMobileMenu"
-              >
-                Projects
-              </router-link>
-            </li>
-            <li role="none">
               <button 
                 class="mobile-nav-link mobile-nav-button" 
                 role="menuitem"
@@ -127,10 +117,103 @@
                 About
               </button>
             </li>
+            <li v-if="showProjectControls" role="none">
+              <div class="mobile-nav-link mobile-control-item">
+                <span class="mobile-control-label">Category</span>
+                <div class="mobile-category-switch">
+                  <button
+                    type="button"
+                    class="mobile-category-btn"
+                    :class="{ 'mobile-category-btn--active': selectedCategory === '' }"
+                    @click="handleMobileCategory('')"
+                  >
+                    All
+                  </button>
+                  <button
+                    type="button"
+                    class="mobile-category-btn"
+                    :class="{ 'mobile-category-btn--active': selectedCategory === 'work' }"
+                    @click="handleMobileCategory('work')"
+                  >
+                    Work
+                  </button>
+                  <button
+                    type="button"
+                    class="mobile-category-btn"
+                    :class="{ 'mobile-category-btn--active': selectedCategory === 'experiments' }"
+                    @click="handleMobileCategory('experiments')"
+                  >
+                    Experiments
+                  </button>
+                </div>
+              </div>
+            </li>
+            <li role="none">
+              <button 
+                class="mobile-nav-link mobile-nav-button mobile-control-item" 
+                role="menuitem"
+                @click="handleMobileTheme"
+                type="button"
+              >
+                <span class="mobile-control-label">Theme</span>
+                <div class="mobile-control-value">
+                  <ThemeIcon :theme="theme" />
+                  <span>{{ theme === 'light' ? 'Light' : 'Dark' }}</span>
+                </div>
+              </button>
+            </li>
+            <li role="none">
+              <button 
+                class="mobile-nav-link mobile-nav-button mobile-control-item" 
+                role="menuitem"
+                @click="handleMobilePerformance"
+                type="button"
+              >
+                <span class="mobile-control-label">Performance</span>
+                <div class="mobile-control-value">
+                  <PerformanceIcon :mode="performanceMode" />
+                  <span>{{ performanceMode === 'full' ? 'Full' : 'Power Saver' }}</span>
+                </div>
+              </button>
+            </li>
+            <li v-if="showProjectControls" role="none">
+              <div class="mobile-nav-link mobile-control-item">
+                <span class="mobile-control-label">View Mode</span>
+                <div class="mobile-view-toggle">
+                  <button
+                    type="button"
+                    class="mobile-toggle-btn"
+                    :class="{ 'mobile-toggle-btn--active': viewMode === 'grid' }"
+                    @click="handleMobileViewMode('grid')"
+                    aria-label="Grid view"
+                  >
+                    <GridIcon />
+                    <span>Grid</span>
+                  </button>
+                  <button
+                    type="button"
+                    class="mobile-toggle-btn"
+                    :class="{ 'mobile-toggle-btn--active': viewMode === 'list' }"
+                    @click="handleMobileViewMode('list')"
+                    aria-label="List view"
+                  >
+                    <ListIcon />
+                    <span>List</span>
+                  </button>
+                </div>
+              </div>
+            </li>
           </ul>
         </div>
     </div>
   </div>
+
+  <!-- Mobile Menu Backdrop -->
+  <div 
+    v-if="mobileMenuOpen"
+    class="mobile-menu-backdrop"
+    @click="closeMobileMenu"
+  ></div>
 </template>
 
 <script setup lang="ts">
@@ -177,6 +260,26 @@ const handleMobileAbout = () => {
   emit('open-about')
   closeMobileMenu()
 }
+
+const handleMobileTheme = () => {
+  emit('toggle-theme')
+  closeMobileMenu()
+}
+
+const handleMobilePerformance = () => {
+  emit('toggle-performance')
+  closeMobileMenu()
+}
+
+const handleMobileViewMode = (mode: 'grid' | 'list') => {
+  emit('update:viewMode', mode)
+  closeMobileMenu()
+}
+
+const handleMobileCategory = (category: string) => {
+  emit('update:selectedCategory', category)
+  closeMobileMenu()
+}
 </script>
 
 <style lang="scss" scoped>
@@ -187,7 +290,7 @@ const handleMobileAbout = () => {
   transform: translateX(-50%);
   width: 100%;
   max-width: 1280px;
-  z-index: 1000;
+  z-index: 1001;
   // background: color-mix(in srgb, var(--color-background) 60%, transparent);
   background: var(--color-background);
   // backdrop-filter: blur(16px);
@@ -200,7 +303,7 @@ const handleMobileAbout = () => {
 
 .nav-section {
   border: 1px solid var(--color-border);
-  padding: 0 var(--space-2);
+  padding: 0;
 }
 
 .nav {
@@ -208,6 +311,7 @@ const handleMobileAbout = () => {
   align-items: center;
   justify-content: space-between;
   height: 3rem;
+  padding: 0 var(--space-4);
 }
 
 .category-switch {
@@ -220,6 +324,10 @@ const handleMobileAbout = () => {
   background-color: var(--color-surface);
   overflow: hidden;
   padding-top: 3px;
+  
+  @media (max-width: 767px) {
+    display: none;
+  }
 }
 
 .category-btn {
@@ -290,6 +398,14 @@ const handleMobileAbout = () => {
   display: flex;
   align-items: center;
   gap: var(--space-4);
+  
+  @media (max-width: 767px) {
+    .nav-link,
+    .control-btn,
+    .view-toggle {
+      display: none;
+    }
+  }
 }
 
 .controls-group {
@@ -322,9 +438,50 @@ const handleMobileAbout = () => {
 
 .mobile-menu-btn {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: none;
+  border: none;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-out);
+  
+  &:hover, &:focus {
+    color: var(--color-primary-600);
+  }
+  
+  &:focus {
+    outline: 2px solid var(--color-primary-500);
+    outline-offset: 2px;
+  }
   
   @media (min-width: 768px) {
     display: none;
+  }
+}
+
+.mobile-menu-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 500;
+  opacity: 0;
+  animation: fadeIn var(--duration-fast) var(--ease-out) forwards;
+  pointer-events: auto;
+  
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
   }
 }
 
@@ -332,6 +489,8 @@ const handleMobileAbout = () => {
   display: none;
   padding: var(--space-4) 0;
   border-top: 1px solid var(--color-border);
+  position: relative;
+  z-index: 501;
   
   &--open {
     display: block;
@@ -372,6 +531,82 @@ const handleMobileAbout = () => {
   font-family: inherit;
   width: 100%;
   text-align: left;
+}
+
+.mobile-control-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mobile-control-label {
+  font-weight: var(--font-weight-medium);
+}
+
+.mobile-control-value {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+}
+
+.mobile-view-toggle {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.mobile-toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-2);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-out);
+  font-size: var(--font-size-xs);
+  
+  &:hover {
+    background: var(--color-primary-50);
+    color: var(--color-primary-600);
+  }
+  
+  &--active {
+    background: var(--color-primary-600);
+    color: var(--color-white);
+    border-color: var(--color-primary-600);
+  }
+}
+
+.mobile-category-switch {
+  display: flex;
+  gap: var(--space-1);
+  flex-wrap: wrap;
+}
+
+.mobile-category-btn {
+  padding: var(--space-1) var(--space-2);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-out);
+  font-size: var(--font-size-xs);
+  
+  &:hover {
+    background: var(--color-primary-50);
+    color: var(--color-primary-600);
+  }
+  
+  &--active {
+    background: var(--color-primary-600);
+    color: var(--color-white);
+    border-color: var(--color-primary-600);
+  }
 }
 
 .controls-section {
