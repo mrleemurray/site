@@ -7,15 +7,14 @@
   >
     <a href="#main-content" class="skip-link">Skip to main content</a>
     
-    <StickyHeader 
+        <StickyHeader 
       :theme="theme"
       :performance-mode="performanceMode"
-      :show-project-controls="isProjectsPage"
       :selected-category="selectedCategory"
       :view-mode="viewMode"
       @toggle-theme="toggleTheme"
       @toggle-performance="togglePerformance"
-      @open-about="openAboutModal"
+      @toggle-about="toggleAboutModal"
       @update:selected-category="updateSelectedCategory"
       @update:view-mode="updateViewMode"
     />
@@ -82,6 +81,10 @@ const openAboutModal = () => {
 
 const closeAboutModal = () => {
   aboutModalOpen.value = false
+}
+
+const toggleAboutModal = () => {
+  aboutModalOpen.value = !aboutModalOpen.value
 }
 
 // Project controls handlers

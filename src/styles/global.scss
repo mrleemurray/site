@@ -24,6 +24,41 @@ body {
   transition: background-color var(--duration-normal) var(--ease-out);
 }
 
+// Custom Scrollbar Styling
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-background);
+  border-radius: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 0px;
+  transition: background-color var(--duration-fast) var(--ease-out);
+  
+  &:hover {
+    background: var(--color-text-secondary);
+  }
+  
+  &:active {
+    background: var(--color-primary-500);
+  }
+}
+
+::-webkit-scrollbar-corner {
+  background: var(--color-background);
+}
+
+// Firefox scrollbar styling
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border) var(--color-background);
+}
+
 #app {
   background-color: var(--color-background);
 }
@@ -37,7 +72,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 { font-size: var(--font-size-5xl); }
 h2 { font-size: var(--font-size-4xl); }
-h3 { font-size: var(--font-size-2xl); }
+h3 { font-size: var(--font-size-1xl); }
 h4 { font-size: var(--font-size-2xl); }
 h5 { font-size: var(--font-size-xl); }
 h6 { font-size: var(--font-size-lg); }

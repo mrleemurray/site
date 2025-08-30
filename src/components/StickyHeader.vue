@@ -37,19 +37,20 @@
 
         <!-- Controls -->
         <div class="nav-controls">
-            <button 
-                class="nav-link nav-button" 
-                role="menuitem"
-                @click="$emit('open-about')"
-                type="button"
-              >
-                About
-              </button>
-            <button 
-              class="control-btn" 
-              @click="$emit('toggle-theme')"
-              :aria-label="`Switch to ${theme === 'light' ? 'dark' : 'light'} theme`"
-              type="button"
+          <button 
+            class="about-btn desktop-only" 
+            @click="$emit('toggle-about')"
+          >
+            <span>
+              About
+            </span>
+          </button>
+          
+          <button 
+            class="control-btn" 
+            @click="$emit('toggle-theme')"
+            :aria-label="`Switch to ${theme === 'light' ? 'dark' : 'light'} theme`"
+            type="button"
             >
               <ThemeIcon :theme="theme" />
             </button>
@@ -241,9 +242,11 @@ withDefaults(defineProps<Props>(), {
 const emit = defineEmits<{
   'toggle-theme': []
   'toggle-performance': []
-  'open-about': []
-  'update:selectedCategory': [value: string]
-  'update:viewMode': [value: 'grid' | 'list']
+  'toggle-about': []
+  'category-change': [category: string]
+  'view-mode-change': [mode: 'grid' | 'list']
+  'update:selectedCategory': [category: string]
+  'update:viewMode': [mode: 'grid' | 'list']
 }>()
 
 const mobileMenuOpen = ref(false)
@@ -257,8 +260,8 @@ const closeMobileMenu = () => {
 }
 
 const handleMobileAbout = () => {
-  emit('open-about')
-  closeMobileMenu()
+  emit('toggle-about')
+  toggleMobileMenu()
 }
 
 const handleMobileTheme = () => {
@@ -321,7 +324,6 @@ const handleMobileCategory = (category: string) => {
   display: flex;
   align-items: center;
   gap: var(--space-2);
-  background-color: var(--color-surface);
   overflow: hidden;
   padding-top: 3px;
   
@@ -394,6 +396,28 @@ const handleMobileCategory = (category: string) => {
   font-family: inherit;
 }
 
+.about-btn {
+  background: none;
+  border: none;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: var(--font-weight-medium);
+  text-decoration: none;
+  transition: all var(--duration-fast) var(--ease-out);
+  
+  &:hover, &:focus {
+    color: var(--color-primary-600);
+    text-decoration: none;
+  }
+  
+  &:focus {
+    outline: 2px solid var(--color-primary-500);
+    outline-offset: 2px;
+  }
+}
+
 .nav-controls {
   display: flex;
   align-items: center;
@@ -428,6 +452,27 @@ const handleMobileCategory = (category: string) => {
   
   &:hover, &:focus {
     color: var(--color-primary-600);
+  }
+  
+  &:focus {
+    outline: 2px solid var(--color-primary-500);
+    outline-offset: 2px;
+  }
+}
+
+.about-btn {
+  background: none;
+  border: none;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  text-decoration: none;
+  transition: all var(--duration-fast) var(--ease-out);
+  
+  &:hover, &:focus {
+    color: var(--color-primary-600);
+    text-decoration: none;
   }
   
   &:focus {
@@ -649,7 +694,7 @@ const handleMobileCategory = (category: string) => {
   align-items: center;
   justify-content: center;
   padding: var(--space-1);
-  background: var(--color-surface);
+  background: var(--color-background);
   border: none;
   color: var(--color-text-secondary);
   cursor: pointer;
@@ -662,6 +707,10 @@ const handleMobileCategory = (category: string) => {
   
   &:focus {
     border-bottom: 2px solid var(--color-primary-500);
+  }
+
+  &--active {
+    color: var(--color-primary-600);
   }
 }
 </style>
