@@ -487,7 +487,6 @@ const handleMobileCategory = (category: string) => {
 
 .mobile-menu {
   display: none;
-  padding: var(--space-4) 0;
   border-top: 1px solid var(--color-border);
   position: relative;
   z-index: 501;
@@ -511,15 +510,13 @@ const handleMobileCategory = (category: string) => {
 .mobile-nav-link {
   display: block;
   padding: var(--space-3) var(--space-4);
-  color: var(--color-text-secondary);
+  color: var(--color-text-primary);
   text-decoration: none;
   font-weight: var(--font-weight-medium);
-  border-radius: var(--radius-md);
   transition: all var(--duration-fast) var(--ease-out);
   
   &:hover, &:focus {
-    color: var(--color-text-primary);
-    background: var(--color-primary-50);
+    color: var(--color-primary-600);
   }
 }
 
@@ -541,6 +538,7 @@ const handleMobileCategory = (category: string) => {
 
 .mobile-control-label {
   font-weight: var(--font-weight-medium);
+  cursor: default;
 }
 
 .mobile-control-value {
@@ -554,6 +552,7 @@ const handleMobileCategory = (category: string) => {
 .mobile-view-toggle {
   display: flex;
   gap: var(--space-2);
+  color: var(--color-text-primary);
 }
 
 .mobile-toggle-btn {
@@ -562,15 +561,14 @@ const handleMobileCategory = (category: string) => {
   gap: var(--space-1);
   padding: var(--space-1) var(--space-2);
   background: var(--color-surface);
+  color: var(--color-text-primary);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
   color: var(--color-text-secondary);
   cursor: pointer;
   transition: all var(--duration-fast) var(--ease-out);
   font-size: var(--font-size-xs);
   
   &:hover {
-    background: var(--color-primary-50);
     color: var(--color-primary-600);
   }
   
@@ -583,22 +581,20 @@ const handleMobileCategory = (category: string) => {
 
 .mobile-category-switch {
   display: flex;
-  gap: var(--space-1);
+  gap: var(--space-2);
   flex-wrap: wrap;
+  color: var(--color-text-primary);
 }
 
 .mobile-category-btn {
   padding: var(--space-1) var(--space-2);
   background: var(--color-surface);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  color: var(--color-text-secondary);
+  color: var(--color-text-primary);
   cursor: pointer;
   transition: all var(--duration-fast) var(--ease-out);
-  font-size: var(--font-size-xs);
   
   &:hover {
-    background: var(--color-primary-50);
     color: var(--color-primary-600);
   }
   
