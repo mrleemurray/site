@@ -28,7 +28,9 @@
           :class="{ 'project-card--list': viewMode === 'list' }"
         >
           <div class="project-image">
-            <img :src="project.image" :alt="project.title" loading="lazy" />
+            <router-link :to="`/projects/${project.id}`">
+              <img :src="project.image" :alt="project.title" loading="lazy" />
+            </router-link>
           </div>
           <div class="project-content">
             <h3 class="project-title">
@@ -346,7 +348,7 @@ onMounted(() => {
 
 .project-links {
   display: flex;
-  gap: var(--space-3);
+  gap: var(--space-4);
   padding: var(--space-4) var(--space-4) 0 var(--space-4);
   border-top: 1px solid var(--color-border);
   

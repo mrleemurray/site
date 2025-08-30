@@ -294,12 +294,22 @@ const handleMobileCategory = (category: string) => {
   width: 100%;
   max-width: 1280px;
   z-index: 1001;
-  // background: color-mix(in srgb, var(--color-background) 60%, transparent);
-  // background: var(--color-background);
-  // backdrop-filter: blur(16px);
   transition: all var(--duration-normal) var(--ease-out);
   margin: 0 auto;
   padding: var(--space-2) var(--space-2) 0 var(--space-2);
+  
+  // Create opaque backdrop only above the header
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--space-2); // Only cover the padding area above
+    background: var(--color-background);
+    z-index: 0;
+    pointer-events: none;
+  }
 }
 
 .nav-section {
