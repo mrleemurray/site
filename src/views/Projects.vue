@@ -18,7 +18,7 @@
         v-else-if="filteredProjects.length > 0" 
         class="projects-container"
         :class="[
-          viewMode === 'grid' ? 'projects-grid grid grid-responsive' : 'projects-list'
+          viewMode === 'grid' ? 'projects-grid' : 'projects-list'
         ]"
       >
         <article 
@@ -196,6 +196,8 @@ onMounted(() => {
     border-left: 1px solid var(--color-border);
     border-top: 1px solid var(--color-border);
     overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     padding-right: 1px; /* Prevents border collapse issues */
   }
 }
@@ -220,7 +222,8 @@ onMounted(() => {
   .projects-grid & {
     border-right: 1px solid var(--color-border);
     border-bottom: 1px solid var(--color-border);
-    margin: -1px -1px -1px 0; /* Overlap borders */
+    margin-right: -1px;
+    margin-bottom: -1px;
   }
   
   &--list {
