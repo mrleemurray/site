@@ -295,17 +295,16 @@ const handleMobileCategory = (category: string) => {
   max-width: 1280px;
   z-index: 1001;
   // background: color-mix(in srgb, var(--color-background) 60%, transparent);
-  background: var(--color-background);
+  // background: var(--color-background);
   // backdrop-filter: blur(16px);
   transition: all var(--duration-normal) var(--ease-out);
   margin: 0 auto;
   padding: var(--space-2) var(--space-2) 0 var(--space-2);
-  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
-  box-shadow: var(--shadow-sm);
 }
 
 .nav-section {
   border: 1px solid var(--color-border);
+  background: var(--color-background);
   padding: 0;
 }
 

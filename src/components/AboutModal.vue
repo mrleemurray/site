@@ -8,6 +8,14 @@
       aria-modal="true"
       aria-labelledby="about-title"
     >
+      <!-- Decorative grid pattern like a cutting mat -->
+      <div class="grid-pattern">
+        <!-- Vertical lines -->
+        <div class="grid-line vertical" v-for="n in 50" :key="`v-${n}`" :style="{ left: `${n * 2}%` }"></div>
+        <!-- Horizontal lines -->
+        <div class="grid-line horizontal" v-for="n in 50" :key="`h-${n}`" :style="{ top: `${n * 2}%` }"></div>
+      </div>
+      
       <div class="modal-container" ref="modalContainer">
         <!-- <header class="modal-header">
           <h1 id="about-title" class="modal-title">About Me</h1>
@@ -151,15 +159,15 @@
             
             <div class="contact-methods">
               <div class="contact-method">
-                <div class="contact-icon">📧</div>
+                <!-- <div class="contact-icon">📧</div> -->
                 <div class="contact-details">
                   <h3>Email</h3>
-                  <a href="mailto:your.email@example.com">your.email@example.com</a>
+                  <a href="mailto:mrleemurray@gmail.com">mrleemurray@gmail.com</a>
                 </div>
               </div>
 
               <div class="contact-method">
-                <div class="contact-icon">💼</div>
+                <!-- <div class="contact-icon">💼</div> -->
                 <div class="contact-details">
                   <h3>LinkedIn</h3>
                   <a href="#" target="_blank" rel="noopener noreferrer">
@@ -169,7 +177,7 @@
               </div>
 
               <div class="contact-method">
-                <div class="contact-icon">🐙</div>
+                <!-- <div class="contact-icon">🐙</div> -->
                 <div class="contact-details">
                   <h3>GitHub</h3>
                   <a href="#" target="_blank" rel="noopener noreferrer">
@@ -177,53 +185,31 @@
                   </a>
                 </div>
               </div>
-
-              <div class="contact-method">
-                <div class="contact-icon">📱</div>
-                <div class="contact-details">
-                  <h3>Calendar</h3>
-                  <a href="#" target="_blank" rel="noopener noreferrer">
-                    Schedule a 30-minute call
-                  </a>
-                </div>
-              </div>
             </div>
 
-            <!-- Availability -->
-            <div class="availability">
-              <h3>Availability</h3>
-              <p>
-                I'm currently <strong>available for new projects</strong> and collaborations. 
-                I typically respond to messages within 24 hours.
-              </p>
-            </div>
           </section>
 
           <!-- Personal Interests -->
           <section class="interests-section">
-            <h2 class="section-title">When I'm Not Coding</h2>
+            <h2 class="section-title">Hobbies & Interests</h2>
             
             <div class="interests-grid">
               <div class="interest-item">
-                <div class="interest-icon">📚</div>
                 <h3>Reading</h3>
                 <p>Passionate about learning new technologies and staying current with industry trends.</p>
               </div>
 
               <div class="interest-item">
-                <div class="interest-icon">🏃‍♂️</div>
                 <h3>Fitness</h3>
                 <p>Staying active helps me maintain focus and creativity in my development work.</p>
               </div>
 
               <div class="interest-item">
-                <div class="interest-icon">🎵</div>
                 <h3>Music</h3>
                 <p>Music fuels my creativity and helps me think through complex problems.</p>
               </div>
 
               <div class="interest-item">
-                <div class="interest-icon">✈️</div>
                 <h3>Travel</h3>
                 <p>Exploring new places and cultures broadens my perspective and inspires new ideas.</p>
               </div>
@@ -326,18 +312,63 @@ watch(() => props.isOpen, (isOpen) => {
   left: 0;
   right: 0;
   bottom: 0;
-  background: color-mix(in srgb, var(--color-background) 20%, transparent);
-  backdrop-filter: blur(4px);
+  background: color-mix(in srgb, var(--color-background) 80%, transparent);
   z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: center;
-  // padding: var(--space-4);
-  animation: fadeIn var(--duration-normal) var(--ease-out);
+}
+
+.decoration-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.grid-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.5;
+}
+
+.grid-line {
+  position: absolute;
+  background: color-mix(in srgb, var(--color-text-secondary) 8%, transparent);
+  
+  &.vertical {
+    width: 1px;
+    height: 100%;
+    top: 0;
+    
+    &:nth-child(5n) {
+      background: color-mix(in srgb, var(--color-text-secondary) 15%, transparent);
+      width: 2px;
+    }
+  }
+  
+  &.horizontal {
+    height: 1px;
+    width: 100%;
+    left: 0;
+    
+    &:nth-child(5n) {
+      background: color-mix(in srgb, var(--color-text-secondary) 15%, transparent);
+      height: 2px;
+    }
+  }
 }
 
 .modal-container {
-  background: var(--color-background);
+  
   // box-shadow: var(--shadow-xl);
   width: 100%;
   max-width: 1280px;
@@ -374,7 +405,6 @@ watch(() => props.isOpen, (isOpen) => {
   border: none;
   background: transparent;
   color: var(--color-text-secondary);
-  border-radius: var(--radius-lg);
   cursor: pointer;
   transition: all var(--duration-fast) var(--ease-out);
   
@@ -398,24 +428,34 @@ watch(() => props.isOpen, (isOpen) => {
   border-left: 1px solid var(--color-border);
   border-right: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
+  background: var(--color-background);
   
   &::-webkit-scrollbar {
     width: 8px;
   }
   
   &::-webkit-scrollbar-track {
-    background: var(--color-neutral-100);
-    border-radius: var(--radius-full);
+    background: var(--color-background);
+    border-radius: 0px;
   }
   
   &::-webkit-scrollbar-thumb {
-    background: var(--color-neutral-300);
-    border-radius: var(--radius-full);
+    background: var(--color-border);
+    border-radius: 0px;
+    transition: background-color var(--duration-fast) var(--ease-out);
     
     &:hover {
-      background: var(--color-neutral-400);
+      background: var(--color-text-secondary);
+    }
+    
+    &:active {
+      background: var(--color-primary-500);
     }
   }
+
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border) var(--color-background);
+
 }
 
 // Reuse existing About page styles
@@ -424,7 +464,7 @@ watch(() => props.isOpen, (isOpen) => {
 .timeline-section,
 .contact-section,
 .interests-section {
-  margin-bottom: var(--space-16);
+  margin-bottom: var(--space-12);
   
   &:last-child {
     margin-bottom: 0;
@@ -470,7 +510,6 @@ watch(() => props.isOpen, (isOpen) => {
   width: 200px;
   height: 200px;
   background: var(--color-neutral-100);
-  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -490,7 +529,6 @@ watch(() => props.isOpen, (isOpen) => {
 .skill-group {
   background: var(--color-background);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-xl);
   padding: var(--space-6);
   
   h3 {
@@ -518,7 +556,6 @@ watch(() => props.isOpen, (isOpen) => {
 .skill-bar {
   height: 6px;
   background: var(--color-neutral-200);
-  border-radius: var(--radius-full);
   overflow: hidden;
 }
 
@@ -529,7 +566,6 @@ watch(() => props.isOpen, (isOpen) => {
     var(--color-primary-500) 0%,
     var(--color-primary-600) 100%
   );
-  border-radius: var(--radius-full);
   transition: width var(--duration-slow) var(--ease-out);
 }
 
@@ -573,7 +609,6 @@ watch(() => props.isOpen, (isOpen) => {
 .timeline-content {
   background: var(--color-background);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
   padding: var(--space-4);
   
   h3 {
@@ -617,7 +652,6 @@ watch(() => props.isOpen, (isOpen) => {
   padding: var(--space-4);
   background: var(--color-background);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
 }
 
 .contact-icon {
@@ -644,29 +678,6 @@ watch(() => props.isOpen, (isOpen) => {
   }
 }
 
-.availability {
-  padding: var(--space-4);
-  background: var(--color-primary-50);
-  border-radius: var(--radius-lg);
-  text-align: center;
-  
-  h3 {
-    margin-bottom: var(--space-3);
-    color: var(--color-primary-700);
-    font-size: var(--font-size-base);
-  }
-  
-  p {
-    color: var(--color-text-secondary);
-    line-height: var(--line-height-relaxed);
-    font-size: var(--font-size-sm);
-    
-    strong {
-      color: var(--color-primary-700);
-    }
-  }
-}
-
 .interests-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -678,7 +689,6 @@ watch(() => props.isOpen, (isOpen) => {
   padding: var(--space-4);
   background: var(--color-background);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
   transition: transform var(--duration-normal) var(--ease-out);
   
   &:hover {
