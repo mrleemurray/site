@@ -275,20 +275,7 @@ const handleMobileAbout = () => {
 .nav-link {
   color: var(--color-text-secondary);
   text-decoration: none;
-  font-weight: var(--font-weight-medium);
-  padding: var(--space-2) var(--space-3);
-  border-radius: var(--radius-md);
-  transition: all var(--duration-fast) var(--ease-out);
-  
-  &:hover, &:focus {
-    color: var(--color-text-primary);
-    background: var(--color-primary-50);
-  }
-  
-  &[aria-current="page"] {
-    color: var(--color-primary-600);
-    background: var(--color-primary-50);
-  }
+  font-weight: var(--font-weight-medium);  
 }
 
 .nav-button {
@@ -302,7 +289,7 @@ const handleMobileAbout = () => {
 .nav-controls {
   display: flex;
   align-items: center;
-  gap: var(--space-2);
+  gap: var(--space-4);
 }
 
 .controls-group {
@@ -315,17 +302,15 @@ const handleMobileAbout = () => {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
+  width: 28px;
+  height: 28px;
   background: none;
   border: none;
-  border-radius: var(--radius-md);
   color: var(--color-text-secondary);
   cursor: pointer;
   transition: all var(--duration-fast) var(--ease-out);
   
   &:hover, &:focus {
-    background: var(--color-primary-50);
     color: var(--color-primary-600);
   }
   
@@ -425,36 +410,27 @@ const handleMobileAbout = () => {
   display: flex;
   border: 1px solid var(--color-border);
   overflow: hidden;
+  margin-top: 1px;
 }
 
 .toggle-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--space-2);
+  padding: var(--space-1);
   background: var(--color-surface);
   border: none;
   color: var(--color-text-secondary);
   cursor: pointer;
   transition: all var(--duration-fast) var(--ease-out);
+  border-bottom: 2px solid transparent;
   
   &:hover {
-    background: var(--color-primary-50);
     color: var(--color-primary-600);
   }
   
-  &--active {
-    background: var(--color-primary-600);
-    color: var(--color-white);
-    
-    &:hover {
-      background: var(--color-primary-700);
-    }
-  }
-  
   &:focus {
-    outline: 2px solid var(--color-primary-500);
-    outline-offset: 2px;
+    border-bottom: 2px solid var(--color-primary-500);
   }
 }
 </style>
