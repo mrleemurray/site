@@ -28,35 +28,44 @@ body {
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
+  background: transparent;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-background);
+  background: transparent;
   border-radius: 0px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-border);
-  border-radius: 0px;
-  transition: background-color var(--duration-fast) var(--ease-out);
+  background: rgba(var(--color-text-secondary-rgb, 107, 114, 126), 0.3);
+  border-radius: 4px;
+  border: 1px solid transparent;
+  background-clip: padding-box;
+  transition: all var(--duration-fast) var(--ease-out);
   
   &:hover {
-    background: var(--color-text-secondary);
+    background: rgba(var(--color-text-secondary-rgb, 107, 114, 126), 0.6);
   }
   
   &:active {
-    background: var(--color-primary-500);
+    background: rgba(var(--color-primary-rgb, 254, 95, 85), 0.7);
   }
 }
 
 ::-webkit-scrollbar-corner {
-  background: var(--color-background);
+  background: transparent;
 }
 
 // Firefox scrollbar styling
 html {
   scrollbar-width: thin;
-  scrollbar-color: var(--color-border) var(--color-background);
+  scrollbar-color: rgba(var(--color-text-secondary-rgb, 107, 114, 126), 0.3) transparent;
+  scrollbar-gutter: stable; /* Prevent layout shift globally */
+  
+  /* Fallback for browsers that don't support scrollbar-gutter */
+  @supports not (scrollbar-gutter: stable) {
+    padding-right: 8px;
+  }
 }
 
 #app {

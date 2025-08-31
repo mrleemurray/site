@@ -385,38 +385,51 @@ watch(() => props.isOpen, (isOpen) => {
   flex: 1;
   overflow-y: auto;
   max-width: 1280px;
-  margin: calc(3rem + var(--space-2)) var(--space-2) var(--space-2);
+  margin: calc(3rem + var(--space-2)) 0 var(--space-2) var(--space-2);
   padding: var(--space-4);
+  padding-right: var(--space-2);
   border-left: 1px solid var(--color-border);
   border-right: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
   background: var(--color-background);
   
+  /* Prevent layout shift by always reserving scrollbar space */
+  scrollbar-gutter: stable;
+  
+  /* Minimal scrollbar styling */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(var(--color-text-secondary-rgb, 107, 114, 126), 0.3) transparent;
+  
+  /* Fallback for browsers that don't support scrollbar-gutter */
+  @supports not (scrollbar-gutter: stable) {
+    padding-right: calc(var(--space-2) + 4px); /* Reduced to match scrollbar width more closely */
+  }
+  
   &::-webkit-scrollbar {
-    width: 8px;
+    width: 4px; /* Reduced width to match the padding adjustment */
+    background: transparent;
   }
   
   &::-webkit-scrollbar-track {
-    background: var(--color-background);
+    background: transparent;
     border-radius: 0px;
   }
   
   &::-webkit-scrollbar-thumb {
-    background: var(--color-border);
-    border-radius: 0px;
-    transition: background-color var(--duration-fast) var(--ease-out);
+    background: rgba(var(--color-text-secondary-rgb, 107, 114, 126), 0.4);
+    border-radius: 6px;
+    border: 2px solid transparent;
+    background-clip: padding-box; /* Creates padding effect */
+    transition: all var(--duration-fast) var(--ease-out);
     
     &:hover {
-      background: var(--color-text-secondary);
+      background: rgba(var(--color-text-secondary-rgb, 107, 114, 126), 0.6);
     }
     
     &:active {
-      background: var(--color-primary-500);
+      background: rgba(var(--color-primary-rgb, 254, 95, 85), 0.7);
     }
   }
-
-  scrollbar-width: thin;
-  scrollbar-color: var(--color-border) var(--color-background);
 
 }
 

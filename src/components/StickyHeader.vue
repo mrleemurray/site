@@ -286,7 +286,7 @@ const handleMobileCategory = (category: string) => {
   z-index: 1001;
   transition: all var(--duration-normal) var(--ease-out);
   margin: 0 auto;
-  padding: var(--space-2) var(--space-2) 0 var(--space-2);
+  padding: var(--space-2) 0 0 var(--space-2);
   
   // Create opaque backdrop only above the header
   &::before {

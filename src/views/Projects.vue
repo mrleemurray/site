@@ -175,6 +175,10 @@ onMounted(() => {
   padding: var(--space-8) 0 var(--space-14);
 }
 
+.container {
+  padding-right: 0;
+}
+
 .page-header {
   text-align: center;
   margin-bottom: var(--space-12);
