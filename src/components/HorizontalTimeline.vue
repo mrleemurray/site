@@ -33,6 +33,7 @@
           @keydown="handleKeyDown($event, index)"
           :ref="(el) => { if (el) markerRefs[index] = el as HTMLButtonElement }"
         >
+          <span class="marker-background" aria-hidden="true"></span>
           <span class="marker-dot" aria-hidden="true"></span>
           <span class="marker-pulse" aria-hidden="true"></span>
           
@@ -321,6 +322,18 @@ defineExpose({
     }
   }
   
+  .marker-background {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--color-background);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -150%);
+    z-index: 1;
+  }
+
   .marker-dot {
     width: 16px;
     height: 16px;
@@ -328,7 +341,7 @@ defineExpose({
     background: var(--color-border);
     border: 3px solid var(--color-background);
     position: relative;
-    z-index: 3;
+    z-index: 2;
     transform: translateY(-100%); // Center the dot on the timeline line
   }
   
@@ -427,7 +440,7 @@ defineExpose({
   
   &:hover:not(.active) {
     .marker-dot {
-      background: var(--color-primary-400);
+      background: var(--color-primary-600);
     }
     
     .timeline-label {
@@ -553,22 +566,6 @@ defineExpose({
   }
 }
 
-// Animations
-@keyframes pulse {
-  0% {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(1);
-  }
-  50% {
-    opacity: 0.3;
-    transform: translate(-50%, -50%) scale(1.5);
-  }
-  100% {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(2);
-  }
-}
-
 // Responsive design
 @media (max-width: 640px) {
   .horizontal-timeline {
@@ -631,7 +628,7 @@ defineExpose({
   }
   
   .marker-dot {
-    background: var(--color-surface);
+    background: var(--color-night);
   }
   
   .content-card {
@@ -653,13 +650,6 @@ defineExpose({
   
   .marker-pulse {
     animation: none;
-  }
-  
-  @keyframes pulse {
-    0%, 100% {
-      opacity: 0;
-      transform: translate(-50%, -50%) scale(1);
-    }
   }
 }
 </style>
