@@ -284,7 +284,6 @@ onMounted(() => {
     width: 100%;
     height: auto;
     display: block;
-    transition: filter var(--duration-normal) var(--ease-out);
   }
 }
 
@@ -536,11 +535,11 @@ onMounted(() => {
   .project-image img {
     filter: 
       grayscale(100%) 
-      contrast(1.2) 
-      brightness(0.9)
+      contrast(5) 
+      brightness(1.2)
       sepia(100%) 
       hue-rotate(10deg) 
-      saturate(0.8)
+      saturate(1)
       opacity(0.85);
   }
   
@@ -550,24 +549,6 @@ onMounted(() => {
   
   .project-image {
     position: relative;
-    
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(
-        135deg,
-        var(--color-text-secondary) 0%,
-        var(--color-background) 100%
-      );
-      opacity: 0.08;
-      pointer-events: none;
-      z-index: 1;
-      mix-blend-mode: overlay;
-    }
   
   }
   

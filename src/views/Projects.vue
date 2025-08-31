@@ -416,23 +416,12 @@ onMounted(() => {
     /* Convert to grayscale first, then apply site color theme */
     filter: 
       grayscale(100%) 
-      contrast(1.2) 
-      brightness(0.9)
+      contrast(5) 
+      brightness(1.2)
       sepia(100%) 
       hue-rotate(10deg) 
-      saturate(0.8)
+      saturate(1)
       opacity(0.85);
-    
-    &:hover {
-      filter: 
-        grayscale(80%) 
-        contrast(1.1) 
-        brightness(0.95)
-        sepia(60%) 
-        hue-rotate(10deg) 
-        saturate(0.6)
-        opacity(0.9);
-    }
   }
   
   .project-card {
@@ -475,24 +464,6 @@ onMounted(() => {
         pointer-events: none;
         z-index: 1;
         mix-blend-mode: overlay;
-      }
-      
-      &::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: 
-          radial-gradient(circle at 25% 25%, var(--color-text-secondary) 1px, transparent 1px),
-          radial-gradient(circle at 75% 75%, var(--color-text-secondary) 1px, transparent 1px);
-        background-size: 8px 8px, 8px 8px;
-        background-position: 0 0, 4px 4px;
-        pointer-events: none;
-        opacity: 0.06;
-        z-index: 2;
-        mix-blend-mode: multiply;
       }
     }
   }
