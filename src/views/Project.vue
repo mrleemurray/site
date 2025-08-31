@@ -196,7 +196,7 @@ onMounted(() => {
 }
 
 .project-container {
-  padding: 0 0 var(--space-16) 0;
+  padding: 0;
   margin-left: var(--space-2);
   border: 1px solid var(--color-border);
 }
@@ -315,7 +315,7 @@ onMounted(() => {
   }
 
   :deep(h1) {
-    font-size: var(--font-size-2xl) !important;
+    font-size: var(--font-size-3xl);
   }
   
   :deep(h2) {
@@ -463,28 +463,17 @@ onMounted(() => {
 }
 
 .related-projects {
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-4);
   h2 {
-    text-align: center;
-    margin-bottom: var(--space-8);
+    padding-left: var(--space-4);
+    margin-bottom: var(--space-4);
   }
-}
-
-.related-grid {
-  max-width: 800px;
-  margin: 0 auto;
 }
 
 .related-card {
-  padding: var(--space-6);
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  transition: all var(--duration-normal) var(--ease-out);
-  
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
-  }
-  
+  padding: var(--space-4);
+
   h3 {
     margin-bottom: var(--space-3);
     
