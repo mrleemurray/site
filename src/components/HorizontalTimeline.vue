@@ -246,8 +246,8 @@ defineExpose({
 
 .timeline-container {
   position: relative;
-  padding: var(--space-16) var(--space-8) var(--space-12);
-  margin-bottom: var(--space-8);
+  padding: var(--space-4) var(--space-8) var(--space-12);
+  margin-bottom: var(--space-4);
   
   @media (max-width: 768px) {
     padding: var(--space-12) var(--space-4) var(--space-8);
@@ -278,7 +278,6 @@ defineExpose({
     var(--color-primary-600) 100%
   );
   border-radius: var(--radius-full);
-  transition: width var(--duration-slow) var(--ease-out);
   position: relative;
   
   &::after {
@@ -304,7 +303,7 @@ defineExpose({
 
 .timeline-marker {
   position: absolute;
-  top: 50%;
+  top: 70%;
   transform: translateX(-50%);
   display: flex;
   flex-direction: column;
@@ -329,30 +328,14 @@ defineExpose({
     background: var(--color-border);
     border: 3px solid var(--color-background);
     position: relative;
-    transition: all var(--duration-normal) var(--ease-out);
     z-index: 3;
     transform: translateY(-100%); // Center the dot on the timeline line
-  }
-  
-  .marker-pulse {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background: var(--color-primary-600);
-    opacity: 0;
-    animation: none;
-    z-index: 1;
   }
   
   .timeline-label {
     position: absolute;
     text-align: center;
     opacity: 0.8;
-    transition: all var(--duration-normal) var(--ease-out);
     white-space: nowrap;
     z-index: 2;
     
@@ -379,6 +362,12 @@ defineExpose({
       font-weight: var(--font-weight-medium);
     }
   }
+
+  @media (max-width: 768px) {
+    & {
+      top: 50%;
+    }
+  }
   
   // Positioning above the timeline
   &.above {
@@ -400,23 +389,17 @@ defineExpose({
     .marker-dot {
       background: var(--color-primary-600);
       border-color: var(--color-background);
-      box-shadow: 0 0 0 4px rgba(var(--color-primary-rgb, 254, 95, 85), 0.2);
-    }
-    
-    .marker-pulse {
-      animation: pulse 2s infinite;
+      box-shadow: 0 0 0 2px rgba(var(--color-primary-rgb, 254, 95, 85), 1);
     }
     
     .timeline-label {
       opacity: 1;
-      transform: scale(1.05);
       
       .timeline-year {
         color: var(--color-primary-600);
       }
       
       .timeline-company {
-        color: var(--color-primary-700);
         font-weight: var(--font-weight-bold);
       }
       
@@ -449,7 +432,7 @@ defineExpose({
     
     .timeline-label {
       opacity: 1;
-      transform: scale(1.02);
+      // transform: scale(1.02);
     }
   }
 }
@@ -476,13 +459,7 @@ defineExpose({
 .content-card {
   background: var(--color-background);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  padding: var(--space-6);
-  box-shadow: var(--shadow-md);
-  
-  @media (max-width: 768px) {
-    padding: var(--space-4);
-  }
+  padding: var(--space-4);
 }
 
 .content-header {

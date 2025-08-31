@@ -322,7 +322,7 @@ const handleMobileCategory = (category: string) => {
   transform: translateX(-50%);
   display: flex;
   align-items: center;
-  gap: var(--space-2);
+  gap: var(--space-4);
   overflow: hidden;
   padding-top: 3px;
   
@@ -334,6 +334,7 @@ const handleMobileCategory = (category: string) => {
 .category-btn {
   background: none;
   border: none;
+  font-family: var(--font-family-serif);
   font-size: var(--font-size-base);
   font-weight: 500;
   color: var(--color-text-secondary);
