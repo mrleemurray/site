@@ -188,12 +188,21 @@ export class MarkdownLoader {
   }
 
   static parseMarkdownToHTML(markdown: string): string {
+    // Helper function to generate ID from text
+    const generateId = (text: string): string => {
+      return text.toLowerCase()
+        .replace(/[^\w\s-]/g, '')
+        .replace(/\s+/g, '-')
+        .replace(/-+/g, '-')
+        .trim()
+    }
+
     // Basic markdown parsing - in a real app, use a library like markdown-it
     return markdown
-      // Headers
-      .replace(/^### (.*$)/gim, '<h3>$1</h3>')
-      .replace(/^## (.*$)/gim, '<h2>$1</h2>')
-      .replace(/^# (.*$)/gim, '<h1>$1</h1>')
+      // Headers with IDs
+      .replace(/^### (.*$)/gim, (_, text) => `<h3 id="${generateId(text)}">${text}</h3>`)
+      .replace(/^## (.*$)/gim, (_, text) => `<h2 id="${generateId(text)}">${text}</h2>`)
+      .replace(/^# (.*$)/gim, (_, text) => `<h1 id="${generateId(text)}">${text}</h1>`)
       
       // Bold and italic
       .replace(/\*\*\*(.*)\*\*\*/gim, '<strong><em>$1</em></strong>')
