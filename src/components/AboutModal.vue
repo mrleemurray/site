@@ -111,46 +111,7 @@
           <!-- Timeline -->
           <section class="timeline-section">
             <h2 class="section-title">Professional Journey</h2>
-            
-            <div class="timeline">
-              <div class="timeline-item">
-                <div class="timeline-marker"></div>
-                <div class="timeline-content">
-                  <h3>Current Position</h3>
-                  <p class="timeline-company">Company Name</p>
-                  <p class="timeline-date">2023 - Present</p>
-                  <p>
-                    Description of your current role and responsibilities. 
-                    Highlight key achievements and technologies you work with.
-                  </p>
-                </div>
-              </div>
-
-              <div class="timeline-item">
-                <div class="timeline-marker"></div>
-                <div class="timeline-content">
-                  <h3>Previous Position</h3>
-                  <p class="timeline-company">Previous Company</p>
-                  <p class="timeline-date">2021 - 2023</p>
-                  <p>
-                    Description of your previous role. What did you learn? 
-                    What projects did you work on?
-                  </p>
-                </div>
-              </div>
-
-              <div class="timeline-item">
-                <div class="timeline-marker"></div>
-                <div class="timeline-content">
-                  <h3>Education / Beginning</h3>
-                  <p class="timeline-company">University / Self-taught</p>
-                  <p class="timeline-date">2019 - 2021</p>
-                  <p>
-                    Your educational background or how you started your development journey.
-                  </p>
-                </div>
-              </div>
-            </div>
+            <HorizontalTimeline />
           </section>
 
           <!-- Contact Information -->
@@ -223,6 +184,7 @@
 
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted, nextTick, watch } from 'vue'
+import HorizontalTimeline from './HorizontalTimeline.vue'
 
 interface Props {
   isOpen: boolean
@@ -567,75 +529,6 @@ watch(() => props.isOpen, (isOpen) => {
     var(--color-primary-600) 100%
   );
   transition: width var(--duration-slow) var(--ease-out);
-}
-
-.timeline {
-  position: relative;
-  max-width: 600px;
-  margin: 0 auto;
-  
-  &::before {
-    content: '';
-    position: absolute;
-    left: 20px;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: var(--color-border);
-  }
-}
-
-.timeline-item {
-  position: relative;
-  margin-bottom: var(--space-8);
-  margin-left: var(--space-12);
-  
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
-
-.timeline-marker {
-  position: absolute;
-  left: -32px;
-  top: 0;
-  width: 12px;
-  height: 12px;
-  background: var(--color-primary-600);
-  border: 2px solid var(--color-surface);
-  border-radius: 50%;
-}
-
-.timeline-content {
-  background: var(--color-background);
-  border: 1px solid var(--color-border);
-  padding: var(--space-4);
-  
-  h3 {
-    margin-bottom: var(--space-1);
-    color: var(--color-text-primary);
-    font-size: var(--font-size-lg);
-  }
-  
-  .timeline-company {
-    font-weight: var(--font-weight-medium);
-    color: var(--color-primary-600);
-    margin-bottom: var(--space-1);
-    font-size: var(--font-size-sm);
-  }
-  
-  .timeline-date {
-    font-size: var(--font-size-xs);
-    color: var(--color-text-tertiary);
-    margin-bottom: var(--space-3);
-  }
-  
-  p:last-child {
-    margin-bottom: 0;
-    color: var(--color-text-secondary);
-    line-height: var(--line-height-relaxed);
-    font-size: var(--font-size-sm);
-  }
 }
 
 .contact-methods {

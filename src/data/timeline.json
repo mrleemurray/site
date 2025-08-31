@@ -1,0 +1,72 @@
+[
+  {
+    "id": "1",
+    "company": "Tech Startup Inc.",
+    "jobTitle": "Senior Frontend Developer",
+    "startDate": "2022-01-01",
+    "endDate": "Present",
+    "description": "Led the development of responsive web applications using Vue.js and TypeScript. Implemented accessibility best practices and improved performance by 40%.",
+    "location": "San Francisco, CA",
+    "technologies": ["Vue.js", "TypeScript", "SCSS", "Vite"]
+  },
+  {
+    "id": "2", 
+    "company": "Digital Agency Ltd.",
+    "jobTitle": "Frontend Developer",
+    "startDate": "2020-06-01",
+    "endDate": "2021-12-31",
+    "description": "Developed custom websites and web applications for clients across various industries. Collaborated with designers to implement pixel-perfect UI components.",
+    "location": "Remote",
+    "technologies": ["React", "JavaScript", "CSS3", "Node.js"]
+  },
+  {
+    "id": "3",
+    "company": "Marketing Solutions Co.",
+    "jobTitle": "Junior Web Developer", 
+    "startDate": "2019-03-01",
+    "endDate": "2020-05-31",
+    "description": "Built and maintained marketing websites and landing pages. Gained experience in modern web development practices and responsive design.",
+    "location": "New York, NY",
+    "technologies": ["HTML5", "CSS3", "JavaScript", "WordPress"]
+  },
+  {
+    "id": "4",
+    "company": "Creative Studio",
+    "jobTitle": "Web Design Intern",
+    "startDate": "2018-06-01", 
+    "endDate": "2019-02-28",
+    "description": "Assisted in creating website mockups and learned fundamentals of web development. Gained hands-on experience with HTML, CSS, and basic JavaScript.",
+    "location": "Los Angeles, CA",
+    "technologies": ["HTML5", "CSS3", "JavaScript", "Photoshop"]
+  },
+  {
+    "id": "5",
+    "company": "State University",
+    "jobTitle": "Computer Science Student",
+    "startDate": "2014-09-01", 
+    "endDate": "2018-05-31",
+    "description": "Studied computer science fundamentals including algorithms, data structures, and software engineering. Completed multiple programming projects and participated in hackathons.",
+    "location": "University Campus",
+    "technologies": ["Java", "Python", "C++", "SQL", "Git"]
+  },
+  {
+    "id": "6",
+    "company": "Local Tech Shop",
+    "jobTitle": "Part-time IT Support",
+    "startDate": "2012-06-01", 
+    "endDate": "2014-08-31",
+    "description": "Provided technical support and computer repair services. Developed problem-solving skills and customer service experience while learning about hardware and software troubleshooting.",
+    "location": "Hometown",
+    "technologies": ["Windows", "Hardware Repair", "Networking", "Customer Service"]
+  },
+  {
+    "id": "7",
+    "company": "High School",
+    "jobTitle": "Student",
+    "startDate": "2006-09-01", 
+    "endDate": "2012-05-31",
+    "description": "Completed high school education with focus on mathematics and science. First exposure to programming through computer science electives.",
+    "location": "Hometown High",
+    "technologies": ["Basic Programming", "Mathematics", "Science"]
+  }
+]
