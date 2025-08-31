@@ -684,7 +684,7 @@ const handleMobileCategory = (category: string) => {
 
 .toggle-buttons {
   display: flex;
-  border: 1px solid var(--color-border);
+  // border: 1px solid var(--color-border);
   overflow: hidden;
   margin-top: 1px;
 }
