@@ -368,7 +368,6 @@ watch(() => props.isOpen, (isOpen) => {
   background: transparent;
   color: var(--color-text-secondary);
   cursor: pointer;
-  transition: all var(--duration-fast) var(--ease-out);
   
   &:hover, &:focus {
     background: var(--color-neutral-100);
@@ -420,7 +419,6 @@ watch(() => props.isOpen, (isOpen) => {
     border-radius: 6px;
     border: 2px solid transparent;
     background-clip: padding-box; /* Creates padding effect */
-    transition: all var(--duration-fast) var(--ease-out);
     
     &:hover {
       background: rgba(var(--color-text-secondary-rgb, 107, 114, 126), 0.6);
@@ -540,7 +538,6 @@ watch(() => props.isOpen, (isOpen) => {
     var(--color-primary-500) 0%,
     var(--color-primary-600) 100%
   );
-  transition: width var(--duration-slow) var(--ease-out);
 }
 
 .contact-methods {
@@ -594,7 +591,6 @@ watch(() => props.isOpen, (isOpen) => {
   padding: var(--space-4);
   background: var(--color-background);
   border: 1px solid var(--color-border);
-  transition: transform var(--duration-normal) var(--ease-out);
   
   &:hover {
     transform: translateY(-2px);

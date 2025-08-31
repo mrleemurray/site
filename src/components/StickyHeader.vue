@@ -303,7 +303,6 @@ const handleMobileCategory = (category: string) => {
   width: 100%;
   max-width: 1280px;
   z-index: 1001;
-  transition: all var(--duration-normal) var(--ease-out);
   margin: 0 auto;
   padding: var(--space-2) 0 0 var(--space-2);
   
@@ -366,7 +365,6 @@ const handleMobileCategory = (category: string) => {
   font-family: var(--font-family-serif);
   font-size: var(--font-size-base);
   font-weight: 500;
-  transition: all 0.2s ease;
   
   &:hover, &:focus {
     color: var(--color-primary-600);
@@ -382,7 +380,6 @@ const handleMobileCategory = (category: string) => {
   font-weight: 500;
   color: var(--color-text-secondary);
   cursor: pointer;
-  transition: all 0.2s ease;
   border-bottom: 3px solid transparent;
 
 
@@ -448,7 +445,6 @@ const handleMobileCategory = (category: string) => {
   font-family: inherit;
   font-weight: var(--font-weight-medium);
   text-decoration: none;
-  transition: all var(--duration-fast) var(--ease-out);
   
   &:hover, &:focus {
     color: var(--color-primary-600);
@@ -491,7 +487,6 @@ const handleMobileCategory = (category: string) => {
   border: none;
   color: var(--color-text-secondary);
   cursor: pointer;
-  transition: all var(--duration-fast) var(--ease-out);
   
   &:hover, &:focus {
     color: var(--color-primary-600);
@@ -511,7 +506,6 @@ const handleMobileCategory = (category: string) => {
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-medium);
   text-decoration: none;
-  transition: all var(--duration-fast) var(--ease-out);
   
   &:hover, &:focus {
     color: var(--color-primary-600);
@@ -534,7 +528,6 @@ const handleMobileCategory = (category: string) => {
   border: none;
   color: var(--color-text-secondary);
   cursor: pointer;
-  transition: all var(--duration-fast) var(--ease-out);
   
   &:hover, &:focus {
     color: var(--color-primary-600);
@@ -601,7 +594,6 @@ const handleMobileCategory = (category: string) => {
   color: var(--color-text-primary);
   text-decoration: none;
   font-weight: var(--font-weight-medium);
-  transition: all var(--duration-fast) var(--ease-out);
   
   &:hover, &:focus {
     color: var(--color-primary-600);
@@ -653,7 +645,6 @@ const handleMobileCategory = (category: string) => {
   border: 1px solid var(--color-border);
   color: var(--color-text-secondary);
   cursor: pointer;
-  transition: all var(--duration-fast) var(--ease-out);
   font-size: var(--font-size-xs);
   
   &:hover {
@@ -680,7 +671,6 @@ const handleMobileCategory = (category: string) => {
   border: 1px solid var(--color-border);
   color: var(--color-text-primary);
   cursor: pointer;
-  transition: all var(--duration-fast) var(--ease-out);
   
   &:hover {
     color: var(--color-primary-600);
@@ -741,7 +731,6 @@ const handleMobileCategory = (category: string) => {
   border: none;
   color: var(--color-text-secondary);
   cursor: pointer;
-  transition: all var(--duration-fast) var(--ease-out);
   border-bottom: 2px solid transparent;
   
   &:hover {

@@ -292,7 +292,6 @@ defineExpose({
     border: 3px solid var(--color-background);
     border-radius: 50%;
     transform: translateY(-50%);
-    transition: all var(--duration-normal) var(--ease-out);
   }
 }
 
@@ -314,7 +313,6 @@ defineExpose({
   cursor: pointer;
   outline: none;
   padding: 0;
-  transition: all var(--duration-normal) var(--ease-out);
   
   &:focus-visible {
     .marker-dot {
@@ -461,7 +459,6 @@ defineExpose({
 .timeline-content {
   opacity: 0;
   transform: translateY(20px);
-  transition: all var(--duration-normal) var(--ease-out);
   
   &.visible {
     opacity: 1;
@@ -558,7 +555,6 @@ defineExpose({
     font-weight: var(--font-weight-medium);
     border-radius: var(--radius-full);
     border: 1px solid var(--color-border);
-    transition: all var(--duration-fast) var(--ease-out);
     
     &:hover {
       background: var(--color-primary-50);

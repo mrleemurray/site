@@ -287,7 +287,6 @@ const handleSubmit = async () => {
   font-size: var(--font-size-base);
   background: var(--color-surface);
   color: var(--color-text-primary);
-  transition: border-color var(--duration-fast) var(--ease-out);
   
   &:focus {
     border-color: var(--color-primary-500);

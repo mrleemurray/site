@@ -150,7 +150,6 @@ const handleMobileAbout = () => {
   z-index: 1000;
   // border-bottom: 1px solid var(--color-border);
   backdrop-filter: blur(16px);
-  transition: all var(--duration-normal) var(--ease-out);
 }
 
 .nav {
@@ -190,7 +189,6 @@ const handleMobileAbout = () => {
   color: var(--color-text-secondary);
   font-weight: var(--font-weight-medium);
   padding: var(--space-2) 0;
-  transition: color var(--duration-fast) var(--ease-out);
   
   &:hover, &:focus {
     color: var(--color-text-primary);
@@ -239,7 +237,6 @@ const handleMobileAbout = () => {
   color: var(--color-text-secondary);
   border-radius: var(--radius-lg);
   cursor: pointer;
-  transition: all var(--duration-fast) var(--ease-out);
   
   &:hover, &:focus {
     background: var(--color-neutral-100);
@@ -263,7 +260,6 @@ const handleMobileAbout = () => {
   color: var(--color-text-secondary);
   border-radius: var(--radius-lg);
   cursor: pointer;
-  transition: all var(--duration-fast) var(--ease-out);
   
   @media (min-width: 768px) {
     display: none;
@@ -290,7 +286,6 @@ const handleMobileAbout = () => {
   transform: translateY(-100%);
   opacity: 0;
   visibility: hidden;
-  transition: all var(--duration-normal) var(--ease-out);
   
   @media (min-width: 768px) {
     display: none;
@@ -315,7 +310,6 @@ const handleMobileAbout = () => {
   font-weight: var(--font-weight-medium);
   text-decoration: none;
   border-radius: var(--radius-lg);
-  transition: all var(--duration-fast) var(--ease-out);
   
   &:hover, &:focus {
     background: var(--color-neutral-100);

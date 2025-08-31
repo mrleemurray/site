@@ -298,7 +298,6 @@
     var(--color-primary-600) 100%
   );
   border-radius: var(--radius-full);
-  transition: width var(--duration-slow) var(--ease-out);
 }
 
 .timeline {
@@ -409,7 +408,6 @@
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-xl);
-  transition: transform var(--duration-normal) var(--ease-out);
   
   &:hover {
     transform: translateY(-4px);

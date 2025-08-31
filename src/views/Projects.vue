@@ -219,7 +219,6 @@ onMounted(() => {
   border: none;
   border-radius: 0;
   overflow: hidden;
-  transition: all var(--duration-normal) var(--ease-out);
   height: 100%;
   display: flex;
   flex-direction: column;
