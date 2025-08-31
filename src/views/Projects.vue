@@ -410,10 +410,10 @@ onMounted(() => {
   }
 }
 
-// Battery Saver Mode - Themed Monochrome & Printed Effect
+/* Battery Saver Mode - Themed Monochrome & Printed Effect */
 [data-performance="power-saver"] {
   .project-image img {
-    // Convert to grayscale first, then apply site color theme
+    /* Convert to grayscale first, then apply site color theme */
     filter: 
       grayscale(100%) 
       contrast(1.2) 
@@ -436,7 +436,7 @@ onMounted(() => {
   }
   
   .project-card {
-    // Add subtle texture overlay for printed effect with site colors
+    /* Add subtle texture overlay for printed effect with site colors */
     position: relative;
     
     &::before {
@@ -458,7 +458,7 @@ onMounted(() => {
     .project-image {
       position: relative;
       
-      // Add a themed color overlay
+      /* Add a themed color overlay */
       &::before {
         content: '';
         position: absolute;
@@ -485,15 +485,12 @@ onMounted(() => {
         right: 0;
         bottom: 0;
         background: 
-          repeating-linear-gradient(
-            45deg,
-            transparent,
-            transparent 1px,
-            var(--color-text-secondary) 1px,
-            var(--color-text-secondary) 2px
-          );
+          radial-gradient(circle at 25% 25%, var(--color-text-secondary) 1px, transparent 1px),
+          radial-gradient(circle at 75% 75%, var(--color-text-secondary) 1px, transparent 1px);
+        background-size: 8px 8px, 8px 8px;
+        background-position: 0 0, 4px 4px;
         pointer-events: none;
-        opacity: 0.04;
+        opacity: 0.06;
         z-index: 2;
         mix-blend-mode: multiply;
       }
