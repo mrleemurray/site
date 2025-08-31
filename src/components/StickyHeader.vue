@@ -8,7 +8,13 @@
           <span class="brand-text">LM</span>
         </router-link>
 
-        <div class="category-switch">
+        <div v-if="isProjectPage" class="back-to-projects">
+          <router-link to="/" class="back-link">
+            ← Back to Projects
+          </router-link>
+        </div>
+
+        <div v-else class="category-switch">
           <button
             type="button"
             class="category-btn"
@@ -108,7 +114,16 @@
           :aria-hidden="!mobileMenuOpen"
         >
           <ul class="mobile-nav-links" role="menu">
-            <li role="none">
+            <li v-if="isProjectPage" role="none">
+              <router-link 
+                to="/" 
+                class="mobile-nav-link"
+                @click="closeMobileMenu"
+              >
+                ← Back to Projects
+              </router-link>
+            </li>
+            <li v-else role="none">
               <div class="mobile-nav-link mobile-control-item">
                 <span class="mobile-control-label">Category</span>
                 <div class="mobile-category-switch">
@@ -208,7 +223,8 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
+import { useRoute } from 'vue-router'
 import ThemeIcon from './icons/ThemeIcon.vue'
 import PerformanceIcon from './icons/PerformanceIcon.vue'
 import MenuIcon from './icons/MenuIcon.vue'
@@ -223,11 +239,14 @@ interface Props {
   viewMode?: 'grid' | 'list'
 }
 
-withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<Props>(), {
   showProjectControls: false,
   selectedCategory: '',
   viewMode: 'grid'
 })
+
+const route = useRoute()
+const isProjectPage = computed(() => route.name === 'Project')
 
 const emit = defineEmits<{
   'toggle-theme': []
@@ -328,6 +347,30 @@ const handleMobileCategory = (category: string) => {
   
   @media (max-width: 767px) {
     display: none;
+  }
+}
+
+.back-to-projects {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  
+  @media (max-width: 767px) {
+    display: none;
+  }
+}
+
+.back-link {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  font-family: var(--font-family-serif);
+  font-size: var(--font-size-base);
+  font-weight: 500;
+  transition: all 0.2s ease;
+  
+  &:hover, &:focus {
+    color: var(--color-primary-600);
+    text-decoration: none;
   }
 }
 

@@ -18,12 +18,6 @@
 
       <!-- Project Content -->
       <div v-else-if="project">
-        <!-- Back Navigation -->
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-          <router-link to="/" class="back-link">
-            ← Back to Projects
-          </router-link>
-        </nav>
 
         <!-- Project Header -->
         <header class="project-header">
@@ -202,7 +196,9 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 .project-detail {
-  padding: var(--space-8) 0 var(--space-16);
+  padding: var(--space-8) var(--space-4) var(--space-16) var(--space-4);
+  margin: 0 0 var(--space-2) var(--space-2);
+  border: 1px solid var(--color-border);
 }
 
 .breadcrumb {
@@ -225,7 +221,7 @@ onMounted(() => {
 }
 
 .project-title {
-  margin-bottom: var(--space-4);
+  margin-bottom: var(--space-2);
 }
 
 .project-subtitle {
@@ -315,8 +311,8 @@ onMounted(() => {
 .markdown-content {
   line-height: var(--line-height-relaxed);
   
-  h1, h2, h3, h4, h5, h6 {
-    margin-top: var(--space-12);
+  :deep(h1), :deep(h2), :deep(h3), :deep(h4), :deep(h5), :deep(h6) {
+    margin-top: var(--space-8);
     margin-bottom: var(--space-6);
     color: var(--color-text-primary);
     
@@ -324,18 +320,22 @@ onMounted(() => {
       margin-top: 0;
     }
   }
+
+  :deep(h1) {
+    font-size: var(--font-size-2xl) !important;
+  }
   
-  h2 {
+  :deep(h2) {
     border-bottom: 2px solid var(--color-border);
     padding-bottom: var(--space-4);
   }
   
-  p {
+  :deep(p) {
     margin-bottom: var(--space-4);
     color: var(--color-text-secondary);
   }
   
-  ul, ol {
+  :deep(ul), :deep(ol) {
     margin-bottom: var(--space-4);
     margin-left: var(--space-6);
     
@@ -345,7 +345,7 @@ onMounted(() => {
     }
   }
   
-  pre {
+  :deep(pre) {
     background: var(--color-surface);
     border: 1px solid var(--color-border);
     padding: var(--space-6);
@@ -360,7 +360,7 @@ onMounted(() => {
     }
   }
   
-  code:not(pre code) {
+  :deep(code:not(pre code)) {
     background: var(--color-surface);
     padding: var(--space-1) var(--space-2);
     border-radius: var(--radius-sm);
@@ -369,7 +369,7 @@ onMounted(() => {
     color: var(--color-primary-700);
   }
   
-  blockquote {
+  :deep(blockquote) {
     border-left: 4px solid var(--color-primary-500);
     margin: var(--space-6) 0;
     padding: var(--space-4) var(--space-6);
@@ -381,7 +381,7 @@ onMounted(() => {
     }
   }
   
-  img {
+  :deep(img) {
     max-width: 100%;
     height: auto;
     border-radius: var(--radius-lg);
@@ -389,7 +389,7 @@ onMounted(() => {
     box-shadow: var(--shadow-md);
   }
   
-  a {
+  :deep(a) {
     color: var(--color-primary-600);
     
     &:hover, &:focus {
@@ -397,7 +397,7 @@ onMounted(() => {
     }
   }
   
-  table {
+  :deep(table) {
     width: 100%;
     border-collapse: collapse;
     margin: var(--space-6) 0;
