@@ -447,7 +447,7 @@ watch(() => props.isOpen, (isOpen) => {
 }
 
 .section-title {
-  margin-bottom: var(--space-8);
+  margin-bottom: var(--space-4);
   font-size: var(--font-size-xl);
   color: var(--color-text-primary);
 }
@@ -493,7 +493,7 @@ watch(() => props.isOpen, (isOpen) => {
 
 .skills-grid {
   display: grid;
-  gap: var(--space-6);
+  gap: var(--space-4);
   
   @media (min-width: 768px) {
     grid-template-columns: 1fr 1fr;
