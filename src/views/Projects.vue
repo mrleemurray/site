@@ -409,4 +409,95 @@ onMounted(() => {
     margin-bottom: var(--space-6);
   }
 }
+
+// Battery Saver Mode - Themed Monochrome & Printed Effect
+[data-performance="power-saver"] {
+  .project-image img {
+    // Convert to grayscale first, then apply site color theme
+    filter: 
+      grayscale(100%) 
+      contrast(1.2) 
+      brightness(0.9)
+      sepia(100%) 
+      hue-rotate(10deg) 
+      saturate(0.8)
+      opacity(0.85);
+    
+    &:hover {
+      filter: 
+        grayscale(80%) 
+        contrast(1.1) 
+        brightness(0.95)
+        sepia(60%) 
+        hue-rotate(10deg) 
+        saturate(0.6)
+        opacity(0.9);
+    }
+  }
+  
+  .project-card {
+    // Add subtle texture overlay for printed effect with site colors
+    position: relative;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 20% 50%, transparent 20%, var(--color-text-secondary) 21%, var(--color-text-secondary) 34%, transparent 35%, transparent),
+        linear-gradient(0deg, var(--color-background) 50%, transparent 50%);
+      opacity: 0.03;
+      pointer-events: none;
+      z-index: 1;
+      mix-blend-mode: multiply;
+    }
+    
+    .project-image {
+      position: relative;
+      
+      // Add a themed color overlay
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          135deg,
+          var(--color-text-secondary) 0%,
+          var(--color-background) 100%
+        );
+        opacity: 0.08;
+        pointer-events: none;
+        z-index: 1;
+        mix-blend-mode: overlay;
+      }
+      
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: 
+          repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 1px,
+            var(--color-text-secondary) 1px,
+            var(--color-text-secondary) 2px
+          );
+        pointer-events: none;
+        opacity: 0.04;
+        z-index: 2;
+        mix-blend-mode: multiply;
+      }
+    }
+  }
+}
 </style>

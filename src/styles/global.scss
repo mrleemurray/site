@@ -311,5 +311,42 @@ a {
   &.grid-responsive {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   }
+}
 
+// Battery Saver Mode - Global themed image treatment
+[data-performance="power-saver"] {
+  // Apply themed monochrome effect to all images by default
+  img {
+    filter: 
+      grayscale(100%) 
+      contrast(1.2) 
+      brightness(0.9)
+      sepia(100%) 
+      hue-rotate(10deg) 
+      saturate(0.8)
+      opacity(0.85);
+    transition: filter var(--duration-normal) var(--ease-out);
+    
+    &:hover {
+      filter: 
+        grayscale(80%) 
+        contrast(1.1) 
+        brightness(0.95)
+        sepia(60%) 
+        hue-rotate(10deg) 
+        saturate(0.6)
+        opacity(0.9);
+    }
+  }
+  
+  // Exception for SVG icons - keep them colored for usability
+  svg {
+    filter: none !important;
+  }
+  
+  // Exception for very small images/icons
+  img[width="24"], img[height="24"],
+  img[width="32"], img[height="32"] {
+    filter: none !important;
+  }
 }
