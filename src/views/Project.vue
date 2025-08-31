@@ -1,62 +1,23 @@
 <template>
   <div class="project-detail">
-    <div class="container">
+    <div class="project-container">
       <!-- Loading State -->
       <div v-if="isLoading" class="loading-state">
-        <div class="loading-spinner"></div>
-        <p>Loading project...</p>
-      </div>
+          <div class="loading-spinner"></div>
+          <p>Loading project...</p>
+        </div>
 
-      <!-- Error State -->
-      <div v-else-if="error" class="error-state">
-        <h1>Project Not Found</h1>
-        <p>{{ error }}</p>
-        <router-link to="/" class="btn btn-primary">
-          Back to Projects
-        </router-link>
-      </div>
+        <!-- Error State -->
+        <div v-else-if="error" class="error-state">
+          <h1>Project Not Found</h1>
+          <p>{{ error }}</p>
+          <router-link to="/" class="btn btn-primary">
+            Back to Projects
+          </router-link>
+        </div>
 
-      <!-- Project Content -->
-      <div v-else-if="project">
-
-        <!-- Project Header -->
-        <header class="project-header">
-          <h1 class="project-title">{{ project.title }}</h1>
-          <p class="project-subtitle">{{ project.subtitle }}</p>
-          
-          <div class="project-meta">
-            <div class="project-links">
-              <a 
-                v-if="project.liveUrl"
-                :href="project.liveUrl" 
-                class="project-link" 
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                View Live Site
-              </a>
-              <a 
-                v-if="project.sourceUrl"
-                :href="project.sourceUrl" 
-                class="project-link" 
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                View Source
-              </a>
-            </div>
-            
-            <div class="project-tags">
-              <span 
-                v-for="tag in project.tags" 
-                :key="tag"
-                class="tag"
-              >
-                {{ tag }}
-              </span>
-            </div>
-          </div>
-        </header>
+        <!-- Project Content -->
+        <div v-else-if="project">
 
         <!-- Project Image -->
         <div class="project-image">
@@ -66,6 +27,39 @@
         <!-- Project Content -->
         <div class="project-content">
           <div class="content-main">
+            <!-- Project Meta -->
+            <div class="project-meta">
+              <div class="project-links">
+                <a 
+                  v-if="project.liveUrl"
+                  :href="project.liveUrl" 
+                  class="project-link" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  View Live Site
+                </a>
+                <a 
+                  v-if="project.sourceUrl"
+                  :href="project.sourceUrl" 
+                  class="project-link" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  View Source
+                </a>
+              </div>
+              
+              <div class="project-tags">
+                <span 
+                  v-for="tag in project.tags" 
+                  :key="tag"
+                  class="tag"
+                >
+                  {{ tag }}
+                </span>
+              </div>
+            </div>
             <!-- Markdown content will be rendered here -->
             <div 
               v-if="markdownContent"
@@ -128,15 +122,13 @@
 
 <script setup lang="ts">
 import { ref, computed, onMounted, watch } from 'vue'
-import { useRoute } from 'vue-router'
-import { MarkdownLoader, ProjectUtils, type Project } from '@/utils/projects'
+import { MarkdownLoader, type Project } from '@/utils/projects'
 
 interface Props {
   slug: string
 }
 
 const props = defineProps<Props>()
-const route = useRoute()
 
 const project = ref<Project | null>(null)
 const allProjects = ref<Project[]>([])
@@ -196,8 +188,16 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 .project-detail {
-  padding: var(--space-8) var(--space-4) var(--space-16) var(--space-4);
-  margin: 0 0 var(--space-2) var(--space-2);
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-bottom: var(--space-2);
+  background: var(--color-background);
+}
+
+.project-container {
+  padding: 0 0 var(--space-16) 0;
+  margin-left: var(--space-2);
   border: 1px solid var(--color-border);
 }
 
@@ -231,35 +231,32 @@ onMounted(() => {
 }
 
 .project-meta {
+  position: sticky;
+  top: calc(var(--space-16) - 6px);
   display: flex;
-  flex-direction: column;
-  gap: var(--space-6);
   align-items: center;
-  
-  @media (min-width: 768px) {
-    flex-direction: row;
-    justify-content: center;
-  }
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-background);
+  z-index: 10;
 }
 
 .project-links {
   display: flex;
-  gap: var(--space-4);
+  gap: var(--space-4);  
 }
 
 .project-link {
-  padding: var(--space-3) var(--space-6);
-  background: var(--color-primary-600);
-  color: white;
+  font-size: var(--font-size-sm);
+  color: var(--color-primary-600);
   text-decoration: none;
-  border-radius: var(--radius-lg);
   font-weight: var(--font-weight-medium);
-  transition: background var(--duration-fast) var(--ease-out);
   
   &:hover, &:focus {
-    background: var(--color-primary-700);
-    color: white;
-    text-decoration: none;
+    color: var(--color-primary-700);
+    text-decoration: underline;
   }
 }
 
@@ -267,24 +264,21 @@ onMounted(() => {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-2);
-  justify-content: center;
 }
 
 .tag {
   display: inline-block;
-  padding: var(--space-2) var(--space-4);
-  background: var(--color-primary-50);
+  padding: var(--space-1) var(--space-3);
   color: var(--color-primary-700);
-  font-size: var(--font-size-sm);
-  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
   font-weight: var(--font-weight-medium);
+  border: 1px solid color-mix(in srgb, var(--color-primary-700) 20%, transparent);
+  cursor: default;
 }
 
 .project-image {
-  margin-bottom: var(--space-12);
-  border-radius: var(--radius-xl);
   overflow: hidden;
-  box-shadow: var(--shadow-lg);
+  border-bottom: 1px solid var(--color-border);
   
   img {
     width: 100%;
@@ -295,12 +289,10 @@ onMounted(() => {
 
 .project-content {
   display: grid;
-  gap: var(--space-12);
-  margin-bottom: var(--space-16);
+  // margin-bottom: var(--space-16);
   
   @media (min-width: 1024px) {
     grid-template-columns: 1fr 300px;
-    gap: var(--space-16);
   }
 }
 
@@ -309,6 +301,7 @@ onMounted(() => {
 }
 
 .markdown-content {
+  padding: var(--space-4);
   line-height: var(--line-height-relaxed);
   
   :deep(h1), :deep(h2), :deep(h3), :deep(h4), :deep(h5), :deep(h6) {
@@ -326,7 +319,7 @@ onMounted(() => {
   }
   
   :deep(h2) {
-    border-bottom: 2px solid var(--color-border);
+    // border-bottom: 2px solid var(--color-border);
     padding-bottom: var(--space-4);
   }
   
@@ -349,7 +342,6 @@ onMounted(() => {
     background: var(--color-surface);
     border: 1px solid var(--color-border);
     padding: var(--space-6);
-    border-radius: var(--radius-lg);
     overflow-x: auto;
     margin-bottom: var(--space-6);
     
@@ -363,7 +355,6 @@ onMounted(() => {
   :deep(code:not(pre code)) {
     background: var(--color-surface);
     padding: var(--space-1) var(--space-2);
-    border-radius: var(--radius-sm);
     font-family: var(--font-family-mono);
     font-size: 0.9em;
     color: var(--color-primary-700);
@@ -384,7 +375,6 @@ onMounted(() => {
   :deep(img) {
     max-width: 100%;
     height: auto;
-    border-radius: var(--radius-lg);
     margin: var(--space-6) 0;
     box-shadow: var(--shadow-md);
   }
@@ -434,10 +424,10 @@ onMounted(() => {
 
 .toc {
   position: sticky;
-  top: var(--space-24);
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-xl);
+  top: calc(var(--space-16) - 6px);
+  border-left: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+
   padding: var(--space-6);
   
   h3 {
@@ -488,7 +478,6 @@ onMounted(() => {
   padding: var(--space-6);
   background: var(--color-surface);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-xl);
   transition: all var(--duration-normal) var(--ease-out);
   
   &:hover {
