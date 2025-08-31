@@ -434,10 +434,9 @@ watch(() => props.isOpen, (isOpen) => {
 }
 
 .section-title {
-  text-align: center;
   margin-bottom: var(--space-8);
   font-size: var(--font-size-xl);
-  color: var(--color-primary-600);
+  color: var(--color-text-primary);
 }
 
 .intro-grid {
@@ -517,7 +516,7 @@ watch(() => props.isOpen, (isOpen) => {
 
 .skill-bar {
   height: 6px;
-  background: var(--color-neutral-200);
+  background: color-mix(in srgb, var(--color-primary-600), transparent 80%);
   overflow: hidden;
 }
 
