@@ -109,16 +109,6 @@
         >
           <ul class="mobile-nav-links" role="menu">
             <li role="none">
-              <button 
-                class="mobile-nav-link mobile-nav-button" 
-                role="menuitem"
-                @click="handleMobileAbout"
-                type="button"
-              >
-                About
-              </button>
-            </li>
-            <li v-if="showProjectControls" role="none">
               <div class="mobile-nav-link mobile-control-item">
                 <span class="mobile-control-label">Category</span>
                 <div class="mobile-category-switch">
@@ -177,7 +167,7 @@
                 </div>
               </button>
             </li>
-            <li v-if="showProjectControls" role="none">
+            <li role="none">
               <div class="mobile-nav-link mobile-control-item">
                 <span class="mobile-control-label">View Mode</span>
                 <div class="mobile-view-toggle">
