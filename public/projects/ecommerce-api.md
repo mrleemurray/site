@@ -6,7 +6,7 @@ description: Complete backend solution for e-commerce applications featuring use
 category: api
 tags: [Node.js, Express, PostgreSQL, JWT, Stripe]
 image: /images/ecommerce-api.svg
-featured: true
+featured: false
 liveUrl: https://api.example-store.com/docs
 sourceUrl: https://github.com/username/ecommerce-api
 completedAt: 2024-02-20

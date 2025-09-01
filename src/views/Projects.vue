@@ -25,7 +25,10 @@
           v-for="project in filteredProjects" 
           :key="project.id"
           class="project-card"
-          :class="{ 'project-card--list': effectiveViewMode === 'list' }"
+          :class="{ 
+            'project-card--list': effectiveViewMode === 'list',
+            'project-card--featured': project.featured && effectiveViewMode === 'grid'
+          }"
         >
           <div class="project-image">
             <router-link :to="`/projects/${project.id}`">
@@ -224,6 +227,13 @@ onUnmounted(() => {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     padding-right: 1px; /* Prevents border collapse issues */
+    
+    /* Ensure at least 2 columns for featured items to work properly */
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      /* Make sure we have at least 2 columns when screen is wide enough */
+      min-width: 560px;
+    }
   }
 }
 
@@ -250,6 +260,15 @@ onUnmounted(() => {
     margin-bottom: -1px;
   }
   
+  /* Featured projects span two columns */
+  &--featured {
+    grid-column: span 2;
+    
+    @media (max-width: 767px) {
+      grid-column: span 1; /* Single column on mobile */
+    }
+  }
+  
   &--list {
     display: flex;
     flex-direction: row;
@@ -270,16 +289,24 @@ onUnmounted(() => {
 .project-image {
   aspect-ratio: 16 / 9;
   overflow: hidden;
+  max-height: 175px;
   
   .project-card--list & {
     flex-shrink: 0;
     width: 300px;
     aspect-ratio: 16 / 10;
+    max-height: 999px;
     
     @media (max-width: 767px) {
       width: 100%;
       aspect-ratio: 16 / 9;
     }
+  }
+  
+  /* Featured projects keep same image height */
+  .project-card--featured & {
+    aspect-ratio: 16 / 9; /* Maintain same aspect ratio */
+    max-height: 175px; /* Shorter height to match regular cards better */
   }
   
   img {
