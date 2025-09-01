@@ -262,7 +262,6 @@ defineExpose({
   right: var(--space-8);
   height: 3px;
   background: var(--color-border);
-  border-radius: var(--radius-full);
   transform: translateY(-50%);
   
   @media (max-width: 768px) {

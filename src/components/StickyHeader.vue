@@ -70,28 +70,15 @@
               <PerformanceIcon :mode="performanceMode" />
             </button>
 
-            <div class="view-toggle">
-              <div class="toggle-buttons">
-                <button
-                  type="button"
-                  class="toggle-btn"
-                  :class="{ 'toggle-btn--active': viewMode === 'grid' }"
-                  @click="$emit('update:viewMode', 'grid')"
-                  aria-label="Grid view"
-                >
-                  <GridIcon />
-                </button>
-                <button
-                  type="button"
-                  class="toggle-btn"
-                  :class="{ 'toggle-btn--active': viewMode === 'list' }"
-                  @click="$emit('update:viewMode', 'list')"
-                  aria-label="List view"
-                >
-                  <ListIcon />
-                </button>
-              </div>
-            </div>
+            <button
+              type="button"
+              class="control-btn"
+              @click="$emit('update:viewMode', viewMode === 'grid' ? 'list' : 'grid')"
+              :aria-label="`Switch to ${viewMode === 'grid' ? 'list' : 'grid'} view`"
+            >
+              <GridIcon v-if="viewMode === 'grid'" />
+              <ListIcon v-else />
+            </button>
             
             <button 
               class="mobile-menu-btn" 
@@ -183,31 +170,19 @@
               </button>
             </li>
             <li role="none">
-              <div class="mobile-nav-link mobile-control-item">
+              <button 
+                class="mobile-nav-link mobile-nav-button mobile-control-item"
+                role="menuitem"
+                @click="handleMobileViewModeToggle"
+                type="button"
+              >
                 <span class="mobile-control-label">View Mode</span>
-                <div class="mobile-view-toggle">
-                  <button
-                    type="button"
-                    class="mobile-toggle-btn"
-                    :class="{ 'mobile-toggle-btn--active': viewMode === 'grid' }"
-                    @click="handleMobileViewMode('grid')"
-                    aria-label="Grid view"
-                  >
-                    <GridIcon />
-                    <span>Grid</span>
-                  </button>
-                  <button
-                    type="button"
-                    class="mobile-toggle-btn"
-                    :class="{ 'mobile-toggle-btn--active': viewMode === 'list' }"
-                    @click="handleMobileViewMode('list')"
-                    aria-label="List view"
-                  >
-                    <ListIcon />
-                    <span>List</span>
-                  </button>
+                <div class="mobile-control-value">
+                  <GridIcon v-if="viewMode === 'grid'" />
+                  <ListIcon v-else />
+                  <span>{{ viewMode === 'grid' ? 'Grid' : 'List' }}</span>
                 </div>
-              </div>
+              </button>
             </li>
           </ul>
         </div>
@@ -283,8 +258,9 @@ const handleMobilePerformance = () => {
   closeMobileMenu()
 }
 
-const handleMobileViewMode = (mode: 'grid' | 'list') => {
-  emit('update:viewMode', mode)
+const handleMobileViewModeToggle = () => {
+  const newMode = props.viewMode === 'grid' ? 'list' : 'grid'
+  emit('update:viewMode', newMode)
   closeMobileMenu()
 }
 
@@ -629,35 +605,6 @@ const handleMobileCategory = (category: string) => {
   font-size: var(--font-size-sm);
 }
 
-.mobile-view-toggle {
-  display: flex;
-  gap: var(--space-2);
-  color: var(--color-text-primary);
-}
-
-.mobile-toggle-btn {
-  display: flex;
-  align-items: center;
-  gap: var(--space-1);
-  padding: var(--space-1) var(--space-2);
-  background: var(--color-surface);
-  color: var(--color-text-primary);
-  border: 1px solid var(--color-border);
-  color: var(--color-text-secondary);
-  cursor: pointer;
-  font-size: var(--font-size-xs);
-  
-  &:hover {
-    color: var(--color-primary-600);
-  }
-  
-  &--active {
-    background: var(--color-primary-600);
-    color: var(--color-white);
-    border-color: var(--color-primary-600);
-  }
-}
-
 .mobile-category-switch {
   display: flex;
   gap: var(--space-2);
@@ -706,43 +653,6 @@ const handleMobileCategory = (category: string) => {
     gap: var(--space-md);
     flex: 1;
     justify-content: center;
-  }
-}
-
-.view-toggle {
-  display: flex;
-  align-items: center;
-  gap: var(--space-3);
-}
-
-.toggle-buttons {
-  display: flex;
-  // border: 1px solid var(--color-border);
-  overflow: hidden;
-  margin-top: 1px;
-}
-
-.toggle-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: var(--space-1);
-  background: var(--color-background);
-  border: none;
-  color: var(--color-text-secondary);
-  cursor: pointer;
-  border-bottom: 2px solid transparent;
-  
-  &:hover {
-    color: var(--color-primary-600);
-  }
-  
-  &:focus {
-    border-bottom: 2px solid var(--color-primary-500);
-  }
-
-  &--active {
-    color: var(--color-primary-600);
   }
 }
 </style>
