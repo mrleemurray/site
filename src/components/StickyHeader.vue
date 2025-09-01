@@ -27,7 +27,7 @@
           </router-link>
           
           <!-- Mobile layout for project page -->
-          <div v-if="stickyProjectTitle && isProjectPage" class="mobile-project-nav">
+          <div v-if="isProjectPage" class="mobile-project-nav">
             <router-link to="/" class="mobile-back-button" @click="emit('close-about')">
               ←
             </router-link>

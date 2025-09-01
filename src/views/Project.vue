@@ -163,6 +163,9 @@ const loadProject = async () => {
   error.value = null
   markdownContent.value = ''
   tableOfContents.value = []
+  
+  // Clear any previous title
+  emit('sticky-title-change', null)
 
   try {
     // Load all projects data first (for related projects)
@@ -172,6 +175,9 @@ const loadProject = async () => {
     // Load the specific project with its content
     const parsed = await MarkdownLoader.loadProjectContent(props.slug)
     project.value = parsed.frontmatter
+
+    // Emit the project title immediately for mobile header
+    emit('sticky-title-change', project.value.title)
 
     // Process the markdown content
     markdownContent.value = MarkdownLoader.parseMarkdownToHTML(parsed.content)
@@ -222,7 +228,12 @@ const setupStickyDetection = () => {
           if (isSticking && project.value?.title) {
             emit('sticky-title-change', project.value.title)
           } else {
-            emit('sticky-title-change', null)
+            // On mobile, always keep the title visible
+            // On desktop, clear it when not sticking
+            const isMobile = window.innerWidth <= 767
+            if (!isMobile) {
+              emit('sticky-title-change', null)
+            }
           }
         }
       })
