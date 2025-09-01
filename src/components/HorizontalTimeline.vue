@@ -63,6 +63,29 @@
       class="timeline-content"
       :class="{ 'visible': activeItem !== null }"
     >
+      <!-- Navigation buttons -->
+      <div v-if="activeItem !== null" class="timeline-navigation">
+        <button 
+          class="nav-button nav-prev"
+          :disabled="activeItem === 0"
+          @click="navigateToPrevious"
+          aria-label="Previous timeline item"
+        >
+          ← Prev
+        </button>
+        <span class="nav-indicator">
+          {{ (activeItem || 0) + 1 }} of {{ timelineData.length }}
+        </span>
+        <button 
+          class="nav-button nav-next"
+          :disabled="activeItem === timelineData.length - 1"
+          @click="navigateToNext"
+          aria-label="Next timeline item"
+        >
+          Next →
+        </button>
+      </div>
+
       <div 
         v-if="activeTimelineItem"
         :id="`timeline-content-${activeTimelineItem.id}`"
@@ -177,6 +200,18 @@ const lastMarkerPosition = computed(() => {
 // Methods
 const setActiveItem = (index: number) => {
   activeItem.value = index
+}
+
+const navigateToPrevious = () => {
+  if (activeItem.value !== null && activeItem.value > 0) {
+    setActiveItem(activeItem.value - 1)
+  }
+}
+
+const navigateToNext = () => {
+  if (activeItem.value !== null && activeItem.value < timelineData.value.length - 1) {
+    setActiveItem(activeItem.value + 1)
+  }
 }
 
 const handleKeyDown = (event: KeyboardEvent, index: number) => {
@@ -514,9 +549,67 @@ defineExpose({
   }
 }
 
+.timeline-navigation {
+  position: absolute;
+  top: -32px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.nav-button {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  background: var(--color-background);
+  border-left: 1px solid var(--color-border);
+  border-right: 1px solid var(--color-border);
+  border-top: none;
+  border-bottom: none;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  
+  &:hover:not(:disabled) {
+    color: var(--color-primary-600);
+  }
+  
+  &:focus {
+    outline: 2px solid var(--color-primary-500);
+    outline-offset: -2px;
+  }
+  
+  &:disabled {
+    color: color-mix(in hsl, var(--color-text-secondary), transparent 50%);
+    cursor: default;
+  }
+  
+  @media (max-width: 768px) {
+    padding: var(--space-2) var(--space-3);
+    font-size: var(--font-size-xs);
+  }
+}
+
+.nav-indicator {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-tertiary);
+  font-weight: var(--font-weight-medium);
+  
+  @media (max-width: 768px) {
+    font-size: var(--font-size-xs);
+  }
+}
+
 .content-card {
   background: var(--color-background);
-  border: 1px solid var(--color-border);
+  border-left: 1px solid var(--color-border);
+  border-right: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
   padding: var(--space-4) 0;
 }
 
