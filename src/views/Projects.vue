@@ -113,6 +113,7 @@ const props = withDefaults(defineProps<Props>(), {
 
 const emit = defineEmits<{
   'update-project-filters': [data: { categories: ProjectCategory[] }]
+  'update:selectedCategory': [category: string]
 }>()
 
 const searchQuery = ref('')
@@ -144,6 +145,7 @@ const { selectedCategory, viewMode } = toRefs(props)
 
 const clearFilters = () => {
   searchQuery.value = ''
+  emit('update:selectedCategory', '')
 }
 
 const loadProjects = async () => {

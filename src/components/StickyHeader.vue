@@ -561,6 +561,7 @@ const handleLogoClick = () => {
   border: none;
   color: var(--color-text-secondary);
   cursor: pointer;
+  z-index: 10;
   
   &:hover, &:focus {
     color: var(--color-primary-600);

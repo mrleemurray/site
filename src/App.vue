@@ -27,6 +27,7 @@
         :selected-category="selectedCategory"
         :view-mode="viewMode"
         @sticky-title-change="handleStickyTitleChange"
+        @update:selected-category="updateSelectedCategory"
       />
     </main>
     
