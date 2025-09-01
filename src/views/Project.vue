@@ -28,7 +28,7 @@
         <div class="project-content">
           <div class="content-main">
             <!-- Project Meta -->
-            <div class="project-meta">
+            <div ref="projectMetaRef" class="project-meta">
               <div class="project-links">
                 <a 
                   v-if="project.liveUrl"
@@ -72,7 +72,7 @@
           </div>
 
           <!-- Table of Contents -->
-          <aside v-if="tableOfContents.length > 0" class="content-sidebar">
+          <aside ref="tocRef" v-if="tableOfContents.length > 0" class="content-sidebar">
             <nav class="toc" aria-label="Table of contents">
               <h3>Table of Contents</h3>
               <ul>
@@ -121,7 +121,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted, watch } from 'vue'
+import { ref, computed, onMounted, onUnmounted, watch } from 'vue'
 import { MarkdownLoader, type Project } from '@/utils/projects'
 
 interface Props {
@@ -130,12 +130,21 @@ interface Props {
 
 const props = defineProps<Props>()
 
+const emit = defineEmits<{
+  'sticky-title-change': [title: string | null]
+}>()
+
 const project = ref<Project | null>(null)
 const allProjects = ref<Project[]>([])
 const markdownContent = ref('')
 const tableOfContents = ref<Array<{ id: string; text: string; level: number }>>([])
 const isLoading = ref(false)
 const error = ref<string | null>(null)
+
+// Refs for sticky detection
+const projectMetaRef = ref<HTMLElement>()
+const tocRef = ref<HTMLElement>()
+let intersectionObserver: IntersectionObserver | null = null
 
 const relatedProjects = computed(() => {
   if (!project.value || !allProjects.value.length) return []
@@ -168,6 +177,11 @@ const loadProject = async () => {
     markdownContent.value = MarkdownLoader.parseMarkdownToHTML(parsed.content)
     tableOfContents.value = MarkdownLoader.extractTableOfContents(parsed.content)
 
+    // Set up sticky detection after content is loaded
+    setTimeout(() => {
+      setupStickyDetection()
+    }, 100)
+
   } catch (err) {
     error.value = err instanceof Error ? err.message : 'Failed to load project'
     console.error('Error loading project:', err)
@@ -181,8 +195,64 @@ watch(() => props.slug, () => {
   loadProject()
 })
 
+// Setup intersection observer for sticky detection
+const setupStickyDetection = () => {
+  if (!projectMetaRef.value) return
+  
+  // Create a sentinel element just above the sticky element
+  const sentinel = document.createElement('div')
+  sentinel.style.height = '1px'
+  sentinel.style.position = 'absolute'
+  sentinel.style.top = 'calc(var(--space-16) - 7px)' // Just above sticky position
+  sentinel.style.left = '0'
+  sentinel.style.right = '0'
+  sentinel.style.pointerEvents = 'none'
+  sentinel.setAttribute('data-sticky-sentinel', 'true')
+  
+  // Insert sentinel before the sticky element
+  projectMetaRef.value.parentNode?.insertBefore(sentinel, projectMetaRef.value)
+  
+  // Create intersection observer
+  intersectionObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.target === sentinel) {
+          // When sentinel is not visible, sticky element is sticking
+          const isSticking = !entry.isIntersecting
+          if (isSticking && project.value?.title) {
+            emit('sticky-title-change', project.value.title)
+          } else {
+            emit('sticky-title-change', null)
+          }
+        }
+      })
+    },
+    {
+      rootMargin: '0px',
+      threshold: 0
+    }
+  )
+  
+  intersectionObserver.observe(sentinel)
+}
+
+const cleanupStickyDetection = () => {
+  if (intersectionObserver) {
+    intersectionObserver.disconnect()
+    intersectionObserver = null
+  }
+  
+  // Remove sentinel elements
+  const sentinels = document.querySelectorAll('[data-sticky-sentinel]')
+  sentinels.forEach(sentinel => sentinel.remove())
+}
+
 onMounted(() => {
   loadProject()
+})
+
+onUnmounted(() => {
+  cleanupStickyDetection()
 })
 </script>
 

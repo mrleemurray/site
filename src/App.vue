@@ -12,17 +12,20 @@
       :performance-mode="performanceMode"
       :selected-category="selectedCategory"
       :view-mode="viewMode"
+      :sticky-project-title="stickyProjectTitle"
       @toggle-theme="toggleTheme"
       @toggle-performance="togglePerformance"
       @toggle-about="toggleAboutModal"
       @update:selected-category="updateSelectedCategory"
       @update:view-mode="updateViewMode"
+      @clear-sticky-title="clearStickyTitle"
     />
     
     <main id="main-content" class="main" role="main">
       <router-view 
         :selected-category="selectedCategory"
         :view-mode="viewMode"
+        @sticky-title-change="handleStickyTitleChange"
       />
     </main>
     
@@ -34,14 +37,9 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted, watch, computed } from 'vue'
-import { useRoute } from 'vue-router'
+import { ref, onMounted, onUnmounted, watch } from 'vue'
 import StickyHeader from './components/StickyHeader.vue'
 import AboutModal from './components/AboutModal.vue'
-
-// Route management
-const route = useRoute()
-const isProjectsPage = computed(() => route.name === 'Projects')
 
 // Theme management
 const theme = ref<'light' | 'dark'>('light')
@@ -51,6 +49,7 @@ const aboutModalOpen = ref(false)
 // Project controls state
 const selectedCategory = ref('')
 const viewMode = ref<'grid' | 'list'>('grid')
+const stickyProjectTitle = ref<string | null>(null)
 
 // Theme detection and persistence
 const initializeTheme = () => {
@@ -94,6 +93,14 @@ const updateSelectedCategory = (value: string) => {
 
 const updateViewMode = (value: 'grid' | 'list') => {
   viewMode.value = value
+}
+
+const handleStickyTitleChange = (title: string | null) => {
+  stickyProjectTitle.value = title
+}
+
+const clearStickyTitle = () => {
+  stickyProjectTitle.value = null
 }
 
 // Persist preferences

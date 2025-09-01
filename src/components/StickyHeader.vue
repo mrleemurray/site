@@ -3,10 +3,15 @@
     <!-- Navigation Section -->
     <div class="nav-section">
       <nav class="nav" role="navigation" aria-label="Main navigation">
-        <!-- Logo/Brand -->
-        <router-link to="/" class="brand" aria-label="Go to projects">
-          <span class="brand-text">LM</span>
-        </router-link>
+        <div class="logo-nav">
+          <!-- Logo/Brand -->
+          <router-link v-if="!stickyProjectTitle" to="/" class="brand" aria-label="Go to projects">
+            <span class="brand-text">LM</span>
+          </router-link>
+          <div v-if="stickyProjectTitle" class="sticky-project-title">
+            {{ stickyProjectTitle }}
+          </div>
+        </div>
 
         <div v-if="isProjectPage" class="back-to-projects">
           <router-link to="/" class="back-link">
@@ -198,7 +203,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref, computed, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import ThemeIcon from './icons/ThemeIcon.vue'
 import PerformanceIcon from './icons/PerformanceIcon.vue'
@@ -212,6 +217,7 @@ interface Props {
   showProjectControls?: boolean
   selectedCategory?: string
   viewMode?: 'grid' | 'list'
+  stickyProjectTitle?: string | null
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -231,7 +237,15 @@ const emit = defineEmits<{
   'view-mode-change': [mode: 'grid' | 'list']
   'update:selectedCategory': [category: string]
   'update:viewMode': [mode: 'grid' | 'list']
+  'clear-sticky-title': []
 }>()
+
+// Clear sticky title when leaving project page
+watch(isProjectPage, (newIsProjectPage) => {
+  if (!newIsProjectPage) {
+    emit('clear-sticky-title')
+  }
+})
 
 const mobileMenuOpen = ref(false)
 
@@ -241,11 +255,6 @@ const toggleMobileMenu = () => {
 
 const closeMobileMenu = () => {
   mobileMenuOpen.value = false
-}
-
-const handleMobileAbout = () => {
-  emit('toggle-about')
-  toggleMobileMenu()
 }
 
 const handleMobileTheme = () => {
@@ -329,6 +338,10 @@ const handleMobileCategory = (category: string) => {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
   
   @media (max-width: 767px) {
     display: none;
@@ -345,6 +358,19 @@ const handleMobileCategory = (category: string) => {
   &:hover, &:focus {
     color: var(--color-primary-600);
     text-decoration: none;
+  }
+}
+
+.sticky-project-title {
+  color: var(--color-text-primary);
+  font-family: var(--font-family-serif);
+  font-weight: var(--font-weight-medium);
+  opacity: 0;
+  transition: all var(--duration-normal) var(--ease-out);
+  
+  &:not(:empty) {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -386,6 +412,12 @@ const handleMobileCategory = (category: string) => {
 
 .brand-text {
   font-family: var(--font-family-heading);
+}
+
+.logo-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
 }
 
 .nav-links {
