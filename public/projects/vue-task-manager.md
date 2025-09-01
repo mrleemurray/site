@@ -9,7 +9,7 @@ image: /images/vue-task-manager.svg
 featured: true
 liveUrl: https://vue-task-manager.netlify.app
 sourceUrl: https://github.com/username/vue-task-manager
-completedAt: 2024-01-15
+completedAt: 2025-01-15
 duration: 3 weeks
 ---
 
