@@ -317,7 +317,8 @@ onUnmounted(() => {
   z-index: 10;
 
   @media (max-width: 768px) {
-    top: calc(var(--space-12));
+    position: static;
+    top: auto;
   }
 }
 

@@ -361,6 +361,10 @@ defineExpose({
     left: 50%;
     transform: translate(-50%, -150%);
     z-index: 1;
+
+    @media (max-width: 768px) {
+      transform: translate(-50%, -100%);
+    }
   }
 
   .marker-dot {
@@ -372,6 +376,10 @@ defineExpose({
     position: relative;
     z-index: 2;
     transform: translateY(-100%); // Center the dot on the timeline line
+
+    @media (max-width: 768px) {
+      transform: translateY(-80%);
+    }
   }
   
   .timeline-label {
