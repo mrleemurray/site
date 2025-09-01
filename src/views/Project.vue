@@ -269,10 +269,10 @@ onMounted(() => {
 .tag {
   display: inline-block;
   padding: var(--space-1) var(--space-3);
-  color: var(--color-primary-700);
+  color: var(--color-primary-600);
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-medium);
-  border: 1px solid color-mix(in srgb, var(--color-primary-700) 20%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-primary-600) 20%, transparent);
   cursor: default;
 }
 
@@ -537,7 +537,6 @@ onMounted(() => {
       grayscale(100%) 
       contrast(5) 
       brightness(1.2)
-      sepia(100%) 
       hue-rotate(10deg) 
       saturate(1)
       opacity(0.85);
