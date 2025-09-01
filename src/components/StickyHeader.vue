@@ -290,6 +290,10 @@ const handleMobileCategory = (category: string) => {
   z-index: 1001;
   margin: 0 auto;
   padding: var(--space-2) 0 0 var(--space-2);
+
+  @media (max-width: 768px) {
+    padding: 0px;
+  }
   
   // Create opaque backdrop only above the header
   &::before {
@@ -309,6 +313,10 @@ const handleMobileCategory = (category: string) => {
   border: 1px solid var(--color-border);
   background: var(--color-background);
   padding: 0;
+  @media (max-width: 768px) {
+    border: none;
+    border-bottom: 1px solid var(--color-border);
+  }
 }
 
 .nav {

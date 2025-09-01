@@ -330,8 +330,6 @@ watch(() => props.isOpen, (isOpen) => {
 }
 
 .modal-container {
-  
-  // box-shadow: var(--shadow-xl);
   width: 100%;
   max-width: 1280px;
   max-height: 100vh;
@@ -339,7 +337,7 @@ watch(() => props.isOpen, (isOpen) => {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  animation: slideUp var(--duration-normal) var(--ease-out);
+  // animation: slideUp var(--duration-normal) var(--ease-out);
 }
 
 .modal-header {
@@ -391,6 +389,10 @@ watch(() => props.isOpen, (isOpen) => {
   border-right: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
   background: var(--color-background);
+
+  @media (max-width: 768px) {
+    margin: calc(3rem) 0 0 0;
+  }
   
   /* Prevent layout shift by always reserving scrollbar space */
   scrollbar-gutter: stable;

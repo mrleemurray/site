@@ -269,6 +269,10 @@ onUnmounted(() => {
   padding: 0;
   margin-left: var(--space-2);
   border: 1px solid var(--color-border);
+
+  @media (max-width: 768px) {
+    margin-left: 0px;
+  }
 }
 
 .breadcrumb {
@@ -311,6 +315,10 @@ onUnmounted(() => {
   border-bottom: 1px solid var(--color-border);
   background: var(--color-background);
   z-index: 10;
+
+  @media (max-width: 768px) {
+    top: calc(var(--space-12));
+  }
 }
 
 .project-links {
@@ -499,6 +507,10 @@ onUnmounted(() => {
   border-bottom: 1px solid var(--color-border);
 
   padding: var(--space-6);
+
+  @media (max-width: 768px) {
+    border-left: none;
+  }
   
   h3 {
     margin-bottom: var(--space-4);

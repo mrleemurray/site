@@ -137,6 +137,10 @@ onUnmounted(() => {
 .main {
   flex: 1;
   padding-top: calc(4rem - var(--space-2)); // Nav height + controls height + padding
+
+  @media (max-width: 768px) {
+    padding-top : calc(4rem - var(--space-4));
+  }
 }
 
 </style>
