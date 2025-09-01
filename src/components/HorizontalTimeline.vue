@@ -400,7 +400,7 @@ defineExpose({
     .marker-dot {
       background: var(--color-primary-600);
       border-color: var(--color-background);
-      box-shadow: 0 0 0 2px rgba(var(--color-primary-rgb, 254, 95, 85), 1);
+      box-shadow: 0 0 0 2px var(--color-primary-600);
     }
     
     .timeline-label {
@@ -626,12 +626,7 @@ defineExpose({
   }
   
   .marker-dot {
-    background: var(--color-night);
-  }
-  
-  .content-card {
-    background: var(--color-surface);
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+    background: var(--color-border);
   }
 }
 
