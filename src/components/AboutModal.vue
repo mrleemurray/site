@@ -399,6 +399,7 @@ watch(() => props.isOpen, (isOpen) => {
 
   @media (max-width: 768px) {
     margin: calc(3rem) 0 0 0;
+    padding-left: var(--space-2);
   }
   
   /* Fallback for browsers that don't support scrollbar-gutter */

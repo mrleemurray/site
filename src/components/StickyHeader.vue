@@ -28,7 +28,7 @@
           
           <!-- Mobile layout for project page -->
           <div v-if="isProjectPage" class="mobile-project-nav">
-            <router-link to="/" class="mobile-back-button" @click="emit('close-about')">
+            <router-link to="/" class="mobile-back-button" @click="handleMobileBackClick">
               ←
             </router-link>
             <div class="sticky-project-title">
@@ -39,7 +39,7 @@
         </div>
 
         <div v-if="isProjectPage" class="back-to-projects">
-          <router-link to="/" class="back-link" @click="emit('close-about')">
+          <router-link to="/" class="back-link" @click="handleDesktopBackClick">
             ← Back to Projects
           </router-link>
         </div>
@@ -320,6 +320,17 @@ const handleCategoryClick = (category: string) => {
 const handleLogoClick = () => {
   emit('update:selectedCategory', '')
   emit('close-about')
+  closeMobileMenu()
+}
+
+const handleMobileBackClick = () => {
+  emit('close-about')
+  closeMobileMenu()
+}
+
+const handleDesktopBackClick = () => {
+  emit('close-about')
+  closeMobileMenu()
 }
 </script>
 
@@ -331,7 +342,7 @@ const handleLogoClick = () => {
   transform: translateX(-50%);
   width: 100%;
   max-width: 1280px;
-  z-index: 1001;
+  z-index: 1100;
   margin: 0 auto;
   padding: var(--space-2) 0 0 var(--space-2);
 
@@ -680,7 +691,7 @@ const handleLogoClick = () => {
   width: 100vw;
   height: 100vh;
   background: rgba(0, 0, 0, 0.5);
-  z-index: 500;
+  z-index: 1050;
   opacity: 0;
   animation: fadeIn var(--duration-fast) var(--ease-out) forwards;
   pointer-events: auto;
@@ -699,7 +710,12 @@ const handleLogoClick = () => {
 .mobile-menu {
   display: none;
   border-top: 1px solid var(--color-border);
-  position: relative;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  padding-bottom: var(--sapce-2);
+  background: var(--color-background);
   z-index: 501;
   
   &--open {
