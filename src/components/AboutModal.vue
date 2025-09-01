@@ -389,10 +389,6 @@ watch(() => props.isOpen, (isOpen) => {
   border-right: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
   background: var(--color-background);
-
-  @media (max-width: 768px) {
-    margin: calc(3rem) 0 0 0;
-  }
   
   /* Prevent layout shift by always reserving scrollbar space */
   scrollbar-gutter: stable;
@@ -400,6 +396,10 @@ watch(() => props.isOpen, (isOpen) => {
   /* Minimal scrollbar styling */
   scrollbar-width: thin;
   scrollbar-color: rgba(var(--color-text-secondary-rgb, 107, 114, 126), 0.3) transparent;
+
+  @media (max-width: 768px) {
+    margin: calc(3rem) 0 0 0;
+  }
   
   /* Fallback for browsers that don't support scrollbar-gutter */
   @supports not (scrollbar-gutter: stable) {

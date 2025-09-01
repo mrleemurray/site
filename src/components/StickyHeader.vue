@@ -4,10 +4,28 @@
     <div class="nav-section">
       <nav class="nav" role="navigation" aria-label="Main navigation">
         <div class="logo-nav">
-          <!-- Logo/Brand -->
-          <router-link v-if="!stickyProjectTitle" to="/" class="brand" aria-label="Go to projects" @click="handleLogoClick">
+          <!-- Show logo when NOT on project page, OR when on project page but in desktop mode -->
+          <router-link 
+            v-if="!isProjectPage"
+            to="/" 
+            class="brand" 
+            aria-label="Go to projects" 
+            @click="handleLogoClick"
+          >
             <span class="brand-text">LM</span>
           </router-link>
+          
+          <!-- Desktop logo for project page -->
+          <router-link 
+            v-if="isProjectPage"
+            to="/" 
+            class="brand brand--desktop-only" 
+            aria-label="Go to projects" 
+            @click="handleLogoClick"
+          >
+            <span class="brand-text">LM</span>
+          </router-link>
+          
           <!-- Mobile layout for project page -->
           <div v-if="stickyProjectTitle && isProjectPage" class="mobile-project-nav">
             <router-link to="/" class="mobile-back-button" @click="emit('close-about')">
@@ -17,10 +35,6 @@
               {{ stickyProjectTitle }}
             </div>
             <div class="mobile-spacer"></div>
-          </div>
-          <!-- Desktop project title -->
-          <div v-else-if="stickyProjectTitle" class="sticky-project-title">
-            {{ stickyProjectTitle }}
           </div>
         </div>
 
@@ -439,6 +453,12 @@ const handleLogoClick = () => {
   &:hover, &:focus {
     color: var(--color-primary-600);
     text-decoration: none;
+  }
+}
+
+.brand--desktop-only {
+  @media (max-width: 767px) {
+    display: none;
   }
 }
 
