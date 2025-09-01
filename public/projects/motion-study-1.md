@@ -1,36 +1,25 @@
 ---
-id: ecommerce-api-123
-title: E-commerce API 123
+id: motion-study-1
+title: Motion Study #1
 subtitle: Robust RESTful API for online stores
 description: Complete backend solution for e-commerce applications featuring user authentication, product management, order processing, and payment integration.
 category: api
-tags: [Node.js, Express, PostgreSQL, JWT, Stripe]
-image: /images/ecommerce-api.svg
+tags: [Vue.js, P5.js]
+image: /images/motion-study-1/three.gif
 featured: false
-liveUrl: https://api.example-store.com/docs
-sourceUrl: https://github.com/username/ecommerce-api
 completedAt: 2024-02-20
 duration: 4 weeks
 ---
 
-# E-commerce API 123
+# Motion Study #1
 
-A robust RESTful API for e-commerce applications built with Node.js, Express, and PostgreSQL.
+Using planetary orbits & explosion diagrams to understand complex relationships between resources.
 
-![API Architecture Diagram](/images/ecommerce-api.svg)
+![API Architecture Diagram](/images/motion-study-1/one.gif)
 
 ## Overview
 
 This e-commerce API provides a complete backend solution for online stores, featuring user authentication, product management, order processing, and payment integration.
-
-### Core Features
-
-- **User Management**: Registration, authentication, and profile management
-- **Product Catalog**: Full CRUD operations with categories and inventory tracking
-- **Shopping Cart**: Persistent cart management across sessions
-- **Order Processing**: Complete order lifecycle from creation to fulfillment
-- **Payment Integration**: Stripe and PayPal integration
-- **Admin Dashboard**: Administrative endpoints for store management
 
 ## API Endpoints
 

@@ -4,7 +4,7 @@ export const PROJECT_REGISTRY = [
   'ecommerce-api',
   'react-native-fitness',
   'portfolio-website',
-  'ecommerce-api-123'
+  'motion-study-1'
 ]
 
 // This file serves as a simple way to register new projects
