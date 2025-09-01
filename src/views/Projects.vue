@@ -18,14 +18,14 @@
         v-else-if="filteredProjects.length > 0" 
         class="projects-container"
         :class="[
-          viewMode === 'grid' ? 'projects-grid' : 'projects-list'
+          effectiveViewMode === 'grid' ? 'projects-grid' : 'projects-list'
         ]"
       >
         <article 
           v-for="project in filteredProjects" 
           :key="project.id"
           class="project-card"
-          :class="{ 'project-card--list': viewMode === 'list' }"
+          :class="{ 'project-card--list': effectiveViewMode === 'list' }"
         >
           <div class="project-image">
             <router-link :to="`/projects/${project.id}`">
@@ -98,7 +98,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted, toRefs } from 'vue'
+import { ref, computed, onMounted, onUnmounted, toRefs } from 'vue'
 import { MarkdownLoader, ProjectUtils, type Project, type ProjectCategory } from '@/utils/projects'
 
 interface Props {
@@ -121,6 +121,17 @@ const projects = ref<Project[]>([])
 const categories = ref<ProjectCategory[]>([])
 const isLoading = ref(false)
 const error = ref<string | null>(null)
+const isMobile = ref(false)
+
+// Check if mobile on mount and window resize
+const checkMobile = () => {
+  isMobile.value = window.innerWidth <= 767
+}
+
+// Force grid mode on mobile, use props viewMode on desktop
+const effectiveViewMode = computed(() => {
+  return isMobile.value ? 'grid' : props.viewMode
+})
 
 // Use props for filtering
 const filteredProjects = computed(() => {
@@ -141,7 +152,7 @@ const filteredProjects = computed(() => {
 })
 
 // Expose computed props for parent component access
-const { selectedCategory, viewMode } = toRefs(props)
+const { selectedCategory } = toRefs(props)
 
 const clearFilters = () => {
   searchQuery.value = ''
@@ -169,6 +180,12 @@ const loadProjects = async () => {
 
 onMounted(() => {
   loadProjects()
+  checkMobile()
+  window.addEventListener('resize', checkMobile)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('resize', checkMobile)
 })
 </script>
 

@@ -40,6 +40,8 @@
   --color-hunter-green: #345830;
   --color-selective-yellow: #ffb30f;
   --color-polynesian-blue: #004e98;
+  --color-asparagus: #659157ff;
+  --color-tekhelet: #473198ff;
 
   // Semantic Color Tokens - Light Theme
   --color-background: var(--color-white);
@@ -52,11 +54,11 @@
   --color-border-hover: rgba(99, 132, 117, 0.3);
   
   // Update primary to use bittersweet accent
-  --color-primary-500: var(--color-hunter-green);
-  --color-primary-600: var(--color-hunter-green);
+  --color-primary-500: var(--color-tekhelet);
+  --color-primary-600: var(--color-tekhelet);
   
   // Accent color using hookers-green
-  --color-accent: var(--color-hookers-green);
+  --color-accent: var(--color-tekhelet);
   --color-accent-hover: rgba(99, 132, 117, 0.8);
 
   // Typography Tokens

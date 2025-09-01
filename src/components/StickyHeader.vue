@@ -103,7 +103,7 @@
 
             <button
               type="button"
-              class="control-btn"
+              class="control-btn view-mode-btn"
               @click="$emit('update:viewMode', viewMode === 'grid' ? 'list' : 'grid')"
               :aria-label="`Switch to ${viewMode === 'grid' ? 'list' : 'grid'} view`"
             >
@@ -201,7 +201,7 @@
                 </div>
               </button>
             </li>
-            <li role="none">
+            <li v-if="false" role="none">
               <button 
                 class="mobile-nav-link mobile-nav-button mobile-control-item"
                 role="menuitem"
@@ -593,7 +593,8 @@ const handleDesktopBackClick = () => {
     .nav-link,
     .control-btn,
     .view-toggle,
-    .about-btn {
+    .about-btn,
+    .view-mode-btn {
       display: none;
     }
   }
