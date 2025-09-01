@@ -198,7 +198,7 @@ export class MarkdownLoader {
     }
 
     // Basic markdown parsing - in a real app, use a library like markdown-it
-    return markdown
+    const result = markdown
       // Headers with IDs
       .replace(/^### (.*$)/gim, (_, text) => `<h3 id="${generateId(text)}">${text}</h3>`)
       .replace(/^## (.*$)/gim, (_, text) => `<h2 id="${generateId(text)}">${text}</h2>`)
@@ -209,11 +209,18 @@ export class MarkdownLoader {
       .replace(/\*\*(.*)\*\*/gim, '<strong>$1</strong>')
       .replace(/\*(.*)\*/gim, '<em>$1</em>')
       
+      // Images - handle both absolute and relative paths (MUST come before links!)
+      .replace(/!\[([^\]]*)\]\(([^)]+)\)/gim, (_, alt, src) => {
+        // If the path starts with /, it's absolute from public folder
+        // If it doesn't start with http/https or /, make it relative to public
+        const imageSrc = src.startsWith('/') ? src : 
+                        src.startsWith('http') ? src : 
+                        `/${src}`
+        return `<img alt="${alt}" src="${imageSrc}" />`
+      })
+      
       // Links
       .replace(/\[([^\]]+)\]\(([^)]+)\)/gim, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>')
-      
-      // Images
-      .replace(/!\[([^\]]*)\]\(([^)]+)\)/gim, '<img alt="$1" src="$2" />')
       
       // Code blocks
       .replace(/```(\w+)?\n([\s\S]*?)```/gim, '<pre><code class="language-$1">$2</code></pre>')
@@ -232,6 +239,8 @@ export class MarkdownLoader {
       .replace(/<p>(<h[1-6]>.*<\/h[1-6]>)<\/p>/gim, '$1')
       .replace(/<p>(<pre>.*<\/pre>)<\/p>/gims, '$1')
       .replace(/<p>(<ul>.*<\/ul>)<\/p>/gims, '$1')
+    
+    return result
   }
 
   static extractTableOfContents(markdown: string): Array<{ id: string; text: string; level: number }> {
