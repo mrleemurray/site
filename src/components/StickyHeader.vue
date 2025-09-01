@@ -8,7 +8,18 @@
           <router-link v-if="!stickyProjectTitle" to="/" class="brand" aria-label="Go to projects" @click="handleLogoClick">
             <span class="brand-text">LM</span>
           </router-link>
-          <div v-if="stickyProjectTitle" class="sticky-project-title">
+          <!-- Mobile layout for project page -->
+          <div v-if="stickyProjectTitle && isProjectPage" class="mobile-project-nav">
+            <router-link to="/" class="mobile-back-button" @click="emit('close-about')">
+              ←
+            </router-link>
+            <div class="sticky-project-title">
+              {{ stickyProjectTitle }}
+            </div>
+            <div class="mobile-spacer"></div>
+          </div>
+          <!-- Desktop project title -->
+          <div v-else-if="stickyProjectTitle" class="sticky-project-title">
             {{ stickyProjectTitle }}
           </div>
         </div>
@@ -48,15 +59,6 @@
 
         <!-- Controls -->
         <div class="nav-controls">
-          <button 
-            class="about-btn desktop-only" 
-            @click="$emit('toggle-about')"
-          >
-            <span>
-              About
-            </span>
-          </button>
-          
           <button 
             class="control-btn" 
             @click="$emit('toggle-theme')"
@@ -106,16 +108,17 @@
           :aria-hidden="!mobileMenuOpen"
         >
           <ul class="mobile-nav-links" role="menu">
-            <li v-if="isProjectPage" role="none">
-              <router-link 
-                to="/" 
-                class="mobile-nav-link"
-                @click="handleMobileBackToProjects"
+            <li role="none">
+              <button 
+                class="mobile-nav-link mobile-nav-button" 
+                role="menuitem"
+                @click="handleMobileAbout"
+                type="button"
               >
-                ← Back to Projects
-              </router-link>
+                About
+              </button>
             </li>
-            <li v-else role="none">
+            <li v-if="!isProjectPage" role="none">
               <div class="mobile-nav-link mobile-control-item">
                 <span class="mobile-control-label">Category</span>
                 <div class="mobile-category-switch">
@@ -268,6 +271,11 @@ const handleMobilePerformance = () => {
   closeMobileMenu()
 }
 
+const handleMobileAbout = () => {
+  emit('toggle-about')
+  closeMobileMenu()
+}
+
 const handleMobileViewModeToggle = () => {
   const newMode = props.viewMode === 'grid' ? 'list' : 'grid'
   emit('update:viewMode', newMode)
@@ -283,11 +291,6 @@ const handleMobileCategory = (category: string) => {
 const handleCategoryClick = (category: string) => {
   emit('update:selectedCategory', category)
   emit('close-about')
-}
-
-const handleMobileBackToProjects = () => {
-  emit('close-about')
-  closeMobileMenu()
 }
 
 const handleLogoClick = () => {
@@ -342,6 +345,10 @@ const handleLogoClick = () => {
   justify-content: space-between;
   height: 3rem;
   padding: 0 var(--space-4);
+  
+  @media (max-width: 767px) {
+    gap: var(--space-2);
+  }
 }
 
 .category-switch {
@@ -443,6 +450,52 @@ const handleLogoClick = () => {
   display: flex;
   align-items: center;
   gap: var(--space-4);
+  
+  @media (max-width: 767px) {
+    gap: var(--space-2);
+  }
+}
+
+.mobile-project-nav {
+  display: none;
+  
+  @media (max-width: 767px) {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    width: 100%;
+    gap: var(--space-2);
+    
+    .sticky-project-title {
+      text-align: center;
+      grid-column: 2;
+    }
+    
+    .mobile-back-button {
+      grid-column: 1;
+      justify-self: start;
+    }
+    
+    .mobile-spacer {
+      grid-column: 3;
+    }
+  }
+}
+
+.mobile-back-button {
+  display: none;
+  
+  @media (max-width: 767px) {
+    display: block;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    font-weight: var(--font-weight-medium);
+    font-family: var(--font-family-serif);
+    
+    &:hover, &:focus {
+      color: var(--color-primary-600);
+    }
+  }
 }
 
 .nav-links {
