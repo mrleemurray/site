@@ -5,7 +5,7 @@
       <nav class="nav" role="navigation" aria-label="Main navigation">
         <div class="logo-nav">
           <!-- Logo/Brand -->
-          <router-link v-if="!stickyProjectTitle" to="/" class="brand" aria-label="Go to projects">
+          <router-link v-if="!stickyProjectTitle" to="/" class="brand" aria-label="Go to projects" @click="handleLogoClick">
             <span class="brand-text">LM</span>
           </router-link>
           <div v-if="stickyProjectTitle" class="sticky-project-title">
@@ -14,7 +14,7 @@
         </div>
 
         <div v-if="isProjectPage" class="back-to-projects">
-          <router-link to="/" class="back-link">
+          <router-link to="/" class="back-link" @click="emit('close-about')">
             ← Back to Projects
           </router-link>
         </div>
@@ -24,7 +24,7 @@
             type="button"
             class="category-btn"
             :class="{ 'category-btn--active': selectedCategory === '' }"
-            @click="$emit('update:selectedCategory', '')"
+            @click="handleCategoryClick('')"
           >
             All
           </button>
@@ -32,7 +32,7 @@
             type="button"
             class="category-btn"
             :class="{ 'category-btn--active': selectedCategory === 'work' }"
-            @click="$emit('update:selectedCategory', 'work')"
+            @click="handleCategoryClick('work')"
           >
             Work
           </button>
@@ -40,7 +40,7 @@
             type="button"
             class="category-btn"
             :class="{ 'category-btn--active': selectedCategory === 'experiments' }"
-            @click="$emit('update:selectedCategory', 'experiments')"
+            @click="handleCategoryClick('experiments')"
           >
             Experiments
           </button>
@@ -110,7 +110,7 @@
               <router-link 
                 to="/" 
                 class="mobile-nav-link"
-                @click="closeMobileMenu"
+                @click="handleMobileBackToProjects"
               >
                 ← Back to Projects
               </router-link>
@@ -233,6 +233,7 @@ const emit = defineEmits<{
   'toggle-theme': []
   'toggle-performance': []
   'toggle-about': []
+  'close-about': []
   'category-change': [category: string]
   'view-mode-change': [mode: 'grid' | 'list']
   'update:selectedCategory': [category: string]
@@ -275,7 +276,23 @@ const handleMobileViewModeToggle = () => {
 
 const handleMobileCategory = (category: string) => {
   emit('update:selectedCategory', category)
+  emit('close-about')
   closeMobileMenu()
+}
+
+const handleCategoryClick = (category: string) => {
+  emit('update:selectedCategory', category)
+  emit('close-about')
+}
+
+const handleMobileBackToProjects = () => {
+  emit('close-about')
+  closeMobileMenu()
+}
+
+const handleLogoClick = () => {
+  emit('update:selectedCategory', '')
+  emit('close-about')
 }
 </script>
 

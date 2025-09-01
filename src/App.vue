@@ -16,6 +16,7 @@
       @toggle-theme="toggleTheme"
       @toggle-performance="togglePerformance"
       @toggle-about="toggleAboutModal"
+      @close-about="closeAboutModal"
       @update:selected-category="updateSelectedCategory"
       @update:view-mode="updateViewMode"
       @clear-sticky-title="clearStickyTitle"
