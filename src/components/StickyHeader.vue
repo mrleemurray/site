@@ -73,6 +73,16 @@
 
         <!-- Controls -->
         <div class="nav-controls">
+          <!-- Desktop About Button -->
+          <button 
+            class="control-btn about-btn" 
+            @click="$emit('toggle-about')"
+            aria-label="Open about modal"
+            type="button"
+          >
+            About
+          </button>
+          
           <button 
             class="control-btn" 
             @click="$emit('toggle-theme')"
@@ -571,7 +581,8 @@ const handleLogoClick = () => {
   @media (max-width: 767px) {
     .nav-link,
     .control-btn,
-    .view-toggle {
+    .view-toggle,
+    .about-btn {
       display: none;
     }
   }
@@ -601,6 +612,18 @@ const handleLogoClick = () => {
   &:focus {
     outline: 2px solid var(--color-primary-500);
     outline-offset: 2px;
+  }
+}
+
+.about-btn {
+  width: auto;
+  padding: 0 var(--space-2);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  font-family: inherit;
+  
+  @media (max-width: 767px) {
+    display: none;
   }
 }
 
