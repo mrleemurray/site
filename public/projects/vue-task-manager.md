@@ -6,7 +6,7 @@ description: A full-featured productivity application demonstrating modern Vue.j
 category: web
 tags: [Vue.js, TypeScript, Pinia, SCSS, PWA]
 image: /images/vue-task-manager.svg
-featured: false
+featured: true
 liveUrl: https://vue-task-manager.netlify.app
 sourceUrl: https://github.com/username/vue-task-manager
 completedAt: 2024-01-15

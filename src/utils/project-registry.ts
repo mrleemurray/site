@@ -3,7 +3,8 @@ export const PROJECT_REGISTRY = [
   'vue-task-manager',
   'ecommerce-api',
   'react-native-fitness',
-  'portfolio-website'
+  'portfolio-website',
+  'ecommerce-api-123'
 ]
 
 // This file serves as a simple way to register new projects

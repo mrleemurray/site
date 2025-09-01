@@ -290,12 +290,14 @@ onUnmounted(() => {
   aspect-ratio: 16 / 9;
   overflow: hidden;
   max-height: 175px;
+  min-height: 175px;
   
   .project-card--list & {
     flex-shrink: 0;
     width: 300px;
     aspect-ratio: 16 / 10;
     max-height: 999px;
+    min-height: 0px;
     
     @media (max-width: 767px) {
       width: 100%;
