@@ -7,9 +7,20 @@
     <div class="timeline-container">
       <!-- Timeline line -->
       <div class="timeline-line" aria-hidden="true">
+        <!-- Solid timeline line up to last marker -->
+        <div 
+          class="timeline-base" 
+          :style="{ width: `${lastMarkerPosition}%` }"
+        ></div>
+        <!-- Progress indicator -->
         <div 
           class="timeline-progress" 
           :style="{ width: `${progressWidth}%` }"
+        ></div>
+        <!-- Future dashed line -->
+        <div 
+          class="timeline-future" 
+          :style="{ left: `${lastMarkerPosition}%` }"
         ></div>
       </div>
       
@@ -158,6 +169,11 @@ const progressWidth = computed(() => {
   return timelineData.value[activeItem.value]?.position || 0
 })
 
+const lastMarkerPosition = computed(() => {
+  if (timelineData.value.length === 0) return 0
+  return timelineData.value[timelineData.value.length - 1]?.position || 0
+})
+
 // Methods
 const setActiveItem = (index: number) => {
   activeItem.value = index
@@ -261,13 +277,20 @@ defineExpose({
   left: var(--space-8);
   right: var(--space-8);
   height: 3px;
-  background: var(--color-border);
   transform: translateY(-50%);
   
   @media (max-width: 768px) {
     left: var(--space-4);
     right: var(--space-4);
   }
+}
+
+.timeline-base {
+  height: 100%;
+  background: var(--color-border);
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .timeline-progress {
@@ -292,6 +315,15 @@ defineExpose({
     border-radius: 50%;
     transform: translateY(-50%);
   }
+}
+
+.timeline-future {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  border-top: 3px dashed var(--color-border);
+  opacity: 0.6;
 }
 
 .timeline-markers {
