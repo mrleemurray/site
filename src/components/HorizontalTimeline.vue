@@ -267,7 +267,8 @@ defineExpose({
   margin-bottom: var(--space-4);
   
   @media (max-width: 768px) {
-    padding: var(--space-12) var(--space-4) var(--space-8);
+    // padding: var(--space-12) var(--space-4) var(--space-8);
+    padding: var(--space-8) var(--space-2) var(--space-6);
   }
 }
 
@@ -403,6 +404,10 @@ defineExpose({
       font-weight: var(--font-weight-semibold);
       color: var(--color-primary-600);
       margin-bottom: 2px;
+      
+      @media (max-width: 768px) {
+        display: none;
+      }
     }
     
     .timeline-role {
@@ -410,6 +415,10 @@ defineExpose({
       font-size: var(--font-size-xs);
       color: var(--color-text-secondary);
       font-weight: var(--font-weight-medium);
+      
+      @media (max-width: 768px) {
+        display: none;
+      }
     }
   }
 
@@ -606,11 +615,12 @@ defineExpose({
 // Responsive design
 @media (max-width: 640px) {
   .horizontal-timeline {
-    padding: var(--space-4) 0;
+    padding: 0;
   }
   
   .timeline-container {
     padding: var(--space-8) var(--space-2) var(--space-6);
+    margin-bottom: 0;
   }
   
   .timeline-line {
