@@ -664,13 +664,7 @@ onUnmounted(() => {
 /* Battery Saver Mode - Themed Monochrome & Printed Effect */
 [data-performance="power-saver"] {
   .project-image img {
-    filter: 
-      grayscale(100%) 
-      contrast(5) 
-      brightness(1.2)
-      hue-rotate(10deg) 
-      saturate(1)
-      opacity(0.85);
+    filter: var(--filter-battery-saver);
   }
   
   .project-container {
@@ -683,13 +677,7 @@ onUnmounted(() => {
   }
   
   .markdown-content :deep(img) {
-    filter: 
-      grayscale(100%) 
-      contrast(5) 
-      brightness(1.2)
-      hue-rotate(10deg) 
-      saturate(1)
-      opacity(0.85);
+    filter: var(--filter-battery-saver);
   }
 }
 </style>

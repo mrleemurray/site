@@ -460,7 +460,7 @@ const handleDesktopBackClick = () => {
     border-color: var(--color-border);
   }
 
-  &--active {
+  &--active, &:focus {
     border-color: var(--color-primary-600);
   }
 }
@@ -616,6 +616,7 @@ const handleDesktopBackClick = () => {
   border: none;
   color: var(--color-text-secondary);
   cursor: pointer;
+  z-index: 10;
   
   &:hover, &:focus {
     color: var(--color-primary-600);

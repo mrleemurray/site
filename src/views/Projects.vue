@@ -486,13 +486,7 @@ onUnmounted(() => {
 [data-performance="power-saver"] {
   .project-image img {
     /* Convert to grayscale first, then apply site color theme */
-    filter: 
-      grayscale(100%) 
-      contrast(5) 
-      brightness(1.2)
-      hue-rotate(10deg) 
-      saturate(1)
-      opacity(0.85);
+    filter: var(--filter-battery-saver);
   }
   
   .project-card {
