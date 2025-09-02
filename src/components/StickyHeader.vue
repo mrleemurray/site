@@ -102,6 +102,7 @@
             </button>
 
             <button
+              v-if="!isProjectPage"
               type="button"
               class="control-btn view-mode-btn"
               @click="$emit('update:viewMode', viewMode === 'grid' ? 'list' : 'grid')"
