@@ -347,7 +347,7 @@ onUnmounted(() => {
 
 .project-meta {
   position: sticky;
-  top: calc(var(--space-16) - 6px);
+  top: calc(3rem + var(--space-2));
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -356,6 +356,10 @@ onUnmounted(() => {
   border-bottom: 1px solid var(--color-border);
   background: var(--color-background);
   z-index: 10;
+
+  @media (max-width: 1280px) {
+    top: 3rem;
+  }
 
   @media (max-width: 768px) {
     position: static;
@@ -548,6 +552,10 @@ onUnmounted(() => {
   border-bottom: 1px solid var(--color-border);
 
   padding: var(--space-5);
+
+  @media (max-width: 1280px) {
+    top: 3rem;
+  }
 
   @media (max-width: 768px) {
     display: none;

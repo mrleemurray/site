@@ -2,6 +2,7 @@
   <teleport to="body">
     <div 
       v-if="isOpen"
+      ref="modalOverlayRef"
       class="modal-overlay" 
       @click="handleOverlayClick"
       role="dialog"
@@ -32,7 +33,7 @@
           </button>
         </header> -->
 
-        <div class="modal-content">
+        <div ref="modalContentRef" class="modal-content">
           <!-- Personal Introduction -->
           <section class="intro-section">
             <div class="intro-grid">
@@ -197,6 +198,8 @@ const emit = defineEmits<{
 }>()
 
 const modalContainer = ref<HTMLElement>()
+const modalContentRef = ref<HTMLElement>()
+const modalOverlayRef = ref<HTMLElement>()
 
 const handleOverlayClick = (event: Event) => {
   if (event.target === event.currentTarget) {
@@ -258,6 +261,21 @@ watch(() => props.isOpen, (isOpen) => {
   if (isOpen) {
     document.body.style.overflow = 'hidden'
     nextTick(() => {
+      // Reset scroll position to top with multiple approaches
+      setTimeout(() => {
+        // Reset modal content scroll (desktop)
+        if (modalContentRef.value) {
+          modalContentRef.value.scrollTop = 0
+          modalContentRef.value.scrollTo({ top: 0, behavior: 'instant' })
+        }
+        
+        // Reset modal overlay scroll (mobile)
+        if (modalOverlayRef.value) {
+          modalOverlayRef.value.scrollTop = 0
+          modalOverlayRef.value.scrollTo({ top: 0, behavior: 'instant' })
+        }
+      }, 50)
+      
       const firstButton = modalContainer.value?.querySelector('button') as HTMLElement
       firstButton?.focus()
     })
