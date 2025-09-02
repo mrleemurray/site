@@ -465,8 +465,7 @@ onUnmounted(() => {
   :deep(img) {
     max-width: 100%;
     height: auto;
-    margin: var(--space-6) 0;
-    box-shadow: var(--shadow-md);
+    margin: var(--space-4) 0;
   }
   
   :deep(a) {
@@ -518,10 +517,10 @@ onUnmounted(() => {
   border-left: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
 
-  padding: var(--space-6);
+  padding: var(--space-5);
 
   @media (max-width: 768px) {
-    border-left: none;
+    display: none;
   }
   
   h3 {
