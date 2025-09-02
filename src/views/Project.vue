@@ -310,7 +310,6 @@ onUnmounted(() => {
 
 .project-container {
   padding: 0;
-  margin-left: var(--space-2);
   border: 1px solid var(--color-border);
 
   @media (max-width: 768px) {

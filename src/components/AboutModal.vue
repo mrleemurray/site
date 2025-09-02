@@ -338,7 +338,7 @@ watch(() => props.isOpen, (isOpen) => {
   width: 100%;
   max-width: 1280px;
   max-height: calc(100vh - 3rem - var(--space-2) - var(--space-2));
-  padding: 0 0 0 var(--space-2);
+  padding: 0;
   overflow: hidden;
   display: flex;
   flex-direction: column;

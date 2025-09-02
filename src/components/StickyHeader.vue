@@ -344,7 +344,7 @@ const handleDesktopBackClick = () => {
   max-width: 1280px;
   z-index: 1100;
   margin: 0 auto;
-  padding: var(--space-2) 0 0 var(--space-2);
+  padding: var(--space-2) 0 0 0;
 
   @media (max-width: 768px) {
     padding: 0px;
