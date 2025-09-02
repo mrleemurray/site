@@ -9,10 +9,9 @@
 
         <!-- Error State -->
         <div v-else-if="error" class="error-state">
-          <h1>Project Not Found</h1>
-          <p>{{ error }}</p>
+          <h2>Project Not Found</h2>
           <router-link to="/" class="btn btn-primary">
-            Back to Projects
+            ← Back to Projects
           </router-link>
         </div>
 
@@ -637,7 +636,10 @@ onUnmounted(() => {
 }
 
 .loading-state, .error-state {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
   padding: var(--space-16);
   color: var(--color-text-secondary);
   

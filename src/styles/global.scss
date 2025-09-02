@@ -256,7 +256,6 @@ a {
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-medium);
   line-height: 1;
-  border-radius: var(--radius-lg);
   border: none;
   cursor: pointer;
   text-decoration: none;
@@ -268,7 +267,7 @@ a {
   
   &.btn-primary {
     background: var(--color-primary-600);
-    color: white;
+    color: var(--color-background);
     
     &:hover:not(:disabled) {
       background: var(--color-primary-700);

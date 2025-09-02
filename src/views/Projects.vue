@@ -85,9 +85,7 @@
       <!-- Empty State -->
       <div v-else class="empty-state">
         <h3>No projects found</h3>
-        <p v-if="searchQuery || selectedCategory">
-          Try adjusting your search criteria or browse all projects.
-        </p>
+        <p v-if="searchQuery || selectedCategory"></p>
         <p v-else>
           Projects are coming soon! Check back later.
         </p>
@@ -471,6 +469,7 @@ onUnmounted(() => {
   text-align: center;
   padding: var(--space-16);
   color: var(--color-text-secondary);
+  border-bottom: 1px solid var(--color-border);
   
   h3 {
     margin-bottom: var(--space-4);
