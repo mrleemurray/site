@@ -429,7 +429,7 @@ onUnmounted(() => {
   line-height: var(--line-height-relaxed);
   
   :deep(h1), :deep(h2), :deep(h3), :deep(h4), :deep(h5), :deep(h6) {
-    margin-top: var(--space-8);
+    margin-top: var(--space-4);
     margin-bottom: var(--space-6);
     color: var(--color-text-primary);
     
@@ -685,23 +685,11 @@ onUnmounted(() => {
   .markdown-content :deep(img) {
     filter: 
       grayscale(100%) 
-      contrast(1.2) 
-      brightness(0.9)
-      sepia(100%) 
+      contrast(5) 
+      brightness(1.2)
       hue-rotate(10deg) 
-      saturate(0.8)
+      saturate(1)
       opacity(0.85);
-    
-    &:hover {
-      filter: 
-        grayscale(80%) 
-        contrast(1.1) 
-        brightness(0.95)
-        sepia(60%) 
-        hue-rotate(10deg) 
-        saturate(0.6)
-        opacity(0.9);
-    }
   }
 }
 </style>
