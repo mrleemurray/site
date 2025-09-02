@@ -281,7 +281,7 @@ watch(() => props.isOpen, (isOpen) => {
   justify-content: center;
   padding-top: calc(3rem + var(--space-2));
   
-  @media (max-width: 768px) {
+  @media (max-width: 1280px) {
     padding-top: 3rem;
   }
 }
@@ -344,8 +344,8 @@ watch(() => props.isOpen, (isOpen) => {
   flex-direction: column;
   // animation: slideUp var(--duration-normal) var(--ease-out);
   
-  @media (max-width: 768px) {
-    max-height: calc(100vh - 3rem - var(--space-2));
+  @media (max-width: 1280px) {
+    max-height: calc(100vh - 3rem);
     padding: 0;
   }
 }

@@ -304,7 +304,6 @@ onUnmounted(() => {
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
-  padding-bottom: var(--space-2);
   background: var(--color-background);
 }
 
