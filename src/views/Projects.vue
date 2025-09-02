@@ -54,7 +54,10 @@
                   {{ tag }}
                 </span>
               </div>
-              <div class="project-links">
+              <div 
+                v-if="project.liveUrl || project.sourceUrl"
+                class="project-links"
+              >
                 <a 
                   v-if="project.liveUrl" 
                   :href="project.liveUrl" 
