@@ -81,7 +81,12 @@
                   :key="heading.id"
                   :class="`toc-level-${heading.level}`"
                 >
-                  <a :href="`#${heading.id}`">{{ heading.text }}</a>
+                  <a 
+                    :href="`#${heading.id}`"
+                    @click.prevent="scrollToHeading(heading.id)"
+                  >
+                    {{ heading.text }}
+                  </a>
                 </li>
               </ul>
             </nav>
@@ -256,6 +261,33 @@ const cleanupStickyDetection = () => {
   // Remove sentinel elements
   const sentinels = document.querySelectorAll('[data-sticky-sentinel]')
   sentinels.forEach(sentinel => sentinel.remove())
+}
+
+const scrollToHeading = (headingId: string) => {
+  const element = document.getElementById(headingId)
+  if (!element) return
+  
+  // Calculate offset for sticky metadata section
+  // The sticky metadata has a top offset of calc(var(--space-16) - 6px) plus its own height
+  const stickyMetaHeight = projectMetaRef.value?.offsetHeight || 0
+  
+  // Get the CSS custom property value for --space-16 (typically 4rem = 64px)
+  const computedStyle = getComputedStyle(document.documentElement)
+  const space16 = parseFloat(computedStyle.getPropertyValue('--space-16')) * 16 || 64 // Convert rem to px
+  const stickyTopOffset = space16 - 6 // calc(var(--space-16) - 6px)
+  
+  const extraOffset = 20 // Additional spacing for comfort
+  const totalOffset = stickyTopOffset + stickyMetaHeight + extraOffset
+  
+  // Get the element's position
+  const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
+  const offsetPosition = elementPosition - totalOffset
+  
+  // Smooth scroll to the calculated position
+  window.scrollTo({
+    top: offsetPosition,
+    behavior: 'smooth'
+  })
 }
 
 onMounted(() => {
