@@ -3,7 +3,7 @@ id: portfolio-website
 title: Portfolio Website
 subtitle: Modern Vue 3 portfolio with markdown CMS
 description: A responsive portfolio website built with Vue 3, TypeScript, and a custom markdown-based content management system featuring YAML frontmatter and beautiful design.
-category: web
+category: experiments
 tags: [Vue.js, TypeScript, Vite, SCSS, Markdown, CMS]
 image: /images/portfolio-website.svg
 featured: true

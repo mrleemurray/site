@@ -3,7 +3,7 @@ id: ecommerce-api
 title: E-commerce API
 subtitle: Robust RESTful API for online stores
 description: Complete backend solution for e-commerce applications featuring user authentication, product management, order processing, and payment integration.
-category: api
+category: work
 tags: [Node.js, Express, PostgreSQL, JWT, Stripe]
 image: /images/ecommerce-api.svg
 featured: false

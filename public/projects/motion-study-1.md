@@ -3,7 +3,7 @@ id: motion-study-1
 title: Motion Study #1
 subtitle: Robust RESTful API for online stores
 description: Complete backend solution for e-commerce applications featuring user authentication, product management, order processing, and payment integration.
-category: api
+category: experiments
 tags: [Vue.js, P5.js]
 image: /images/motion-study-1/three.gif
 featured: false

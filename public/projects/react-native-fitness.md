@@ -3,7 +3,7 @@ id: react-native-fitness
 title: React Native Fitness App
 subtitle: Comprehensive fitness tracking mobile app
 description: Cross-platform fitness tracking application with workout logging, progress analytics, social features, and health integration.
-category: mobile
+category: experiments
 tags: [React Native, TypeScript, Expo, MongoDB, Firebase]
 image: /images/react-native-fitness.svg
 featured: false

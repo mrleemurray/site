@@ -3,7 +3,7 @@ id: vue-task-manager
 title: Vue Task Manager
 subtitle: Modern task management with Vue 3 and TypeScript
 description: A full-featured productivity application demonstrating modern Vue.js development practices with drag & drop, real-time collaboration, and offline support.
-category: web
+category: work
 tags: [Vue.js, TypeScript, Pinia, SCSS, PWA]
 image: /images/vue-task-manager.svg
 featured: true
