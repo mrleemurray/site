@@ -277,8 +277,13 @@ watch(() => props.isOpen, (isOpen) => {
   background: color-mix(in srgb, var(--color-background) 80%, transparent);
   z-index: 1000;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
+  padding-top: calc(3rem + var(--space-2));
+  
+  @media (max-width: 768px) {
+    padding-top: 3rem;
+  }
 }
 
 .decoration-layer {
@@ -332,12 +337,17 @@ watch(() => props.isOpen, (isOpen) => {
 .modal-container {
   width: 100%;
   max-width: 1280px;
-  max-height: 100vh;
-  margin: 0 auto;
+  max-height: calc(100vh - 3rem - var(--space-2) - var(--space-2));
+  padding: 0 0 0 var(--space-2);
   overflow: hidden;
   display: flex;
   flex-direction: column;
   // animation: slideUp var(--duration-normal) var(--ease-out);
+  
+  @media (max-width: 768px) {
+    max-height: calc(100vh - 3rem - var(--space-2));
+    padding: 0;
+  }
 }
 
 .modal-header {
@@ -381,13 +391,8 @@ watch(() => props.isOpen, (isOpen) => {
 .modal-content {
   flex: 1;
   overflow-y: auto;
-  max-width: 1280px;
-  margin: calc(3rem + var(--space-2)) 0 var(--space-2) var(--space-2);
   padding: var(--space-4);
-  padding-right: var(--space-2);
-  border-left: 1px solid var(--color-border);
-  border-right: 1px solid var(--color-border);
-  border-bottom: 1px solid var(--color-border);
+  border: 1px solid var(--color-border);
   background: var(--color-background);
   
   /* Prevent layout shift by always reserving scrollbar space */
@@ -398,8 +403,8 @@ watch(() => props.isOpen, (isOpen) => {
   scrollbar-color: rgba(var(--color-text-secondary-rgb, 107, 114, 126), 0.3) transparent;
 
   @media (max-width: 768px) {
-    margin: calc(3rem) 0 0 0;
-    padding-left: var(--space-2);
+    padding: var(--space-2);
+    margin: 0;
   }
   
   /* Fallback for browsers that don't support scrollbar-gutter */
