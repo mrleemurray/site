@@ -226,18 +226,28 @@ onUnmounted(() => {
     overflow: hidden;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    padding-right: 1px; /* Prevents border collapse issues */
+    position: relative;
+    background-color: var(--color-background);
     
     /* Diagonal stripe pattern background for empty spaces */
-    background-image: repeating-linear-gradient(
-      -45deg,
-      transparent,
-      transparent 12px,
-      color-mix(in srgb, var(--color-border) 50%, transparent) 12px,
-      color-mix(in srgb, var(--color-border) 50%, transparent) 13px
-    );
-    background-size: 18px 18px;
-    background-attachment: local;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 12px,
+        var(--color-border) 12px,
+        var(--color-border) 13px
+      );
+      background-size: 18px 18px;
+      pointer-events: none;
+      z-index: 0;
+    }
     
     /* Ensure at least 2 columns for featured items to work properly */
     @media (min-width: 768px) {
@@ -268,8 +278,8 @@ onUnmounted(() => {
   .projects-grid & {
     border-right: 1px solid var(--color-border);
     border-bottom: 1px solid var(--color-border);
-    margin-right: -1px;
-    margin-bottom: -1px;
+    position: relative;
+    z-index: 1;
   }
   
   /* Featured projects span two columns */
