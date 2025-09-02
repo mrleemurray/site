@@ -228,6 +228,17 @@ onUnmounted(() => {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     padding-right: 1px; /* Prevents border collapse issues */
     
+    /* Diagonal stripe pattern background for empty spaces */
+    background-image: repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 12px,
+      color-mix(in srgb, var(--color-border) 50%, transparent) 12px,
+      color-mix(in srgb, var(--color-border) 50%, transparent) 13px
+    );
+    background-size: 18px 18px;
+    background-attachment: local;
+    
     /* Ensure at least 2 columns for featured items to work properly */
     @media (min-width: 768px) {
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -251,6 +262,7 @@ onUnmounted(() => {
   height: 100%;
   display: flex;
   flex-direction: column;
+  background-color: var(--color-background);
   
   /* Grid view borders */
   .projects-grid & {
