@@ -431,6 +431,7 @@ onUnmounted(() => {
     color: var(--color-primary-600);
     text-decoration: none;
     font-weight: var(--font-weight-medium);
+    line-height: 28px;
     
     &:hover, &:focus {
       color: var(--color-primary-700);
