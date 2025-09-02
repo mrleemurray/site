@@ -157,10 +157,29 @@
   --duration-normal: 0ms;
   --duration-slow: 0ms;
   
+  // Desaturate primary colors for battery optimization
+  --color-primary-500: color-mix(in srgb, var(--color-tekhelet) 40%, var(--color-neutral-500));
+  --color-primary-600: color-mix(in srgb, var(--color-tekhelet) 40%, var(--color-neutral-500));
+  
+  // Desaturate accent color
+  --color-accent: color-mix(in srgb, var(--color-tekhelet) 40%, var(--color-neutral-500));
+  --color-accent-hover: color-mix(in srgb, var(--color-tekhelet) 30%, var(--color-neutral-500));
+  
   * {
     animation-duration: 0ms !important;
     transition-duration: 0ms !important;
   }
+}
+
+// Power Saver Mode - Dark Theme Overrides
+[data-theme="dark"][data-performance="power-saver"] {
+  // Desaturate primary colors for dark theme battery optimization
+  --color-primary-500: color-mix(in srgb, var(--color-selective-yellow) 40%, var(--color-neutral-500));
+  --color-primary-600: color-mix(in srgb, var(--color-selective-yellow) 40%, var(--color-neutral-500));
+  
+  // Desaturate accent color for dark theme
+  --color-accent: color-mix(in srgb, var(--color-selective-yellow) 40%, var(--color-neutral-500));
+  --color-accent-hover: color-mix(in srgb, var(--color-selective-yellow) 30%, var(--color-neutral-500));
 }
 
 // Reduced Motion Preference
