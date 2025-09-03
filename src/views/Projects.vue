@@ -304,6 +304,8 @@ onUnmounted(() => {
   overflow: hidden;
   max-height: 175px;
   min-height: 175px;
+  position: relative; /* iOS Safari fix */
+  width: 100%; /* Explicit width for iOS */
   
   .project-card--list & {
     flex-shrink: 0;
@@ -328,6 +330,13 @@ onUnmounted(() => {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block; /* Fix iOS browser width issues */
+    min-width: 100%; /* Ensure full width on iOS */
+    position: absolute; /* iOS Safari positioning fix */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
   }
 }
 
