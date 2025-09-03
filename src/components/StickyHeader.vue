@@ -589,9 +589,17 @@ const handleDesktopBackClick = () => {
 }
 
 .nav-controls {
+  height: 100%;
   display: flex;
   align-items: center;
   gap: var(--space-4);
+
+  padding-left: var(--space-2);
+  border-left: 1px solid var(--color-border);
+
+  @media (max-width: 1280px) {
+    border: none;
+  }
   
   @media (max-width: 767px) {
     .nav-link,
