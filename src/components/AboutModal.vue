@@ -9,30 +9,10 @@
       aria-modal="true"
       aria-labelledby="about-title"
     >
-      <!-- Decorative grid pattern like a cutting mat -->
-      <div class="grid-pattern">
-        <!-- Vertical lines -->
-        <div class="grid-line vertical" v-for="n in 50" :key="`v-${n}`" :style="{ left: `${n * 2}%` }"></div>
-        <!-- Horizontal lines -->
-        <div class="grid-line horizontal" v-for="n in 50" :key="`h-${n}`" :style="{ top: `${n * 2}%` }"></div>
-      </div>
+      <!-- Decorative diagonal stripe pattern -->
+      <div class="diagonal-pattern"></div>
       
       <div class="modal-container" ref="modalContainer">
-        <!-- <header class="modal-header">
-          <h1 id="about-title" class="modal-title">About Me</h1>
-          <button 
-            class="close-button"
-            @click="$emit('close')"
-            aria-label="Close about dialog"
-            type="button"
-          >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <line x1="18" y1="6" x2="6" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              <line x1="6" y1="6" x2="18" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-          </button>
-        </header> -->
-
         <div ref="modalContentRef" class="modal-content">
           <!-- Personal Introduction -->
           <section class="intro-section">
@@ -46,11 +26,6 @@
                   I thrive in teams where I can lead hardware & software prototyping efforts in an organisation, promoting the mindset of rapid design iterations, learning from mistakes & crafting experiences. With this ideal in mind, my passion is to harmonise design & engineering teams to allow for seamless collaborations, culminating in incredibly well crafted, compelling products & services.
                 </p>
               </div>
-              <!-- <div class="intro-image">
-                <div class="image-placeholder">
-                  Your Photo
-                </div>
-              </div> -->
             </div>
           </section>
 
@@ -314,7 +289,7 @@ watch(() => props.isOpen, (isOpen) => {
   z-index: -1;
 }
 
-.grid-pattern {
+.diagonal-pattern {
   position: absolute;
   top: 0;
   left: 0;
@@ -322,34 +297,9 @@ watch(() => props.isOpen, (isOpen) => {
   bottom: 0;
   pointer-events: none;
   z-index: -1;
-  opacity: 0.5;
-}
-
-.grid-line {
-  position: absolute;
-  background: color-mix(in srgb, var(--color-text-secondary) 8%, transparent);
-  
-  &.vertical {
-    width: 1px;
-    height: 100%;
-    top: 0;
-    
-    &:nth-child(5n) {
-      background: color-mix(in srgb, var(--color-text-secondary) 15%, transparent);
-      width: 2px;
-    }
-  }
-  
-  &.horizontal {
-    height: 1px;
-    width: 100%;
-    left: 0;
-    
-    &:nth-child(5n) {
-      background: color-mix(in srgb, var(--color-text-secondary) 15%, transparent);
-      height: 2px;
-    }
-  }
+  // opacity: 0.3;
+  background-image: var(--pattern-diagonal-stripes);
+  background-size: 18px 18px;
 }
 
 .modal-container {

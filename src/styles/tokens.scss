@@ -123,6 +123,15 @@
   --ease-in: cubic-bezier(0.4, 0, 1, 1);
   --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
 
+  // Pattern Tokens
+  --pattern-diagonal-stripes: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 12px,
+    var(--color-border) 12px,
+    var(--color-border) 13px
+  );
+
   // Breakpoint Tokens (for JavaScript usage)
   --breakpoint-sm: 640px;
   --breakpoint-md: 768px;

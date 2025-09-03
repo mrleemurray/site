@@ -238,13 +238,7 @@ onUnmounted(() => {
       left: 0;
       right: 0;
       bottom: 0;
-      background-image: repeating-linear-gradient(
-        -45deg,
-        transparent,
-        transparent 12px,
-        var(--color-border) 12px,
-        var(--color-border) 13px
-      );
+      background-image: var(--pattern-diagonal-stripes);
       background-size: 18px 18px;
       pointer-events: none;
       z-index: 0;
