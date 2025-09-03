@@ -8,9 +8,8 @@
     aria-hidden="true"
   >
     <g v-if="mode === 'full'">
-      <!-- Settings/Gear icon -->
-      <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
-      <path d="M12 1v6M12 17v6M20.49 9l-5.1 3M8.61 15l-5.1 3M20.49 15l-5.1-3M8.61 9l-5.1-3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <!-- Performance gauge icon -->
+      <path d="M23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12H23ZM24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12C0 5.37258 5.37258 0 12 0C18.6274 0 24 5.37258 24 12Z" fill="currentColor"/>
     </g>
     <g v-else>
       <!-- Battery/Power saver icon -->
