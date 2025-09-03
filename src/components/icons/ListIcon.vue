@@ -2,17 +2,12 @@
   <svg 
     width="20" 
     height="20" 
-    viewBox="0 0 24 24" 
+    viewBox="0 0 20 20" 
     fill="none" 
     xmlns="http://www.w3.org/2000/svg"
     class="icon"
   >
-    <line x1="8" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-    <line x1="8" y1="12" x2="21" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-    <line x1="8" y1="18" x2="21" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-    <line x1="3" y1="6" x2="3.01" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-    <line x1="3" y1="12" x2="3.01" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-    <line x1="3" y1="18" x2="3.01" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    <path d="M20 20H0V0H20V20ZM2 10V18H18V10H2Z" fill="currentColor"/>
   </svg>
 </template>
 

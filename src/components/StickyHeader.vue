@@ -572,6 +572,7 @@ const handleDesktopBackClick = () => {
   font-size: inherit;
   font-family: inherit;
   font-weight: var(--font-weight-medium);
+  line-height: 28px;
   text-decoration: none;
   
   &:hover, &:focus {

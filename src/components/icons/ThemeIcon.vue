@@ -1,20 +1,19 @@
 <template>
   <svg 
-    width="24" 
-    height="24" 
-    viewBox="0 0 24 24" 
+    width="20" 
+    height="20" 
+    viewBox="0 0 20 20" 
     fill="none" 
     xmlns="http://www.w3.org/2000/svg"
     aria-hidden="true"
   >
     <g v-if="theme === 'light'">
       <!-- Sun icon -->
-      <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/>
-      <path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <path d="M10 0C15.3502 -2.33867e-07 19.7195 4.20167 19.9873 9.48535C19.9959 9.6558 20 9.8274 20 10C20 10.1726 19.9959 10.3442 19.9873 10.5146C19.7195 15.7983 15.3502 20 10 20C9.8274 20 9.6558 19.9959 9.48535 19.9873C4.20167 19.7195 5.66746e-07 15.3502 0 10C-2.41411e-07 4.47715 4.47715 8.42747e-07 10 0ZM10 2C5.58172 2 2 5.58172 2 10C2 14.4183 5.58172 18 10 18L10 2Z" fill="currentColor"/>
     </g>
     <g v-else>
       <!-- Moon icon -->
-      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2" fill="currentColor"/>
+      <path d="M10 20C4.64975 20 0.280544 15.7983 0.0126961 10.5146C0.00405531 10.3442 8.59139e-07 10.1726 8.74228e-07 10C8.89317e-07 9.8274 0.00405537 9.6558 0.0126962 9.48535C0.280545 4.20167 4.64976 -1.10809e-06 10 -8.74228e-07C10.1726 -8.59139e-07 10.3442 0.00405362 10.5147 0.0126945C15.7983 0.280544 20 4.64975 20 10C20 15.5228 15.5228 20 10 20ZM10 18C14.4183 18 18 14.4183 18 10C18 5.58172 14.4183 2 10 2L10 18Z" fill="currentColor"/>
     </g>
   </svg>
 </template>
@@ -26,3 +25,4 @@ interface Props {
 
 defineProps<Props>()
 </script>
+
