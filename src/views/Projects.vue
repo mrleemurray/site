@@ -27,7 +27,7 @@
           class="project-card"
           :class="{ 
             'project-card--list': effectiveViewMode === 'list',
-            'project-card--featured': project.featured && effectiveViewMode === 'grid'
+            'project-card--featured': (project.featured && effectiveViewMode === 'grid') || (isMobile && effectiveViewMode === 'grid')
           }"
         >
           <div class="project-image">
@@ -280,10 +280,6 @@ onUnmounted(() => {
   /* Featured projects span two columns */
   &--featured {
     grid-column: span 2;
-    
-    @media (max-width: calc(var(--breakpoint-md) - 1px)) {
-      grid-column: span 1; /* Single column on mobile */
-    }
   }
   
   &--list {
