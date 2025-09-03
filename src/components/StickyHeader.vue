@@ -12,7 +12,7 @@
             aria-label="Go to projects" 
             @click="handleLogoClick"
           >
-            <span class="brand-text">LM</span>
+            <LogoIcon />
           </router-link>
           
           <!-- Desktop logo for project page -->
@@ -23,7 +23,7 @@
             aria-label="Go to projects" 
             @click="handleLogoClick"
           >
-            <span class="brand-text">LM</span>
+            <LogoIcon />
           </router-link>
           
           <!-- Mobile layout for project page -->
@@ -238,6 +238,7 @@ import PerformanceIcon from './icons/PerformanceIcon.vue'
 import MenuIcon from './icons/MenuIcon.vue'
 import GridIcon from './icons/GridIcon.vue'
 import ListIcon from './icons/ListIcon.vue'
+import LogoIcon from './icons/LogoIcon.vue'
 
 interface Props {
   theme: 'light' | 'dark'
@@ -467,6 +468,7 @@ const handleDesktopBackClick = () => {
 }
 
 .brand {
+  display: flex;
   font-size: var(--font-size-xl);
   font-weight: var(--font-weight-bold);
   color: var(--color-text-primary);
@@ -484,17 +486,17 @@ const handleDesktopBackClick = () => {
   }
 }
 
-.brand-text {
-  font-family: var(--font-family-heading);
-}
-
 .logo-nav {
   display: flex;
   align-items: center;
-  gap: var(--space-4);
+  padding-right: var(--space-4);
+  height: 100%;
+  border-right: 1px solid var(--color-border);
   
-  @media (max-width: 767px) {
-    gap: var(--space-2);
+
+
+  @media (max-width: 1280px) {
+    border: none;
   }
 }
 
