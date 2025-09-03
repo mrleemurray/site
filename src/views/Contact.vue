@@ -248,7 +248,7 @@ const handleSubmit = async () => {
   display: grid;
   gap: var(--space-12);
   
-  @media (min-width: 1024px) {
+  @media (min-width: var(--breakpoint-lg)) {
     grid-template-columns: 2fr 1fr;
     gap: var(--space-16);
   }

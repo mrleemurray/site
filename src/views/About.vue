@@ -199,7 +199,7 @@
   gap: var(--space-12);
   align-items: center;
   
-  @media (min-width: 768px) {
+  @media (min-width: var(--breakpoint-md)) {
     grid-template-columns: 2fr 1fr;
     gap: var(--space-16);
   }
@@ -251,7 +251,7 @@
   display: grid;
   gap: var(--space-8);
   
-  @media (min-width: 768px) {
+  @media (min-width: var(--breakpoint-md)) {
     grid-template-columns: 1fr 1fr;
   }
 }
@@ -314,7 +314,7 @@
     width: 2px;
     background: var(--color-border);
     
-    @media (min-width: 768px) {
+    @media (min-width: var(--breakpoint-md)) {
       left: 50%;
       transform: translateX(-50%);
     }
@@ -326,7 +326,7 @@
   margin-bottom: var(--space-12);
   margin-left: var(--space-16);
   
-  @media (min-width: 768px) {
+  @media (min-width: var(--breakpoint-md)) {
     width: 50%;
     margin-left: 0;
     
@@ -352,7 +352,7 @@
   border: 3px solid var(--color-surface);
   border-radius: 50%;
   
-  @media (min-width: 768px) {
+  @media (min-width: var(--breakpoint-md)) {
     left: -8px;
     
     .timeline-item:nth-child(even) & {

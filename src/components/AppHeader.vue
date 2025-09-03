@@ -158,7 +158,7 @@ const handleMobileAbout = () => {
   justify-content: space-between;
   height: 4rem;
   
-  @media (min-width: 768px) {
+  @media (min-width: var(--breakpoint-md)) {
     height: 5rem;
   }
 }
@@ -180,7 +180,7 @@ const handleMobileAbout = () => {
   list-style: none;
   gap: var(--space-8);
   
-  @media (min-width: 768px) {
+  @media (min-width: var(--breakpoint-md)) {
     display: flex;
   }
 }
@@ -261,7 +261,7 @@ const handleMobileAbout = () => {
   border-radius: var(--radius-lg);
   cursor: pointer;
   
-  @media (min-width: 768px) {
+  @media (min-width: var(--breakpoint-md)) {
     display: none;
   }
   
@@ -287,7 +287,7 @@ const handleMobileAbout = () => {
   opacity: 0;
   visibility: hidden;
   
-  @media (min-width: 768px) {
+  @media (min-width: var(--breakpoint-md)) {
     display: none;
   }
   

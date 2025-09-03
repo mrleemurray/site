@@ -245,7 +245,7 @@ onUnmounted(() => {
     }
     
     /* Ensure at least 2 columns for featured items to work properly */
-    @media (min-width: 768px) {
+    @media (min-width: var(--breakpoint-md)) {
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       /* Make sure we have at least 2 columns when screen is wide enough */
       min-width: 560px;
@@ -281,7 +281,7 @@ onUnmounted(() => {
   &--featured {
     grid-column: span 2;
     
-    @media (max-width: 767px) {
+    @media (max-width: calc(var(--breakpoint-md) - 1px)) {
       grid-column: span 1; /* Single column on mobile */
     }
   }
@@ -297,7 +297,7 @@ onUnmounted(() => {
       border-bottom: none;
     }
     
-    @media (max-width: 767px) {
+    @media (max-width: calc(var(--breakpoint-md) - 1px)) {
       flex-direction: column;
     }
   }
@@ -316,7 +316,7 @@ onUnmounted(() => {
     max-height: 999px;
     min-height: 0px;
     
-    @media (max-width: 767px) {
+    @media (max-width: calc(var(--breakpoint-md) - 1px)) {
       width: 100%;
       aspect-ratio: 16 / 9;
     }
@@ -387,7 +387,7 @@ onUnmounted(() => {
   
   
   .project-card--list & {
-    @media (min-width: 768px) {
+    @media (min-width: var(--breakpoint-md)) {
       flex-direction: row;
       justify-content: space-between;
       align-items: flex-end;
