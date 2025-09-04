@@ -29,61 +29,6 @@
             </div>
           </section>
 
-          <!-- Skills & Experience -->
-          <section class="skills-section">
-            <h2 class="section-title">Skills & Experience</h2>
-            
-            <div class="skills-grid">
-              <div class="skill-group">
-                <h3>Frontend Development</h3>
-                <div class="skill-list">
-                  <div class="skill-item">
-                    <span class="skill-name">Vue.js</span>
-                    <div class="skill-bar">
-                      <div class="skill-progress" style="width: 90%"></div>
-                    </div>
-                  </div>
-                  <div class="skill-item">
-                    <span class="skill-name">TypeScript</span>
-                    <div class="skill-bar">
-                      <div class="skill-progress" style="width: 85%"></div>
-                    </div>
-                  </div>
-                  <div class="skill-item">
-                    <span class="skill-name">CSS/SCSS</span>
-                    <div class="skill-bar">
-                      <div class="skill-progress" style="width: 95%"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="skill-group">
-                <h3>Backend Development</h3>
-                <div class="skill-list">
-                  <div class="skill-item">
-                    <span class="skill-name">Node.js</span>
-                    <div class="skill-bar">
-                      <div class="skill-progress" style="width: 80%"></div>
-                    </div>
-                  </div>
-                  <div class="skill-item">
-                    <span class="skill-name">Python</span>
-                    <div class="skill-bar">
-                      <div class="skill-progress" style="width: 75%"></div>
-                    </div>
-                  </div>
-                  <div class="skill-item">
-                    <span class="skill-name">Databases</span>
-                    <div class="skill-bar">
-                      <div class="skill-progress" style="width: 70%"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
           <!-- Timeline -->
           <section class="timeline-section">
             <h2 class="section-title">Professional Journey</h2>
@@ -96,7 +41,6 @@
             
             <div class="contact-methods">
               <div class="contact-method">
-                <!-- <div class="contact-icon">📧</div> -->
                 <div class="contact-details">
                   <h3>Email</h3>
                   <a href="mailto:mrleemurray@gmail.com">mrleemurray@gmail.com</a>
@@ -104,7 +48,6 @@
               </div>
 
               <div class="contact-method">
-                <!-- <div class="contact-icon">💼</div> -->
                 <div class="contact-details">
                   <h3>LinkedIn</h3>
                   <a href="#" target="_blank" rel="noopener noreferrer">
@@ -114,11 +57,19 @@
               </div>
 
               <div class="contact-method">
-                <!-- <div class="contact-icon">🐙</div> -->
                 <div class="contact-details">
                   <h3>GitHub</h3>
                   <a href="#" target="_blank" rel="noopener noreferrer">
                     View my code on GitHub
+                  </a>
+                </div>
+              </div>
+
+              <div class="contact-method">
+                <div class="contact-details">
+                  <h3>Figma</h3>
+                  <a href="#" target="_blank" rel="noopener noreferrer">
+                    View my plugins on Figma
                   </a>
                 </div>
               </div>

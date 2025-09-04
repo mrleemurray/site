@@ -168,8 +168,7 @@
   --color-accent-hover: color-mix(in srgb, var(--color-tekhelet) 30%, var(--color-neutral-500));
   
   // Battery saver image filters for monochrome effect
-  --filter-battery-saver: grayscale(100%) contrast(2) brightness(1) hue-rotate(0deg) saturate(1) opacity(1);
-  --filter-battery-saver-global: grayscale(100%) contrast(2) brightness(1) hue-rotate(0deg) saturate(1) opacity(1);
+  --filter-battery-saver: grayscale(100%) contrast(0.9) brightness(0.9) hue-rotate(0deg) saturate(1) opacity(1);
   
   * {
     animation-duration: 0ms !important;

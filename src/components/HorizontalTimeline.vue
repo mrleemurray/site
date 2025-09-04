@@ -70,6 +70,7 @@
           :disabled="activeItem === 0"
           @click="navigateToPrevious"
           aria-label="Previous timeline item"
+          title="Previous timeline item"
         >
           ← Prev
         </button>
@@ -81,6 +82,7 @@
           :disabled="activeItem === timelineData.length - 1"
           @click="navigateToNext"
           aria-label="Next timeline item"
+          title="Next timeline item"
         >
           Next →
         </button>
@@ -109,7 +111,7 @@
           </div>
           
           <div v-if="activeTimelineItem.technologies?.length" class="technologies">
-            <h4>Technologies Used</h4>
+            <h4>Skills developed</h4>
             <div class="tech-tags">
               <span 
                 v-for="tech in activeTimelineItem.technologies" 

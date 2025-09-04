@@ -87,6 +87,7 @@
             class="control-btn" 
             @click="$emit('toggle-theme')"
             :aria-label="`Switch to ${theme === 'light' ? 'dark' : 'light'} theme`"
+            :title="`Switch to ${theme === 'light' ? 'dark' : 'light'} theme`"
             type="button"
             >
               <ThemeIcon :theme="theme" />
@@ -95,7 +96,8 @@
             <button 
               class="control-btn" 
               @click="$emit('toggle-performance')"
-              :aria-label="`Switch to ${performanceMode === 'full' ? 'power saver' : 'full'} mode`"
+              :aria-label="`Switch to ${performanceMode === 'full' ? 'low saturation' : 'full saturation'} mode`"
+              :title="`Switch to ${performanceMode === 'full' ? 'low saturation' : 'full saturation'} mode`"
               type="button"
             >
               <PerformanceIcon :mode="performanceMode" />
@@ -107,6 +109,7 @@
               class="control-btn view-mode-btn"
               @click="$emit('update:viewMode', viewMode === 'grid' ? 'list' : 'grid')"
               :aria-label="`Switch to ${viewMode === 'grid' ? 'list' : 'grid'} view`"
+              :title="`Switch to ${viewMode === 'grid' ? 'list' : 'grid'} view`"
             >
               <GridIcon v-if="viewMode === 'grid'" />
               <ListIcon v-else />
