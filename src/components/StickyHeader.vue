@@ -17,7 +17,7 @@
           
           <!-- Desktop logo for project page -->
           <router-link 
-            v-if="isProjectPage"
+            v-if="isProjectPage && !isScrolled"
             to="/" 
             class="brand brand--desktop-only" 
             aria-label="Go to projects" 
@@ -464,13 +464,6 @@ const handleDesktopBackClick = () => {
   color: var(--color-text-primary);
   font-family: var(--font-family-serif);
   font-weight: var(--font-weight-medium);
-  opacity: 0;
-  transition: all var(--duration-normal) var(--ease-out);
-  
-  &:not(:empty) {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 .category-btn {
@@ -518,7 +511,7 @@ const handleDesktopBackClick = () => {
   font-weight: var(--font-weight-medium);
   font-size: var(--font-size-xl);
   opacity: 1;
-  padding-left: var(--space-4);
+  // padding-left: var(--space-4);
   // transform: translateX(-10px);
   // transition: all var(--duration-normal) var(--ease-out);
   // animation: slideInFade var(--duration-normal) var(--ease-out) forwards;
