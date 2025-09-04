@@ -1,15 +1,15 @@
 ---
-id: aether
-title: Aether
-subtitle: An air quality monitoring device and software, Open Source and powered by .NET 6.
-description: An air quality monitoring device and software, Open Source and powered by .NET 6.
+id: figma-ui-toolkit
+title: Figma Plugin UI Toolkit
+subtitle: A component library for building Figma plugin UI.
+description: A component library for building Figma plugin UI.
 category: work
-tags: [Hackathon, CAD, Hardware, Software, Open Source]
-image: /images/aether/cover.png
+tags: [Technology, Framework]
+image: /images/figma-ui-toolkit/cover.png
 featured: false
 liveUrl: https://example.com
 sourceUrl: https://github.com/username/project
-completedAt: 2022-09-04
+completedAt: 2025-09-04
 duration: 1 week
 ---
 
@@ -22,7 +22,6 @@ Brief introduction explaining what this project is and its main purpose.
 ## Overview
 
 Quick overview of what the project does and why it's valuable.
-<iframe width="913" height="514" src="https://www.youtube.com/embed/VsS-zbfhtrs" title="Aether Intro" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Key Features
 

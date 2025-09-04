@@ -1,15 +1,15 @@
 ---
-id: aether
-title: Aether
-subtitle: An air quality monitoring device and software, Open Source and powered by .NET 6.
-description: An air quality monitoring device and software, Open Source and powered by .NET 6.
+id: storymaker-storyteller
+title: Storymaker, Storyteller
+subtitle: A pair of devices that record stories to be relived by future generations.
+description: A pair of devices that record stories to be relived by future generations.
 category: work
-tags: [Hackathon, CAD, Hardware, Software, Open Source]
-image: /images/aether/cover.png
-featured: false
-liveUrl: https://example.com
-sourceUrl: https://github.com/username/project
-completedAt: 2022-09-04
+tags: [Research, Interaction Design]
+image: /images/storymaker-storyteller/cover.png
+featured: true
+liveUrl: 
+sourceUrl: 
+completedAt: 2025-09-04
 duration: 1 week
 ---
 
@@ -22,7 +22,6 @@ Brief introduction explaining what this project is and its main purpose.
 ## Overview
 
 Quick overview of what the project does and why it's valuable.
-<iframe width="913" height="514" src="https://www.youtube.com/embed/VsS-zbfhtrs" title="Aether Intro" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Key Features
 

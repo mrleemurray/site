@@ -1,5 +1,10 @@
 // Projects registry - add new project IDs here
 export const PROJECT_REGISTRY = [
+  'storymaker-storyteller',
+  'syntax-highlighter',
+  'theme-importer',
+  'figma-ui-toolkit',
+  'word-clouds',
   'aether',
   'real-time-clock',
   'color-mapper',
@@ -7,10 +12,6 @@ export const PROJECT_REGISTRY = [
   'vs-code-codicons',
   'figmail',
   'skew',
-  'vue-task-manager',
-  'ecommerce-api',
-  'react-native-fitness',
-  'portfolio-website',
   'motion-study-1'
 ]
 
