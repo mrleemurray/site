@@ -1,5 +1,8 @@
 // Projects registry - add new project IDs here
 export const PROJECT_REGISTRY = [
+  'color-mapper',
+  'sf-symbol-creator',
+  'vs-code-codicons',
   'figmail',
   'skew',
   'vue-task-manager',
