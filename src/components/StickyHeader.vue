@@ -24,13 +24,19 @@
             @click="handleLogoClick"
           >
             <LogoIcon />
-            <span 
+            <!-- <span 
               v-if="stickyProjectTitle && isScrolled"
               class="desktop-project-title"
             >
               {{ stickyProjectTitle }}
-            </span>
+            </span> -->
           </router-link>
+          <span 
+            v-if="stickyProjectTitle && isScrolled"
+            class="desktop-project-title"
+          >
+            {{ stickyProjectTitle }}
+          </span>
           
           <!-- Mobile layout for project page -->
           <div v-if="isProjectPage" class="mobile-project-nav">
@@ -512,7 +518,7 @@ const handleDesktopBackClick = () => {
   font-weight: var(--font-weight-medium);
   font-size: var(--font-size-xl);
   opacity: 1;
-  padding-left: var(--space-2);
+  padding-left: var(--space-4);
   // transform: translateX(-10px);
   // transition: all var(--duration-normal) var(--ease-out);
   // animation: slideInFade var(--duration-normal) var(--ease-out) forwards;

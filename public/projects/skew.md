@@ -13,6 +13,8 @@ completedAt: 2025-09-04
 duration: 1 week
 ---
 
+# Skew
+
 Brief introduction explaining what this project is and its main purpose.
 
 ![Project Screenshot](/images/simple-template.svg)
@@ -59,5 +61,3 @@ export const mainFunction = () => {
 
 - **Live Demo**: [project.com](https://example.com)
 - **Source Code**: [github.com/username/project](https://github.com/username/project)
-
----

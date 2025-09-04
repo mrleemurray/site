@@ -438,6 +438,7 @@ onUnmounted(() => {
   }
 
   :deep(h1) {
+    margin-top: var(--space-4);
     font-size: var(--font-size-3xl);
   }
   
@@ -602,6 +603,8 @@ onUnmounted(() => {
 }
 
 .related-card {
+  display: flex;
+  flex-direction: column;
   padding: var(--space-4);
 
   h3 {
@@ -621,6 +624,7 @@ onUnmounted(() => {
     color: var(--color-text-secondary);
     font-size: var(--font-size-sm);
     margin-bottom: var(--space-4);
+    flex-grow: 1;
   }
 }
 

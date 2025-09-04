@@ -13,6 +13,8 @@ completedAt: 2024-01-15
 duration: 1 week
 ---
 
+# Project Title
+
 Brief introduction explaining what this project is and its main purpose.
 
 ![Project Screenshot](/images/simple-template.svg)
