@@ -42,6 +42,7 @@
   --color-polynesian-blue: #004e98;
   --color-asparagus: #659157ff;
   --color-tekhelet: #473198ff;
+  --color-lapis-lazuli: #006494ff;
 
   // Semantic Color Tokens - Light Theme
   --color-background: var(--color-white);
@@ -53,13 +54,11 @@
   --color-border: color-mix(in srgb, var(--color-night) 20%, transparent);
   --color-border-hover: rgba(99, 132, 117, 0.3);
   
-  // Update primary to use bittersweet accent
-  --color-primary-500: var(--color-tekhelet);
-  --color-primary-600: var(--color-tekhelet);
+  --color-primary-500: var(--color-lapis-lazuli);
+  --color-primary-600: var(--color-lapis-lazuli);
   
-  // Accent color using hookers-green
-  --color-accent: var(--color-tekhelet);
-  --color-accent-hover: rgba(99, 132, 117, 0.8);
+  --color-accent: var(--color-lapis-lazuli);
+  // --color-accent-hover: rgba(99, 132, 117, 0.8);
 
   // Typography Tokens
   --font-family-sans: 'Lato', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
