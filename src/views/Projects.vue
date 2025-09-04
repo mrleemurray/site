@@ -358,6 +358,10 @@ onUnmounted(() => {
     .project-description {
       margin-bottom: 0;
     }
+
+    .project-meta {
+      gap: 0px;
+    }
   }
 }
 
@@ -399,7 +403,6 @@ onUnmounted(() => {
     }
 
     .project-links {
-      border-top: none;
       border-left: 1px solid var(--color-border);
       padding: var(--space-4);
       height: -webkit-fill-available;
