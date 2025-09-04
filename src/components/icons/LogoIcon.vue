@@ -21,6 +21,6 @@
   height: 100%;
   width: auto;
   max-height: 28px;
-  color: inherit;
+  color: var(--color-text-primary);
 }
 </style>
