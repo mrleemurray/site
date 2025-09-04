@@ -590,7 +590,6 @@ onUnmounted(() => {
 
 .related-projects {
   border-top: 1px solid var(--color-border);
-  // padding-top: var(--space-4);
   padding: var(--space-4);
   h2 {
     padding-left: var(--space-4);
@@ -605,7 +604,6 @@ onUnmounted(() => {
 .related-card {
   display: flex;
   flex-direction: column;
-  // margin: var(--space-4);
   padding: var(--space-4);
   border: 1px solid var(--color-border);
 
