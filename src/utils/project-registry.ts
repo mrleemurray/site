@@ -1,5 +1,7 @@
 // Projects registry - add new project IDs here
 export const PROJECT_REGISTRY = [
+  'aether',
+  'real-time-clock',
   'color-mapper',
   'sf-symbol-creator',
   'vs-code-codicons',
