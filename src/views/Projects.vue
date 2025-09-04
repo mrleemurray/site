@@ -433,7 +433,6 @@ onUnmounted(() => {
     line-height: 28px;
     
     &:hover, &:focus {
-      color: var(--color-primary-700);
       text-decoration: underline;
     }
   }

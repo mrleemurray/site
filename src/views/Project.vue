@@ -378,7 +378,6 @@ onUnmounted(() => {
   font-weight: var(--font-weight-medium);
   
   &:hover, &:focus {
-    color: var(--color-primary-700);
     text-decoration: underline;
   }
 }
@@ -504,10 +503,6 @@ onUnmounted(() => {
   
   :deep(a) {
     color: var(--color-primary-600);
-    
-    &:hover, &:focus {
-      color: var(--color-primary-700);
-    }
   }
   
   :deep(table) {

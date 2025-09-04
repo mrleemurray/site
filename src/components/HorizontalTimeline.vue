@@ -751,14 +751,7 @@ defineExpose({
 // Dark theme support
 [data-theme="dark"] {
   .tech-tag {
-    background: rgba(99, 132, 117, 0.2);
-    border-color: var(--color-border);
-    
-    &:hover {
-      background: rgba(254, 95, 85, 0.1);
-      border-color: var(--color-primary-600);
-      color: var(--color-primary-500);
-    }
+    border-color: color-mix(in srgb, var(--color-primary-600) 20%, transparent);
   }
   
   .marker-dot {
