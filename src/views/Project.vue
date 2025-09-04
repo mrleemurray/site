@@ -36,7 +36,7 @@
                   target="_blank" 
                   rel="noopener noreferrer"
                 >
-                  View Live Site
+                  {{ project.liveUrlLabel || 'View Live Site' }}
                 </a>
                 <a 
                   v-if="project.sourceUrl"
@@ -45,7 +45,7 @@
                   target="_blank" 
                   rel="noopener noreferrer"
                 >
-                  View Source
+                  {{ project.sourceUrlLabel || 'View Source' }}
                 </a>
               </div>
               

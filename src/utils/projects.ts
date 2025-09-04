@@ -10,6 +10,8 @@ export interface Project {
   featured: boolean
   liveUrl: string
   sourceUrl: string
+  liveUrlLabel: string
+  sourceUrlLabel: string
   completedAt: string
   duration: string
 }
@@ -95,6 +97,8 @@ export class FrontmatterParser {
     frontmatter.featured = frontmatter.featured || false
     frontmatter.liveUrl = frontmatter.liveUrl || ''
     frontmatter.sourceUrl = frontmatter.sourceUrl || ''
+    frontmatter.liveUrlLabel = frontmatter.liveUrlLabel || 'Live Demo'
+    frontmatter.sourceUrlLabel = frontmatter.sourceUrlLabel || 'Source Code'
     frontmatter.completedAt = frontmatter.completedAt || ''
     frontmatter.duration = frontmatter.duration || ''
 

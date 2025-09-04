@@ -9,6 +9,8 @@ image: /images/simple-template.svg
 featured: false
 liveUrl: https://example.com
 sourceUrl: https://github.com/username/project
+liveUrlLabel: Live Demo
+sourceUrlLabel: Source Code
 completedAt: 2024-01-15
 duration: 1 week
 ---

@@ -65,7 +65,7 @@
                   rel="noopener noreferrer"
                   class="project-link"
                 >
-                  Live Demo
+                  {{ project.liveUrlLabel || 'Live Demo' }}
                 </a>
                 <a 
                   v-if="project.sourceUrl" 
@@ -74,7 +74,7 @@
                   rel="noopener noreferrer"
                   class="project-link"
                 >
-                  Source Code
+                  {{ project.sourceUrlLabel || 'Source Code' }}
                 </a>
               </div>
             </div>

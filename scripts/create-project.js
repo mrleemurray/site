@@ -22,6 +22,8 @@ async function createProject() {
     const projectId = await question('Project ID (kebab-case, e.g., my-awesome-app): ');
     const projectTitle = await question('Project Title (e.g., My Awesome App): ');
     const projectSubtitle = await question('Project Subtitle: ');
+    const liveUrlLabel = await question('Live URL Label (default: "Live Demo"): ');
+    const sourceUrlLabel = await question('Source URL Label (default: "Source Code"): ');
     
     if (!projectId || !projectTitle || !projectSubtitle) {
       console.error('❌ Error: All fields are required');
@@ -60,12 +62,16 @@ async function createProject() {
     const templateTitlePattern = 'Simple Project Template';
     const templateSubtitlePattern = 'Quick template for simpler projects';
     const templateDescriptionPattern = 'A streamlined template for smaller projects or rapid prototyping documentation.';
+    const templateLiveUrlLabelPattern = 'Live Demo';
+    const templateSourceUrlLabelPattern = 'Source Code';
     
     content = content
       .replace(`id: ${templateIdPattern}`, `id: ${projectId}`)
       .replace(`title: ${templateTitlePattern}`, `title: ${projectTitle}`)
       .replace(`subtitle: ${templateSubtitlePattern}`, `subtitle: ${projectSubtitle}`)
       .replace(`description: ${templateDescriptionPattern}`, `description: ${projectSubtitle}`)
+      .replace(`liveUrlLabel: ${templateLiveUrlLabelPattern}`, `liveUrlLabel: ${liveUrlLabel || 'Live Demo'}`)
+      .replace(`sourceUrlLabel: ${templateSourceUrlLabelPattern}`, `sourceUrlLabel: ${sourceUrlLabel || 'Source Code'}`)
       .replace(`image: /images/${templateIdPattern}.svg`, `image: /images/${projectId}.svg`)
       .replace(/completedAt: 2024-01-15/, `completedAt: ${currentDate}`);
     

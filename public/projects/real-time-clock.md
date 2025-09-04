@@ -8,7 +8,8 @@ tags: [Figma, Plugin, Tools]
 image: /images/real-time-clock/cover.png
 featured: false
 liveUrl: https://example.com
-sourceUrl: https://github.com/username/project
+sourceUrl: 
+liveUrlLabel: View plugin in Figma
 completedAt: 2025-09-04
 duration: 1 week
 ---
