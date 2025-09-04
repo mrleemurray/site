@@ -309,7 +309,7 @@ onUnmounted(() => {
   
   .project-card--list & {
     flex-shrink: 0;
-    width: 300px;
+    width: 420px;
     aspect-ratio: 16 / 10;
     max-height: 999px;
     min-height: 0px;

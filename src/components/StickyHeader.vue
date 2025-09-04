@@ -123,7 +123,7 @@
               :aria-label="`Switch to ${viewMode === 'grid' ? 'list' : 'grid'} view`"
               :title="`Switch to ${viewMode === 'grid' ? 'list' : 'grid'} view`"
             >
-              <GridIcon v-if="viewMode === 'grid'" />
+              <GridIcon v-if="viewMode === 'list'" />
               <ListIcon v-else />
             </button>
             
@@ -226,7 +226,7 @@
               >
                 <span class="mobile-control-label">View Mode</span>
                 <div class="mobile-control-value">
-                  <GridIcon v-if="viewMode === 'grid'" />
+                  <GridIcon v-if="viewMode === 'list'" />
                   <ListIcon v-else />
                   <span>{{ viewMode === 'grid' ? 'Grid' : 'List' }}</span>
                 </div>
