@@ -24,6 +24,12 @@
             @click="handleLogoClick"
           >
             <LogoIcon />
+            <span 
+              v-if="stickyProjectTitle && isScrolled"
+              class="desktop-project-title"
+            >
+              {{ stickyProjectTitle }}
+            </span>
           </router-link>
           
           <!-- Mobile layout for project page -->
@@ -234,7 +240,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, watch } from 'vue'
+import { ref, computed, watch, onMounted, onUnmounted } from 'vue'
 import { useRoute } from 'vue-router'
 import ThemeIcon from './icons/ThemeIcon.vue'
 import PerformanceIcon from './icons/PerformanceIcon.vue'
@@ -281,6 +287,21 @@ watch(isProjectPage, (newIsProjectPage) => {
 })
 
 const mobileMenuOpen = ref(false)
+const isScrolled = ref(false)
+
+// Scroll detection for desktop project title
+const handleScroll = () => {
+  isScrolled.value = window.scrollY > 100
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll)
+  handleScroll() // Check initial scroll position
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll)
+})
 
 const toggleMobileMenu = () => {
   mobileMenuOpen.value = !mobileMenuOpen.value
@@ -472,6 +493,8 @@ const handleDesktopBackClick = () => {
 
 .brand {
   display: flex;
+  align-items: center;
+  gap: var(--space-2);
   font-size: var(--font-size-xl);
   font-weight: var(--font-weight-bold);
   color: var(--color-text-primary);
@@ -482,6 +505,29 @@ const handleDesktopBackClick = () => {
     text-decoration: none;
   }
 }
+
+.desktop-project-title {
+  color: var(--color-text-primary);
+  font-family: var(--font-family-serif);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-xl);
+  opacity: 1;
+  padding-left: var(--space-2);
+  // transform: translateX(-10px);
+  // transition: all var(--duration-normal) var(--ease-out);
+  // animation: slideInFade var(--duration-normal) var(--ease-out) forwards;
+  
+  @media (max-width: 767px) {
+    display: none;
+  }
+}
+
+// @keyframes slideInFade {
+//   to {
+//     opacity: 1;
+//     transform: translateX(0);
+//   }
+// }
 
 .brand--desktop-only {
   @media (max-width: 767px) {

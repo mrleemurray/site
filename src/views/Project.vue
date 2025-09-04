@@ -428,7 +428,7 @@ onUnmounted(() => {
   line-height: var(--line-height-relaxed);
   
   :deep(h1), :deep(h2), :deep(h3), :deep(h4), :deep(h5), :deep(h6) {
-    margin-top: var(--space-4);
+    margin-top: var(--space-8);
     margin-bottom: var(--space-6);
     color: var(--color-text-primary);
     
