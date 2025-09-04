@@ -98,7 +98,7 @@
         <div class="content-header">
           <h3 class="position-title">{{ activeTimelineItem.jobTitle }}</h3>
           <p class="company-name">{{ activeTimelineItem.company }}</p>
-          <p class="date-range">{{ activeTimelineItem.startDate }} - {{ activeTimelineItem.endDate }}</p>
+          <p class="date-range">{{ activeTimelineItem.startDate }} &mdash; {{ activeTimelineItem.endDate }}</p>
         </div>
         
         <div class="content-body">
@@ -691,18 +691,11 @@ defineExpose({
   .tech-tag {
     display: inline-block;
     padding: var(--space-1) var(--space-3);
-    background: var(--color-neutral-100);
-    color: var(--color-text-secondary);
+    color: var(--color-primary-600);
     font-size: var(--font-size-xs);
     font-weight: var(--font-weight-medium);
-    border-radius: var(--radius-full);
-    border: 1px solid var(--color-border);
-    
-    &:hover {
-      background: var(--color-primary-50);
-      border-color: var(--color-primary-200);
-      color: var(--color-primary-700);
-    }
+    border: 1px solid color-mix(in srgb, var(--color-primary-600) 20%, transparent);
+    cursor: default;
   }
 }
 

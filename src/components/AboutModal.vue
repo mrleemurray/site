@@ -69,7 +69,7 @@
                 <div class="contact-details">
                   <h3>Figma</h3>
                   <a href="#" target="_blank" rel="noopener noreferrer">
-                    View my plugins on Figma
+                    View my Figma profile
                   </a>
                 </div>
               </div>
@@ -369,6 +369,10 @@ watch(() => props.isOpen, (isOpen) => {
   &:last-child {
     margin-bottom: 0;
   }
+}
+
+.timeline-section {
+  margin-bottom: var(--space-8);
 }
 
 .section-title {
