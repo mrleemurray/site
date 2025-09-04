@@ -1,5 +1,6 @@
 // Projects registry - add new project IDs here
 export const PROJECT_REGISTRY = [
+  'skew',
   'vue-task-manager',
   'ecommerce-api',
   'react-native-fitness',
