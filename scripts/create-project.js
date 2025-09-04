@@ -59,11 +59,13 @@ async function createProject() {
     const templateIdPattern = 'simple-template';
     const templateTitlePattern = 'Simple Project Template';
     const templateSubtitlePattern = 'Quick template for simpler projects';
+    const templateDescriptionPattern = 'A streamlined template for smaller projects or rapid prototyping documentation.';
     
     content = content
       .replace(`id: ${templateIdPattern}`, `id: ${projectId}`)
       .replace(`title: ${templateTitlePattern}`, `title: ${projectTitle}`)
       .replace(`subtitle: ${templateSubtitlePattern}`, `subtitle: ${projectSubtitle}`)
+      .replace(`description: ${templateDescriptionPattern}`, `description: ${projectSubtitle}`)
       .replace(`image: /images/${templateIdPattern}.svg`, `image: /images/${projectId}.svg`)
       .replace(/completedAt: 2024-01-15/, `completedAt: ${currentDate}`);
     
