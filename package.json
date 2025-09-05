@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && node scripts/update-404.js",
     "preview": "vite preview",
     "type-check": "vue-tsc --noEmit",
     "create-project": "node scripts/create-project.js",

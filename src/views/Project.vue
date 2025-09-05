@@ -205,6 +205,10 @@ const loadProject = async () => {
     console.log('✅ Project frontmatter loaded:', project.value.title)
     console.log('📝 Raw content length:', parsed.content.length)
     console.log('📝 Content preview:', parsed.content.substring(0, 200))
+    
+    // Add detailed debugging for markdown processing
+    console.log('🔧 Starting enhanced markdown processing...')
+    console.log('🔧 Raw markdown sample:', parsed.content.substring(0, 500))
 
     // Emit the project title immediately for mobile header
     emit('sticky-title-change', project.value.title)

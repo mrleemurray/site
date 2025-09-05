@@ -125,8 +125,24 @@ export class MarkdownLoader {
     }
 
     try {
-      // Import the bundled markdown content
-      const { MARKDOWN_CONTENT } = await import('../data/markdown-content')
+      // Import the bundled markdown content with better error handling
+      let MARKDOWN_CONTENT: Record<string, string>
+      
+      try {
+        const markdownModule = await import('../data/markdown-content')
+        MARKDOWN_CONTENT = markdownModule.MARKDOWN_CONTENT
+      } catch (importError) {
+        console.warn('Failed to import markdown-content module:', importError)
+        // Fallback: try different import paths that might work with GitHub Pages routing
+        try {
+          const markdownModule = await import('@/data/markdown-content')
+          MARKDOWN_CONTENT = markdownModule.MARKDOWN_CONTENT
+        } catch (fallbackError) {
+          console.error('All markdown import attempts failed:', fallbackError)
+          throw new Error(`Failed to load markdown module for project: ${projectId}`)
+        }
+      }
+      
       const rawMarkdown = MARKDOWN_CONTENT[projectId]
       
       if (!rawMarkdown) {
@@ -152,8 +168,23 @@ export class MarkdownLoader {
     }
 
     try {
-      // Import the project registry
-      const { PROJECT_REGISTRY } = await import('./project-registry')
+      // Import the project registry with better error handling
+      let PROJECT_REGISTRY: string[]
+      
+      try {
+        const registryModule = await import('./project-registry')
+        PROJECT_REGISTRY = registryModule.PROJECT_REGISTRY
+      } catch (importError) {
+        console.warn('Failed to import project-registry module:', importError)
+        // Fallback: try different import paths
+        try {
+          const registryModule = await import('@/utils/project-registry')
+          PROJECT_REGISTRY = registryModule.PROJECT_REGISTRY
+        } catch (fallbackError) {
+          console.error('All project registry import attempts failed:', fallbackError)
+          throw new Error('Failed to load project registry')
+        }
+      }
 
       const projects: Project[] = []
       const categories: Map<string, number> = new Map()
