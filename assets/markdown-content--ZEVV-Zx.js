@@ -252,6 +252,217 @@ export const mainFunction = () => {
 - **Live Demo**: [project.com](https://example.com)
 - **Source Code**: [github.com/username/project](https://github.com/username/project)
 `,r=`---
+id: markdown-features-demo
+title: Enhanced Markdown Features Demo
+subtitle: Showcase of all available markdown capabilities
+description: A comprehensive demonstration of the enhanced markdown features including callouts, task lists, footnotes, and more
+category: experiment
+tags: [Markdown, Documentation, Demo]
+image: /images/markdown-demo.svg
+featured: false
+sourceUrl: https://github.com/mrleemurray/site
+completedAt: 2024-03-15
+duration: 1 day
+---
+
+# Enhanced Markdown Features Demo
+
+This document demonstrates all the enhanced markdown features available in your portfolio site.
+
+## Table of Contents
+
+[[toc]]
+
+## Basic Formatting
+
+You can use **bold text**, *italic text*, and ***bold italic text***. You can also ==highlight text== and ++insert new text++.
+
+Here's some \`inline code\` and regular text with an abbreviation: HTML
+
+*[HTML]: HyperText Markup Language
+
+## Callout Boxes
+
+::: info
+This is an info callout box. Use it for general information or tips.
+:::
+
+::: tip
+This is a tip callout. Perfect for helpful hints and best practices.
+:::
+
+::: warning
+This is a warning callout. Use it for important warnings or caveats.
+:::
+
+::: danger
+This is a danger callout. Use it for critical warnings or error messages.
+:::
+
+## Task Lists
+
+Here's a project todo list:
+
+- [x] Set up enhanced markdown parsing
+- [x] Add syntax highlighting
+- [x] Create callout boxes
+- [ ] Add diagram support
+- [ ] Implement custom components
+- [ ] Add search functionality
+
+## Code Examples
+
+### TypeScript Example
+
+\`\`\`typescript
+interface Project {
+  id: string
+  title: string
+  subtitle: string
+  description: string
+  category: 'web' | 'mobile' | 'api' | 'tools'
+  tags: string[]
+  featured?: boolean
+}
+
+const createProject = (data: Partial<Project>): Project => {
+  return {
+    id: '',
+    title: '',
+    subtitle: '',
+    description: '',
+    category: 'web',
+    tags: [],
+    ...data
+  }
+}
+\`\`\`
+
+### Python Example
+
+\`\`\`python
+def process_markdown(content: str) -> dict:
+    """Process markdown content and return HTML with metadata."""
+    
+    # Parse frontmatter
+    if content.startswith('---'):
+        parts = content.split('---', 2)
+        if len(parts) >= 3:
+            frontmatter = yaml.safe_load(parts[1])
+            markdown_content = parts[2].strip()
+        else:
+            frontmatter = {}
+            markdown_content = content
+    else:
+        frontmatter = {}
+        markdown_content = content
+    
+    # Convert to HTML
+    html = markdown.markdown(markdown_content, extensions=[
+        'markdown.extensions.codehilite',
+        'markdown.extensions.toc',
+        'markdown.extensions.tables'
+    ])
+    
+    return {
+        'frontmatter': frontmatter,
+        'html': html,
+        'raw': markdown_content
+    }
+\`\`\`
+
+### Shell Commands
+
+\`\`\`bash
+# Install dependencies
+npm install markdown-it prismjs
+
+# Add plugin packages
+npm install markdown-it-anchor markdown-it-footnote markdown-it-container
+
+# Run development server
+npm run dev
+\`\`\`
+
+## Tables
+
+| Feature | Status | Description |
+|---------|--------|-------------|
+| Basic Markdown | ✅ | Headers, lists, links, images |
+| Syntax Highlighting | ✅ | Code blocks with Prism.js |
+| Table of Contents | ✅ | Auto-generated from headings |
+| Callout Boxes | ✅ | Info, tip, warning, danger |
+| Task Lists | ✅ | Interactive checkboxes |
+| Footnotes | ✅ | Reference-style footnotes |
+| Emoji | ✅ | :rocket: :sparkles: :fire: |
+
+## Footnotes
+
+Here's a paragraph with a footnote[^1]. You can have multiple footnotes[^2] in your content.
+
+[^1]: This is the first footnote with more detailed information.
+[^2]: This is the second footnote explaining something else.
+
+## Emoji Support
+
+You can use emoji in several ways:
+
+- Unicode: 🚀 ✨ 📝 💻 🎯
+- Shortcodes: :rocket: :sparkles: :memo: :computer: :dart:
+
+## Mathematical Expressions
+
+While not included in this setup, you could easily add KaTeX or MathJax for mathematical expressions.
+
+## Images and Media
+
+![Example Image](/images/profile.png)
+
+## Links and References
+
+- [External Link](https://github.com/markdown-it/markdown-it)
+- [Internal Link](#basic-formatting)
+- [Email Link](mailto:example@email.com)
+
+## Advanced Features
+
+### Custom HTML
+
+Since HTML is enabled, you can include custom HTML elements:
+
+<details>
+<summary>Click to expand</summary>
+
+This content is hidden by default and can be expanded.
+
+\`\`\`javascript
+console.log('Hidden code example')
+\`\`\`
+
+</details>
+
+### Blockquotes
+
+> This is a blockquote. It can contain **formatted text** and other markdown elements.
+> 
+> Multiple paragraphs are supported.
+
+### Horizontal Rules
+
+---
+
+## Performance Considerations
+
+The enhanced markdown features are optimized for:
+
+- **Fast parsing**: Efficient markdown-it plugins
+- **Small bundle size**: Only needed Prism languages are loaded
+- **SEO friendly**: Semantic HTML output
+- **Accessibility**: Proper heading hierarchy and ARIA labels
+
+---
+
+*This demo showcases the full capabilities of the enhanced markdown system. Use these features to create rich, interactive documentation for your projects.*`,i=`---
 id: motion-study-1
 title: Motion Study #1
 subtitle: Robust RESTful API for online stores
@@ -672,7 +883,7 @@ export const metricsMiddleware = (req: Request, res: Response, next: NextFunctio
 
 ---
 
-*Built with Node.js, Express, PostgreSQL, and modern development practices.*`,i=`---
+*Built with Node.js, Express, PostgreSQL, and modern development practices.*`,a=`---
 id: real-time-clock
 title: Real Time Clock
 subtitle: Add live time & date information to any design, presentation, or prototype.
@@ -736,7 +947,7 @@ export const mainFunction = () => {
 
 - **Live Demo**: [project.com](https://example.com)
 - **Source Code**: [github.com/username/project](https://github.com/username/project)
-`,a=`---
+`,s=`---
 id: sf-symbol-creator
 title: SF Symbol Creator
 subtitle: Preview & export SF Symbols 3.0 for macOS & iOS.
@@ -799,7 +1010,7 @@ export const mainFunction = () => {
 
 - **Live Demo**: [project.com](https://example.com)
 - **Source Code**: [github.com/username/project](https://github.com/username/project)
-`,s=`---
+`,c=`---
 id: skew
 title: Skew
 subtitle: A Figma plugin to skew layers up to ±90° in each axis
@@ -862,7 +1073,7 @@ export const mainFunction = () => {
 
 - **Live Demo**: [project.com](https://example.com)
 - **Source Code**: [github.com/username/project](https://github.com/username/project)
-`,c=`---
+`,l=`---
 id: storymaker-storyteller
 title: Storymaker, Storyteller
 subtitle: A pair of devices that record stories to be relived by future generations.
@@ -925,7 +1136,7 @@ export const mainFunction = () => {
 
 - **Live Demo**: [project.com](https://example.com)
 - **Source Code**: [github.com/username/project](https://github.com/username/project)
-`,p=`---
+`,d=`---
 id: syntax-highlighter
 title: Syntax Highlighter
 subtitle: Apply syntax highlighting colors to code snippets.
@@ -988,7 +1199,129 @@ export const mainFunction = () => {
 
 - **Live Demo**: [project.com](https://example.com)
 - **Source Code**: [github.com/username/project](https://github.com/username/project)
-`,l=`---
+`,p=`---
+id: test-callouts
+title: Enhanced Markdown Test
+subtitle: Testing all advanced markdown features
+description: A comprehensive test for enhanced markdown functionality
+category: experiment
+tags: [Test, Markdown, Demo]
+featured: false
+completedAt: 2024-03-15
+duration: 5 minutes
+---
+
+# Enhanced Markdown Test
+
+This page tests all the enhanced markdown features.
+
+## Callout Boxes
+
+::: info
+This is an **info** callout box with *formatting* support!
+:::
+
+::: tip
+This is a **tip** callout with some helpful information.
+:::
+
+::: warning
+This is a **warning** callout. Be careful!
+:::
+
+::: danger
+This is a **danger** callout. Critical information here!
+:::
+
+## Task Lists
+
+Project checklist:
+
+- [x] Basic markdown parsing
+- [x] Callout containers
+- [x] Task list support
+- [ ] Footnote testing
+- [ ] Table of contents
+- [ ] Advanced typography
+
+## Code Blocks with Syntax Highlighting
+
+### JavaScript
+\`\`\`javascript
+function enhancedMarkdown() {
+  const features = ['callouts', 'task-lists', 'footnotes'];
+  console.log('Features:', features);
+  return features.length > 0;
+}
+\`\`\`
+
+### TypeScript
+\`\`\`typescript
+interface MarkdownFeature {
+  name: string;
+  enabled: boolean;
+  description?: string;
+}
+
+const features: MarkdownFeature[] = [
+  { name: 'callouts', enabled: true, description: 'Info, warning, tip boxes' },
+  { name: 'task-lists', enabled: true }
+];
+\`\`\`
+
+### Python
+\`\`\`python
+def test_enhanced_features():
+    """Test enhanced markdown functionality."""
+    features = {
+        'callouts': True,
+        'task_lists': True,
+        'syntax_highlighting': True
+    }
+    return all(features.values())
+\`\`\`
+
+## Enhanced Typography
+
+**Bold text** and *italic text* work great.
+
+==Highlighted text== should appear with a background color.
+
+++Inserted text++ should show as inserted content.
+
+## Footnotes
+
+Here's a sentence with a footnote[^1]. You can have multiple footnotes[^2] in your content.
+
+[^1]: This is the first footnote with detailed information.
+[^2]: This is the second footnote explaining something else.
+
+## Tables
+
+| Feature | Status | Notes |
+|---------|--------|-------|
+| Callouts | ✅ | Working great |
+| Task Lists | ✅ | Interactive |
+| Syntax Highlighting | ✅ | Multiple languages |
+| Footnotes | ✅ | Reference style |
+| Enhanced Typography | ✅ | Highlighting, etc. |
+
+## Links and Images
+
+- [External Link](https://github.com/markdown-it/markdown-it)
+- [Internal Link](#callout-boxes)
+
+![Test Image](/images/profile.png)
+
+## Blockquotes
+
+> This is a blockquote with **bold** and *italic* text.
+> 
+> It can span multiple paragraphs and include other markdown elements.
+
+---
+
+**All features tested!** The enhanced markdown system provides rich formatting capabilities for documentation.`,m=`---
 id: theme-importer
 title: Theme Importer
 subtitle: Generate Figma variables from popular VS Code themes.
@@ -1051,7 +1384,7 @@ export const mainFunction = () => {
 
 - **Live Demo**: [project.com](https://example.com)
 - **Source Code**: [github.com/username/project](https://github.com/username/project)
-`,m=`---
+`,u=`---
 id: vs-code-codicons
 title: VS Code Codicons
 subtitle: Browse & copy VS Code icons.
@@ -1114,7 +1447,7 @@ export const mainFunction = () => {
 
 - **Live Demo**: [project.com](https://example.com)
 - **Source Code**: [github.com/username/project](https://github.com/username/project)
-`,u=`---
+`,h=`---
 id: word-clouds
 title: Word Clouds
 subtitle: Generate editable word clouds from raw text.
@@ -1177,4 +1510,4 @@ export const mainFunction = () => {
 
 - **Live Demo**: [project.com](https://example.com)
 - **Source Code**: [github.com/username/project](https://github.com/username/project)
-`,d={aether:n,"color-mapper":e,"figma-ui-toolkit":t,figmail:o,"motion-study-1":r,"real-time-clock":i,"sf-symbol-creator":a,skew:s,"storymaker-storyteller":c,"syntax-highlighter":p,"theme-importer":l,"vs-code-codicons":m,"word-clouds":u};export{d as MARKDOWN_CONTENT};
+`,g={aether:n,"color-mapper":e,"figma-ui-toolkit":t,figmail:o,"markdown-features-demo":r,"motion-study-1":i,"real-time-clock":a,"sf-symbol-creator":s,skew:c,"storymaker-storyteller":l,"syntax-highlighter":d,"test-callouts":p,"theme-importer":m,"vs-code-codicons":u,"word-clouds":h};export{g as MARKDOWN_CONTENT};
