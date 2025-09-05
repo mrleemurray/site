@@ -1,6 +1,17 @@
 import MarkdownIt from 'markdown-it'
 import Prism from 'prismjs'
 
+// Import markdown-it plugins
+import markdownItAnchor from 'markdown-it-anchor'
+import markdownItToc from 'markdown-it-toc-done-right'
+import markdownItFootnote from 'markdown-it-footnote'
+import markdownItContainer from 'markdown-it-container'
+// import * as markdownItEmoji from 'markdown-it-emoji'
+import markdownItTaskLists from 'markdown-it-task-lists'
+import markdownItMark from 'markdown-it-mark'
+import markdownItIns from 'markdown-it-ins'
+import markdownItAbbr from 'markdown-it-abbr'
+
 // Import Prism languages you want to support
 import 'prismjs/components/prism-javascript'
 import 'prismjs/components/prism-typescript'
@@ -9,6 +20,10 @@ import 'prismjs/components/prism-scss'
 import 'prismjs/components/prism-json'
 import 'prismjs/components/prism-bash'
 import 'prismjs/components/prism-markdown'
+import 'prismjs/components/prism-python'
+import 'prismjs/components/prism-java'
+import 'prismjs/components/prism-sql'
+import 'prismjs/components/prism-yaml'
 
 // Configure markdown-it
 const md = new MarkdownIt({
@@ -18,8 +33,62 @@ const md = new MarkdownIt({
   breaks: true
 })
 
+// Add plugins
+md.use(markdownItAnchor, {
+  permalink: markdownItAnchor.permalink.headerLink()
+})
+md.use(markdownItToc, {
+  includeLevel: [1, 2, 3, 4],
+  containerClass: 'table-of-contents',
+  listType: 'ul'
+})
+md.use(markdownItFootnote)
+// md.use(markdownItEmoji) // Skip emoji for now due to type issues
+md.use(markdownItTaskLists, { enabled: true })
+md.use(markdownItMark) // ==highlighted text==
+md.use(markdownItIns) // ++inserted text++
+md.use(markdownItAbbr) // Abbreviations
+
+// Custom containers for callouts
+md.use(markdownItContainer, 'info', {
+  render: (tokens: any[], idx: number) => {
+    if (tokens[idx].nesting === 1) {
+      return '<div class="callout callout-info">\n'
+    } else {
+      return '</div>\n'
+    }
+  }
+})
+md.use(markdownItContainer, 'warning', {
+  render: (tokens: any[], idx: number) => {
+    if (tokens[idx].nesting === 1) {
+      return '<div class="callout callout-warning">\n'
+    } else {
+      return '</div>\n'
+    }
+  }
+})
+md.use(markdownItContainer, 'tip', {
+  render: (tokens: any[], idx: number) => {
+    if (tokens[idx].nesting === 1) {
+      return '<div class="callout callout-tip">\n'
+    } else {
+      return '</div>\n'
+    }
+  }
+})
+md.use(markdownItContainer, 'danger', {
+  render: (tokens: any[], idx: number) => {
+    if (tokens[idx].nesting === 1) {
+      return '<div class="callout callout-danger">\n'
+    } else {
+      return '</div>\n'
+    }
+  }
+})
+
 // Custom renderer for code blocks with syntax highlighting
-md.renderer.rules.fence = (tokens, idx, options, env, renderer) => {
+md.renderer.rules.fence = (tokens, idx) => {
   const token = tokens[idx]
   const info = token.info ? token.info.trim() : ''
   const langName = info.split(/\s+/g)[0]
@@ -42,11 +111,11 @@ md.renderer.rules.fence = (tokens, idx, options, env, renderer) => {
 }
 
 // Add target="_blank" and rel="noopener noreferrer" to external links
-const defaultRender = md.renderer.rules.link_open || function(tokens, idx, options, env, renderer) {
+const defaultRender = md.renderer.rules.link_open || function(tokens, idx, options, _env, renderer) {
   return renderer.renderToken(tokens, idx, options)
 }
 
-md.renderer.rules.link_open = function (tokens, idx, options, env, renderer) {
+md.renderer.rules.link_open = function (tokens, idx, options, _env, renderer) {
   const token = tokens[idx]
   const href = token.attrGet('href')
   
@@ -55,7 +124,7 @@ md.renderer.rules.link_open = function (tokens, idx, options, env, renderer) {
     token.attrSet('rel', 'noopener noreferrer')
   }
   
-  return defaultRender(tokens, idx, options, env, renderer)
+  return defaultRender(tokens, idx, options, _env, renderer)
 }
 
 // Table of Contents generator
@@ -91,7 +160,7 @@ export function processMarkdown(content: string): { html: string; toc: Array<{ t
   // Add IDs to headings for anchor linking
   const processedContent = content.replace(
     /^(#{1,6})\s+(.+)$/gm,
-    (match, hashes, title) => {
+    (_match, hashes, title) => {
       const anchor = title
         .toLowerCase()
         .replace(/[^\w\s-]/g, '')

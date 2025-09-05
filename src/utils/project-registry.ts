@@ -1,5 +1,6 @@
 // Projects registry - add new project IDs here
 export const PROJECT_REGISTRY = [
+  'test-callouts',
   'storymaker-storyteller',
   'syntax-highlighter',
   'theme-importer',
@@ -12,7 +13,8 @@ export const PROJECT_REGISTRY = [
   'vs-code-codicons',
   'figmail',
   'skew',
-  'motion-study-1'
+  'motion-study-1',
+  'markdown-features-demo'
 ]
 
 // This file serves as a simple way to register new projects
