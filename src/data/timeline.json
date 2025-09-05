@@ -5,9 +5,9 @@
     "jobTitle": "Senior UX Engineer",
     "startDate": "2025-01-01",
     "endDate": "Present",
-    "description": "Led the development of responsive web applications using Vue.js and TypeScript. Implemented accessibility best practices and improved performance by 40%.",
+    "description": "Developing the next generation of AI coding tools for VS Code.",
     "location": "Remote",
-    "technologies": ["Vue.js", "TypeScript", "SCSS", "Vite"]
+    "technologies": ["AI", "Product design", "Design tokens"]
   },
   {
     "id": "2",
@@ -15,9 +15,9 @@
     "jobTitle": "Senior Design Technologist, Foundations",
     "startDate": "2022-02-01",
     "endDate": "2025-02-01",
-    "description": "Led the development of responsive web applications using Vue.js and TypeScript. Implemented accessibility best practices and improved performance by 40%.",
+    "description": "As a core member of the Developer Division Design team, I focus on scaling the impact of designers through the creation of tools, interactive resources, & prototypes for use in developer products.",
     "location": "Remote",
-    "technologies": ["Vue.js", "TypeScript", "SCSS", "Vite"]
+    "technologies": ["Figma plugins", "Design systems", "Swift", "TypeScript", "Security"]
   },
   {
     "id": "3",
@@ -27,7 +27,7 @@
     "endDate": "2022-02-01",
     "description": "Led the development of responsive web applications using Vue.js and TypeScript. Implemented accessibility best practices and improved performance by 40%.",
     "location": "Remote",
-    "technologies": ["Vue.js", "TypeScript", "SCSS", "Vite"]
+    "technologies": ["Figma", "Vue.js", "P5.js", "C#", "Design Ops"]
   },
   {
     "id": "4",
@@ -35,9 +35,9 @@
     "jobTitle": "Hardware Lead",
     "startDate": "2016-10-01",
     "endDate": "2018-07-01",
-    "description": "Led the development of responsive web applications using Vue.js and TypeScript. Implemented accessibility best practices and improved performance by 40%.",
-    "location": "San Francisco, CA",
-    "technologies": ["Vue.js", "TypeScript", "SCSS", "Vite"]
+    "description": "I led the concepting, development, technical specification & delivery of 110 physical interactive experiences within the $50M, 60K sq. ft. SPYSCAPE NY museum, all within 18 months.",
+    "location": "London, UK / New York City",
+    "technologies": ["Interaction Design", "HCI", "Exhibition Design", "Project Management", "Prototyping"]
   },
   {
     "id": "5", 
@@ -47,7 +47,7 @@
     "endDate": "2016-10-31",
     "description": "Combining cutting edge technology with well-considered design thinking to produce concepts, products, tools & experiences for client & internal use. Responsibilities include technical feasibility studies as well as hardware & software prototyping/development.",
     "location": "London, UK",
-    "technologies": ["React", "JavaScript", "CSS3", "Node.js"]
+    "technologies": ["JavaScript", "CSS3", "HTML", "3D Printing", "Rapid Prototyping"]
   },
   {
     "id": "6",
@@ -57,7 +57,7 @@
     "endDate": "2015-06-30",
     "description": "At Microsoft my job was to bridge design & engineering teams, using multiple methods of prototyping, from high-end 3D printing techniques to mock up electronic circuits & application development that help define & make ideas come to life throughout the entire organisation.",
     "location": "London, UK",
-    "technologies": ["HTML5", "CSS3", "JavaScript", "WordPress"]
+    "technologies": ["PCB Design", "PCB Manufacturing", "Wireless Communication", "User Studies"]
   },
   {
     "id": "7",
