@@ -132,12 +132,23 @@
               v-if="!isProjectPage"
               type="button"
               class="control-btn view-mode-btn"
-              @click="$emit('update:viewMode', viewMode === 'grid' ? 'list' : 'grid')"
+              :disabled="aboutModalOpen"
+              @click="!aboutModalOpen && $emit('update:viewMode', viewMode === 'grid' ? 'list' : 'grid')"
               :aria-label="`Switch to ${viewMode === 'grid' ? 'list' : 'grid'} view`"
               :title="`Switch to ${viewMode === 'grid' ? 'list' : 'grid'} view`"
             >
               <GridIcon v-if="viewMode === 'list'" />
               <ListIcon v-else />
+            </button>
+            
+            <button 
+              v-if="aboutModalOpen"
+              class="mobile-close-btn" 
+              @click="$emit('close-about')"
+              aria-label="Close about modal"
+              type="button"
+            >
+              Close
             </button>
             
             <button 
@@ -714,6 +725,15 @@ const handleDesktopBackClick = () => {
     outline: 2px solid var(--color-primary-500);
     outline-offset: 2px;
   }
+  
+  &:disabled {
+    opacity: 0.5;
+    cursor: default;
+    
+    &:hover, &:focus {
+      color: var(--color-text-secondary);
+    }
+  }
 }
 
 .about-btn {
@@ -745,6 +765,35 @@ const handleDesktopBackClick = () => {
   &:focus {
     outline: 2px solid var(--color-primary-500);
     outline-offset: 2px;
+  }
+}
+
+.mobile-close-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  z-index: 10;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-l);
+  height: auto;
+  width: auto;
+  padding: 4px var(--space-1) 0;
+  
+  &:hover, &:focus {
+    color: var(--color-primary-600);
+  }
+  
+  &:focus {
+    outline: 2px solid var(--color-primary-500);
+    outline-offset: 2px;
+  }
+  
+  @media (min-width: 768px) {
+    display: none;
   }
 }
 
