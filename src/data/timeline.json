@@ -7,7 +7,7 @@
     "endDate": "Present",
     "description": "Developing the next generation of AI coding tools for VS Code.",
     "location": "Remote",
-    "technologies": ["AI", "Product design", "Design tokens"]
+    "technologies": ["AI", "Product Design", "Design Tokens"]
   },
   {
     "id": "2",
@@ -17,7 +17,7 @@
     "endDate": "2025-02-01",
     "description": "As a core member of the Developer Division Design team, I focus on scaling the impact of designers through the creation of tools, interactive resources, & prototypes for use in developer products.",
     "location": "Remote",
-    "technologies": ["Figma plugins", "Design systems", "Swift", "TypeScript", "Security"]
+    "technologies": ["Figma Plugins", "Design Systems", "Swift", "TypeScript", "Security"]
   },
   {
     "id": "3",
