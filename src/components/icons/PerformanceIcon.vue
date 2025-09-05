@@ -7,7 +7,7 @@
     xmlns="http://www.w3.org/2000/svg"
     aria-hidden="true"
   >
-    <g v-if="mode === 'full'">
+    <g v-if="mode !== 'full'">
       <!-- Performance gauge icon -->
       <path d="M10 20C4.47715 20 5.20257e-07 15.5228 8.74228e-07 10C1.35705e-06 4.47715 4.47715 -1.35705e-06 10 -8.74228e-07C15.5228 -3.91405e-07 20 4.47715 20 10C20 15.5228 15.5228 20 10 20ZM10 18C14.4183 18 18 14.4183 18 10L2 10C2 14.4183 5.58172 18 10 18Z" fill="currentColor"/>
     </g>
