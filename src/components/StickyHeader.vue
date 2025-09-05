@@ -542,6 +542,7 @@ const handleDesktopBackClick = () => {
   font-family: var(--font-family-serif);
   font-weight: var(--font-weight-medium);
   font-size: var(--font-size-xl);
+  cursor: default;
 }
 
 .desktop-project-title {

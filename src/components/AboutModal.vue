@@ -83,13 +83,8 @@
             
             <div class="interests-grid">
               <div class="interest-item">
-                <h3>Reading</h3>
-                <p>Passionate about learning new technologies and staying current with industry trends.</p>
-              </div>
-
-              <div class="interest-item">
-                <h3>Fitness</h3>
-                <p>Staying active helps me maintain focus and creativity in my development work.</p>
+                <h3>Making</h3>
+                <p>Passionate about learning through experimentation & hands-on projects.</p>
               </div>
 
               <div class="interest-item">
