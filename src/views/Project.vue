@@ -62,6 +62,7 @@
             <!-- Markdown content will be rendered here -->
             <div 
               v-if="markdownContent"
+              :key="`markdown-${props.slug}-${markdownContent.length}`"
               class="markdown-content"
               v-html="markdownContent"
             ></div>
@@ -126,7 +127,8 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted, onUnmounted, watch } from 'vue'
+import { ref, computed, watch, onMounted, onUnmounted, nextTick } from 'vue'
+import { useRouter, useRoute } from 'vue-router'
 import { MarkdownLoader, type Project } from '@/utils/projects'
 
 interface Props {
@@ -178,6 +180,8 @@ const getImageSrc = (imagePath: string): string => {
 }
 
 const loadProject = async () => {
+  console.log('🚀 loadProject called for slug:', props.slug)
+  
   isLoading.value = true
   error.value = null
   project.value = null  // Reset project data
@@ -188,20 +192,146 @@ const loadProject = async () => {
   emit('sticky-title-change', null)
 
   try {
+    console.log('📥 Loading projects data...')
     // Load all projects data first (for related projects)
     const data = await MarkdownLoader.loadProjectsData()
     allProjects.value = data.projects
+    console.log('✅ Projects data loaded:', data.projects.length)
 
+    console.log('📄 Loading project content for:', props.slug)
     // Load the specific project with its content
     const parsed = await MarkdownLoader.loadProjectContent(props.slug)
     project.value = parsed.frontmatter
+    console.log('✅ Project frontmatter loaded:', project.value.title)
+    console.log('📝 Raw content length:', parsed.content.length)
+    console.log('📝 Content preview:', parsed.content.substring(0, 200))
 
     // Emit the project title immediately for mobile header
     emit('sticky-title-change', project.value.title)
 
-    // Process the markdown content
-    markdownContent.value = MarkdownLoader.parseMarkdownToHTML(parsed.content)
-    tableOfContents.value = MarkdownLoader.extractTableOfContents(parsed.content)
+    // Get the correct base path for images
+    const basePath = window.location.hostname === 'mrleemurray.github.io' ? '/site' : ''
+    console.log('🔗 Base path:', basePath)
+
+    // Simple markdown processing that should always work
+    console.log('⚙️ Processing markdown with fallback approach...')
+    
+    // Process image paths first
+    let processedContent = parsed.content
+    if (basePath) {
+      processedContent = parsed.content.replace(
+        /!\[([^\]]*)\]\(([^)]+)\)/gim, 
+        (_, alt, src) => {
+          const imageSrc = src.startsWith('/') ? `${basePath}${src}` : 
+                          src.startsWith('http') ? src : 
+                          `${basePath}/${src}`
+          return `![${alt}](${imageSrc})`
+        }
+      )
+    }
+    
+    // Extract TOC manually first (before processing headers)
+    const tocMatches = parsed.content.matchAll(/^(#{1,6})\s+(.*)$/gm)
+    const toc = Array.from(tocMatches).map((match: RegExpMatchArray) => {
+      const level = match[1].length
+      const text = match[2].trim()
+      const id = text.toLowerCase()
+        .replace(/[^\w\s-]/g, '')
+        .replace(/\s+/g, '-')
+        .replace(/-+/g, '-')
+        .replace(/^-|-$/g, '')
+      return { level, text, id }
+    })
+    tableOfContents.value = toc
+    console.log('📚 TOC extracted:', tableOfContents.value.length, 'items')
+    if (tableOfContents.value.length > 0) {
+      console.log('📚 TOC items:', tableOfContents.value)
+    }
+    
+    // Manual markdown processing that will definitely work
+    let result = processedContent
+      // Headers - use the same ID generation as TOC
+      .replace(/^### (.*$)/gim, (_, title) => {
+        const id = title.trim().toLowerCase()
+          .replace(/[^\w\s-]/g, '')
+          .replace(/\s+/g, '-')
+          .replace(/-+/g, '-')
+          .replace(/^-|-$/g, '')
+        return `<h3 id="${id}">${title}</h3>`
+      })
+      .replace(/^## (.*$)/gim, (_, title) => {
+        const id = title.trim().toLowerCase()
+          .replace(/[^\w\s-]/g, '')
+          .replace(/\s+/g, '-')
+          .replace(/-+/g, '-')
+          .replace(/^-|-$/g, '')
+        return `<h2 id="${id}">${title}</h2>`
+      })
+      .replace(/^# (.*$)/gim, (_, title) => {
+        const id = title.trim().toLowerCase()
+          .replace(/[^\w\s-]/g, '')
+          .replace(/\s+/g, '-')
+          .replace(/-+/g, '-')
+          .replace(/^-|-$/g, '')
+        return `<h1 id="${id}">${title}</h1>`
+      })
+      // Bold and italic
+      .replace(/\*\*\*(.*?)\*\*\*/g, '<strong><em>$1</em></strong>')
+      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+      .replace(/\*(.*?)\*/g, '<em>$1</em>')
+      // Callouts
+      .replace(/::: info\n([\s\S]*?)\n:::/g, '<div class="callout callout-info"><p>$1</p></div>')
+      .replace(/::: tip\n([\s\S]*?)\n:::/g, '<div class="callout callout-tip"><p>$1</p></div>')
+      .replace(/::: warning\n([\s\S]*?)\n:::/g, '<div class="callout callout-warning"><p>$1</p></div>')
+      .replace(/::: danger\n([\s\S]*?)\n:::/g, '<div class="callout callout-danger"><p>$1</p></div>')
+      // Task lists
+      .replace(/^- \[ \] (.*)$/gm, '<li class="task-list-item"><input type="checkbox" disabled> $1</li>')
+      .replace(/^- \[x\] (.*)$/gm, '<li class="task-list-item"><input type="checkbox" checked disabled> $1</li>')
+      // Highlighted text
+      .replace(/==(.*?)==/g, '<mark>$1</mark>')
+      .replace(/\+\+(.*?)\+\+/g, '<ins>$1</ins>')
+      // Code blocks
+      .replace(/```(\w+)?\n([\s\S]*?)```/g, '<pre><code class="hljs language-$1">$2</code></pre>')
+      .replace(/`([^`]+)`/g, '<code>$1</code>')
+      // Links
+      .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>')
+      // Images
+      .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img alt="$1" src="$2" />')
+      // Lists
+      .replace(/^- (.*)$/gm, '<li>$1</li>')
+      // Wrap consecutive list items in ul tags
+      .replace(/(<li>.*<\/li>)(\n<li>.*<\/li>)*/g, (match) => {
+        return '<ul>' + match.replace(/\n/g, '') + '</ul>'
+      })
+      // Wrap task list items in ul tags
+      .replace(/(<li class="task-list-item">.*<\/li>)(\n<li class="task-list-item">.*<\/li>)*/g, (match) => {
+        return '<ul>' + match.replace(/\n/g, '') + '</ul>'
+      })
+      // Paragraphs
+      .split('\n\n')
+      .map(paragraph => {
+        const trimmed = paragraph.trim()
+        if (trimmed === '') return ''
+        if (trimmed.startsWith('<')) return trimmed // Already HTML
+        return `<p>${trimmed}</p>`
+      })
+      .filter(p => p !== '')
+      .join('\n')
+    
+    markdownContent.value = result
+    console.log('✅ Manual markdown processing complete, length:', markdownContent.value.length)
+    console.log('🎨 Final content preview:', markdownContent.value.substring(0, 300))
+
+    // Force re-render and reapply styles after markdown is processed
+    await nextTick()
+    
+    // Additional debugging
+    console.log('🔍 Final markdown content check:', {
+      hasCallouts: markdownContent.value.includes('callout-'),
+      hasTaskLists: markdownContent.value.includes('task-list-item'),
+      hasHTML: markdownContent.value.includes('<'),
+      isEmpty: markdownContent.value.trim() === ''
+    })
 
     // Set up sticky detection after content is loaded
     setTimeout(() => {
@@ -209,10 +339,11 @@ const loadProject = async () => {
     }, 100)
 
   } catch (err) {
+    console.error('❌ Error loading project:', err)
     error.value = err instanceof Error ? err.message : 'Failed to load project'
-    console.error('Error loading project:', err)
   } finally {
     isLoading.value = false
+    console.log('🏁 loadProject completed')
   }
 }
 
@@ -541,6 +672,65 @@ onUnmounted(() => {
     td {
       color: var(--color-text-secondary);
     }
+  }
+
+  // Enhanced markdown styles that might not be applied via v-html
+  :deep(.callout) {
+    padding: var(--space-4);
+    margin: var(--space-4) 0;
+    border-radius: var(--radius-md);
+    border-left: 4px solid;
+    
+    &.callout-info {
+      background-color: rgba(59, 130, 246, 0.1);
+      border-left-color: rgb(59, 130, 246);
+    }
+    
+    &.callout-tip {
+      background-color: rgba(34, 197, 94, 0.1);
+      border-left-color: rgb(34, 197, 94);
+    }
+    
+    &.callout-warning {
+      background-color: rgba(245, 158, 11, 0.1);
+      border-left-color: rgb(245, 158, 11);
+    }
+    
+    &.callout-danger {
+      background-color: rgba(239, 68, 68, 0.1);
+      border-left-color: rgb(239, 68, 68);
+    }
+    
+    p:first-child {
+      margin-top: 0;
+    }
+    
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  :deep(.task-list-item) {
+    list-style: none;
+    margin: var(--space-2) 0;
+    
+    .task-list-item-checkbox {
+      margin-right: var(--space-2);
+      margin-left: calc(-1 * var(--space-5));
+    }
+  }
+
+  :deep(mark) {
+    background-color: rgba(255, 235, 59, 0.3);
+    padding: 0.1em 0.2em;
+    border-radius: 2px;
+  }
+
+  :deep(ins) {
+    background-color: rgba(34, 197, 94, 0.2);
+    text-decoration: none;
+    padding: 0.1em 0.2em;
+    border-radius: 2px;
   }
 }
 

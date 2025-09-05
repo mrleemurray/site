@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .callout { padding: 16px; margin: 16px 0; border-radius: 8px; border-left: 4px solid; }
+        .callout-info { background-color: rgba(59, 130, 246, 0.1); border-left-color: rgb(59, 130, 246); }
+        .callout-tip { background-color: rgba(34, 197, 94, 0.1); border-left-color: rgb(34, 197, 94); }
+        .callout-warning { background-color: rgba(245, 158, 11, 0.1); border-left-color: rgb(245, 158, 11); }
+        .callout-danger { background-color: rgba(239, 68, 68, 0.1); border-left-color: rgb(239, 68, 68); }
+        .task-list-item { list-style: none; }
+        mark { background-color: rgba(255, 235, 59, 0.3); padding: 0.1em 0.2em; border-radius: 2px; }
+        ins { background-color: rgba(34, 197, 94, 0.2); text-decoration: none; padding: 0.1em 0.2em; border-radius: 2px; }
+    </style>
+</head>
+<body>
+    <h1>Markdown Processing Test</h1>
+    <div id="output"></div>
+    
+    <script type="module">
+        // Test markdown content
+        const testContent = `
+# Test Heading
+
+This is **bold** and *italic* text.
+
+::: info
+This is an info callout box.
+:::
+
+::: tip
+This is a tip callout.
+:::
+
+- [ ] Unchecked task
+- [x] Checked task
+
+==Highlighted text== and ++inserted text++.
+
+\`\`\`javascript
+console.log('Hello, world!');
+\`\`\`
+        `;
+        
+        console.log('🧪 Starting markdown test...');
+        console.log('Test content:', testContent);
+        
+        // Simple manual markdown processing to test
+        function processTestMarkdown(content) {
+            console.log('🔄 Processing markdown manually...');
+            
+            // Basic HTML conversion
+            let result = content
+                // Headers
+                .replace(/^# (.*$)/gim, '<h1>$1</h1>')
+                .replace(/^## (.*$)/gim, '<h2>$1</h2>')
+                .replace(/^### (.*$)/gim, '<h3>$1</h3>')
+                // Bold and italic
+                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                .replace(/\*(.*?)\*/g, '<em>$1</em>')
+                // Callouts
+                .replace(/::: info\n([\s\S]*?)\n:::/g, '<div class="callout callout-info">$1</div>')
+                .replace(/::: tip\n([\s\S]*?)\n:::/g, '<div class="callout callout-tip">$1</div>')
+                .replace(/::: warning\n([\s\S]*?)\n:::/g, '<div class="callout callout-warning">$1</div>')
+                .replace(/::: danger\n([\s\S]*?)\n:::/g, '<div class="callout callout-danger">$1</div>')
+                // Task lists
+                .replace(/- \[ \] (.*)/g, '<li class="task-list-item"><input type="checkbox" disabled> $1</li>')
+                .replace(/- \[x\] (.*)/g, '<li class="task-list-item"><input type="checkbox" checked disabled> $1</li>')
+                // Highlighted text
+                .replace(/==(.*?)==/g, '<mark>$1</mark>')
+                .replace(/\+\+(.*?)\+\+/g, '<ins>$1</ins>')
+                // Code blocks
+                .replace(/```(\w+)?\n([\s\S]*?)```/g, '<pre><code class="language-$1">$2</code></pre>')
+                // Paragraphs
+                .replace(/\n\n/g, '</p><p>')
+                .replace(/^(.*)$/gm, '<p>$1</p>')
+                // Clean up empty paragraphs
+                .replace(/<p><\/p>/g, '')
+                .replace(/<p>(<h[1-6]>.*<\/h[1-6]>)<\/p>/g, '$1')
+                .replace(/<p>(<div.*<\/div>)<\/p>/g, '$1')
+                .replace(/<p>(<li.*<\/li>)<\/p>/g, '<ul>$1</ul>');
+                
+            console.log('✅ Manual processing complete:', result.length, 'characters');
+            return result;
+        }
+        
+        try {
+            const result = processTestMarkdown(testContent);
+            console.log('✅ Processed result:', result);
+            
+            document.getElementById('output').innerHTML = result;
+        } catch (error) {
+            console.error('❌ Error processing markdown:', error);
+            document.getElementById('output').innerHTML = `<p style="color: red;">Error: ${error.message}</p>`;
+        }
+    </script>
+</body>
+</html>
