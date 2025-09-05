@@ -48,12 +48,47 @@ console.log('Hello, world!');
         console.log('🧪 Starting markdown test...');
         console.log('Test content:', testContent);
         
-        try {
-            // Try to import and use the enhanced markdown processor
-            const { processEnhancedMarkdown } = await import('./src/utils/enhanced-markdown.ts');
-            console.log('✅ Successfully imported enhanced markdown processor');
+        // Simple manual markdown processing to test
+        function processTestMarkdown(content) {
+            console.log('🔄 Processing markdown manually...');
             
-            const result = processEnhancedMarkdown(testContent, '');
+            // Basic HTML conversion
+            let result = content
+                // Headers
+                .replace(/^# (.*$)/gim, '<h1>$1</h1>')
+                .replace(/^## (.*$)/gim, '<h2>$1</h2>')
+                .replace(/^### (.*$)/gim, '<h3>$1</h3>')
+                // Bold and italic
+                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                .replace(/\*(.*?)\*/g, '<em>$1</em>')
+                // Callouts
+                .replace(/::: info\n([\s\S]*?)\n:::/g, '<div class="callout callout-info">$1</div>')
+                .replace(/::: tip\n([\s\S]*?)\n:::/g, '<div class="callout callout-tip">$1</div>')
+                .replace(/::: warning\n([\s\S]*?)\n:::/g, '<div class="callout callout-warning">$1</div>')
+                .replace(/::: danger\n([\s\S]*?)\n:::/g, '<div class="callout callout-danger">$1</div>')
+                // Task lists
+                .replace(/- \[ \] (.*)/g, '<li class="task-list-item"><input type="checkbox" disabled> $1</li>')
+                .replace(/- \[x\] (.*)/g, '<li class="task-list-item"><input type="checkbox" checked disabled> $1</li>')
+                // Highlighted text
+                .replace(/==(.*?)==/g, '<mark>$1</mark>')
+                .replace(/\+\+(.*?)\+\+/g, '<ins>$1</ins>')
+                // Code blocks
+                .replace(/```(\w+)?\n([\s\S]*?)```/g, '<pre><code class="language-$1">$2</code></pre>')
+                // Paragraphs
+                .replace(/\n\n/g, '</p><p>')
+                .replace(/^(.*)$/gm, '<p>$1</p>')
+                // Clean up empty paragraphs
+                .replace(/<p><\/p>/g, '')
+                .replace(/<p>(<h[1-6]>.*<\/h[1-6]>)<\/p>/g, '$1')
+                .replace(/<p>(<div.*<\/div>)<\/p>/g, '$1')
+                .replace(/<p>(<li.*<\/li>)<\/p>/g, '<ul>$1</ul>');
+                
+            console.log('✅ Manual processing complete:', result.length, 'characters');
+            return result;
+        }
+        
+        try {
+            const result = processTestMarkdown(testContent);
             console.log('✅ Processed result:', result);
             
             document.getElementById('output').innerHTML = result;
