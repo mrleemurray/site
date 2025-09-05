@@ -3,21 +3,52 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MRLEEMURRAY</title>
   
+  <!-- SEO Meta Tags -->
+  <title>MRLEEMURRAY</title>
+  <meta name="description" content="A modern portfolio website showcasing development projects, skills, and creative work. Built with Vue 3, TypeScript, and accessible design." />
+  <meta name="keywords" content="portfolio, web development, vue, typescript, frontend, backend, projects" />
+  <meta name="author" content="MRLEEMURRAY" />
+
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/site/favicon.svg" />
+  <!-- Apple Touch Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/site/apple-touch-icon.png" />
+  
+  <!-- Preconnect to external domains for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  
+  <!-- Theme Color - Responsive to light/dark mode -->
+  <meta name="theme-color" content="#fefeff" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#020202" media="(prefers-color-scheme: dark)" />
+  
+  <!-- PWA Meta -->
+  <!-- <link rel="manifest" href="/manifest.json" /> -->
   
   <!-- Prevent FOUC (Flash of Unstyled Content) -->
   <style>
-    html { scroll-behavior: smooth; }
+    /* Minimal critical CSS to prevent layout shift */
+    html {
+      scroll-behavior: smooth;
+    }
+    
     body {
       margin: 0;
-      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
       background-color: #fafafa;
       color: #171717;
     }
-    #app { min-height: 100vh; }
+    
+    [data-theme="dark"] body {
+      background-color: #171717;
+      color: #fafafa;
+    }
+    
+    #app {
+      min-height: 100vh;
+    }
+    
+    /* Loading state */
     .loading-spinner {
       position: fixed;
       top: 50%;
@@ -29,6 +60,7 @@
       border-radius: 50%;
       animation: spin 1s linear infinite;
     }
+    
     @keyframes spin {
       0% { transform: translate(-50%, -50%) rotate(0deg); }
       100% { transform: translate(-50%, -50%) rotate(360deg); }
@@ -37,22 +69,11 @@
   
   <!-- Single Page App for GitHub Pages -->
   <script>
-    // Handle GitHub Pages SPA routing
+    // Single Page Apps for GitHub Pages
+    // https://github.com/rafgraph/spa-github-pages
+    
     (function(l) {
-      var pathSegmentsToKeep = 1;
-      
-      // If we're not at the base URL, redirect with encoded path
-      if (l.pathname !== '/site/' && l.pathname !== '/site/index.html') {
-        l.replace(
-          l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-          '/site/' + 
-          '?/' +
-          l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
-          (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-          l.hash
-        );
-      } else if (l.search[1] === '/' ) {
-        // Decode the redirected URL
+      if (l.search[1] === '/' ) {
         var decoded = l.search.slice(1).split('&').map(function(s) { 
           return s.replace(/~and~/g, '&')
         }).join('?');
@@ -60,25 +81,27 @@
             l.pathname.slice(0, -1) + decoded + l.hash
         );
       }
-    }(window.location));
+    }(window.location))
   </script>
-  
-  <!-- Load app assets -->
+  <script type="module" crossorigin src="/site/assets/index-BlXgz1NQ.js"></script>
   <link rel="stylesheet" crossorigin href="/site/assets/index-BB_8swx0.css">
 </head>
 <body>
   <div id="app">
+    <!-- Loading spinner shown while app loads -->
     <div class="loading-spinner" aria-hidden="true"></div>
   </div>
   
-  <script type="module" crossorigin src="/site/assets/index-BlXgz1NQ.js"></script>
   
+  <!-- Non-essential scripts -->
   <script>
     // Remove loading spinner when app mounts
     window.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
         const spinner = document.querySelector('.loading-spinner');
-        if (spinner) spinner.remove();
+        if (spinner) {
+          spinner.remove();
+        }
       }, 100);
     });
   </script>
