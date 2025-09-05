@@ -1,6 +1,6 @@
-// Types for project data
 import { renderMarkdown } from './markdown'
 
+// Types for project data
 export interface Project {
   id: string
   title: string
@@ -201,8 +201,8 @@ export class MarkdownLoader {
   static parseMarkdownToHTML(markdown: string): string {
     // Get the correct base path for images
     const basePath = this.getBasePath()
-    
-    // Process images to handle path resolution before passing to markdown-it
+
+    // Process image paths to work with GitHub Pages before rendering
     const processedMarkdown = markdown.replace(
       /!\[([^\]]*)\]\(([^)]+)\)/gim, 
       (_, alt, src) => {
@@ -214,8 +214,8 @@ export class MarkdownLoader {
         return `![${alt}](${imageSrc})`
       }
     )
-    
-    // Use the enhanced markdown-it parser
+
+    // Use the enhanced markdown renderer with all plugins
     return renderMarkdown(processedMarkdown)
   }
 
