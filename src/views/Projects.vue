@@ -3,9 +3,9 @@
     <div class="container">
       <!-- Loading State -->
       <div v-if="isLoading" class="loading-state">
-        <div class="loading-spinner"></div>
         <p>Loading projects...</p>
       </div>
+
 
       <!-- Error State -->
       <div v-else-if="error" class="error-state">
@@ -30,9 +30,19 @@
             'project-card--featured': (project.featured && effectiveViewMode === 'grid') || (isMobile && effectiveViewMode === 'grid')
           }"
         >
-          <div class="project-image">
+          <div 
+            class="project-image"
+            :class="{ 'image-loaded': imageLoadedStates[project.id] }"
+          >
             <router-link :to="`/projects/${project.id}`">
-              <img :src="getImageSrc(project.image)" :alt="project.title" loading="lazy" />
+              <img 
+                :src="getImageSrc(project.image)" 
+                :alt="project.title" 
+                :class="{ loaded: imageLoadedStates[project.id] }"
+                loading="lazy" 
+                @load="onImageLoad(project.id)"
+                @error="onImageError(project.id)"
+              />
             </router-link>
           </div>
           <div class="project-content">
@@ -126,6 +136,7 @@ const categories = ref<ProjectCategory[]>([])
 const isLoading = ref(false)
 const error = ref<string | null>(null)
 const isMobile = ref(false)
+const imageLoadedStates = ref<Record<string, boolean>>({})
 
 // Check if mobile on mount and window resize
 const checkMobile = () => {
@@ -177,6 +188,15 @@ const clearFilters = () => {
   emit('update:selectedCategory', '')
 }
 
+// Image loading handlers
+const onImageLoad = (projectId: string) => {
+  imageLoadedStates.value[projectId] = true
+}
+
+const onImageError = (projectId: string) => {
+  imageLoadedStates.value[projectId] = true // Show content even if image fails
+}
+
 const loadProjects = async () => {
   isLoading.value = true
   error.value = null
@@ -185,6 +205,12 @@ const loadProjects = async () => {
     const data = await MarkdownLoader.loadProjectsData()
     projects.value = data.projects
     categories.value = data.categories
+    
+    // Initialize image loading states
+    imageLoadedStates.value = {}
+    data.projects.forEach(project => {
+      imageLoadedStates.value[project.id] = false
+    })
     
     // Emit categories to parent for use in StickyHeader
     emit('update-project-filters', { categories: data.categories })
@@ -320,6 +346,31 @@ onUnmounted(() => {
   min-height: 175px;
   position: relative; /* iOS Safari fix */
   width: 100%; /* Explicit width for iOS */
+  
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 12px,
+      var(--color-border) 12px,
+      var(--color-border) 13px
+    );
+    opacity: 1;
+    z-index: 0;
+  }
+  
+  img {
+    position: relative;
+    z-index: 1;
+    opacity: 0;
+    
+    &.loaded {
+      opacity: 1;
+    }
+  }
   
   .project-card--list & {
     flex-shrink: 0;
@@ -469,16 +520,6 @@ onUnmounted(() => {
   text-align: center;
   padding: var(--space-16);
   color: var(--color-text-secondary);
-}
-
-.loading-spinner {
-  width: 40px;
-  height: 40px;
-  border: 3px solid var(--color-neutral-200);
-  border-top: 3px solid var(--color-primary-600);
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-  margin: 0 auto var(--space-4);
 }
 
 .empty-state {
