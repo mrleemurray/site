@@ -771,12 +771,13 @@ const handleDesktopBackClick = () => {
 
 .mobile-menu {
   display: none;
-  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
   position: absolute;
   top: 100%;
   left: 0;
   right: 0;
-  padding-bottom: var(--sapce-2);
+  padding-top: var(--space-2);
+  padding-bottom: var(--space-4);
   background: var(--color-background);
   z-index: 501;
   
