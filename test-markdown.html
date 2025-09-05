@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .callout { padding: 16px; margin: 16px 0; border-radius: 8px; border-left: 4px solid; }
+        .callout-info { background-color: rgba(59, 130, 246, 0.1); border-left-color: rgb(59, 130, 246); }
+        .callout-tip { background-color: rgba(34, 197, 94, 0.1); border-left-color: rgb(34, 197, 94); }
+        .callout-warning { background-color: rgba(245, 158, 11, 0.1); border-left-color: rgb(245, 158, 11); }
+        .callout-danger { background-color: rgba(239, 68, 68, 0.1); border-left-color: rgb(239, 68, 68); }
+        .task-list-item { list-style: none; }
+        mark { background-color: rgba(255, 235, 59, 0.3); padding: 0.1em 0.2em; border-radius: 2px; }
+        ins { background-color: rgba(34, 197, 94, 0.2); text-decoration: none; padding: 0.1em 0.2em; border-radius: 2px; }
+    </style>
+</head>
+<body>
+    <h1>Markdown Processing Test</h1>
+    <div id="output"></div>
+    
+    <script type="module">
+        // Test markdown content
+        const testContent = `
+# Test Heading
+
+This is **bold** and *italic* text.
+
+::: info
+This is an info callout box.
+:::
+
+::: tip
+This is a tip callout.
+:::
+
+- [ ] Unchecked task
+- [x] Checked task
+
+==Highlighted text== and ++inserted text++.
+
+\`\`\`javascript
+console.log('Hello, world!');
+\`\`\`
+        `;
+        
+        console.log('🧪 Starting markdown test...');
+        console.log('Test content:', testContent);
+        
+        try {
+            // Try to import and use the enhanced markdown processor
+            const { processEnhancedMarkdown } = await import('./src/utils/enhanced-markdown.ts');
+            console.log('✅ Successfully imported enhanced markdown processor');
+            
+            const result = processEnhancedMarkdown(testContent, '');
+            console.log('✅ Processed result:', result);
+            
+            document.getElementById('output').innerHTML = result;
+        } catch (error) {
+            console.error('❌ Error processing markdown:', error);
+            document.getElementById('output').innerHTML = `<p style="color: red;">Error: ${error.message}</p>`;
+        }
+    </script>
+</body>
+</html>
