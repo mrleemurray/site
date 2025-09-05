@@ -87,6 +87,16 @@
   <link rel="stylesheet" crossorigin href="/site/assets/index-BB_8swx0.css">
 </head>
 <body>
+  <!-- 404.html DEBUGGING - This confirms 404.html is being loaded -->
+  <script>
+    console.log('🚨 404.html is being loaded!');
+    console.log('🔗 Current URL:', window.location.href);
+    console.log('🛣️ Current pathname:', window.location.pathname);
+    document.body.style.border = '5px solid red';
+    setTimeout(() => {
+      document.body.style.border = 'none';
+    }, 3000);
+  </script>
   <div id="app">
     <!-- Loading spinner shown while app loads -->
     <div class="loading-spinner" aria-hidden="true"></div>
