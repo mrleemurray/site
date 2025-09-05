@@ -210,10 +210,10 @@
                 @click="handleMobilePerformance"
                 type="button"
               >
-                <span class="mobile-control-label">Performance</span>
+                <span class="mobile-control-label">Contrast</span>
                 <div class="mobile-control-value">
                   <PerformanceIcon :mode="performanceMode" />
-                  <span>{{ performanceMode === 'full' ? 'Full' : 'Power Saver' }}</span>
+                  <span>{{ performanceMode === 'full' ? 'High' : 'Low' }}</span>
                 </div>
               </button>
             </li>
@@ -752,7 +752,7 @@ const handleDesktopBackClick = () => {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.5);
+  background: color-mix(in srgb, var(--color-background), transparent 30%);
   z-index: 1050;
   opacity: 0;
   animation: fadeIn var(--duration-fast) var(--ease-out) forwards;
@@ -830,6 +830,7 @@ const handleDesktopBackClick = () => {
 }
 
 .mobile-control-value {
+  width: 60px;
   display: flex;
   align-items: center;
   gap: var(--space-2);
@@ -857,7 +858,7 @@ const handleDesktopBackClick = () => {
   
   &--active {
     background: var(--color-primary-600);
-    color: var(--color-white);
+    color: var(--color-background);
     border-color: var(--color-primary-600);
   }
 }

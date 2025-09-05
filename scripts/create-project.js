@@ -36,8 +36,8 @@ async function createProject() {
       process.exit(1);
     }
     
-    const templateFile = 'public/projects/_simple-template.md';
-    const newFile = `public/projects/${projectId}.md`;
+    const templateFile = 'src/content/projects/_simple-template.md';
+    const newFile = `src/content/projects/${projectId}.md`;
     
     // Check if template exists
     if (!fs.existsSync(templateFile)) {
