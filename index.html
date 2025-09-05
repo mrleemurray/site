@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- SEO Meta Tags -->
+  <title>MRLEEMURRAY</title>
+  <meta name="description" content="A modern portfolio website showcasing development projects, skills, and creative work. Built with Vue 3, TypeScript, and accessible design." />
+  <meta name="keywords" content="portfolio, web development, vue, typescript, frontend, backend, projects" />
+  <meta name="author" content="MRLEEMURRAY" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/site/favicon.svg" />
+  <!-- Apple Touch Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  
+  <!-- Preconnect to external domains for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  
+  <!-- Theme Color - Responsive to light/dark mode -->
+  <meta name="theme-color" content="#fefeff" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#020202" media="(prefers-color-scheme: dark)" />
+  
+  <!-- PWA Meta -->
+  <!-- <link rel="manifest" href="/manifest.json" /> -->
+  
+  <!-- Prevent FOUC (Flash of Unstyled Content) -->
+  <style>
+    /* Minimal critical CSS to prevent layout shift */
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background-color: #fafafa;
+      color: #171717;
+    }
+    
+    [data-theme="dark"] body {
+      background-color: #171717;
+      color: #fafafa;
+    }
+    
+    #app {
+      min-height: 100vh;
+    }
+    
+    /* Loading state */
+    .loading-spinner {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 40px;
+      height: 40px;
+      border: 3px solid #e5e5e5;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin {
+      0% { transform: translate(-50%, -50%) rotate(0deg); }
+      100% { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+  </style>
+  <script type="module" crossorigin src="/site/assets/index-DLYZkHYt.js"></script>
+  <link rel="stylesheet" crossorigin href="/site/assets/index-JhgY36qV.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Loading spinner shown while app loads -->
+    <div class="loading-spinner" aria-hidden="true"></div>
+  </div>
+  
+  
+  <!-- Non-essential scripts -->
+  <script>
+    // Remove loading spinner when app mounts
+    window.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        const spinner = document.querySelector('.loading-spinner');
+        if (spinner) {
+          spinner.remove();
+        }
+      }, 100);
+    });
+  </script>
+</body>
+</html>
