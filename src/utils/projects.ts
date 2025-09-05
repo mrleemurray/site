@@ -1,5 +1,5 @@
 // Types for project data
-import { renderMarkdown, generateTOC } from './markdown'
+import { renderMarkdown } from './markdown'
 
 export interface Project {
   id: string
@@ -199,19 +199,44 @@ export class MarkdownLoader {
   }
 
   static parseMarkdownToHTML(markdown: string): string {
-    console.log('Using enhanced markdown parser')
-    console.log('Input markdown:', markdown.slice(0, 200) + '...')
-    const result = renderMarkdown(markdown)
-    console.log('Output HTML:', result.slice(0, 200) + '...')
-    return result
+    // Get the correct base path for images
+    const basePath = this.getBasePath()
+    
+    // Process images to handle path resolution before passing to markdown-it
+    const processedMarkdown = markdown.replace(
+      /!\[([^\]]*)\]\(([^)]+)\)/gim, 
+      (_, alt, src) => {
+        // If the path starts with /, it's absolute from public folder
+        // If it doesn't start with http/https or /, make it relative to public
+        const imageSrc = src.startsWith('/') ? `${basePath}${src}` : 
+                        src.startsWith('http') ? src : 
+                        `${basePath}/${src}`
+        return `![${alt}](${imageSrc})`
+      }
+    )
+    
+    // Use the enhanced markdown-it parser
+    return renderMarkdown(processedMarkdown)
   }
 
   static extractTableOfContents(markdown: string): Array<{ id: string; text: string; level: number }> {
-    return generateTOC(markdown).map(item => ({
-      id: item.anchor,
-      text: item.title,
-      level: item.level
-    }))
+    const headings: Array<{ id: string; text: string; level: number }> = []
+    const headerRegex = /^(#{1,6})\s+(.*)$/gm
+    let match
+
+    while ((match = headerRegex.exec(markdown)) !== null) {
+      const level = match[1].length
+      const text = match[2].trim()
+      const id = text.toLowerCase()
+        .replace(/[^\w\s-]/g, '')
+        .replace(/\s+/g, '-')
+        .replace(/-+/g, '-')
+        .trim()
+
+      headings.push({ id, text, level })
+    }
+
+    return headings
   }
 
   static clearCache(): void {
