@@ -27,7 +27,7 @@
     "endDate": "2022-02-01",
     "description": "Led the development of responsive web applications using Vue.js and TypeScript. Implemented accessibility best practices and improved performance by 40%.",
     "location": "Remote",
-    "technologies": ["Figma", "Vue.js", "P5.js", "C#", "Design Ops"]
+    "technologies": ["Figma", "Accessibility", "Vue.js", "P5.js", "C#", "Design Ops"]
   },
   {
     "id": "4",
