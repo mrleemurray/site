@@ -1,4 +1,6 @@
 // Types for project data
+import { renderMarkdown, generateTOC } from './markdown'
+
 export interface Project {
   id: string
   title: string
@@ -197,82 +199,19 @@ export class MarkdownLoader {
   }
 
   static parseMarkdownToHTML(markdown: string): string {
-    // Helper function to generate ID from text
-    const generateId = (text: string): string => {
-      return text.toLowerCase()
-        .replace(/[^\w\s-]/g, '')
-        .replace(/\s+/g, '-')
-        .replace(/-+/g, '-')
-        .trim()
-    }
-
-    // Get the correct base path for images
-    const basePath = this.getBasePath()
-
-    // Basic markdown parsing - in a real app, use a library like markdown-it
-    const result = markdown
-      // Headers with IDs
-      .replace(/^### (.*$)/gim, (_, text) => `<h3 id="${generateId(text)}">${text}</h3>`)
-      .replace(/^## (.*$)/gim, (_, text) => `<h2 id="${generateId(text)}">${text}</h2>`)
-      .replace(/^# (.*$)/gim, (_, text) => `<h1 id="${generateId(text)}">${text}</h1>`)
-      
-      // Bold and italic
-      .replace(/\*\*\*(.*)\*\*\*/gim, '<strong><em>$1</em></strong>')
-      .replace(/\*\*(.*)\*\*/gim, '<strong>$1</strong>')
-      .replace(/\*(.*)\*/gim, '<em>$1</em>')
-      
-      // Images - handle both absolute and relative paths (MUST come before links!)
-      .replace(/!\[([^\]]*)\]\(([^)]+)\)/gim, (_, alt, src) => {
-        // If the path starts with /, it's absolute from public folder
-        // If it doesn't start with http/https or /, make it relative to public
-        const imageSrc = src.startsWith('/') ? `${basePath}${src}` : 
-                        src.startsWith('http') ? src : 
-                        `${basePath}/${src}`
-        return `<img alt="${alt}" src="${imageSrc}" />`
-      })
-      
-      // Links
-      .replace(/\[([^\]]+)\]\(([^)]+)\)/gim, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>')
-      
-      // Code blocks
-      .replace(/```(\w+)?\n([\s\S]*?)```/gim, '<pre><code class="language-$1">$2</code></pre>')
-      .replace(/`([^`]+)`/gim, '<code>$1</code>')
-      
-      // Lists
-      .replace(/^\- (.*$)/gim, '<li>$1</li>')
-      .replace(/(<li>.*<\/li>)/gis, '<ul>$1</ul>')
-      
-      // Paragraphs
-      .replace(/\n\n/gim, '</p><p>')
-      .replace(/^(.*)$/gim, '<p>$1</p>')
-      
-      // Clean up
-      .replace(/<p><\/p>/gim, '')
-      .replace(/<p>(<h[1-6]>.*<\/h[1-6]>)<\/p>/gim, '$1')
-      .replace(/<p>(<pre>.*<\/pre>)<\/p>/gims, '$1')
-      .replace(/<p>(<ul>.*<\/ul>)<\/p>/gims, '$1')
-    
+    console.log('Using enhanced markdown parser')
+    console.log('Input markdown:', markdown.slice(0, 200) + '...')
+    const result = renderMarkdown(markdown)
+    console.log('Output HTML:', result.slice(0, 200) + '...')
     return result
   }
 
   static extractTableOfContents(markdown: string): Array<{ id: string; text: string; level: number }> {
-    const headings: Array<{ id: string; text: string; level: number }> = []
-    const headerRegex = /^(#{1,6})\s+(.*)$/gm
-    let match
-
-    while ((match = headerRegex.exec(markdown)) !== null) {
-      const level = match[1].length
-      const text = match[2].trim()
-      const id = text.toLowerCase()
-        .replace(/[^\w\s-]/g, '')
-        .replace(/\s+/g, '-')
-        .replace(/-+/g, '-')
-        .trim()
-
-      headings.push({ id, text, level })
-    }
-
-    return headings
+    return generateTOC(markdown).map(item => ({
+      id: item.anchor,
+      text: item.title,
+      level: item.level
+    }))
   }
 
   static clearCache(): void {
