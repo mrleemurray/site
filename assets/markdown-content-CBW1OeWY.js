@@ -800,132 +800,6 @@ export const mainFunction = () => {
 - **Live Demo**: [project.com](https://example.com)
 - **Source Code**: [github.com/username/project](https://github.com/username/project)
 `,s=`---
-id: skew
-title: Skew
-subtitle: A Figma plugin to skew layers up to ±90° in each axis
-description: A Figma plugin to skew layers up to ±90° in each axis.
-category: work
-tags: [Figma, Tools, Plugin]
-image: /images/skew/cover.png
-featured: true
-liveUrl: https://example.com
-sourceUrl:
-completedAt: 2025-09-04
-duration: 1 week
----
-
-# Skew
-
-Brief introduction explaining what this project is and its main purpose.
-
-![Project Screenshot](/images/simple-template.svg)
-
-## Overview
-
-Quick overview of what the project does and why it's valuable.
-
-### Key Features
-
-- **Feature 1**: Main functionality
-- **Feature 2**: Secondary functionality
-- **Feature 3**: Additional features
-
-## Context
-
-### Problem
-
-- Description of the problem being solved
-
-### Solution
-
-Key technical implementation details:
-
-\`\`\`typescript
-// Main code example
-export const mainFunction = () => {
-  // Implementation
-}
-\`\`\`
-
-## Impact
-
-- Metric 1: Achievement
-- Metric 2: Another result
-- User feedback summary
-  
-## Learnings
-
-**Learning 1**: Lessons learned from the project
-**Learning 2**: Additional insights gained
-
-## Links
-
-- **Live Demo**: [project.com](https://example.com)
-- **Source Code**: [github.com/username/project](https://github.com/username/project)
-`,c=`---
-id: storymaker-storyteller
-title: Storymaker, Storyteller
-subtitle: A pair of devices that record stories to be relived by future generations.
-description: A pair of devices that record stories to be relived by future generations.
-category: work
-tags: [Research, Interaction Design]
-image: /images/storymaker-storyteller/cover.png
-featured: true
-liveUrl: 
-sourceUrl: 
-completedAt: 2025-09-04
-duration: 1 week
----
-
-# Project Title
-
-Brief introduction explaining what this project is and its main purpose.
-
-![Project Screenshot](/images/simple-template.svg)
-
-## Overview
-
-Quick overview of what the project does and why it's valuable.
-
-### Key Features
-
-- **Feature 1**: Main functionality
-- **Feature 2**: Secondary functionality
-- **Feature 3**: Additional features
-
-## Context
-
-### Problem
-
-- Description of the problem being solved
-
-### Solution
-
-Key technical implementation details:
-
-\`\`\`typescript
-// Main code example
-export const mainFunction = () => {
-  // Implementation
-}
-\`\`\`
-
-## Impact
-
-- Metric 1: Achievement
-- Metric 2: Another result
-- User feedback summary
-  
-## Learnings
-
-**Learning 1**: Lessons learned from the project
-**Learning 2**: Additional insights gained
-
-## Links
-
-- **Live Demo**: [project.com](https://example.com)
-- **Source Code**: [github.com/username/project](https://github.com/username/project)
-`,p=`---
 id: syntax-highlighter
 title: Syntax Highlighter
 subtitle: Apply syntax highlighting colors to code snippets.
@@ -988,7 +862,7 @@ export const mainFunction = () => {
 
 - **Live Demo**: [project.com](https://example.com)
 - **Source Code**: [github.com/username/project](https://github.com/username/project)
-`,l=`---
+`,c=`---
 id: theme-importer
 title: Theme Importer
 subtitle: Generate Figma variables from popular VS Code themes.
@@ -1051,7 +925,7 @@ export const mainFunction = () => {
 
 - **Live Demo**: [project.com](https://example.com)
 - **Source Code**: [github.com/username/project](https://github.com/username/project)
-`,m=`---
+`,p=`---
 id: vs-code-codicons
 title: VS Code Codicons
 subtitle: Browse & copy VS Code icons.
@@ -1114,7 +988,7 @@ export const mainFunction = () => {
 
 - **Live Demo**: [project.com](https://example.com)
 - **Source Code**: [github.com/username/project](https://github.com/username/project)
-`,u=`---
+`,l=`---
 id: word-clouds
 title: Word Clouds
 subtitle: Generate editable word clouds from raw text.
@@ -1177,4 +1051,4 @@ export const mainFunction = () => {
 
 - **Live Demo**: [project.com](https://example.com)
 - **Source Code**: [github.com/username/project](https://github.com/username/project)
-`,d={aether:n,"color-mapper":e,"figma-ui-toolkit":t,figmail:o,"motion-study-1":r,"real-time-clock":i,"sf-symbol-creator":a,skew:s,"storymaker-storyteller":c,"syntax-highlighter":p,"theme-importer":l,"vs-code-codicons":m,"word-clouds":u};export{d as MARKDOWN_CONTENT};
+`,m={aether:n,"color-mapper":e,"figma-ui-toolkit":t,figmail:o,"motion-study-1":r,"real-time-clock":i,"sf-symbol-creator":a,"syntax-highlighter":s,"theme-importer":c,"vs-code-codicons":p,"word-clouds":l};export{m as MARKDOWN_CONTENT};
