@@ -18,8 +18,11 @@ const routes = [
   }
 ]
 
+// Determine base path for GitHub Pages vs local development
+const basePath = window.location.hostname === 'mrleemurray.github.io' ? '/site/' : '/'
+
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory(basePath),
   routes,
   scrollBehavior(to: any, _from: any, savedPosition: any) {
     if (savedPosition) {

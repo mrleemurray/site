@@ -32,7 +32,7 @@
         >
           <div class="project-image">
             <router-link :to="`/projects/${project.id}`">
-              <img :src="project.image" :alt="project.title" loading="lazy" />
+              <img :src="getImageSrc(project.image)" :alt="project.title" loading="lazy" />
             </router-link>
           </div>
           <div class="project-content">
@@ -130,6 +130,20 @@ const isMobile = ref(false)
 // Check if mobile on mount and window resize
 const checkMobile = () => {
   isMobile.value = window.innerWidth <= 767
+}
+
+// Fix image paths for GitHub Pages
+const getImageSrc = (imagePath: string): string => {
+  if (!imagePath) return ''
+  
+  // If it's already a full URL, return as is
+  if (imagePath.startsWith('http')) return imagePath
+  
+  // For GitHub Pages, add the base path
+  const basePath = window.location.hostname === 'mrleemurray.github.io' ? '/site' : ''
+  
+  // If the path starts with /, it's absolute from public folder
+  return imagePath.startsWith('/') ? `${basePath}${imagePath}` : `${basePath}/${imagePath}`
 }
 
 // Force grid mode on mobile, use props viewMode on desktop

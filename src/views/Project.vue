@@ -20,7 +20,7 @@
 
         <!-- Project Image -->
         <div class="project-image">
-          <img :src="project.image" :alt="project.title" />
+          <img :src="getImageSrc(project.image)" :alt="project.title" />
         </div>
 
         <!-- Project Content -->
@@ -119,7 +119,8 @@
             </article>
           </div>
         </section>
-      </div>
+        
+        </div> <!-- End of v-else-if="project" -->
     </div>
   </div>
 </template>
@@ -162,9 +163,24 @@ const relatedProjects = computed(() => {
     .slice(0, 4)
 })
 
+// Fix image paths for GitHub Pages
+const getImageSrc = (imagePath: string): string => {
+  if (!imagePath) return ''
+  
+  // If it's already a full URL, return as is
+  if (imagePath.startsWith('http')) return imagePath
+  
+  // For GitHub Pages, add the base path
+  const basePath = window.location.hostname === 'mrleemurray.github.io' ? '/site' : ''
+  
+  // If the path starts with /, it's absolute from public folder
+  return imagePath.startsWith('/') ? `${basePath}${imagePath}` : `${basePath}/${imagePath}`
+}
+
 const loadProject = async () => {
   isLoading.value = true
   error.value = null
+  project.value = null  // Reset project data
   markdownContent.value = ''
   tableOfContents.value = []
   

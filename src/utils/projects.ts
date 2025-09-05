@@ -111,25 +111,30 @@ export class MarkdownLoader {
   private static cache = new Map<string, ParsedMarkdown>()
   private static projectsCache: ProjectsData | null = null
 
+  // Get the correct base path for asset loading
+  private static getBasePath(): string {
+    return window.location.hostname === 'mrleemurray.github.io' ? '/site' : ''
+  }
+
   static async loadProjectContent(projectId: string): Promise<ParsedMarkdown> {
-    const markdownPath = `/projects/${projectId}.md`
-    
     // Check cache first
-    if (this.cache.has(markdownPath)) {
-      return this.cache.get(markdownPath)!
+    if (this.cache.has(projectId)) {
+      return this.cache.get(projectId)!
     }
 
     try {
-      const response = await fetch(markdownPath)
-      if (!response.ok) {
-        throw new Error(`Failed to load markdown: ${response.statusText}`)
+      // Import the bundled markdown content
+      const { MARKDOWN_CONTENT } = await import('../data/markdown-content')
+      const rawMarkdown = MARKDOWN_CONTENT[projectId]
+      
+      if (!rawMarkdown) {
+        throw new Error(`Project content not found: ${projectId}`)
       }
       
-      const rawMarkdown = await response.text()
       const parsed = FrontmatterParser.parseMarkdownWithFrontmatter(rawMarkdown)
       
       // Cache the parsed content
-      this.cache.set(markdownPath, parsed)
+      this.cache.set(projectId, parsed)
       
       return parsed
     } catch (error) {
@@ -201,6 +206,9 @@ export class MarkdownLoader {
         .trim()
     }
 
+    // Get the correct base path for images
+    const basePath = this.getBasePath()
+
     // Basic markdown parsing - in a real app, use a library like markdown-it
     const result = markdown
       // Headers with IDs
@@ -217,9 +225,9 @@ export class MarkdownLoader {
       .replace(/!\[([^\]]*)\]\(([^)]+)\)/gim, (_, alt, src) => {
         // If the path starts with /, it's absolute from public folder
         // If it doesn't start with http/https or /, make it relative to public
-        const imageSrc = src.startsWith('/') ? src : 
+        const imageSrc = src.startsWith('/') ? `${basePath}${src}` : 
                         src.startsWith('http') ? src : 
-                        `/${src}`
+                        `${basePath}/${src}`
         return `<img alt="${alt}" src="${imageSrc}" />`
       })
       
