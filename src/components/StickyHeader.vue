@@ -550,22 +550,11 @@ const handleDesktopBackClick = () => {
   font-weight: var(--font-weight-medium);
   font-size: var(--font-size-xl);
   opacity: 1;
-  // padding-left: var(--space-4);
-  // transform: translateX(-10px);
-  // transition: all var(--duration-normal) var(--ease-out);
-  // animation: slideInFade var(--duration-normal) var(--ease-out) forwards;
   
   @media (max-width: 767px) {
     display: none;
   }
 }
-
-// @keyframes slideInFade {
-//   to {
-//     opacity: 1;
-//     transform: translateX(0);
-//   }
-// }
 
 .brand--desktop-only {
   @media (max-width: 767px) {
@@ -831,8 +820,7 @@ const handleDesktopBackClick = () => {
   height: 100vh;
   background: color-mix(in srgb, var(--color-background), transparent 30%);
   z-index: 1050;
-  opacity: 0;
-  animation: fadeIn var(--duration-fast) var(--ease-out) forwards;
+  opacity: 1;
   pointer-events: auto;
   
   @media (min-width: 768px) {
