@@ -4,9 +4,9 @@
     <div class="nav-section">
       <nav class="nav" role="navigation" aria-label="Main navigation">
         <div class="logo-nav">
-          <!-- Show logo when NOT on project page, OR when on project page but in desktop mode -->
+          <!-- Show logo when NOT on project page AND about modal is closed -->
           <router-link 
-            v-if="!isProjectPage"
+            v-if="!isProjectPage && !aboutModalOpen"
             to="/" 
             class="brand" 
             aria-label="Go to projects" 
@@ -14,6 +14,19 @@
           >
             <LogoIcon />
           </router-link>
+          
+          <!-- Show "Lee Murray" when about modal is open -->
+          <div v-if="aboutModalOpen && !isProjectPage" class="brand-with-name">
+            <router-link 
+              to="/" 
+              class="brand" 
+              aria-label="Go to projects" 
+              @click="handleLogoClick"
+            >
+              <LogoIcon />
+            </router-link>
+            <span class="brand-name">Lee Murray</span>
+          </div>
           
           <!-- Desktop logo for project page -->
           <router-link 
@@ -262,12 +275,14 @@ interface Props {
   selectedCategory?: string
   viewMode?: 'grid' | 'list'
   stickyProjectTitle?: string | null
+  aboutModalOpen?: boolean
 }
 
 const props = withDefaults(defineProps<Props>(), {
   showProjectControls: false,
   selectedCategory: '',
-  viewMode: 'grid'
+  viewMode: 'grid',
+  aboutModalOpen: false
 })
 
 const route = useRoute()
@@ -503,6 +518,19 @@ const handleDesktopBackClick = () => {
     color: var(--color-primary-600);
     text-decoration: none;
   }
+}
+
+.brand-with-name {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.brand-name {
+  color: var(--color-text-primary);
+  font-family: var(--font-family-serif);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-xl);
 }
 
 .desktop-project-title {

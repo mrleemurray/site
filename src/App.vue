@@ -13,6 +13,7 @@
       :selected-category="selectedCategory"
       :view-mode="viewMode"
       :sticky-project-title="stickyProjectTitle"
+      :about-modal-open="aboutModalOpen"
       @toggle-theme="toggleTheme"
       @toggle-performance="togglePerformance"
       @toggle-about="toggleAboutModal"

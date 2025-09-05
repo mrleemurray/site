@@ -228,6 +228,13 @@ watch(() => props.isOpen, (isOpen) => {
   @media (max-width: 1280px) {
     padding-top: 3rem;
   }
+
+  @media (max-width: 768px) {
+
+    h2, p {
+      padding: var(--space-2);
+    }
+  }
 }
 
 .decoration-layer {
