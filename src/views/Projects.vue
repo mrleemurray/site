@@ -36,10 +36,9 @@
           >
             <router-link :to="`/projects/${project.id}`">
               <img 
-                :src="getImageSrc(project.image)" 
+                v-lazy="getImageSrc(project.image)" 
                 :alt="project.title" 
                 :class="{ loaded: imageLoadedStates[project.id] }"
-                loading="lazy" 
                 @load="onImageLoad(project.id)"
                 @error="onImageError(project.id)"
               />
@@ -366,9 +365,22 @@ onUnmounted(() => {
     position: relative;
     z-index: 1;
     opacity: 0;
+    transition: opacity 0.3s ease;
     
     &.loaded {
       opacity: 1;
+    }
+    
+    &.lazy-loading {
+      opacity: 0;
+    }
+    
+    &.lazy-loaded {
+      opacity: 1;
+    }
+    
+    &.lazy-error {
+      opacity: 0.5;
     }
   }
   

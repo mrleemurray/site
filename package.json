@@ -24,7 +24,8 @@
     "markdown-it-toc-done-right": "^4.2.0",
     "prismjs": "^1.30.0",
     "vue": "^3.5.20",
-    "vue-router": "^4.5.1"
+    "vue-router": "^4.5.1",
+    "vue3-lazyload": "^0.3.8"
   },
   "devDependencies": {
     "@types/markdown-it": "^14.1.2",

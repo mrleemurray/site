@@ -20,7 +20,7 @@
 
         <!-- Project Image -->
         <div class="project-image">
-          <img :src="getImageSrc(project.image)" :alt="project.title" />
+          <img v-lazy="getImageSrc(project.image)" :alt="project.title" />
         </div>
 
         <!-- Project Content -->
@@ -299,8 +299,11 @@ const loadProject = async () => {
       .replace(/`([^`]+)`/g, '<code>$1</code>')
       // Links
       .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>')
-      // Images
-      .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img alt="$1" src="$2" />')
+      // Images - prepare for lazy loading (will be processed after render)
+      .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (_, alt, src) => {
+        const altText = alt || 'Project image'
+        return `<img data-lazy="${src}" alt="${altText}" class="lazy-image" />`
+      })
       // Lists
       .replace(/^- (.*)$/gm, '<li>$1</li>')
       // Wrap consecutive list items in ul tags
@@ -328,6 +331,9 @@ const loadProject = async () => {
 
     // Force re-render and reapply styles after markdown is processed
     await nextTick()
+    
+    // Process lazy images in markdown content
+    processLazyImages()
     
     // Additional debugging
     console.log('🔍 Final markdown content check:', {
@@ -411,6 +417,44 @@ const cleanupStickyDetection = () => {
   // Remove sentinel elements
   const sentinels = document.querySelectorAll('[data-sticky-sentinel]')
   sentinels.forEach(sentinel => sentinel.remove())
+}
+
+const processLazyImages = () => {
+  // Find all images with data-lazy attribute in the markdown content
+  const lazyImages = document.querySelectorAll('.markdown-content img[data-lazy]')
+  
+  lazyImages.forEach((img: any) => {
+    const lazySrc = img.getAttribute('data-lazy')
+    if (lazySrc) {
+      // Use IntersectionObserver for lazy loading
+      const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const image = entry.target as HTMLImageElement
+            image.src = lazySrc
+            image.classList.add('lazy-loading')
+            
+            image.onload = () => {
+              image.classList.remove('lazy-loading')
+              image.classList.add('lazy-loaded')
+            }
+            
+            image.onerror = () => {
+              image.classList.remove('lazy-loading')
+              image.classList.add('lazy-error')
+              image.src = getImageSrc('/images/error-placeholder.svg')
+            }
+            
+            observer.unobserve(image)
+          }
+        })
+      }, {
+        rootMargin: '50px'
+      })
+      
+      imageObserver.observe(img)
+    }
+  })
 }
 
 const scrollToHeading = (headingId: string) => {
@@ -650,6 +694,36 @@ onUnmounted(() => {
     max-width: 100%;
     height: auto;
     margin: var(--space-4) 0;
+    
+    &.lazy-image {
+      background: var(--color-surface);
+      min-height: 200px;
+      background-image: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 8px,
+        var(--color-border) 8px,
+        var(--color-border) 16px
+      );
+      background-size: 22px 22px;
+      border: 1px solid var(--color-border);
+    }
+    
+    &.lazy-loading {
+      opacity: 0.5;
+      transition: opacity 0.3s ease;
+    }
+    
+    &.lazy-loaded {
+      opacity: 1;
+      background: none;
+      border: none;
+    }
+    
+    &.lazy-error {
+      opacity: 0.7;
+      border: 1px solid var(--color-danger, #dc2626);
+    }
   }
   
   :deep(a) {
