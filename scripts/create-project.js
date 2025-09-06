@@ -72,8 +72,9 @@ async function createProject() {
       .replace(`description: ${templateDescriptionPattern}`, `description: ${projectSubtitle}`)
       .replace(`liveUrlLabel: ${templateLiveUrlLabelPattern}`, `liveUrlLabel: ${liveUrlLabel || 'Live Demo'}`)
       .replace(`sourceUrlLabel: ${templateSourceUrlLabelPattern}`, `sourceUrlLabel: ${sourceUrlLabel || 'Source Code'}`)
-      .replace(`image: /images/${templateIdPattern}.svg`, `image: /images/${projectId}.svg`)
-      .replace(/completedAt: 2024-01-15/, `completedAt: ${currentDate}`);
+      .replace(`image: /images/${templateIdPattern}.svg`, `image: /images/${projectId}/cover.png`)
+      .replace(/completedAt: 2024-01-15/, `completedAt: ${currentDate}`)
+      .replace('# Project Title', `# ${projectTitle}`);
     
     // Write new project file
     fs.writeFileSync(newFile, content);
@@ -134,7 +135,7 @@ async function createProject() {
     console.log(`\n✅ Created new project file: ${newFile}`);
     console.log('\n📝 Next steps:');
     console.log(`   1. Edit ${newFile} to add your project content`);
-    console.log(`   2. Add project image at public/images/${projectId}.svg`);
+    console.log(`   2. Add project image at public/images/${projectId}/cover.png`);
     console.log('   3. Update the description, tags, and URLs in the frontmatter');
     console.log('   4. Replace placeholder content with your project details');
     console.log('   5. Restart the dev server to see your changes');
