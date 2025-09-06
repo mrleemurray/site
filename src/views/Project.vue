@@ -895,5 +895,13 @@ onUnmounted(() => {
   .markdown-content :deep(img) {
     filter: var(--filter-battery-saver);
   }
+
+  .markdown-content :deep(iframe) {
+    filter: var(--filter-battery-saver);
+  }
+}
+
+.markdown-content :deep(iframe) {
+    width: 100%;
 }
 </style>
