@@ -17,22 +17,24 @@ import testCalloutsMd from '../content/projects/test-callouts.md?raw'
 import themeImporterMd from '../content/projects/theme-importer.md?raw'
 import vsCodeCodiconsMd from '../content/projects/vs-code-codicons.md?raw'
 import wordCloudsMd from '../content/projects/word-clouds.md?raw'
+import weatherStationMd from '../content/projects/weather-station.md?raw'
 
 export const MARKDOWN_CONTENT: Record<string, string> = {
-  'aether': aetherMd,
-  'color-mapper': colorMapperMd,
-  'figma-ui-toolkit': figmaUiToolkitMd,
-  'figmail': figmailMd,
-  'markdown-features-demo': markdownFeaturesDemoMd,
-  'motion-study-1': motionStudy1Md,
-  'real-time-clock': realTimeClockMd,
-  'sf-symbol-creator': sfSymbolCreatorMd,
-  'skew': skewMd,
-  'slug-and-chip': slugAndChipMd,
-  'storymaker-storyteller': storymakerStorytellerMd,
-  'syntax-highlighter': syntaxHighlighterMd,
-  'test-callouts': testCalloutsMd,
-  'theme-importer': themeImporterMd,
-  'vs-code-codicons': vsCodeCodiconsMd,
-  'word-clouds': wordCloudsMd,
+  'weather-station': weatherStationMd,
+'aether': aetherMd,
+'color-mapper': colorMapperMd,
+'figma-ui-toolkit': figmaUiToolkitMd,
+'figmail': figmailMd,
+'markdown-features-demo': markdownFeaturesDemoMd,
+'motion-study-1': motionStudy1Md,
+'real-time-clock': realTimeClockMd,
+'sf-symbol-creator': sfSymbolCreatorMd,
+'skew': skewMd,
+'slug-and-chip': slugAndChipMd,
+'storymaker-storyteller': storymakerStorytellerMd,
+'syntax-highlighter': syntaxHighlighterMd,
+'test-callouts': testCalloutsMd,
+'theme-importer': themeImporterMd,
+'vs-code-codicons': vsCodeCodiconsMd,
+'word-clouds': wordCloudsMd
 }

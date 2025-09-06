@@ -1,11 +1,11 @@
 ---
 id: slug-and-chip
 title: Slug and Chip
-subtitle: SALT. Chips love it, slugs hate it. A MakeCode game.
-description: SALT. Chips love it, slugs hate it. A MakeCode game.
-category: work
-tags: [Technology, Framework]
-image: /images/portfolio-website.svg
+subtitle: SALT. Chips love it, slugs hate it.
+description: SALT. Chips love it, slugs hate it.
+category: experiments
+tags: [MakeCode, Game]
+image: /images/slug-and-chip/cover.gif
 featured: false
 liveUrl: https://example.com
 sourceUrl: https://github.com/username/project
