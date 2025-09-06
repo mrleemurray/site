@@ -99,13 +99,46 @@ async function createProject() {
       console.log(`   Remember to manually add '${projectId}' to the PROJECT_REGISTRY array`);
     }
     
+    // Update markdown content bundle
+    const markdownContentFile = 'src/data/markdown-content.ts';
+    if (fs.existsSync(markdownContentFile)) {
+      let markdownContent = fs.readFileSync(markdownContentFile, 'utf8');
+      
+      // Convert projectId to camelCase for variable name
+      const variableName = projectId.replace(/-([a-z])/g, (match, letter) => letter.toUpperCase()) + 'Md';
+      
+      // Add import statement
+      const importStatement = `import ${variableName} from '../content/projects/${projectId}.md?raw'`;
+      const lastImportMatch = markdownContent.match(/import .* from '\.\.\/content\/projects\/.*\.md\?raw'/g);
+      if (lastImportMatch) {
+        const lastImport = lastImportMatch[lastImportMatch.length - 1];
+        markdownContent = markdownContent.replace(lastImport, `${lastImport}\n${importStatement}`);
+      }
+      
+      // Add to export object
+      const exportPattern = /(export const MARKDOWN_CONTENT: Record<string, string> = \{)([\s\S]*?)(\})/;
+      markdownContent = markdownContent.replace(exportPattern, (match, start, middle, end) => {
+        const entries = middle.split(',').map(e => e.trim()).filter(Boolean);
+        entries.unshift(`  '${projectId}': ${variableName}`); // Add to beginning for newest first
+        const newMiddle = entries.join(',\n');
+        return `${start}\n${newMiddle}\n${end}`;
+      });
+      
+      fs.writeFileSync(markdownContentFile, markdownContent);
+      console.log(`✅ Added '${projectId}' to markdown content bundle`);
+    } else {
+      console.log(`⚠️  Warning: Could not find markdown content file at ${markdownContentFile}`);
+      console.log(`   Remember to manually add '${projectId}' to the markdown content bundle`);
+    }
+    
     console.log(`\n✅ Created new project file: ${newFile}`);
     console.log('\n📝 Next steps:');
     console.log(`   1. Edit ${newFile} to add your project content`);
     console.log(`   2. Add project image at public/images/${projectId}.svg`);
     console.log('   3. Update the description, tags, and URLs in the frontmatter');
     console.log('   4. Replace placeholder content with your project details');
-    console.log('\n🚀 Your project template is ready for customization!');
+    console.log('   5. Restart the dev server to see your changes');
+    console.log('\n🚀 Your project is now registered and ready for customization!');
     
   } catch (error) {
     console.error('❌ Error:', error.message);
