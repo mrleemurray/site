@@ -771,7 +771,7 @@ const handleDesktopBackClick = () => {
   font-size: var(--font-size-l);
   height: auto;
   width: auto;
-  padding: 4px var(--space-1) 0;
+  padding: var(--space-1) 0;
   
   &:hover, &:focus {
     color: var(--color-primary-600);
