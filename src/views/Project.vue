@@ -188,8 +188,6 @@ const getImageSrc = (imagePath: string): string => {
 }
 
 const loadProject = async () => {
-  console.log('🚀 loadProject called for slug:', props.slug)
-  
   isLoading.value = true
   error.value = null
   project.value = null  // Reset project data
@@ -200,33 +198,19 @@ const loadProject = async () => {
   emit('sticky-title-change', null)
 
   try {
-    console.log('📥 Loading projects data...')
     // Load all projects data first (for related projects)
     const data = await MarkdownLoader.loadProjectsData()
     allProjects.value = data.projects
-    console.log('✅ Projects data loaded:', data.projects.length)
 
-    console.log('📄 Loading project content for:', props.slug)
     // Load the specific project with its content
     const parsed = await MarkdownLoader.loadProjectContent(props.slug)
     project.value = parsed.frontmatter
-    console.log('✅ Project frontmatter loaded:', project.value.title)
-    console.log('📝 Raw content length:', parsed.content.length)
-    console.log('📝 Content preview:', parsed.content.substring(0, 200))
-    
-    // Add detailed debugging for markdown processing
-    console.log('🔧 Starting enhanced markdown processing...')
-    console.log('🔧 Raw markdown sample:', parsed.content.substring(0, 500))
 
     // Emit the project title immediately for mobile header
     emit('sticky-title-change', project.value.title)
 
     // Get the correct base path for images
     const basePath = window.location.hostname === 'mrleemurray.github.io' ? '/site' : ''
-    console.log('🔗 Base path:', basePath)
-
-    // Simple markdown processing that should always work
-    console.log('⚙️ Processing markdown with fallback approach...')
     
     // Extract TOC manually first (before processing headers)
     const tocMatches = parsed.content.matchAll(/^(#{1,6})\s+(.*)$/gm)
@@ -241,10 +225,6 @@ const loadProject = async () => {
       return { level, text, id }
     })
     tableOfContents.value = toc
-    console.log('📚 TOC extracted:', tableOfContents.value.length, 'items')
-    if (tableOfContents.value.length > 0) {
-      console.log('📚 TOC items:', tableOfContents.value)
-    }
     
     // Manual markdown processing that will definitely work
     let result = parsed.content
@@ -296,7 +276,6 @@ const loadProject = async () => {
         const altText = alt || 'Project image'
         // Process the image path here to ensure correct base path
         const processedSrc = getImageSrc(src)
-        console.log('🖼️ Processing image:', { original: src, processed: processedSrc })
         return `<img src="${processedSrc}" alt="${altText}" />`
       })
       // Links (after images so images don't get converted to links)
@@ -323,19 +302,9 @@ const loadProject = async () => {
       .join('\n')
     
     markdownContent.value = result
-    console.log('✅ Manual markdown processing complete, length:', markdownContent.value.length)
-    console.log('🎨 Final content preview:', markdownContent.value.substring(0, 300))
 
     // Force re-render and reapply styles after markdown is processed
     await nextTick()
-    
-    // Additional debugging
-    console.log('🔍 Final markdown content check:', {
-      hasCallouts: markdownContent.value.includes('callout-'),
-      hasTaskLists: markdownContent.value.includes('task-list-item'),
-      hasHTML: markdownContent.value.includes('<'),
-      isEmpty: markdownContent.value.trim() === ''
-    })
 
     // Set up sticky detection after content is loaded
     setTimeout(() => {
@@ -347,7 +316,6 @@ const loadProject = async () => {
     error.value = err instanceof Error ? err.message : 'Failed to load project'
   } finally {
     isLoading.value = false
-    console.log('🏁 loadProject completed')
   }
 }
 
