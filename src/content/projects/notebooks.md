@@ -11,7 +11,7 @@ liveUrl: https://example.com
 sourceUrl: https://github.com/username/project
 liveUrlLabel: Live Demo
 sourceUrlLabel: Source Code
-completedAt: 2025-09-06
+completedAt: 2020-09-06
 duration: 1 week
 ---
 
