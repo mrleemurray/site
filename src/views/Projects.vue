@@ -440,7 +440,6 @@ onUnmounted(() => {
   color: var(--color-text-secondary);
   line-height: var(--line-height-relaxed);
   flex-grow: 1;
-  border-bottom: 1px solid var(--color-border);
 }
 
 .project-meta {
