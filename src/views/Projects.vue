@@ -63,29 +63,6 @@
                   {{ tag }}
                 </span>
               </div>
-              <div 
-                v-if="project.liveUrl || project.sourceUrl"
-                class="project-links"
-              >
-                <a 
-                  v-if="project.liveUrl" 
-                  :href="project.liveUrl" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  class="project-link"
-                >
-                  {{ project.liveUrlLabel || 'Live Demo' }}
-                </a>
-                <a 
-                  v-if="project.sourceUrl" 
-                  :href="project.sourceUrl" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  class="project-link"
-                >
-                  {{ project.sourceUrlLabel || 'Source Code' }}
-                </a>
-              </div>
             </div>
           </div>
         </article>

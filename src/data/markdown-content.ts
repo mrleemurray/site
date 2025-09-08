@@ -18,9 +18,11 @@ import themeImporterMd from '../content/projects/theme-importer.md?raw'
 import vsCodeCodiconsMd from '../content/projects/vs-code-codicons.md?raw'
 import wordCloudsMd from '../content/projects/word-clouds.md?raw'
 import weatherStationMd from '../content/projects/weather-station.md?raw'
+import notebooksMd from '../content/projects/notebooks.md?raw'
 
 export const MARKDOWN_CONTENT: Record<string, string> = {
-  'weather-station': weatherStationMd,
+  'notebooks': notebooksMd,
+'weather-station': weatherStationMd,
 'aether': aetherMd,
 'color-mapper': colorMapperMd,
 'figma-ui-toolkit': figmaUiToolkitMd,
