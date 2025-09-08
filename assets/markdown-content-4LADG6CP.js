@@ -4,7 +4,7 @@ title: Aether
 subtitle: An air quality monitoring device and software, Open Source and powered by .NET 6.
 description: An air quality monitoring device and software, Open Source and powered by .NET 6.
 category: work
-tags: [Hackathon, CAD, Hardware, Software, Open Source]
+tags: [Hackathon, CAD, Hardware, Open Source, .net]
 image: /images/aether/cover.png
 featured: false
 liveUrl: https://example.com
@@ -68,7 +68,7 @@ title: VS Code Color Mapper
 subtitle: Create theme responsive SVG assets for VS Code.
 description: Create theme responsive SVG assets for VS Code.
 category: work
-tags: [Figma, VS Code, Plugin, Tools]
+tags: [Typescript, Figma Plugin, VS Code]
 image: /images/color-mapper/cover.png
 featured: false
 liveUrl: https://example.com
@@ -131,7 +131,7 @@ title: Figma Plugin UI Toolkit
 subtitle: A component library for building Figma plugin UI.
 description: A component library for building Figma plugin UI.
 category: work
-tags: [Technology, Framework]
+tags: [Web Components, Toolkit, Figma]
 image: /images/figma-ui-toolkit/cover.png
 featured: false
 liveUrl: https://example.com
@@ -194,7 +194,7 @@ title: Figmail
 subtitle: Create & export crafted email templates for Outlook.
 description: Create & export crafted email templates for Outlook.
 category: work
-tags: [Figma, Outlook, Plugin, Tools]
+tags: [Typescript, Figma Plugin, Outlook]
 image: /images/figmail/cover.png
 featured: false
 liveUrl: https://example.com
@@ -889,12 +889,12 @@ title: Real Time Clock
 subtitle: Add live time & date information to any design, presentation, or prototype.
 description: Add live time & date information to any design, presentation, or prototype.
 category: work
-tags: [Figma, Plugin, Tools]
+tags: [Typescript, Figma Plugin]
 image: /images/real-time-clock/cover.png
 featured: false
 liveUrl: https://example.com
 sourceUrl: 
-liveUrlLabel: View plugin in Figma
+liveUrlLabel: View plugin
 completedAt: 2025-09-04
 duration: 1 week
 ---
@@ -953,7 +953,7 @@ title: SF Symbol Creator
 subtitle: Preview & export SF Symbols 3.0 for macOS & iOS.
 description: Preview & export SF Symbols 3.0 for macOS & iOS.
 category: work
-tags: [Figma, SF Symbols, Plugin, Tools, macOS, iOS]
+tags: [Typescript, Figma Plugin, Iconography, macOS, iOS]
 image: /images/sf-symbols/cover.png
 featured: false
 liveUrl: https://example.com
@@ -1016,10 +1016,11 @@ title: Skew
 subtitle: A Figma plugin to skew layers up to ±90° in each axis
 description: A Figma plugin to skew layers up to ±90° in each axis.
 category: work
-tags: [Figma, Tools, Plugin]
+tags: [Typescript, Figma Plugin]
 image: /images/skew/cover.png
 featured: true
-liveUrl: https://example.com
+liveUrl: https://www.figma.com/community/plugin/1219749104610050886/skew
+liveUrlLabel: View plugin
 sourceUrl:
 completedAt: 2025-09-04
 duration: 1 week
@@ -1029,7 +1030,7 @@ duration: 1 week
 
 Brief introduction explaining what this project is and its main purpose.
 
-![Project Screenshot](/images/simple-template.svg)
+![Plugin UI](/images/skew/plugin-ui.png)
 
 ## Overview
 
@@ -1051,13 +1052,6 @@ Quick overview of what the project does and why it's valuable.
 
 Key technical implementation details:
 
-\`\`\`typescript
-// Main code example
-export const mainFunction = () => {
-  // Implementation
-}
-\`\`\`
-
 ## Impact
 
 - Metric 1: Achievement
@@ -1071,8 +1065,7 @@ export const mainFunction = () => {
 
 ## Links
 
-- **Live Demo**: [project.com](https://example.com)
-- **Source Code**: [github.com/username/project](https://github.com/username/project)
+- [Install Skew Figma plugin](https://www.figma.com/community/plugin/1219749104610050886/skew)
 `,l=`---
 id: slug-and-chip
 title: Slug and Chip
@@ -1086,7 +1079,7 @@ liveUrl: https://example.com
 sourceUrl: https://github.com/username/project
 liveUrlLabel: Play the game
 sourceUrlLabel: Source Code
-completedAt: 2025-09-06
+completedAt: 2020-09-01
 duration: 1 week
 ---
 
@@ -1149,7 +1142,7 @@ image: /images/storymaker-storyteller/cover.png
 featured: true
 liveUrl: 
 sourceUrl: 
-completedAt: 2025-09-04
+completedAt: 2007-09-01
 duration: 1 week
 ---
 
@@ -1201,13 +1194,13 @@ export const mainFunction = () => {
 
 - **Live Demo**: [project.com](https://example.com)
 - **Source Code**: [github.com/username/project](https://github.com/username/project)
-`,m=`---
+`,d=`---
 id: syntax-highlighter
 title: Syntax Highlighter
 subtitle: Apply syntax highlighting colors to code snippets.
 description: Apply syntax highlighting colors to code snippets.
 category: work
-tags: [Figma, Plugin, Tools]
+tags: [Typescript, Figma Plugin]
 image: /images/syntax-highlighter/cover.png
 featured: false
 liveUrl: https://example.com
@@ -1264,7 +1257,7 @@ export const mainFunction = () => {
 
 - **Live Demo**: [project.com](https://example.com)
 - **Source Code**: [github.com/username/project](https://github.com/username/project)
-`,d=`---
+`,m=`---
 id: test-callouts
 title: Enhanced Markdown Test
 subtitle: Testing all advanced markdown features
@@ -1392,7 +1385,7 @@ title: Theme Importer
 subtitle: Generate Figma variables from popular VS Code themes.
 description: Generate Figma variables from popular VS Code themes.
 category: work
-tags: [Technology, Framework]
+tags: [Typescript, Design System, Figma Plugin]
 image: /images/theme-importer/cover.png
 featured: false
 liveUrl: https://example.com
@@ -1455,7 +1448,7 @@ title: VS Code Codicons
 subtitle: Browse & copy VS Code icons.
 description: Browse & copy VS Code icons.
 category: work
-tags: [Figma, VS Code, Plugin, Tools]
+tags: [Typescript, Figma Plugin, Iconography, VS Code]
 image: /images/codicons/cover.png
 featured: false
 liveUrl: https://example.com
@@ -1518,7 +1511,7 @@ title: Word Clouds
 subtitle: Generate editable word clouds from raw text.
 description: Generate editable word clouds from raw text.
 category: work
-tags: [Figma, Plugin, Tools]
+tags: [Typescript, Figma Plugin]
 image: /images/word-cloud/cover.png
 featured: false
 liveUrl: https://example.com
@@ -1646,14 +1639,14 @@ title: Notebooks
 subtitle: Jupyter Notebooks prototypes for VS Code.
 description: Jupyter Notebooks prototypes for VS Code.
 category: work
-tags: [Technology, Framework]
+tags: [Vue.js, VS Code, Prototyping]
 image: /images/notebooks/cover.png
 featured: false
 liveUrl: https://example.com
 sourceUrl: https://github.com/username/project
 liveUrlLabel: Live Demo
 sourceUrlLabel: Source Code
-completedAt: 2025-09-06
+completedAt: 2020-09-06
 duration: 1 week
 ---
 
@@ -1705,4 +1698,4 @@ export const mainFunction = () => {
 
 - **Live Demo**: [project.com](https://example.com)
 - **Source Code**: [github.com/username/project](https://github.com/username/project)
-`,w={notebooks:y,"weather-station":f,aether:n,"color-mapper":e,"figma-ui-toolkit":t,figmail:o,"markdown-features-demo":i,"motion-study-1":r,"real-time-clock":a,"sf-symbol-creator":s,skew:c,"slug-and-chip":l,"storymaker-storyteller":p,"syntax-highlighter":m,"test-callouts":d,"theme-importer":u,"vs-code-codicons":h,"word-clouds":g};export{w as MARKDOWN_CONTENT};
+`,w={notebooks:y,"weather-station":f,aether:n,"color-mapper":e,"figma-ui-toolkit":t,figmail:o,"markdown-features-demo":i,"motion-study-1":r,"real-time-clock":a,"sf-symbol-creator":s,skew:c,"slug-and-chip":l,"storymaker-storyteller":p,"syntax-highlighter":d,"test-callouts":m,"theme-importer":u,"vs-code-codicons":h,"word-clouds":g};export{w as MARKDOWN_CONTENT};
