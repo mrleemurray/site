@@ -102,6 +102,15 @@
               :key="relatedProject.id"
               class="related-card"
             >
+              <div class="related-image">
+                <router-link :to="`/projects/${relatedProject.id}`">
+                  <img 
+                    :src="getImageSrc(relatedProject.image)" 
+                    :alt="relatedProject.title"
+                    loading="lazy"
+                  />
+                </router-link>
+              </div>
               <h3>
                 <router-link :to="`/projects/${relatedProject.id}`">
                   {{ relatedProject.title }}
@@ -128,7 +137,6 @@
 
 <script setup lang="ts">
 import { ref, computed, watch, onMounted, onUnmounted, nextTick } from 'vue'
-import { useRouter, useRoute } from 'vue-router'
 import { MarkdownLoader, type Project } from '@/utils/projects'
 
 interface Props {
@@ -548,6 +556,7 @@ onUnmounted(() => {
   gap: var(--space-4);
   padding: var(--space-4);
   border-bottom: 1px solid var(--color-border);
+  border-right: 1px solid var(--color-border);
   background: var(--color-background);
   z-index: 10;
 
@@ -620,10 +629,11 @@ onUnmounted(() => {
 .markdown-content {
   padding: var(--space-4);
   line-height: var(--line-height-relaxed);
+  border-right: 1px solid var(--color-border);
   
   :deep(h1), :deep(h2), :deep(h3), :deep(h4), :deep(h5), :deep(h6) {
-    margin-top: var(--space-8);
-    margin-bottom: var(--space-6);
+    margin-top: var(--space-4);
+    margin-bottom: var(--space-2);
     color: var(--color-text-primary);
     
     &:first-child {
@@ -637,8 +647,7 @@ onUnmounted(() => {
   }
   
   :deep(h2) {
-    // border-bottom: 2px solid var(--color-border);
-    padding-bottom: var(--space-4);
+    margin-top: var(--space-8);
   }
   
   :deep(p) {
@@ -827,8 +836,6 @@ onUnmounted(() => {
 .toc {
   position: sticky;
   top: calc(var(--space-16) - 6px);
-  border-left: 1px solid var(--color-border);
-  border-bottom: 1px solid var(--color-border);
 
   padding: var(--space-5);
 
@@ -876,7 +883,6 @@ onUnmounted(() => {
   border-top: 1px solid var(--color-border);
   padding: var(--space-4);
   h2 {
-    padding-left: var(--space-4);
     margin-bottom: var(--space-4);
   }
 }
@@ -888,11 +894,13 @@ onUnmounted(() => {
 .related-card {
   display: flex;
   flex-direction: column;
-  padding: var(--space-4);
+  padding-bottom: var(--space-4);
   border: 1px solid var(--color-border);
 
   h3 {
     margin-bottom: var(--space-3);
+    padding: 0 var(--space-4) var(--space-2);
+    border-bottom: 1px solid var(--color-border);
     
     a {
       color: var(--color-text-primary);
@@ -907,8 +915,28 @@ onUnmounted(() => {
   p {
     color: var(--color-text-secondary);
     font-size: var(--font-size-sm);
+    padding: 0 var(--space-4);
     margin-bottom: var(--space-4);
     flex-grow: 1;
+  }
+}
+
+.related-image {
+  margin-bottom: var(--space-3);
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  a {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
 
@@ -916,6 +944,7 @@ onUnmounted(() => {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-2);
+  padding: 0 var(--space-4);
   
   .tag {
     font-size: var(--font-size-xs);
