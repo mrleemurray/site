@@ -1201,7 +1201,7 @@ export const mainFunction = () => {
 
 - **Live Demo**: [project.com](https://example.com)
 - **Source Code**: [github.com/username/project](https://github.com/username/project)
-`,d=`---
+`,m=`---
 id: syntax-highlighter
 title: Syntax Highlighter
 subtitle: Apply syntax highlighting colors to code snippets.
@@ -1264,7 +1264,7 @@ export const mainFunction = () => {
 
 - **Live Demo**: [project.com](https://example.com)
 - **Source Code**: [github.com/username/project](https://github.com/username/project)
-`,m=`---
+`,d=`---
 id: test-callouts
 title: Enhanced Markdown Test
 subtitle: Testing all advanced markdown features
@@ -1640,4 +1640,69 @@ export const mainFunction = () => {
 
 - **Live Demo**: [project.com](https://example.com)
 - **Source Code**: [github.com/username/project](https://github.com/username/project)
-`,y={"weather-station":f,aether:n,"color-mapper":e,"figma-ui-toolkit":t,figmail:o,"markdown-features-demo":i,"motion-study-1":r,"real-time-clock":a,"sf-symbol-creator":s,skew:c,"slug-and-chip":l,"storymaker-storyteller":p,"syntax-highlighter":d,"test-callouts":m,"theme-importer":u,"vs-code-codicons":h,"word-clouds":g};export{y as MARKDOWN_CONTENT};
+`,y=`---
+id: notebooks
+title: Notebooks
+subtitle: Jupyter Notebooks prototypes for VS Code.
+description: Jupyter Notebooks prototypes for VS Code.
+category: work
+tags: [Technology, Framework]
+image: /images/notebooks/cover.png
+featured: false
+liveUrl: https://example.com
+sourceUrl: https://github.com/username/project
+liveUrlLabel: Live Demo
+sourceUrlLabel: Source Code
+completedAt: 2025-09-06
+duration: 1 week
+---
+
+# Notebooks
+
+Brief introduction explaining what this project is and its main purpose.
+
+![Project Screenshot](/images/simple-template.svg)
+
+## Overview
+
+Quick overview of what the project does and why it's valuable.
+
+### Key Features
+
+- **Feature 1**: Main functionality
+- **Feature 2**: Secondary functionality
+- **Feature 3**: Additional features
+
+## Context
+
+### Problem
+
+- Description of the problem being solved
+
+### Solution
+
+Key technical implementation details:
+
+\`\`\`typescript
+// Main code example
+export const mainFunction = () => {
+  // Implementation
+}
+\`\`\`
+
+## Impact
+
+- Metric 1: Achievement
+- Metric 2: Another result
+- User feedback summary
+  
+## Learnings
+
+**Learning 1**: Lessons learned from the project
+**Learning 2**: Additional insights gained
+
+## Links
+
+- **Live Demo**: [project.com](https://example.com)
+- **Source Code**: [github.com/username/project](https://github.com/username/project)
+`,w={notebooks:y,"weather-station":f,aether:n,"color-mapper":e,"figma-ui-toolkit":t,figmail:o,"markdown-features-demo":i,"motion-study-1":r,"real-time-clock":a,"sf-symbol-creator":s,skew:c,"slug-and-chip":l,"storymaker-storyteller":p,"syntax-highlighter":m,"test-callouts":d,"theme-importer":u,"vs-code-codicons":h,"word-clouds":g};export{w as MARKDOWN_CONTENT};
