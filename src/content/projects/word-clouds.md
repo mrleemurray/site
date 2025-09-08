@@ -4,7 +4,7 @@ title: Word Clouds
 subtitle: Generate editable word clouds from raw text.
 description: Generate editable word clouds from raw text.
 category: work
-tags: [Figma, Plugin, Tools]
+tags: [Typescript, Figma Plugin]
 image: /images/word-cloud/cover.png
 featured: false
 liveUrl: https://example.com

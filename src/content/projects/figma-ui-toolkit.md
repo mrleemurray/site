@@ -4,7 +4,7 @@ title: Figma Plugin UI Toolkit
 subtitle: A component library for building Figma plugin UI.
 description: A component library for building Figma plugin UI.
 category: work
-tags: [Technology, Framework]
+tags: [Web Components, Toolkit, Figma]
 image: /images/figma-ui-toolkit/cover.png
 featured: false
 liveUrl: https://example.com

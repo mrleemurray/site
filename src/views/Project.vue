@@ -765,7 +765,6 @@ onUnmounted(() => {
   :deep(.callout) {
     padding: var(--space-4);
     margin: var(--space-4) 0;
-    border-radius: var(--radius-md);
     border-left: 4px solid;
     
     &.callout-info {
@@ -810,14 +809,12 @@ onUnmounted(() => {
   :deep(mark) {
     background-color: rgba(255, 235, 59, 0.3);
     padding: 0.1em 0.2em;
-    border-radius: 2px;
   }
 
   :deep(ins) {
     background-color: rgba(34, 197, 94, 0.2);
     text-decoration: none;
     padding: 0.1em 0.2em;
-    border-radius: 2px;
   }
 }
 

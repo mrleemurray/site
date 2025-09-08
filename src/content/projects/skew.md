@@ -4,7 +4,7 @@ title: Skew
 subtitle: A Figma plugin to skew layers up to ±90° in each axis
 description: A Figma plugin to skew layers up to ±90° in each axis.
 category: work
-tags: [Figma, Tools, Plugin]
+tags: [Typescript, Figma Plugin]
 image: /images/skew/cover.png
 featured: true
 liveUrl: https://example.com

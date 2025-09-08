@@ -4,7 +4,7 @@ title: Figmail
 subtitle: Create & export crafted email templates for Outlook.
 description: Create & export crafted email templates for Outlook.
 category: work
-tags: [Figma, Outlook, Plugin, Tools]
+tags: [Typescript, Figma Plugin, Outlook]
 image: /images/figmail/cover.png
 featured: false
 liveUrl: https://example.com

@@ -4,7 +4,7 @@ title: Real Time Clock
 subtitle: Add live time & date information to any design, presentation, or prototype.
 description: Add live time & date information to any design, presentation, or prototype.
 category: work
-tags: [Figma, Plugin, Tools]
+tags: [Typescript, Figma Plugin]
 image: /images/real-time-clock/cover.png
 featured: false
 liveUrl: https://example.com

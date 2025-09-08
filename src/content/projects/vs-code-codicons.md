@@ -4,7 +4,7 @@ title: VS Code Codicons
 subtitle: Browse & copy VS Code icons.
 description: Browse & copy VS Code icons.
 category: work
-tags: [Figma, VS Code, Plugin, Tools]
+tags: [Typescript, Figma Plugin, Iconography, VS Code]
 image: /images/codicons/cover.png
 featured: false
 liveUrl: https://example.com

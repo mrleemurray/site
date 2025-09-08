@@ -4,7 +4,7 @@ title: SF Symbol Creator
 subtitle: Preview & export SF Symbols 3.0 for macOS & iOS.
 description: Preview & export SF Symbols 3.0 for macOS & iOS.
 category: work
-tags: [Figma, SF Symbols, Plugin, Tools, macOS, iOS]
+tags: [Typescript, Figma Plugin, Iconography, macOS, iOS]
 image: /images/sf-symbols/cover.png
 featured: false
 liveUrl: https://example.com

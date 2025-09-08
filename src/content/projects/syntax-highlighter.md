@@ -4,7 +4,7 @@ title: Syntax Highlighter
 subtitle: Apply syntax highlighting colors to code snippets.
 description: Apply syntax highlighting colors to code snippets.
 category: work
-tags: [Figma, Plugin, Tools]
+tags: [Typescript, Figma Plugin]
 image: /images/syntax-highlighter/cover.png
 featured: false
 liveUrl: https://example.com

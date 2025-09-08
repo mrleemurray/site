@@ -4,7 +4,7 @@ title: VS Code Color Mapper
 subtitle: Create theme responsive SVG assets for VS Code.
 description: Create theme responsive SVG assets for VS Code.
 category: work
-tags: [Figma, VS Code, Plugin, Tools]
+tags: [Typescript, Figma Plugin, VS Code]
 image: /images/color-mapper/cover.png
 featured: false
 liveUrl: https://example.com

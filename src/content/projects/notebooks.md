@@ -4,7 +4,7 @@ title: Notebooks
 subtitle: Jupyter Notebooks prototypes for VS Code.
 description: Jupyter Notebooks prototypes for VS Code.
 category: work
-tags: [Technology, Framework]
+tags: [Vue.js, VS Code, Prototyping]
 image: /images/notebooks/cover.png
 featured: false
 liveUrl: https://example.com

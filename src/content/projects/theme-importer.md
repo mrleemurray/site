@@ -4,7 +4,7 @@ title: Theme Importer
 subtitle: Generate Figma variables from popular VS Code themes.
 description: Generate Figma variables from popular VS Code themes.
 category: work
-tags: [Technology, Framework]
+tags: [Typescript, Design System, Figma Plugin]
 image: /images/theme-importer/cover.png
 featured: false
 liveUrl: https://example.com

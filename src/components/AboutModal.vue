@@ -345,7 +345,7 @@ watch(() => props.isOpen, (isOpen) => {
   
   &::-webkit-scrollbar-thumb {
     background: rgba(var(--color-text-secondary-rgb, 107, 114, 126), 0.4);
-    border-radius: 6px;
+    border-radius: 0px;
     border: 2px solid transparent;
     background-clip: padding-box; /* Creates padding effect */
     

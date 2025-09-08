@@ -9,7 +9,7 @@ image: /images/storymaker-storyteller/cover.png
 featured: true
 liveUrl: 
 sourceUrl: 
-completedAt: 2025-09-04
+completedAt: 2007-09-01
 duration: 1 week
 ---
 

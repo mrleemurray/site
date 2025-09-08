@@ -3,7 +3,6 @@ export const PROJECT_REGISTRY = [
   'notebooks',
   'weather-station',
   'slug-and-chip',
-  'test-callouts',
   'storymaker-storyteller',
   'syntax-highlighter',
   'theme-importer',
