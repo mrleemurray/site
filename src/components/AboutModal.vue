@@ -520,7 +520,6 @@ watch(() => props.isOpen, (isOpen) => {
 }
 
 .interest-item {
-  text-align: center;
   padding: var(--space-4);
   background: var(--color-background);
   border: 1px solid var(--color-border);
