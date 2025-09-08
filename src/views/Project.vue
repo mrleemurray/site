@@ -228,20 +228,6 @@ const loadProject = async () => {
     // Simple markdown processing that should always work
     console.log('⚙️ Processing markdown with fallback approach...')
     
-    // Process image paths first
-    let processedContent = parsed.content
-    if (basePath) {
-      processedContent = parsed.content.replace(
-        /!\[([^\]]*)\]\(([^)]+)\)/gim, 
-        (_, alt, src) => {
-          const imageSrc = src.startsWith('/') ? `${basePath}${src}` : 
-                          src.startsWith('http') ? src : 
-                          `${basePath}/${src}`
-          return `![${alt}](${imageSrc})`
-        }
-      )
-    }
-    
     // Extract TOC manually first (before processing headers)
     const tocMatches = parsed.content.matchAll(/^(#{1,6})\s+(.*)$/gm)
     const toc = Array.from(tocMatches).map((match: RegExpMatchArray) => {
@@ -261,7 +247,7 @@ const loadProject = async () => {
     }
     
     // Manual markdown processing that will definitely work
-    let result = processedContent
+    let result = parsed.content
       // Headers - use the same ID generation as TOC
       .replace(/^### (.*$)/gim, (_, title) => {
         const id = title.trim().toLowerCase()
@@ -305,13 +291,16 @@ const loadProject = async () => {
       // Code blocks
       .replace(/```(\w+)?\n([\s\S]*?)```/g, '<pre><code class="hljs language-$1">$2</code></pre>')
       .replace(/`([^`]+)`/g, '<code>$1</code>')
-      // Links
-      .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>')
-      // Images - prepare for lazy loading (will be processed after render)
+      // Images - load immediately (no lazy loading)
       .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (_, alt, src) => {
         const altText = alt || 'Project image'
-        return `<img data-lazy="${src}" alt="${altText}" class="lazy-image" />`
+        // Process the image path here to ensure correct base path
+        const processedSrc = getImageSrc(src)
+        console.log('🖼️ Processing image:', { original: src, processed: processedSrc })
+        return `<img src="${processedSrc}" alt="${altText}" />`
       })
+      // Links (after images so images don't get converted to links)
+      .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>')
       // Lists
       .replace(/^- (.*)$/gm, '<li>$1</li>')
       // Wrap consecutive list items in ul tags
@@ -339,9 +328,6 @@ const loadProject = async () => {
 
     // Force re-render and reapply styles after markdown is processed
     await nextTick()
-    
-    // Process lazy images in markdown content
-    processLazyImages()
     
     // Additional debugging
     console.log('🔍 Final markdown content check:', {
@@ -425,44 +411,6 @@ const cleanupStickyDetection = () => {
   // Remove sentinel elements
   const sentinels = document.querySelectorAll('[data-sticky-sentinel]')
   sentinels.forEach(sentinel => sentinel.remove())
-}
-
-const processLazyImages = () => {
-  // Find all images with data-lazy attribute in the markdown content
-  const lazyImages = document.querySelectorAll('.markdown-content img[data-lazy]')
-  
-  lazyImages.forEach((img: any) => {
-    const lazySrc = img.getAttribute('data-lazy')
-    if (lazySrc) {
-      // Use IntersectionObserver for lazy loading
-      const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const image = entry.target as HTMLImageElement
-            image.src = lazySrc
-            image.classList.add('lazy-loading')
-            
-            image.onload = () => {
-              image.classList.remove('lazy-loading')
-              image.classList.add('lazy-loaded')
-            }
-            
-            image.onerror = () => {
-              image.classList.remove('lazy-loading')
-              image.classList.add('lazy-error')
-              image.src = getImageSrc('/images/error-placeholder.svg')
-            }
-            
-            observer.unobserve(image)
-          }
-        })
-      }, {
-        rootMargin: '50px'
-      })
-      
-      imageObserver.observe(img)
-    }
-  })
 }
 
 const scrollToHeading = (headingId: string) => {
@@ -703,36 +651,6 @@ onUnmounted(() => {
     max-width: 100%;
     height: auto;
     margin: var(--space-4) 0;
-    
-    &.lazy-image {
-      background: var(--color-surface);
-      min-height: 200px;
-      background-image: repeating-linear-gradient(
-        45deg,
-        transparent,
-        transparent 8px,
-        var(--color-border) 8px,
-        var(--color-border) 16px
-      );
-      background-size: 22px 22px;
-      border: 1px solid var(--color-border);
-    }
-    
-    &.lazy-loading {
-      opacity: 0.5;
-      transition: opacity 0.3s ease;
-    }
-    
-    &.lazy-loaded {
-      opacity: 1;
-      background: none;
-      border: none;
-    }
-    
-    &.lazy-error {
-      opacity: 0.7;
-      border: 1px solid var(--color-danger, #dc2626);
-    }
   }
   
   :deep(a) {

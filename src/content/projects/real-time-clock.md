@@ -9,7 +9,7 @@ image: /images/real-time-clock/cover.png
 featured: false
 liveUrl: https://example.com
 sourceUrl: 
-liveUrlLabel: View plugin in Figma
+liveUrlLabel: View plugin
 completedAt: 2025-09-04
 duration: 1 week
 ---

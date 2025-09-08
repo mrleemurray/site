@@ -7,7 +7,8 @@ category: work
 tags: [Typescript, Figma Plugin]
 image: /images/skew/cover.png
 featured: true
-liveUrl: https://example.com
+liveUrl: https://www.figma.com/community/plugin/1219749104610050886/skew
+liveUrlLabel: View plugin
 sourceUrl:
 completedAt: 2025-09-04
 duration: 1 week
@@ -17,7 +18,7 @@ duration: 1 week
 
 Brief introduction explaining what this project is and its main purpose.
 
-![Project Screenshot](/images/simple-template.svg)
+![Plugin UI](/images/skew/plugin-ui.png)
 
 ## Overview
 
@@ -39,13 +40,6 @@ Quick overview of what the project does and why it's valuable.
 
 Key technical implementation details:
 
-```typescript
-// Main code example
-export const mainFunction = () => {
-  // Implementation
-}
-```
-
 ## Impact
 
 - Metric 1: Achievement
@@ -59,5 +53,4 @@ export const mainFunction = () => {
 
 ## Links
 
-- **Live Demo**: [project.com](https://example.com)
-- **Source Code**: [github.com/username/project](https://github.com/username/project)
+- [Install Skew Figma plugin](https://www.figma.com/community/plugin/1219749104610050886/skew)

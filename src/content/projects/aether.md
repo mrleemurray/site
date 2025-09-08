@@ -4,7 +4,7 @@ title: Aether
 subtitle: An air quality monitoring device and software, Open Source and powered by .NET 6.
 description: An air quality monitoring device and software, Open Source and powered by .NET 6.
 category: work
-tags: [Hackathon, CAD, Hardware, Software, Open Source]
+tags: [Hackathon, CAD, Hardware, Open Source, .net]
 image: /images/aether/cover.png
 featured: false
 liveUrl: https://example.com
