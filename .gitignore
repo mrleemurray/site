@@ -183,3 +183,5 @@ dist-ssr
 
 # Test coverage
 coverage/
+# Generated thumbnails
+public/images/thumbnails/

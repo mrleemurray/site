@@ -33,14 +33,22 @@
           <div 
             class="project-image"
             :class="{ 'image-loaded': imageLoadedStates[project.id] }"
+            @mouseenter="onImageMouseEnter(project.id, project.image)"
+            @mouseleave="onImageMouseLeave(project.id, project.image)"
           >
             <router-link :to="`/projects/${project.id}`">
               <img 
-                v-lazy="getImageSrc(project.image)" 
+                :src="animatedImageStates[project.id] && isGifImage(project.image) 
+                  ? getAnimatedImageSrc(project.image) 
+                  : getImageSrc(project.image)" 
                 :alt="project.title" 
-                :class="{ loaded: imageLoadedStates[project.id] }"
+                :class="{ 
+                  loaded: imageLoadedStates[project.id],
+                  'gif-animated': animatedImageStates[project.id] && isGifImage(project.image)
+                }"
                 @load="onImageLoad(project.id)"
                 @error="onImageError(project.id)"
+                loading="lazy"
               />
             </router-link>
           </div>
@@ -90,6 +98,7 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted, toRefs } from 'vue'
 import { MarkdownLoader, ProjectUtils, type Project, type ProjectCategory } from '@/utils/projects'
+import { ImageOptimizer, type ThumbnailOptions } from '@/utils/image-optimizer'
 
 interface Props {
   selectedCategory?: string
@@ -113,24 +122,65 @@ const isLoading = ref(false)
 const error = ref<string | null>(null)
 const isMobile = ref(false)
 const imageLoadedStates = ref<Record<string, boolean>>({})
+const animatedImageStates = ref<Record<string, boolean>>({})
 
 // Check if mobile on mount and window resize
 const checkMobile = () => {
   isMobile.value = window.innerWidth <= 767
 }
 
-// Fix image paths for GitHub Pages
-const getImageSrc = (imagePath: string): string => {
+// Fix image paths for GitHub Pages and use optimized thumbnails
+const getImageSrc = (imagePath: string, preferAnimation = false): string => {
   if (!imagePath) return ''
   
   // If it's already a full URL, return as is
   if (imagePath.startsWith('http')) return imagePath
   
-  // For GitHub Pages, add the base path
-  const basePath = window.location.hostname === 'mrleemurray.github.io' ? '/site' : ''
+  // Create thumbnail options based on current view mode and device
+  const thumbnailOptions: ThumbnailOptions = {
+    viewMode: effectiveViewMode.value,
+    isMobile: isMobile.value,
+    isRetina: window.devicePixelRatio > 1,
+    preferAnimation: preferAnimation
+  }
   
-  // If the path starts with /, it's absolute from public folder
-  return imagePath.startsWith('/') ? `${basePath}${imagePath}` : `${basePath}/${imagePath}`
+  // Use the ImageOptimizer to get the best thumbnail
+  try {
+    return ImageOptimizer.getImageSrc(imagePath, thumbnailOptions)
+  } catch (error) {
+    console.warn('Failed to get optimized image, falling back to original:', error)
+    // Fallback to original image path logic
+    const basePath = window.location.hostname === 'mrleemurray.github.io' ? '/site' : ''
+    return imagePath.startsWith('/') ? `${basePath}${imagePath}` : `${basePath}/${imagePath}`
+  }
+}
+
+// Get animated version for GIF files
+const getAnimatedImageSrc = (imagePath: string): string => {
+  return getImageSrc(imagePath, true)
+}
+
+// Check if image is a GIF
+const isGifImage = (imagePath: string): boolean => {
+  return ImageOptimizer.isGif(imagePath)
+}
+
+// Handle mouse enter for GIF animation
+const onImageMouseEnter = (projectId: string, imagePath: string) => {
+  if (isGifImage(imagePath)) {
+    console.log(`Mouse enter on GIF: ${projectId}, path: ${imagePath}`)
+    animatedImageStates.value[projectId] = true
+    console.log(`Animation state set to true for ${projectId}`)
+  }
+}
+
+// Handle mouse leave for GIF animation
+const onImageMouseLeave = (projectId: string, imagePath: string) => {
+  if (isGifImage(imagePath)) {
+    console.log(`Mouse leave on GIF: ${projectId}, path: ${imagePath}`)
+    animatedImageStates.value[projectId] = false
+    console.log(`Animation state set to false for ${projectId}`)
+  }
 }
 
 // Force grid mode on mobile, use props viewMode on desktop
@@ -184,8 +234,10 @@ const loadProjects = async () => {
     
     // Initialize image loading states
     imageLoadedStates.value = {}
+    animatedImageStates.value = {}
     data.projects.forEach(project => {
       imageLoadedStates.value[project.id] = false
+      animatedImageStates.value[project.id] = false
     })
     
     // Emit categories to parent for use in StickyHeader
@@ -391,6 +443,27 @@ onUnmounted(() => {
     left: 0;
     right: 0;
     bottom: 0;
+    transition: opacity 0.2s ease;
+    
+    &.gif-animated {
+      /* Add subtle indicator for animated GIFs */
+      position: relative;
+      
+      &::after {
+        content: '🎬';
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-size: 12px;
+        opacity: 0.8;
+        pointer-events: none;
+        z-index: 2;
+      }
+    }
   }
 }
 

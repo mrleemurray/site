@@ -136,10 +136,13 @@ async function createProject() {
     console.log('\n📝 Next steps:');
     console.log(`   1. Edit ${newFile} to add your project content`);
     console.log(`   2. Add project image at public/images/${projectId}/cover.png`);
-    console.log('   3. Update the description, tags, and URLs in the frontmatter');
-    console.log('   4. Replace placeholder content with your project details');
-    console.log('   5. Restart the dev server to see your changes');
+    console.log(`   3. Run 'npm run optimize-images' to generate thumbnails after adding the image`);
+    console.log('   4. Update the description, tags, and URLs in the frontmatter');
+    console.log('   5. Replace placeholder content with your project details');
+    console.log('   6. Restart the dev server to see your changes');
     console.log('\n🚀 Your project is now registered and ready for customization!');
+    console.log('\n💡 Pro tip: The image optimization script will automatically create optimized thumbnails');
+    console.log('   for faster loading when you run the build process.');
     
   } catch (error) {
     console.error('❌ Error:', error.message);
