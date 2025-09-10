@@ -16,7 +16,10 @@ For GIF files, the system creates both static and animated versions:
 
 - **Static thumbnails** (`-grid-static.jpg`, `-list-static.jpg`, `-small-static.jpg`): JPEG versions of the first frame for fast loading
 - **Animated thumbnails** (`-grid.gif`, `-list.gif`, `-small.gif`): Optimized GIF versions with reduced color palette
-- **Auto-switching**: Static version loads first, animated version shows on hover (desktop only)
+- **Performance-based display**: 
+  - **Full Performance Mode**: Shows animated GIFs automatically (🎬 indicator)
+  - **Power-Saver Mode**: Shows static JPEG versions (📷 indicator)
+- **Automatic switching**: Users can toggle between modes using the performance button in the header
 
 ## Generated Files
 
@@ -70,7 +73,7 @@ npm run optimize-images
 - **Automatic fallback** to original images if thumbnails fail
 - **Retina display support** with 2x resolution thumbnails
 - **Progressive JPEG encoding** for faster perceived loading
-- **Intelligent GIF handling** with static thumbnails for initial load and animated versions on hover
+- **Intelligent GIF handling** with static thumbnails for power-saver mode and animated versions for full performance mode
 
 ## File Size Comparison
 
@@ -91,7 +94,7 @@ Typical compression results:
 - **Automatically excludes** the thumbnails directory from processing
 - **Animated GIF detection** and special handling
 - **Color palette reduction** for GIF optimization (64 colors)
-- **Hover-to-animate** functionality for GIFs on desktop
+- **Performance mode integration** for automatic GIF animation control
 
 ## Browser Compatibility
 

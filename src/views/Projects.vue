@@ -33,18 +33,16 @@
           <div 
             class="project-image"
             :class="{ 'image-loaded': imageLoadedStates[project.id] }"
-            @mouseenter="onImageMouseEnter(project.id, project.image)"
-            @mouseleave="onImageMouseLeave(project.id, project.image)"
           >
             <router-link :to="`/projects/${project.id}`">
               <img 
-                :src="animatedImageStates[project.id] && isGifImage(project.image) 
-                  ? getAnimatedImageSrc(project.image) 
-                  : getImageSrc(project.image)" 
+                :key="getImageKey(project.id, project.image)"
+                :src="getImageSrcByPerformanceMode(project.image)" 
                 :alt="project.title" 
                 :class="{ 
                   loaded: imageLoadedStates[project.id],
-                  'gif-animated': animatedImageStates[project.id] && isGifImage(project.image)
+                  'gif-static': isGifImage(project.image) && performanceMode === 'power-saver',
+                  'gif-animated': isGifImage(project.image) && performanceMode === 'full'
                 }"
                 @load="onImageLoad(project.id)"
                 @error="onImageError(project.id)"
@@ -96,7 +94,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted, onUnmounted, toRefs } from 'vue'
+import { ref, computed, onMounted, onUnmounted, toRefs, watch } from 'vue'
 import { MarkdownLoader, ProjectUtils, type Project, type ProjectCategory } from '@/utils/projects'
 import { ImageOptimizer, type ThumbnailOptions } from '@/utils/image-optimizer'
 
@@ -122,7 +120,18 @@ const isLoading = ref(false)
 const error = ref<string | null>(null)
 const isMobile = ref(false)
 const imageLoadedStates = ref<Record<string, boolean>>({})
-const animatedImageStates = ref<Record<string, boolean>>({})
+const currentPerformanceMode = ref<'full' | 'power-saver'>('full')
+
+// Get performance mode from document attribute and keep it reactive
+const performanceMode = computed(() => currentPerformanceMode.value)
+
+// Watch for performance mode changes in the DOM
+const updatePerformanceMode = () => {
+  const mode = document.documentElement.getAttribute('data-performance') as 'full' | 'power-saver' || 'full'
+  if (mode !== currentPerformanceMode.value) {
+    currentPerformanceMode.value = mode
+  }
+}
 
 // Check if mobile on mount and window resize
 const checkMobile = () => {
@@ -155,31 +164,25 @@ const getImageSrc = (imagePath: string, preferAnimation = false): string => {
   }
 }
 
-// Get animated version for GIF files
-const getAnimatedImageSrc = (imagePath: string): string => {
-  return getImageSrc(imagePath, true)
-}
-
 // Check if image is a GIF
 const isGifImage = (imagePath: string): boolean => {
   return ImageOptimizer.isGif(imagePath)
 }
 
-// Handle mouse enter for GIF animation
-const onImageMouseEnter = (projectId: string, imagePath: string) => {
-  if (isGifImage(imagePath)) {
-    console.log(`Mouse enter on GIF: ${projectId}, path: ${imagePath}`)
-    animatedImageStates.value[projectId] = true
-    console.log(`Animation state set to true for ${projectId}`)
+// Get image source based on performance mode for GIFs
+const getImageSrcByPerformanceMode = (imagePath: string): string => {
+  if (!isGifImage(imagePath)) {
+    // For non-GIF images, use the standard optimized version
+    return getImageSrc(imagePath, false)
   }
-}
-
-// Handle mouse leave for GIF animation
-const onImageMouseLeave = (projectId: string, imagePath: string) => {
-  if (isGifImage(imagePath)) {
-    console.log(`Mouse leave on GIF: ${projectId}, path: ${imagePath}`)
-    animatedImageStates.value[projectId] = false
-    console.log(`Animation state set to false for ${projectId}`)
+  
+  // For GIF images, decide based on performance mode
+  if (performanceMode.value === 'power-saver') {
+    // In power-saver mode, use static JPEG version
+    return getImageSrc(imagePath, false)
+  } else {
+    // In full performance mode, use animated GIF version
+    return getImageSrc(imagePath, true)
   }
 }
 
@@ -187,6 +190,31 @@ const onImageMouseLeave = (projectId: string, imagePath: string) => {
 const effectiveViewMode = computed(() => {
   return isMobile.value ? 'grid' : props.viewMode
 })
+
+// Watch for performance mode changes and force image reloads for GIFs
+watch(currentPerformanceMode, (newMode, oldMode) => {
+  if (newMode !== oldMode) {
+    // Force re-render of GIF images by temporarily setting them as not loaded
+    // then reloading them with the new performance mode
+    projects.value.forEach(project => {
+      if (isGifImage(project.image)) {
+        imageLoadedStates.value[project.id] = false
+        // Small delay to allow DOM update, then reload
+        setTimeout(() => {
+          imageLoadedStates.value[project.id] = true
+        }, 50)
+      }
+    })
+  }
+})
+
+// Create a computed key that changes when performance mode changes to force image re-render
+const getImageKey = (projectId: string, imagePath: string): string => {
+  if (isGifImage(imagePath)) {
+    return `${projectId}-${performanceMode.value}`
+  }
+  return projectId
+}
 
 // Use props for filtering
 const filteredProjects = computed(() => {
@@ -234,10 +262,8 @@ const loadProjects = async () => {
     
     // Initialize image loading states
     imageLoadedStates.value = {}
-    animatedImageStates.value = {}
     data.projects.forEach(project => {
       imageLoadedStates.value[project.id] = false
-      animatedImageStates.value[project.id] = false
     })
     
     // Emit categories to parent for use in StickyHeader
@@ -254,10 +280,37 @@ onMounted(() => {
   loadProjects()
   checkMobile()
   window.addEventListener('resize', checkMobile)
+  
+  // Initialize performance mode
+  updatePerformanceMode()
+  
+  // Watch for performance mode changes using MutationObserver
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      if (mutation.type === 'attributes' && mutation.attributeName === 'data-performance') {
+        updatePerformanceMode()
+      }
+    })
+  })
+  
+  observer.observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ['data-performance']
+  })
+  
+  // Store observer for cleanup
+  ;(window as any).__performanceModeObserver = observer
 })
 
 onUnmounted(() => {
   window.removeEventListener('resize', checkMobile)
+  
+  // Clean up performance mode observer
+  const observer = (window as any).__performanceModeObserver
+  if (observer) {
+    observer.disconnect()
+    delete (window as any).__performanceModeObserver
+  }
 })
 </script>
 
@@ -445,26 +498,17 @@ onUnmounted(() => {
     bottom: 0;
     transition: opacity 0.2s ease;
     
+    &.gif-static {
+      /* Static GIF version (power-saver mode) */
+      opacity: 1;
+    }
+    
     &.gif-animated {
-      /* Add subtle indicator for animated GIFs */
-      position: relative;
-      
-      &::after {
-        content: '🎬';
-        position: absolute;
-        top: 8px;
-        right: 8px;
-        background: rgba(0, 0, 0, 0.7);
-        color: white;
-        padding: 2px 6px;
-        border-radius: 4px;
-        font-size: 12px;
-        opacity: 0.8;
-        pointer-events: none;
-        z-index: 2;
-      }
+      /* Animated GIF version (full performance mode) */
+      opacity: 1;
     }
   }
+  
 }
 
 .project-content {
