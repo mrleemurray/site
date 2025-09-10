@@ -119,6 +119,14 @@
     var(--color-border) 12px,
     var(--color-border) 13px
   );
+  
+  --pattern-diagonal-stripes-alt: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 12px,
+    var(--color-border) 12px,
+    var(--color-border) 13px
+  );
 
   // Breakpoint Tokens (for JavaScript usage)
   --breakpoint-sm: 640px;

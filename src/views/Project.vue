@@ -20,7 +20,13 @@
 
         <!-- Project Image -->
         <div class="project-image">
-          <img v-lazy="getImageSrc(project.image)" :alt="project.title" />
+          <img 
+            v-lazy="getImageSrc(project.image)" 
+            :alt="project.title"
+            :class="{ loaded: heroImageLoaded }"
+            @load="onHeroImageLoad"
+            @error="onHeroImageError"
+          />
         </div>
 
         <!-- Project Content -->
@@ -155,6 +161,7 @@ const markdownContent = ref('')
 const tableOfContents = ref<Array<{ id: string; text: string; level: number }>>([])
 const isLoading = ref(false)
 const error = ref<string | null>(null)
+const heroImageLoaded = ref(false)
 
 // Refs for sticky detection
 const projectMetaRef = ref<HTMLElement>()
@@ -187,12 +194,22 @@ const getImageSrc = (imagePath: string): string => {
   return imagePath.startsWith('/') ? `${basePath}${imagePath}` : `${basePath}/${imagePath}`
 }
 
+// Image loading handlers
+const onHeroImageLoad = () => {
+  heroImageLoaded.value = true
+}
+
+const onHeroImageError = () => {
+  heroImageLoaded.value = true // Show content even if image fails
+}
+
 const loadProject = async () => {
   isLoading.value = true
   error.value = null
   project.value = null  // Reset project data
   markdownContent.value = ''
   tableOfContents.value = []
+  heroImageLoaded.value = false // Reset hero image loaded state
   
   // Clear any previous title
   emit('sticky-title-change', null)
@@ -521,11 +538,32 @@ onUnmounted(() => {
 .project-image {
   overflow: hidden;
   border-bottom: 1px solid var(--color-border);
+  max-height: 500px;
+  position: relative;
+  
+  /* Diagonal stripe pattern background that shows before image loads */
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: var(--pattern-diagonal-stripes-alt);
+    background-size: 18px 18px;
+    pointer-events: none;
+    z-index: 0;
+  }
   
   img {
     width: 100%;
     height: auto;
     display: block;
+    position: relative;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    
+    &.loaded {
+      opacity: 1;
+    }
   }
 }
 
