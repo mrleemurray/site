@@ -396,7 +396,7 @@ watch(() => props.isOpen, (isOpen) => {
 .intro-content {
   h2 {
     margin-bottom: var(--space-4);
-    // color: var(--color-primary-600);
+    color: var(--color-primary-600);
   }
   
   p {
