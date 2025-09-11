@@ -538,7 +538,7 @@ onUnmounted(() => {
 .project-image {
   overflow: hidden;
   border-bottom: 1px solid var(--color-border);
-  max-height: 500px;
+  max-height: 600px;
   position: relative;
   
   /* Diagonal stripe pattern background that shows before image loads */
@@ -554,7 +554,10 @@ onUnmounted(() => {
   
   img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    max-height: 600px;
+    object-fit: cover;
+    object-position: center;
     display: block;
     position: relative;
     z-index: 1;
@@ -910,7 +913,7 @@ onUnmounted(() => {
 
 /* Battery Saver Mode - Themed Monochrome & Printed Effect */
 [data-performance="power-saver"] {
-  .project-image img {
+  .project-image img, .related-image img {
     filter: var(--filter-battery-saver);
   }
   

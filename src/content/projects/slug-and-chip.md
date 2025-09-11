@@ -1,6 +1,6 @@
 ---
 id: slug-and-chip
-title: Slug and Chip
+title: Slug & Chip
 subtitle: SALT. Chips love it, slugs hate it.
 description: SALT. Chips love it, slugs hate it.
 category: experiments
@@ -15,9 +15,15 @@ completedAt: 2020-09-01
 duration: 1 week
 ---
 
-# Project Title
+# Slug & Chip
 
-Brief introduction explaining what this project is and its main purpose.
+SALT. Chips love it, slugs hate it.
+
+Use the arrows to help Chip mop up the salt. Hold A and use the arrows to help slug avoid it…
+
+But be careful - nobody likes an overly salted chip. And everyone hates a slimy one.
+
+My submission for the 2020 Developer Division GameJam.
 
 ![Project Screenshot](/images/simple-template.svg)
 
