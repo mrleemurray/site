@@ -74,9 +74,9 @@ completedAt: 2025-09-04
 duration: 1 week
 ---
 
-# Project Title
+# VS Code Color Mapper
 
-Brief introduction explaining what this project is and its main purpose.
+A Figma plugin to create theme responsive SVG assets for VS Code.
 
 ![Project Screenshot](/images/simple-template.svg)
 
@@ -137,9 +137,9 @@ completedAt: 2025-09-04
 duration: 1 week
 ---
 
-# Project Title
+# Figma Plugin UI Toolkit
 
-Brief introduction explaining what this project is and its main purpose.
+A component library for building Figma plugin UI.
 
 ![Project Screenshot](/images/simple-template.svg)
 
@@ -188,21 +188,21 @@ export const mainFunction = () => {
 `,o=`---
 id: figmail
 title: Figmail
-subtitle: Create & export crafted email templates for Outlook.
-description: Create & export crafted email templates for Outlook.
+subtitle: Create & export email templates for Outlook.
+description: Create & export email templates for Outlook.
 category: work
-tags: [Typescript, Figma Plugin, Outlook]
+tags: [Typescript, Figma Plugin, Outlook, MJML]
 image: /images/figmail/cover.png
 featured: false
 liveUrl: https://example.com
 sourceUrl: https://github.com/username/project
-completedAt: 2025-09-04
+completedAt: 2020-09-04
 duration: 1 week
 ---
 
-# Project Title
+# Figmail
 
-Brief introduction explaining what this project is and its main purpose.
+A Figma plugin to create & export email templates for Outlook.
 
 ![Project Screenshot](/images/simple-template.svg)
 
@@ -248,7 +248,7 @@ export const mainFunction = () => {
 
 - **Live Demo**: [project.com](https://example.com)
 - **Source Code**: [github.com/username/project](https://github.com/username/project)
-`,i=`---
+`,r=`---
 id: markdown-features-demo
 title: Enhanced Markdown Features Demo
 subtitle: Showcase of all available markdown capabilities
@@ -459,7 +459,7 @@ The enhanced markdown features are optimized for:
 
 ---
 
-*This demo showcases the full capabilities of the enhanced markdown system. Use these features to create rich, interactive documentation for your projects.*`,r=`---
+*This demo showcases the full capabilities of the enhanced markdown system. Use these features to create rich, interactive documentation for your projects.*`,i=`---
 id: motion-study-1
 title: Motion Study #1
 subtitle: Robust RESTful API for online stores
@@ -896,9 +896,9 @@ completedAt: 2025-09-04
 duration: 1 week
 ---
 
-# Project Title
+# Real Time Clock
 
-Brief introduction explaining what this project is and its main purpose.
+A Figma plugin to add live time & date information to any design, presentation, or prototype.
 
 ![Project Screenshot](/images/simple-template.svg)
 
@@ -959,9 +959,9 @@ completedAt: 2025-09-04
 duration: 1 week
 ---
 
-# Project Title
+# SF Symbol Creator
 
-Brief introduction explaining what this project is and its main purpose.
+A Figma plugin to preview & export SF Symbols 3.0 for macOS & iOS.
 
 ![Project Screenshot](/images/simple-template.svg)
 
@@ -1025,7 +1025,7 @@ duration: 1 week
 
 # Skew
 
-Brief introduction explaining what this project is and its main purpose.
+A Figma plugin to skew layers up to ±90° in each axis.
 
 ![Plugin UI](/images/skew/plugin-ui.png)
 
@@ -1134,11 +1134,11 @@ export const mainFunction = () => {
 
 - **Live Demo**: [project.com](https://example.com)
 - **Source Code**: [github.com/username/project](https://github.com/username/project)
-`,p=`---
+`,d=`---
 id: storymaker-storyteller
 title: Storymaker, Storyteller
-subtitle: A pair of devices that record stories to be relived by future generations.
-description: A pair of devices that record stories to be relived by future generations.
+subtitle: A pair of connected devices that record stories to be relived by future generations.
+description: A pair of connected devices that record stories to be relived by future generations.
 category: work
 tags: [Research, Interaction Design]
 image: /images/storymaker-storyteller/cover.png
@@ -1149,9 +1149,9 @@ completedAt: 2007-09-01
 duration: 1 week
 ---
 
-# Project Title
+# Storymaker, Storyteller
 
-Brief introduction explaining what this project is and its main purpose.
+A pair of connected devices that record stories to be relived by future generations.
 
 ![Project Screenshot](/images/simple-template.svg)
 
@@ -1197,7 +1197,7 @@ export const mainFunction = () => {
 
 - **Live Demo**: [project.com](https://example.com)
 - **Source Code**: [github.com/username/project](https://github.com/username/project)
-`,d=`---
+`,p=`---
 id: syntax-highlighter
 title: Syntax Highlighter
 subtitle: Apply syntax highlighting colors to code snippets.
@@ -1212,9 +1212,9 @@ completedAt: 2025-09-04
 duration: 1 week
 ---
 
-# Project Title
+# Syntax Highlighter
 
-Brief introduction explaining what this project is and its main purpose.
+A Figma plugin to apply syntax highlighting colors to code snippets.
 
 ![Project Screenshot](/images/simple-template.svg)
 
@@ -1397,9 +1397,9 @@ completedAt: 2025-09-04
 duration: 1 week
 ---
 
-# Project Title
+# Theme Importer
 
-Brief introduction explaining what this project is and its main purpose.
+A Figma plugin to import variables from popular VS Code themes.
 
 ![Project Screenshot](/images/simple-template.svg)
 
@@ -1462,7 +1462,7 @@ duration: 1 week
 
 # VS Code Codicons
 
-Brief introduction explaining what this project is and its main purpose.
+A Figma plugin to browse & copy the latest VS Code icons.
 
 ![Project Screenshot](/images/codicons/cover.png)
 
@@ -1511,8 +1511,8 @@ export const mainFunction = () => {
 `,g=`---
 id: word-clouds
 title: Word Clouds
-subtitle: Generate editable word clouds from raw text.
-description: Generate editable word clouds from raw text.
+subtitle: Generate editable word clouds from text.
+description: Generate editable word clouds from text.
 category: work
 tags: [Typescript, Figma Plugin]
 image: /images/word-cloud/cover.png
@@ -1523,74 +1523,9 @@ completedAt: 2025-09-04
 duration: 1 week
 ---
 
-# Project Title
+# Word Clouds
 
-Brief introduction explaining what this project is and its main purpose.
-
-![Project Screenshot](/images/simple-template.svg)
-
-## Overview
-
-Quick overview of what the project does and why it's valuable.
-
-### Key Features
-
-- **Feature 1**: Main functionality
-- **Feature 2**: Secondary functionality
-- **Feature 3**: Additional features
-
-## Context
-
-### Problem
-
-- Description of the problem being solved
-
-### Solution
-
-Key technical implementation details:
-
-\`\`\`typescript
-// Main code example
-export const mainFunction = () => {
-  // Implementation
-}
-\`\`\`
-
-## Impact
-
-- Metric 1: Achievement
-- Metric 2: Another result
-- User feedback summary
-  
-## Learnings
-
-**Learning 1**: Lessons learned from the project
-**Learning 2**: Additional insights gained
-
-## Links
-
-- **Live Demo**: [project.com](https://example.com)
-- **Source Code**: [github.com/username/project](https://github.com/username/project)
-`,f=`---
-id: weather-station
-title: Weather Station
-subtitle: A weather display for sailors at the Lake MacQuarie Yacht Club. Realtime data from the Australian Government Bureau of Meteorology.
-description: A weather display for sailors at the Lake MacQuarie Yacht Club. Realtime data from the Australian Government Bureau of Meteorology.
-category: experiments
-tags: [Processing, Java]
-image: /images/weather-station/cover.gif
-featured: false
-liveUrl:
-sourceUrl:
-liveUrlLabel: Live Demo
-sourceUrlLabel: Source Code
-completedAt: 2018-09-06
-duration: 1 week
----
-
-# Project Title
-
-Brief introduction explaining what this project is and its main purpose.
+A Figma plugin to generate editable word clouds from text.
 
 ![Project Screenshot](/images/simple-template.svg)
 
@@ -1637,25 +1572,25 @@ export const mainFunction = () => {
 - **Live Demo**: [project.com](https://example.com)
 - **Source Code**: [github.com/username/project](https://github.com/username/project)
 `,y=`---
-id: notebooks
-title: Notebooks
-subtitle: Jupyter Notebooks prototypes for VS Code.
-description: Jupyter Notebooks prototypes for VS Code.
-category: work
-tags: [Vue.js, VS Code, Prototyping]
-image: /images/notebooks/cover.png
+id: weather-station
+title: Weather Station
+subtitle: A weather display for sailors at the Lake MacQuarie Yacht Club. Realtime data from the Australian Government Bureau of Meteorology.
+description: A weather display for sailors at the Lake MacQuarie Yacht Club. Realtime data from the Australian Government Bureau of Meteorology.
+category: experiments
+tags: [Processing, Java]
+image: /images/weather-station/cover.gif
 featured: false
-liveUrl: https://example.com
-sourceUrl: https://github.com/username/project
+liveUrl:
+sourceUrl:
 liveUrlLabel: Live Demo
 sourceUrlLabel: Source Code
-completedAt: 2020-09-06
+completedAt: 2018-09-06
 duration: 1 week
 ---
 
-# Notebooks
+# Weather Station
 
-Brief introduction explaining what this project is and its main purpose.
+A weather display for sailors at the Lake MacQuarie Yacht Club. Realtime data from the Australian Government Bureau of Meteorology.
 
 ![Project Screenshot](/images/simple-template.svg)
 
@@ -1701,4 +1636,69 @@ export const mainFunction = () => {
 
 - **Live Demo**: [project.com](https://example.com)
 - **Source Code**: [github.com/username/project](https://github.com/username/project)
-`,w={notebooks:y,"weather-station":f,aether:n,"color-mapper":e,"figma-ui-toolkit":t,figmail:o,"markdown-features-demo":i,"motion-study-1":r,"real-time-clock":a,"sf-symbol-creator":s,skew:c,"slug-and-chip":l,"storymaker-storyteller":p,"syntax-highlighter":d,"test-callouts":m,"theme-importer":u,"vs-code-codicons":h,"word-clouds":g};export{w as MARKDOWN_CONTENT};
+`,f=`---
+id: notebooks
+title: Notebooks
+subtitle: Jupyter Notebooks prototypes for VS Code.
+description: Jupyter Notebooks prototypes for VS Code.
+category: work
+tags: [Vue.js, VS Code, Prototyping]
+image: /images/notebooks/cover.png
+featured: false
+liveUrl: https://example.com
+sourceUrl: https://github.com/username/project
+liveUrlLabel: Live Demo
+sourceUrlLabel: Source Code
+completedAt: 2020-09-06
+duration: 1 week
+---
+
+# Notebooks
+
+Jupyter Notebooks prototypes for VS Code.
+
+![Project Screenshot](/images/simple-template.svg)
+
+## Overview
+
+Quick overview of what the project does and why it's valuable.
+
+### Key Features
+
+- **Feature 1**: Main functionality
+- **Feature 2**: Secondary functionality
+- **Feature 3**: Additional features
+
+## Context
+
+### Problem
+
+- Description of the problem being solved
+
+### Solution
+
+Key technical implementation details:
+
+\`\`\`typescript
+// Main code example
+export const mainFunction = () => {
+  // Implementation
+}
+\`\`\`
+
+## Impact
+
+- Metric 1: Achievement
+- Metric 2: Another result
+- User feedback summary
+  
+## Learnings
+
+**Learning 1**: Lessons learned from the project
+**Learning 2**: Additional insights gained
+
+## Links
+
+- **Live Demo**: [project.com](https://example.com)
+- **Source Code**: [github.com/username/project](https://github.com/username/project)
+`,b={notebooks:f,"weather-station":y,aether:n,"color-mapper":e,"figma-ui-toolkit":t,figmail:o,"markdown-features-demo":r,"motion-study-1":i,"real-time-clock":a,"sf-symbol-creator":s,skew:c,"slug-and-chip":l,"storymaker-storyteller":d,"syntax-highlighter":p,"test-callouts":m,"theme-importer":u,"vs-code-codicons":h,"word-clouds":g};export{b as MARKDOWN_CONTENT};
