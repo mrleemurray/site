@@ -39,6 +39,15 @@ const THUMBNAIL_CONFIGS = {
     withoutEnlargement: true,
     quality: 80,
     suffix: '-small'
+  },
+  // Hero images: 500px height, maintain aspect ratio
+  hero: {
+    width: null,
+    height: 1000, // 2x for retina (500px display height)
+    fit: 'inside',
+    withoutEnlargement: true,
+    quality: 90, // Higher quality for hero images
+    suffix: '-hero'
   }
 };
 
@@ -233,6 +242,7 @@ async function optimizeImages() {
   console.log('   Grid view: `/images/thumbnails/project-name/cover-grid.jpg`');
   console.log('   List view: `/images/thumbnails/project-name/cover-list.jpg`');
   console.log('   Mobile:    `/images/thumbnails/project-name/cover-small.jpg`');
+  console.log('   Hero:      `/images/thumbnails/project-name/cover-hero.jpg`');
 }
 
 // Add to .gitignore if not already there

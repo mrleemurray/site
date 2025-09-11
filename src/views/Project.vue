@@ -21,7 +21,7 @@
         <!-- Project Image -->
         <div class="project-image">
           <img 
-            v-lazy="getImageSrc(project.image)" 
+            v-lazy="getImageSrc(project.image, true)" 
             :alt="project.title"
             :class="{ loaded: heroImageLoaded }"
             @load="onHeroImageLoad"
@@ -144,6 +144,7 @@
 <script setup lang="ts">
 import { ref, computed, watch, onMounted, onUnmounted, nextTick } from 'vue'
 import { MarkdownLoader, type Project } from '@/utils/projects'
+import { ImageOptimizer, type ThumbnailOptions } from '@/utils/image-optimizer'
 
 interface Props {
   slug: string
@@ -180,17 +181,37 @@ const relatedProjects = computed(() => {
     .slice(0, 4)
 })
 
-// Fix image paths for GitHub Pages
-const getImageSrc = (imagePath: string): string => {
+// Fix image paths for GitHub Pages and use optimized images
+const getImageSrc = (imagePath: string, isHeroImage: boolean = false): string => {
   if (!imagePath) return ''
   
   // If it's already a full URL, return as is
   if (imagePath.startsWith('http')) return imagePath
   
-  // For GitHub Pages, add the base path
-  const basePath = window.location.hostname === 'mrleemurray.github.io' ? '/site' : ''
+  // For hero images, use optimization
+  if (isHeroImage) {
+    // Check if it's a GIF to decide on animation preference
+    const isGif = ImageOptimizer.isGif(imagePath)
+    
+    // Create thumbnail options for hero images - use 'hero' view mode for 500px height
+    const thumbnailOptions: ThumbnailOptions = {
+      viewMode: 'hero', // Use hero mode for 500px height optimized images
+      isMobile: window.innerWidth <= 767,
+      isRetina: window.devicePixelRatio > 1,
+      preferAnimation: isGif // For GIFs, prefer animated versions; for others, use static
+    }
+    
+    // Use the ImageOptimizer to get the best optimized image
+    try {
+      return ImageOptimizer.getImageSrc(imagePath, thumbnailOptions)
+    } catch (error) {
+      console.warn('Failed to get optimized hero image, falling back to original:', error)
+      // Fall through to original logic
+    }
+  }
   
-  // If the path starts with /, it's absolute from public folder
+  // Fallback to original image path logic for non-hero images or optimization failure
+  const basePath = window.location.hostname === 'mrleemurray.github.io' ? '/site' : ''
   return imagePath.startsWith('/') ? `${basePath}${imagePath}` : `${basePath}/${imagePath}`
 }
 
@@ -538,7 +559,7 @@ onUnmounted(() => {
 .project-image {
   overflow: hidden;
   border-bottom: 1px solid var(--color-border);
-  max-height: 600px;
+  max-height: 500px;
   position: relative;
   
   /* Diagonal stripe pattern background that shows before image loads */
@@ -555,7 +576,7 @@ onUnmounted(() => {
   img {
     width: 100%;
     height: 100%;
-    max-height: 600px;
+    max-height: 500px;
     object-fit: cover;
     object-position: center;
     display: block;

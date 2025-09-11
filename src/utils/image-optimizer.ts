@@ -1,7 +1,7 @@
 // Image optimization utilities for selecting the best thumbnail
 
 export interface ThumbnailOptions {
-  viewMode: 'grid' | 'list'
+  viewMode: 'grid' | 'list' | 'hero'
   isMobile: boolean
   isRetina?: boolean
   preferAnimation?: boolean // New option for GIF handling
@@ -27,7 +27,9 @@ export class ImageOptimizer {
     // Determine the best thumbnail suffix based on view mode and device
     let suffix = 'grid' // default
     
-    if (options.isMobile) {
+    if (options.viewMode === 'hero') {
+      suffix = 'hero' // Use hero thumbnails for Project.vue hero images
+    } else if (options.isMobile) {
       suffix = 'small' // Use small thumbnails on mobile for faster loading
     } else if (options.viewMode === 'list') {
       suffix = 'list'
