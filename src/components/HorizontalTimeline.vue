@@ -452,7 +452,7 @@ defineExpose({
       color: var(--color-text-secondary);
       font-weight: var(--font-weight-medium);
       
-      @media (max-width: 768px) {
+      @media (max-width: 1200px) {
         display: none;
       }
     }

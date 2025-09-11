@@ -31,7 +31,7 @@
 
           <!-- Timeline -->
           <section class="timeline-section">
-            <h2 class="section-title">Professional Journey</h2>
+            <h2 class="section-title timeline-title">Professional Journey</h2>
             <HorizontalTimeline />
           </section>
 
@@ -383,14 +383,14 @@ watch(() => props.isOpen, (isOpen) => {
   color: var(--color-text-primary);
 }
 
+.timeline-title {
+  margin-bottom: 0;
+}
+
 .intro-grid {
   display: grid;
   gap: var(--space-8);
   align-items: center;
-  
-  // @media (min-width: 768px) {
-  //   grid-template-columns: 2fr 1fr;
-  // }
 }
 
 .intro-content {
