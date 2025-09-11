@@ -1,8 +1,8 @@
 ---
 id: storymaker-storyteller
 title: Storymaker, Storyteller
-subtitle: A pair of devices that record stories to be relived by future generations.
-description: A pair of devices that record stories to be relived by future generations.
+subtitle: A pair of connected devices that record stories to be relived by future generations.
+description: A pair of connected devices that record stories to be relived by future generations.
 category: work
 tags: [Research, Interaction Design]
 image: /images/storymaker-storyteller/cover.png
@@ -13,9 +13,9 @@ completedAt: 2007-09-01
 duration: 1 week
 ---
 
-# Project Title
+# Storymaker, Storyteller
 
-Brief introduction explaining what this project is and its main purpose.
+A pair of connected devices that record stories to be relived by future generations.
 
 ![Project Screenshot](/images/simple-template.svg)
 

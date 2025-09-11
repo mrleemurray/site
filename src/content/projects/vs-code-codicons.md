@@ -15,7 +15,7 @@ duration: 1 week
 
 # VS Code Codicons
 
-Brief introduction explaining what this project is and its main purpose.
+A Figma plugin to browse & copy the latest VS Code icons.
 
 ![Project Screenshot](/images/codicons/cover.png)
 

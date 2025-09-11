@@ -13,9 +13,9 @@ completedAt: 2025-09-04
 duration: 1 week
 ---
 
-# Project Title
+# Syntax Highlighter
 
-Brief introduction explaining what this project is and its main purpose.
+A Figma plugin to apply syntax highlighting colors to code snippets.
 
 ![Project Screenshot](/images/simple-template.svg)
 

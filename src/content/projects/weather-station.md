@@ -15,9 +15,9 @@ completedAt: 2018-09-06
 duration: 1 week
 ---
 
-# Project Title
+# Weather Station
 
-Brief introduction explaining what this project is and its main purpose.
+A weather display for sailors at the Lake MacQuarie Yacht Club. Realtime data from the Australian Government Bureau of Meteorology.
 
 ![Project Screenshot](/images/simple-template.svg)
 

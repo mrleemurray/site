@@ -14,9 +14,9 @@ completedAt: 2025-09-04
 duration: 1 week
 ---
 
-# Project Title
+# Real Time Clock
 
-Brief introduction explaining what this project is and its main purpose.
+A Figma plugin to add live time & date information to any design, presentation, or prototype.
 
 ![Project Screenshot](/images/simple-template.svg)
 

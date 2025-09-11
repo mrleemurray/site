@@ -16,7 +16,7 @@ duration: 1 week
 
 # Skew
 
-Brief introduction explaining what this project is and its main purpose.
+A Figma plugin to skew layers up to ±90° in each axis.
 
 ![Plugin UI](/images/skew/plugin-ui.png)
 

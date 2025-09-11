@@ -17,7 +17,7 @@ duration: 1 week
 
 # Notebooks
 
-Brief introduction explaining what this project is and its main purpose.
+Jupyter Notebooks prototypes for VS Code.
 
 ![Project Screenshot](/images/simple-template.svg)
 

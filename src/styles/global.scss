@@ -102,6 +102,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Cascadia Code';
+  src: url('../fonts/CascadiaCode.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 // CSS Reset & Base Styles
 *,
 *::before,

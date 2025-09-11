@@ -1,8 +1,8 @@
 ---
 id: word-clouds
 title: Word Clouds
-subtitle: Generate editable word clouds from raw text.
-description: Generate editable word clouds from raw text.
+subtitle: Generate editable word clouds from text.
+description: Generate editable word clouds from text.
 category: work
 tags: [Typescript, Figma Plugin]
 image: /images/word-cloud/cover.png
@@ -13,9 +13,9 @@ completedAt: 2025-09-04
 duration: 1 week
 ---
 
-# Project Title
+# Word Clouds
 
-Brief introduction explaining what this project is and its main purpose.
+A Figma plugin to generate editable word clouds from text.
 
 ![Project Screenshot](/images/simple-template.svg)
 

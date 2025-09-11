@@ -1,21 +1,21 @@
 ---
 id: figmail
 title: Figmail
-subtitle: Create & export crafted email templates for Outlook.
-description: Create & export crafted email templates for Outlook.
+subtitle: Create & export email templates for Outlook.
+description: Create & export email templates for Outlook.
 category: work
-tags: [Typescript, Figma Plugin, Outlook]
+tags: [Typescript, Figma Plugin, Outlook, MJML]
 image: /images/figmail/cover.png
 featured: false
 liveUrl: https://example.com
 sourceUrl: https://github.com/username/project
-completedAt: 2025-09-04
+completedAt: 2020-09-04
 duration: 1 week
 ---
 
-# Project Title
+# Figmail
 
-Brief introduction explaining what this project is and its main purpose.
+A Figma plugin to create & export email templates for Outlook.
 
 ![Project Screenshot](/images/simple-template.svg)
 
