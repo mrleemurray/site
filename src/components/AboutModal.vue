@@ -18,7 +18,7 @@
           <section class="intro-section">
             <div class="intro-grid">
               <div class="intro-content">
-                <h2>Lee Murray</h2>
+                <h2>Technical Interaction Design for Product & Systems</h2>
                 <p>
                   My interests & skills blend the boundary between designer & developer, using technology to evolve the design experience to the highest standards; from simple test mock-ups to hardware preproduction prototypes, my unusual hybrid skillsets combine hardware design with software as well as web technology.
                 </p>
@@ -396,7 +396,7 @@ watch(() => props.isOpen, (isOpen) => {
 .intro-content {
   h2 {
     margin-bottom: var(--space-4);
-    color: var(--color-primary-600);
+    // color: var(--color-primary-600);
   }
   
   p {
