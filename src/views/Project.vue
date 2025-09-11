@@ -569,7 +569,6 @@ onUnmounted(() => {
 
 .project-content {
   display: grid;
-  // margin-bottom: var(--space-16);
   
   @media (min-width: 1024px) {
     grid-template-columns: 1fr 300px;
@@ -584,6 +583,8 @@ onUnmounted(() => {
   padding: var(--space-4);
   line-height: var(--line-height-relaxed);
   border-right: 1px solid var(--color-border);
+
+  
   
   :deep(h1), :deep(h2), :deep(h3), :deep(h4), :deep(h5), :deep(h6) {
     margin-top: var(--space-4);
@@ -742,6 +743,12 @@ onUnmounted(() => {
   }
 }
 
+@media (max-width: 1024px) {
+  .markdown-content, .project-meta {
+    border-right: none;
+  }
+}
+
 .content-loading {
   text-align: center;
   padding: var(--space-16);
@@ -764,7 +771,7 @@ onUnmounted(() => {
     top: 3rem;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     display: none;
   }
   
