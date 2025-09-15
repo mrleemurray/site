@@ -1681,4 +1681,69 @@ export const mainFunction = () => {
 
 - **Live Demo**: [project.com](https://example.com)
 - **Source Code**: [github.com/username/project](https://github.com/username/project)
-`,b={notebooks:f,"weather-station":y,aether:n,"color-mapper":e,"figma-ui-toolkit":t,figmail:o,"markdown-features-demo":r,"motion-study-1":a,"real-time-clock":i,"sf-symbol-creator":s,skew:c,"slug-and-chip":l,"storymaker-storyteller":d,"syntax-highlighter":p,"test-callouts":m,"theme-importer":u,"vs-code-codicons":h,"word-clouds":g};export{b as MARKDOWN_CONTENT};
+`,b=`---
+id: observer
+title: The Observer
+subtitle: A public access CCTV viewer exploring the social boundaries of surveillance.
+description: A public access CCTV viewer exploring the social boundaries of surveillance.
+category: work
+tags: [Technology, Framework]
+image: /images/observer/cover.png
+featured: false
+liveUrl: https://example.com
+sourceUrl: https://github.com/username/project
+liveUrlLabel: Live Demo
+sourceUrlLabel: Source Code
+completedAt: 2010-05-01
+duration: 1 week
+---
+
+# The Observer
+
+A public access CCTV viewer exploring the social boundaries of surveillance.
+
+![Project Screenshot](/images/simple-template.svg)
+
+## Overview
+
+Quick overview of what the project does and why it's valuable.
+
+### Key Features
+
+- **Feature 1**: Main functionality
+- **Feature 2**: Secondary functionality
+- **Feature 3**: Additional features
+
+## Context
+
+### Problem
+
+- Description of the problem being solved
+
+### Solution
+
+Key technical implementation details:
+
+\`\`\`typescript
+// Main code example
+export const mainFunction = () => {
+  // Implementation
+}
+\`\`\`
+
+## Impact
+
+- Metric 1: Achievement
+- Metric 2: Another result
+- User feedback summary
+  
+## Learnings
+
+**Learning 1**: Lessons learned from the project
+**Learning 2**: Additional insights gained
+
+## Links
+
+- **Live Demo**: [project.com](https://example.com)
+- **Source Code**: [github.com/username/project](https://github.com/username/project)
+`,w={observer:b,notebooks:f,"weather-station":y,aether:n,"color-mapper":e,"figma-ui-toolkit":t,figmail:o,"markdown-features-demo":r,"motion-study-1":a,"real-time-clock":i,"sf-symbol-creator":s,skew:c,"slug-and-chip":l,"storymaker-storyteller":d,"syntax-highlighter":p,"test-callouts":m,"theme-importer":u,"vs-code-codicons":h,"word-clouds":g};export{w as MARKDOWN_CONTENT};
