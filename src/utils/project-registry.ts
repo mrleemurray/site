@@ -1,5 +1,6 @@
 // Projects registry - add new project IDs here
 export const PROJECT_REGISTRY = [
+  'observer',
   'notebooks',
   'weather-station',
   'slug-and-chip',

@@ -19,9 +19,11 @@ import vsCodeCodiconsMd from '../content/projects/vs-code-codicons.md?raw'
 import wordCloudsMd from '../content/projects/word-clouds.md?raw'
 import weatherStationMd from '../content/projects/weather-station.md?raw'
 import notebooksMd from '../content/projects/notebooks.md?raw'
+import observerMd from '../content/projects/observer.md?raw'
 
 export const MARKDOWN_CONTENT: Record<string, string> = {
-  'notebooks': notebooksMd,
+  'observer': observerMd,
+'notebooks': notebooksMd,
 'weather-station': weatherStationMd,
 'aether': aetherMd,
 'color-mapper': colorMapperMd,
