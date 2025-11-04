@@ -3,7 +3,7 @@ import vue from '@vitejs/plugin-vue'
 
 export default defineConfig(({ command }) => ({
   plugins: [vue()],
-  base: command === 'serve' ? '/' : '/site/', // '/' for dev, '/site/' for production
+  base: '/', // Use root path for both dev and production
   resolve: {
     alias: {
       '@': new URL('./src', import.meta.url).pathname
