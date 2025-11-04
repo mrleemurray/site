@@ -28,7 +28,7 @@ import giftMd from '../content/projects/gift.md?raw'
 import googlePlayMd from '../content/projects/google-play.md?raw'
 import handbellHeroMd from '../content/projects/handbell-hero.md?raw'
 import helvarMd from '../content/projects/helvar.md?raw'
-import instrumentOneMd from '../content/projects/instrument-1.md?raw'
+import instrument_1Md from '../content/projects/instrument-1.md?raw'
 import intellWonderwallMd from '../content/projects/intell-wonderwall.md?raw'
 import interrogationOpsSpyscapeMd from '../content/projects/interrogation-ops-spyscape.md?raw'
 import keyshotMd from '../content/projects/keyshot.md?raw'
@@ -37,13 +37,12 @@ import lightMd from '../content/projects/light.md?raw'
 import magicWandMd from '../content/projects/magic-wand.md?raw'
 import magnetismMd from '../content/projects/magnetism.md?raw'
 import markdownFeaturesDemoMd from '../content/projects/markdown-features-demo.md?raw'
-import motionStudyOnePortfolioMd from '../content/projects/motion-study-1-portfolio.md?raw'
-import motionStudyOneMd from '../content/projects/motion-study-1.md?raw'
+import motionStudy_1Md from '../content/projects/motion-study-1.md?raw'
 import notebooksMd from '../content/projects/notebooks.md?raw'
-import objectiveFourxMd from '../content/projects/objective-4x.md?raw'
+import objective_4xMd from '../content/projects/objective-4x.md?raw'
 import observerMd from '../content/projects/observer.md?raw'
 import particlesMd from '../content/projects/particles.md?raw'
-import patternToolFourMd from '../content/projects/pattern-tool-4.md?raw'
+import patternTool_4Md from '../content/projects/pattern-tool-4.md?raw'
 import physicalOnenoteMd from '../content/projects/physical-onenote.md?raw'
 import presenceMd from '../content/projects/presence.md?raw'
 import protopieMd from '../content/projects/protopie.md?raw'
@@ -108,7 +107,7 @@ export const MARKDOWN_CONTENT: Record<string, string> = {
   'google-play': googlePlayMd,
   'handbell-hero': handbellHeroMd,
   'helvar': helvarMd,
-  'instrument-1': instrumentOneMd,
+  'instrument-1': instrument_1Md,
   'intell-wonderwall': intellWonderwallMd,
   'interrogation-ops-spyscape': interrogationOpsSpyscapeMd,
   'keyshot': keyshotMd,
@@ -117,13 +116,12 @@ export const MARKDOWN_CONTENT: Record<string, string> = {
   'magic-wand': magicWandMd,
   'magnetism': magnetismMd,
   'markdown-features-demo': markdownFeaturesDemoMd,
-  'motion-study-1-portfolio': motionStudyOnePortfolioMd,
-  'motion-study-1': motionStudyOneMd,
+  'motion-study-1': motionStudy_1Md,
   'notebooks': notebooksMd,
-  'objective-4x': objectiveFourxMd,
+  'objective-4x': objective_4xMd,
   'observer': observerMd,
   'particles': particlesMd,
-  'pattern-tool-4': patternToolFourMd,
+  'pattern-tool-4': patternTool_4Md,
   'physical-onenote': physicalOnenoteMd,
   'presence': presenceMd,
   'protopie': protopieMd,
