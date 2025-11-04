@@ -37,9 +37,9 @@ try {
     // Make JS path absolute  
     .replace(/src="([^"]*\.js)"/, `src="${jsPath}"`)
     // Make favicon absolute
-    .replace(/href="\.\/favicon\.svg"/, 'href="/site/favicon.svg"')
+    .replace(/href="\.\/favicon\.svg"/, 'href="/favicon.svg"')
     // Make apple touch icon absolute
-    .replace(/href="\.\/apple-touch-icon\.png"/, 'href="/site/apple-touch-icon.png"')
+    .replace(/href="\.\/apple-touch-icon\.png"/, 'href="/apple-touch-icon.png"')
     // Update the main.ts script to be the bundled JS
     .replace(/src="\.\/src\/main\.ts"/, `src="${jsPath}"`);
 
