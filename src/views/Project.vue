@@ -211,8 +211,7 @@ const getImageSrc = (imagePath: string, isHeroImage: boolean = false): string =>
   }
   
   // Fallback to original image path logic for non-hero images or optimization failure
-  const basePath = window.location.hostname === 'mrleemurray.github.io' ? '/site' : ''
-  return imagePath.startsWith('/') ? `${basePath}${imagePath}` : `${basePath}/${imagePath}`
+  return imagePath.startsWith('/') ? imagePath : `/${imagePath}`
 }
 
 // Image loading handlers
@@ -247,8 +246,7 @@ const loadProject = async () => {
     // Emit the project title immediately for mobile header
     emit('sticky-title-change', project.value.title)
 
-    // Get the correct base path for images
-    const basePath = window.location.hostname === 'mrleemurray.github.io' ? '/site' : ''
+    // Images use root path
     
     // Extract TOC manually first (before processing headers)
     const tocMatches = parsed.content.matchAll(/^(#{1,6})\s+(.*)$/gm)

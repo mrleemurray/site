@@ -64,7 +64,7 @@ export class ImageOptimizer {
    * Get the correct base path for GitHub Pages vs local development
    */
   static getBasePath(): string {
-    return window.location.hostname === 'mrleemurray.github.io' ? '/site' : ''
+    return ''
   }
   
   /**
