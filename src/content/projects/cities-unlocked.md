@@ -4,49 +4,32 @@ title: Cities Unlocked
 subtitle: Custom hardware to allow the visually impaired navigate towns & cities.
 description: Custom hardware to allow the visually impaired navigate towns & cities.
 category: work
-tags: [3D Printing, Hardware, AI, IoT, Design, Microsoft, SPYSCAPE, Google, Intel]
+tags: [Accessibility, 3D Printing, Electronics]
 image: /images/cities-unlocked/cover.gif
 featured: false
-completedAt: 2024-01-01
-duration: 2 weeks
+completedAt: 2015-01-01
+duration: 6 months
 ---
-# Cities Unlocked
-
-CIties unlocked
 
 Custom hardware to allow the visually impaired navigate towns & cities.
 
 In conjunction with Microsoft Reading, we created custom electronics & 3D printed casings for sensor packages that clip on to bone conducting headsets. The final product allowed a visually impaired person to set a route (via an app) & follow it through a busy town using spatial audio "breadcrumbs" to reach their destination.
 
 ## Partnership
-Guide Dogs UK
 
-Future Cities Catapult
+- Guide Dogs UK
+- Future Cities Catapult
 
 ## Media Coverage
-- **BBC News**
 
-- **The Telegraph**
-
-- **Dezeen**
-
-- **Fast Company**
-
-- **The Guardian**
-
-- **The Verge**
-
-**Technology:** Mbed / ARM Cortex-M0
-
-**Manufacturing:** PCBs manufactured by PCB-Pool/BETA Layout
-
-## Videos
-
-Microsoft, Guide Dogs and Future Cities Catapult have launched the results of the first phase of an exciting project which will revolutionise how people with sight loss, and the sighted, experience the urban landscape, by creating a revolutionary new application of 3D sound.
-
-
-## Gallery
-
+- **[Guide Dogs UK](https://www.guidedogs.org.uk/cities-unlocked/)**
+- **[Future Cities Catapult](https://futurecities.catapult.org.uk/project/cities-unlocked/)**
+- **[BBC News](https://www.bbc.com/news/technology-29913637)**
+- **[The Telegraph](https://www.telegraph.co.uk/technology/news/11210926/How-3D-audio-technology-could-unlock-cities-for-blind-people.html)**
+- **[Dezeen](https://www.dezeen.com/2014/11/06/future-cities-catapult-microsoft-guide-dogs-3d-headset-soundscape-to-help-blind-people/)**
+- **[Fast Company](https://www.fastcompany.com/3038691/this-device-creates-a-3d-soundscape-to-help-blind-people-navigate-through-cities)**
+- **[The Guardian](https://www.theguardian.com/artanddesign/architecture-design-blog/2014/nov/07/microsoft-headset-blind-3d-gps-guide-dogs)**
+- **[The Verge](https://www.theverge.com/2014/11/6/7164623/microsoft-3d-sound-headset-guide-dogs)**
 
 ![dogs_clip.gif](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1511527413257-13C3KS3GWG50NBL7HXLZ/dogs_clip.gif)
 
@@ -67,11 +50,3 @@ Microsoft, Guide Dogs and Future Cities Catapult have launched the results of th
 ![IMG_4685.JPG](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1532880687389-G512VSSGWMJLENPUZMTO/IMG_4685.JPG)
 
 ![IMG_4608.jpg](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1532880702665-KGIRGGFWVIQMGAHEFULC/IMG_4608.jpg)
-- **[Guide Dogs UK](https://www.guidedogs.org.uk/cities-unlocked/)**
-- **[Future Cities Catapult](https://futurecities.catapult.org.uk/project/cities-unlocked/)**
-- **[- **BBC News**](https://www.bbc.com/news/technology-29913637)**
-- **[- **The Telegraph**](https://www.telegraph.co.uk/technology/news/11210926/How-3D-audio-technology-could-unlock-cities-for-blind-people.html)**
-- **[- **Dezeen**](https://www.dezeen.com/2014/11/06/future-cities-catapult-microsoft-guide-dogs-3d-headset-soundscape-to-help-blind-people/)**
-- **[- **Fast Company**](https://www.fastcompany.com/3038691/this-device-creates-a-3d-soundscape-to-help-blind-people-navigate-through-cities)**
-- **[- **The Guardian**](https://www.theguardian.com/artanddesign/architecture-design-blog/2014/nov/07/microsoft-headset-blind-3d-gps-guide-dogs)**
-- **[- **The Verge**](https://www.theverge.com/2014/11/6/7164623/microsoft-3d-sound-headset-guide-dogs)**

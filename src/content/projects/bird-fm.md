@@ -3,7 +3,7 @@ id: bird-fm
 title: Bird FM
 subtitle: An ambient soundscape of birdsong from all over the world, captured in the past 24 hours.
 description: An ambient soundscape of birdsong from all over the world, captured in the past 24 hours.
-category: work
+category: experiments
 tags: [Python, Raspberry Pi, Audio Processing]
 image: /images/bird-fm/cover.jpg
 liveUrl: https://www.xeno-canto.org/

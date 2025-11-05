@@ -1,39 +1,17 @@
 ---
 id: breaking-news
 title: Breaking News
-subtitle: Dundee University hosted a hackday based around the themes of journalism, open data and creating physical interactive experiences. Our team created a...
-description: Dundee University hosted a hackday based around the themes of journalism, open data and creating physical interactive experiences. Our team created a...
+subtitle: A game about news headlines.
+description: A game about news headlines.
 category: work
-tags: [Arduino, Hardware, AI, Design, Prototype, SPYSCAPE, Google, Intel]
+tags: [Hackathon, Arduino, Processing, Laser Cutting]
 image: /images/breaking-news/cover.png
 featured: false
-completedAt: 2024-01-01
-duration: 2 weeks
+completedAt: 2012-03-01
+duration: 1 day
 ---
-# Breaking News
 
-Breaking news
-
-A game about news headlines.
-
-Dundee University hosted a hackday based around the themes of journalism, open data and creating physical interactive experiences. Our team created a game which was a mash up of
-
-Have I got news for you
-
-and
-
-Whac-a-Mole
-
-🔧 Laser cut enclosure, electronics powered by
-
-Arduino
-
-⚡️ UI built with
-
-Processing
-
-## Gallery
-
+Dundee University hosted a hackday based around the themes of journalism, open data & physical interactive experiences. Our team created a game which was a mash up of [Have I got news for you](https://www.bbc.co.uk/programmes/b006mkw3) & [Whac-a-Mole](https://en.wikipedia.org/wiki/Whac-A-Mole) using an Arduino, Processing & laser cut boxes.
 
 ![dundeeBox.png](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1510934680569-OEUL1LEBXBA9WXY5DU5J/dundeeBox.png)
 
@@ -42,7 +20,3 @@ Processing
 ![dundeeElectronics.jpg](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1510934787196-16J7QJTXQ7UD1V3FG83D/dundeeElectronics.jpg)
 
 ![dundeePrototype.jpg](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1510934801497-MMZ9AT31N9OSM34EIALW/dundeePrototype.jpg)
-- **[Have I got news for you](https://www.bbc.co.uk/programmes/b006mkw3)**
-- **[Whac-a-Mole](https://en.wikipedia.org/wiki/Whac-A-Mole)**
-- **[Arduino](https://www.arduino.cc)**
-- **[Processing](https://processing.org)**

@@ -13,8 +13,6 @@ completedAt: 2025-09-04
 duration: 1 week
 ---
 
-# VS Code Color Mapper
-
 A Figma plugin to create theme responsive SVG assets for VS Code.
 
 ![Project Screenshot](/images/simple-template.svg)
