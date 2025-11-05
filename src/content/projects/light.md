@@ -5,7 +5,7 @@ subtitle: 60 MINUTE BUILD OF AN ADJUSTABLE LIGHT
 description: 60 MINUTE BUILD OF AN ADJUSTABLE LIGHT
 category: work
 tags: [Arduino, AI]
-image: /images/light/cover.png
+image: /images/light/cover.jpg
 featured: false
 completedAt: 2024-01-01
 duration: 2 weeks

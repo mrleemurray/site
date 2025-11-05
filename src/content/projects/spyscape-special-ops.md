@@ -5,7 +5,7 @@ subtitle: four unique laser tunnels to test agility & risk taking
 description: four unique laser tunnels to test agility & risk taking
 category: work
 tags: [AI, Design, SPYSCAPE, Google, Intel]
-image: /images/spyscape-special-ops/cover.png
+image: /images/spyscape-special-ops/cover.gif
 featured: false
 completedAt: 2024-01-01
 duration: 2 weeks

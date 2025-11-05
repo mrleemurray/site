@@ -5,7 +5,7 @@ subtitle: An interactive product booklet to promote the latest pest control from
 description: An interactive product booklet to promote the latest pest control from Syngenta.
 category: work
 tags: [Web, AI, Design, SPYSCAPE, Google, Intel]
-image: /images/elatus/cover.png
+image: /images/elatus/cover.gif
 featured: false
 completedAt: 2024-01-01
 duration: 2 weeks

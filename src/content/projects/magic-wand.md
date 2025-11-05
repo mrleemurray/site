@@ -5,7 +5,7 @@ subtitle: A system to help visitors plan & navigate a theme park.
 description: A system to help visitors plan & navigate a theme park.
 category: work
 tags: [Arduino, 3D Printing, AI, Design, SPYSCAPE, Google, Intel]
-image: /images/magic-wand/cover.png
+image: /images/magic-wand/cover.jpg
 featured: false
 completedAt: 2024-01-01
 duration: 2 weeks

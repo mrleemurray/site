@@ -5,7 +5,7 @@ subtitle: A purpose built panning rig to film everyday objects through a microsc
 description: A purpose built panning rig to film everyday objects through a microscope.
 category: work
 tags: [Arduino, AI, Design, SPYSCAPE, Google, Intel]
-image: /images/objective-4x/cover.png
+image: /images/objective-4x/cover.gif
 featured: false
 completedAt: 2024-01-01
 duration: 2 weeks

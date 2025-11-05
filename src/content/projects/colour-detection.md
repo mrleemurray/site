@@ -5,7 +5,7 @@ subtitle: A QUICK PROJECT TO DETECT COLOURS ON A CAMERA FEED & RELAY RESULTS TO 
 description: A QUICK PROJECT TO DETECT COLOURS ON A CAMERA FEED & RELAY RESULTS TO LED ARRAY
 category: work
 tags: [Arduino, AI]
-image: /images/colour-detection/cover.png
+image: /images/colour-detection/cover.gif
 featured: false
 completedAt: 2024-01-01
 duration: 2 weeks

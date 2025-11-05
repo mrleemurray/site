@@ -5,7 +5,7 @@ subtitle: Learning a new prototyping tool.
 description: Learning a new prototyping tool.
 category: work
 tags: [AI]
-image: /images/protopie/cover.png
+image: /images/protopie/cover.gif
 featured: false
 completedAt: 2024-01-01
 duration: 2 weeks

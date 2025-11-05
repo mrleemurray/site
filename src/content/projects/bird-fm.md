@@ -5,7 +5,7 @@ subtitle: An ambient soundscape of birdsong from all over the world, ALL capture
 description: An ambient soundscape of birdsong from all over the world, ALL captured in the past 24 hours.
 category: work
 tags: [Python, AI]
-image: /images/bird-fm/cover.png
+image: /images/bird-fm/cover.jpg
 featured: false
 completedAt: 2024-01-01
 duration: 2 weeks

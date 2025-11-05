@@ -5,7 +5,7 @@ subtitle: A light switch mounted whiteboard for the home.
 description: A light switch mounted whiteboard for the home.
 category: work
 tags: [AI]
-image: /images/switchboard/cover.png
+image: /images/switchboard/cover.jpg
 featured: false
 completedAt: 2024-01-01
 duration: 2 weeks

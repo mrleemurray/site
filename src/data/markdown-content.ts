@@ -3,8 +3,8 @@
 
 import activityMd from '../content/projects/activity.md?raw'
 import aetherMd from '../content/projects/aether.md?raw'
-import alanBotMd from '../content/projects/alan-bot.md?raw'
-import barryRadioMd from '../content/projects/barry-radio.md?raw'
+import chatBotMd from '../content/projects/chat-bot.md?raw'
+import smartSpeakerMd from '../content/projects/smart-speaker.md?raw'
 import beaconsMd from '../content/projects/beacons.md?raw'
 import birdFmMd from '../content/projects/bird-fm.md?raw'
 import boxnetMd from '../content/projects/boxnet.md?raw'
@@ -66,7 +66,6 @@ import syntaxHighlighterMd from '../content/projects/syntax-highlighter.md?raw'
 import teacakeMd from '../content/projects/teacake.md?raw'
 import testCalloutsMd from '../content/projects/test-callouts.md?raw'
 import theAlarmingClockMd from '../content/projects/the-alarming-clock.md?raw'
-import theObserverMd from '../content/projects/the-observer.md?raw'
 import themeImporterMd from '../content/projects/theme-importer.md?raw'
 import topHatMd from '../content/projects/top-hat.md?raw'
 import toroidMd from '../content/projects/toroid.md?raw'
@@ -81,8 +80,8 @@ import wordCloudsMd from '../content/projects/word-clouds.md?raw'
 export const MARKDOWN_CONTENT: Record<string, string> = {
   'activity': activityMd,
   'aether': aetherMd,
-  'alan-bot': alanBotMd,
-  'barry-radio': barryRadioMd,
+  'chat-bot': chatBotMd,
+  'smart-speaker': smartSpeakerMd,
   'beacons': beaconsMd,
   'bird-fm': birdFmMd,
   'boxnet': boxnetMd,
@@ -144,7 +143,6 @@ export const MARKDOWN_CONTENT: Record<string, string> = {
   'teacake': teacakeMd,
   'test-callouts': testCalloutsMd,
   'the-alarming-clock': theAlarmingClockMd,
-  'the-observer': theObserverMd,
   'theme-importer': themeImporterMd,
   'top-hat': topHatMd,
   'toroid': toroidMd,

@@ -5,7 +5,7 @@ subtitle: Custom hardware to allow the visually impaired navigate towns & cities
 description: Custom hardware to allow the visually impaired navigate towns & cities.
 category: work
 tags: [3D Printing, Hardware, AI, IoT, Design, Microsoft, SPYSCAPE, Google, Intel]
-image: /images/cities-unlocked/cover.png
+image: /images/cities-unlocked/cover.gif
 featured: false
 completedAt: 2024-01-01
 duration: 2 weeks

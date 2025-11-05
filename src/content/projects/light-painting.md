@@ -5,7 +5,7 @@ subtitle: Experiments with CODE, PERSISTENCE OF VISION & long exposure photograp
 description: Experiments with CODE, PERSISTENCE OF VISION & long exposure photography.
 category: work
 tags: [AI]
-image: /images/light-painting/cover.png
+image: /images/light-painting/cover.gif
 featured: false
 completedAt: 2024-01-01
 duration: 2 weeks

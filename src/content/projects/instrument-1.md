@@ -5,7 +5,7 @@ subtitle: QUICK PROTOTYPE TURNING COLOURED SQUARES INTO MUSICAL NOTES.
 description: QUICK PROTOTYPE TURNING COLOURED SQUARES INTO MUSICAL NOTES.
 category: work
 tags: [Arduino, AI, Prototype]
-image: /images/instrument-1/cover.png
+image: /images/instrument-1/cover.gif
 featured: false
 completedAt: 2024-01-01
 duration: 2 weeks

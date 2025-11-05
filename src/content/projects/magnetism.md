@@ -5,7 +5,7 @@ subtitle: Magnetic behaviour between the user & objects.
 description: Magnetic behaviour between the user & objects.
 category: work
 tags: [AI]
-image: /images/magnetism/cover.png
+image: /images/magnetism/cover.gif
 featured: false
 completedAt: 2024-01-01
 duration: 2 weeks

@@ -5,7 +5,7 @@ subtitle: READERS & TAGS THAT TRACK VISITORS THROUGHOUT THE MUSEUM
 description: READERS & TAGS THAT TRACK VISITORS THROUGHOUT THE MUSEUM
 category: work
 tags: [Python, 3D Printing, AI, Design, SPYSCAPE, Google, Intel]
-image: /images/rfid-spyscape/cover.png
+image: /images/rfid-spyscape/cover.gif
 featured: false
 completedAt: 2024-01-01
 duration: 2 weeks

@@ -5,7 +5,7 @@ subtitle: Prototyping a speaker THAT TUNES INTO OTHER PEOPLES PLAYLISTS.
 description: Prototyping a speaker THAT TUNES INTO OTHER PEOPLES PLAYLISTS.
 category: work
 tags: [3D Printing, Hardware, Web, AI, Design, Prototype, SPYSCAPE, Google, Intel]
-image: /images/social-radio/cover.png
+image: /images/social-radio/cover.jpg
 featured: false
 completedAt: 2024-01-01
 duration: 2 weeks

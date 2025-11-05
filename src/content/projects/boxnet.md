@@ -5,7 +5,7 @@ subtitle: A novel way to control presentations & interact with digital content.
 description: A novel way to control presentations & interact with digital content.
 category: work
 tags: [AI, Design, Microsoft, SPYSCAPE, Google, Intel]
-image: /images/boxnet/cover.png
+image: /images/boxnet/cover.gif
 featured: false
 completedAt: 2024-01-01
 duration: 2 weeks

@@ -5,7 +5,7 @@ subtitle: Learning a new material & process.
 description: Learning a new material & process.
 category: work
 tags: [AI]
-image: /images/concrete/cover.png
+image: /images/concrete/cover.jpg
 featured: false
 completedAt: 2024-01-01
 duration: 2 weeks

@@ -5,7 +5,7 @@ subtitle: Working with an international lighting company to promote intelligent 
 description: Working with an international lighting company to promote intelligent lighting systems.
 category: work
 tags: [Mobile, AI, Design, SPYSCAPE, Google, Intel]
-image: /images/helvar/cover.png
+image: /images/helvar/cover.jpg
 featured: false
 completedAt: 2024-01-01
 duration: 2 weeks

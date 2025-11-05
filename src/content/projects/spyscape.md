@@ -5,7 +5,7 @@ subtitle: Contemporary interactive spy museum & experience
 description: Contemporary interactive spy museum & experience
 category: work
 tags: [AI, Design, SPYSCAPE, Google, Intel]
-image: /images/spyscape/cover.png
+image: /images/spyscape/cover.jpg
 featured: false
 completedAt: 2024-01-01
 duration: 2 weeks

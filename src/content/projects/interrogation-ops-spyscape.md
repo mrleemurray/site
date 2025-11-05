@@ -5,7 +5,7 @@ subtitle: Twelve interrogation booths to test & teach deception skills.
 description: Twelve interrogation booths to test & teach deception skills.
 category: work
 tags: [AI, Design, SPYSCAPE, Google, Intel]
-image: /images/interrogation-ops-spyscape/cover.png
+image: /images/interrogation-ops-spyscape/cover.gif
 featured: false
 completedAt: 2024-01-01
 duration: 2 weeks

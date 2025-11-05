@@ -5,7 +5,7 @@ subtitle: An all-in-one tool to develop the site menu across multiple screen siz
 description: An all-in-one tool to develop the site menu across multiple screen sizes for swisscom.ch
 category: work
 tags: [Web, AI, Design, Prototype, SPYSCAPE, Google, Intel]
-image: /images/swisscom/cover.png
+image: /images/swisscom/cover.gif
 featured: false
 completedAt: 2024-01-01
 duration: 2 weeks

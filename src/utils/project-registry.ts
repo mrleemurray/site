@@ -2,8 +2,8 @@
 export const PROJECT_REGISTRY = [
   'activity',
   'aether',
-  'alan-bot',
-  'barry-radio',
+  'chat-bot',
+  'smart-speaker',
   'beacons',
   'bird-fm',
   'boxnet',
@@ -62,7 +62,6 @@ export const PROJECT_REGISTRY = [
   'syntax-highlighter',
   'teacake',
   'the-alarming-clock',
-  'the-observer',
   'theme-importer',
   'top-hat',
   'toroid',

@@ -5,7 +5,7 @@ subtitle: Interacting with particles using a webcam & colour detection.
 description: Interacting with particles using a webcam & colour detection.
 category: work
 tags: [Web, AI]
-image: /images/particles/cover.png
+image: /images/particles/cover.gif
 featured: false
 completedAt: 2024-01-01
 duration: 2 weeks

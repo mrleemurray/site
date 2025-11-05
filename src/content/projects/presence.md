@@ -5,7 +5,7 @@ subtitle: IoT devices to communicate social availability in physical space
 description: IoT devices to communicate social availability in physical space
 category: work
 tags: [Python, Arduino, Hardware, AI, IoT, Design, SPYSCAPE, Google, Intel]
-image: /images/presence/cover.png
+image: /images/presence/cover.jpg
 featured: false
 completedAt: 2024-01-01
 duration: 2 weeks

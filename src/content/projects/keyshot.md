@@ -1,11 +1,11 @@
 ---
 id: keyshot
 title: Keyshot
-subtitle: ![MRLEEMURRAY](//images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1510928411268-4W3O2BK1W8DKGT7D7NAV/LM_Logo-02.png)
-description: ![MRLEEMURRAY](//images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1510928411268-4W3O2BK1W8DKGT7D7NAV/LM_Logo-02.png)
+subtitle: Experiments with light & textures in Keyshot.
+description: Experiments with light & textures in Keyshot.
 category: work
 tags: [AI]
-image: /images/keyshot/cover.png
+image: /images/keyshot/cover.jpg
 featured: false
 completedAt: 2024-01-01
 duration: 2 weeks
@@ -17,9 +17,6 @@ KEYSHOT
 PLAYING WITH LIGHT & TEXTURES
 
 ## Gallery
-
-![MRLEEMURRAY](//images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1510928411268-4W3O2BK1W8DKGT7D7NAV/LM_Logo-02.png)
-*MRLEEMURRAY*
 
 ![IMG_2776.jpg](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1540836682779-0W6OBSBXIW474GNP2ZUL/IMG_2776.jpg)
 *IMG_2776.jpg*

@@ -5,7 +5,7 @@ subtitle: Concepts for integrating RFID tags into jewellery.
 description: Concepts for integrating RFID tags into jewellery.
 category: work
 tags: [3D Printing, AI]
-image: /images/rfid-rings/cover.png
+image: /images/rfid-rings/cover.jpg
 featured: false
 completedAt: 2024-01-01
 duration: 2 weeks

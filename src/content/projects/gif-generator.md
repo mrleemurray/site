@@ -5,7 +5,7 @@ subtitle: A tool to create encryption like animations in gif form.
 description: A tool to create encryption like animations in gif form.
 category: work
 tags: [AI]
-image: /images/gif-generator/cover.png
+image: /images/gif-generator/cover.gif
 featured: false
 completedAt: 2024-01-01
 duration: 2 weeks

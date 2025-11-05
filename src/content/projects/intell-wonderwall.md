@@ -5,7 +5,7 @@ subtitle: Early concept prototypes for interactive brand experience.
 description: Early concept prototypes for interactive brand experience.
 category: work
 tags: [React, Mobile, AI, Design, Prototype, SPYSCAPE, Google, Intel]
-image: /images/intell-wonderwall/cover.png
+image: /images/intell-wonderwall/cover.gif
 featured: false
 completedAt: 2024-01-01
 duration: 2 weeks
