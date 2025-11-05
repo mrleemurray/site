@@ -50,7 +50,6 @@ export const PROJECT_REGISTRY = [
   'sf-symbol-creator',
   'skew',
   'slug-and-chip',
-  'slug-chip',
   'social-radio',
   'spring-table',
   'spyscape',

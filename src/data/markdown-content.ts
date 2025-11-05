@@ -52,7 +52,6 @@ import rfidSpyscapeMd from '../content/projects/rfid-spyscape.md?raw'
 import sfSymbolCreatorMd from '../content/projects/sf-symbol-creator.md?raw'
 import skewMd from '../content/projects/skew.md?raw'
 import slugAndChipMd from '../content/projects/slug-and-chip.md?raw'
-import slugChipMd from '../content/projects/slug-chip.md?raw'
 import socialRadioMd from '../content/projects/social-radio.md?raw'
 import springTableMd from '../content/projects/spring-table.md?raw'
 import spyscapeSpecialOpsMd from '../content/projects/spyscape-special-ops.md?raw'
@@ -131,7 +130,6 @@ export const MARKDOWN_CONTENT: Record<string, string> = {
   'sf-symbol-creator': sfSymbolCreatorMd,
   'skew': skewMd,
   'slug-and-chip': slugAndChipMd,
-  'slug-chip': slugChipMd,
   'social-radio': socialRadioMd,
   'spring-table': springTableMd,
   'spyscape-special-ops': spyscapeSpecialOpsMd,
