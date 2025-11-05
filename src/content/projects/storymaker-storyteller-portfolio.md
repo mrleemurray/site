@@ -46,19 +46,13 @@ here
 
 ## Gallery
 
-![MRLEEMURRAY](//images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1510928411268-4W3O2BK1W8DKGT7D7NAV/LM_Logo-02.png)
-*MRLEEMURRAY*
 
 ![STORYMAKER STORYTELLER 1.jpg](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1511104674907-6Q5KW9P6ON41W73NURVN/STORYMAKER+STORYTELLER+1.jpg)
-*STORYMAKER STORYTELLER 1.jpg*
 
 ![STORYMAKER STORYTELLER 1.jpg](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1511104571224-45I8I4JX87A07YSKHIPK/STORYMAKER+STORYTELLER+1.jpg)
-*STORYMAKER STORYTELLER 1.jpg*
 
 ![STORYMAKER STORYTELLER 2.jpg](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1511104605113-0E0TD4Z2IFIYMXX0T6B6/STORYMAKER+STORYTELLER+2.jpg)
-*STORYMAKER STORYTELLER 2.jpg*
 
 ![STORYMAKER STORYTELLER 3.jpg](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1511104643837-9Z2CKWQT05QMRMQ6SUG7/STORYMAKER+STORYTELLER+3.jpg)
-*STORYMAKER STORYTELLER 3.jpg*
 - **[here](https://www.amazon.co.uk/Technologies-Synthesis-Assistive-Rehabilitative-Health-Preserving/dp/1627053174)**
 - **[here](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/Social20digital20objects20for20Grandparents20-20Pullin20Banks.pdf)**

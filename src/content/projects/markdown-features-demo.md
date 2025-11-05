@@ -209,4 +209,3 @@ The enhanced markdown features are optimized for:
 
 ---
 
-*This demo showcases the full capabilities of the enhanced markdown system. Use these features to create rich, interactive documentation for your projects.*

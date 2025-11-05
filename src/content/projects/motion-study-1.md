@@ -419,4 +419,3 @@ export const metricsMiddleware = (req: Request, res: Response, next: NextFunctio
 
 ---
 
-*Built with Node.js, Express, PostgreSQL, and modern development practices.*

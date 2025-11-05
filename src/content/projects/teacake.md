@@ -30,18 +30,12 @@ OpenFrameworks
 
 ## Gallery
 
-![MRLEEMURRAY](//images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1510928411268-4W3O2BK1W8DKGT7D7NAV/LM_Logo-02.png)
-*MRLEEMURRAY*
 
 ![WP_000449.jpg](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1510935504763-J4OFRS5NAZ714LEW87KR/WP_000449.jpg)
-*WP_000449.jpg*
 
 ![WP_000449.jpg](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1510935345621-U5D4Z2778AYYX6GTKY62/WP_000449.jpg)
-*WP_000449.jpg*
 
 ![WP_000454.jpg](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1510935376509-12F3D0JLJCUEIDI761I1/WP_000454.jpg)
-*WP_000454.jpg*
 
 ![Teacake Vision.jpg](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1510935438037-NJPMNFKCAS8LHLMHAUBI/Teacake+Vision.jpg)
-*Teacake Vision.jpg*
 - **[OpenFrameworks](https://openframeworks.cc)**

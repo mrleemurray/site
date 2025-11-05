@@ -24,32 +24,21 @@ The technology helped track the visitors’ interaction and as a result, a great
 
 ## Gallery
 
-![MRLEEMURRAY](//images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1510928411268-4W3O2BK1W8DKGT7D7NAV/LM_Logo-02.png)
-*MRLEEMURRAY*
 
 ![21_Lumia@_Vitra_Museum.jpg](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1510932347850-30EY8K5MX1VIF2F62CRI/21_Lumia%40_Vitra_Museum.jpg)
-*21_Lumia@_Vitra_Museum.jpg*
 
 ![21_Lumia@_Vitra_Museum.jpg](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1510932212944-7QRBO0A20DMZ2PC58JYH/21_Lumia%40_Vitra_Museum.jpg)
-*21_Lumia@_Vitra_Museum.jpg*
 
 ![handbellHero_920_3.png](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1510932247449-KZCJ7EBY5DT2YKPST51A/handbellHero_920_3.png)
-*handbellHero_920_3.png*
 
 ![IMG_0024.jpg](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1510932297506-1LFNSWAOQQ5AKQW3CBT9/IMG_0024.jpg)
-*IMG_0024.jpg*
 
 ![07_Lumia@_Vitra_MuseumSmall.jpg](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1678271700878-UAAC4K3G2YTKKYJKMYVW/07_Lumia%40_Vitra_MuseumSmall.jpg)
-*07_Lumia@_Vitra_MuseumSmall.jpg*
 
 ![12_VDM_AALTO_∏UrsulaSprecher_MG_1218.jpg](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1678271704625-1IYVKFEIOOE4DJXD79F0/12_VDM_AALTO_%E2%88%8FUrsulaSprecher_MG_1218.jpg)
-*12_VDM_AALTO_∏UrsulaSprecher_MG_1218.jpg*
 
 ![15_Lumia@_Vitra_MuseumSmall.jpg](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1678271704763-M4LQYXJ2LHDESZEIZIG2/15_Lumia%40_Vitra_MuseumSmall.jpg)
-*15_Lumia@_Vitra_MuseumSmall.jpg*
 
 ![20_Lumia@_Vitra_MuseumSmall.jpg](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1678271707322-30M5Q6Q9QHLYHB0B7RDG/20_Lumia%40_Vitra_MuseumSmall.jpg)
-*20_Lumia@_Vitra_MuseumSmall.jpg*
 
 ![IMG_3080.jpg](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1540837568043-7O7YAC2561BIIST1QGRZ/IMG_3080.jpg)
-*IMG_3080.jpg*

@@ -20,14 +20,9 @@ A digital booklet to allow sales representatives to go into the field (literally
 
 ## Gallery
 
-![MRLEEMURRAY](//images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1510928411268-4W3O2BK1W8DKGT7D7NAV/LM_Logo-02.png)
-*MRLEEMURRAY*
 
 ![graph_clip_small.gif](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1511530730408-8FDI357T8YZ2SSSW460C/graph_clip_small.gif)
-*graph_clip_small.gif*
 
 ![Screen Shot 2017-11-24 at 13.30.00.png](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1511530620718-2JAU1MPUT1R7EFGVHXML/Screen+Shot+2017-11-24+at+13.30.00.png)
-*Screen Shot 2017-11-24 at 13.30.00.png*
 
 ![Screen Shot 2017-11-24 at 13.31.07.png](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1511530660301-6FOPT5DC0HM85C25OMPJ/Screen+Shot+2017-11-24+at+13.31.07.png)
-*Screen Shot 2017-11-24 at 13.31.07.png*

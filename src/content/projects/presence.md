@@ -38,50 +38,34 @@ Device configuration tool
 
 ## Gallery
 
-![MRLEEMURRAY](//images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1510928411268-4W3O2BK1W8DKGT7D7NAV/LM_Logo-02.png)
-*MRLEEMURRAY*
 
 ![IMG_7372.JPG](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1646733764672-5101RV95X7TNSP8MLYP4/IMG_7372.JPG)
-*IMG_7372.JPG*
 
 ![](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/a7907c12-077f-4c32-a3d8-9308cd078dba/presence.jpeg)
 
 ![IMG_7371.JPG](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1646733176325-YAW340FPQB7ENXFILMHM/IMG_7371.JPG)
-*IMG_7371.JPG*
 
 ![IMG_7425.JPG](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1646733197884-36EJK8WLFSTPHRGZ8XHD/IMG_7425.JPG)
-*IMG_7425.JPG*
 
 ![IMG_7426.JPG](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1646733197986-OSHJS1NO0N1RZS3R4FJ3/IMG_7426.JPG)
-*IMG_7426.JPG*
 
 ![skull.jpeg](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1646733205320-R1TD3SC1BQUPW0FJGA72/skull.jpeg)
-*skull.jpeg*
 
 ![Presence device configuration tool](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/2703513c-120b-48a0-9b19-fff6135fb14e/image-asset.png)
-*Presence device configuration tool*
 
 ![IMG_6592.JPG](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1646733518141-9T1ZKVSYD9WKZPVBR2SN/IMG_6592.JPG)
-*IMG_6592.JPG*
 
 ![IMG_6594.JPG](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1646733516514-IR1UHMAAI2ATQZ4TSY3K/IMG_6594.JPG)
-*IMG_6594.JPG*
 
 ![IMG_6675.JPG](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1646733529329-D48KMPBTTX9036SGDPR9/IMG_6675.JPG)
-*IMG_6675.JPG*
 
 ![IMG_6678.JPG](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1646733537863-0S01YDEEDOGAWV4W2RER/IMG_6678.JPG)
-*IMG_6678.JPG*
 
 ![IMG_6735.JPG](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1646733544668-OUIXIW5B04KSC7E0NN0A/IMG_6735.JPG)
-*IMG_6735.JPG*
 
 ![IMG_6737.JPG](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1646733589505-A445ZHNV29VMN9769965/IMG_6737.JPG)
-*IMG_6737.JPG*
 
 ![IMG_7332.JPG](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1646733559989-G0825IS6ZTTGCDKZMPTH/IMG_7332.JPG)
-*IMG_7332.JPG*
 
 ![IMG_7354.JPG](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1646733576639-OY4L6BWHSQBBL3X2EMD3/IMG_7354.JPG)
-*IMG_7354.JPG*
 - **[Adafruit Huzzah32 Feather development boards](https://www.adafruit.com/product/3405)**

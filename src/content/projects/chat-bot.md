@@ -19,16 +19,11 @@ Through experimenting with chatbots, in particular Google Hangouts, we discovere
 **Technology:** Raspberry Pi, Python
 
 ![IMG_6681.PNG](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1510942103699-P4OHDZ17EEY1CX03C648/IMG_6681.PNG)
-*IMG_6681.PNG*
 
 ![IMG_6681.PNG](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1510942013084-BCO17PHSKRHPGTQVQ2H7/IMG_6681.PNG)
-*IMG_6681.PNG*
 
 ![IMG_6678.PNG](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1510942035765-NI8TR8637BA8ZUEMJOFT/IMG_6678.PNG)
-*IMG_6678.PNG*
 
 ![IMG_6680.PNG](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1510942062225-NORL87MUTT2K5R91A7V6/IMG_6680.PNG)
-*IMG_6680.PNG*
 
 ![IMG_6823.JPG](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1526417770354-MR0PJT493PPK83VSMMEZ/IMG_6823.JPG)
-*IMG_6823.JPG*

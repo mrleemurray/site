@@ -18,11 +18,8 @@ A Figma plugin to generate Azure DevOps work items from weekly crit sessions.
 
 ## Gallery
 
-![MRLEEMURRAY](//images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1510928411268-4W3O2BK1W8DKGT7D7NAV/LM_Logo-02.png)
-*MRLEEMURRAY*
 
 ![Screenshot+2021-07-28+at+19.05.40.jpg](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1739881890680-OAJNXNWU2RHR8QCSGKTL/Screenshot%2B2021-07-28%2Bat%2B19.05.40.jpg)
-*Screenshot+2021-07-28+at+19.05.40.jpg*
 
 ![](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/241596be-ae46-4536-b6a1-f8c72652e644/Screenshot+2021-07-28+at+19.05.40.jpg)
 

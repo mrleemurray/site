@@ -24,18 +24,12 @@ Full case study
 
 ## Gallery
 
-![MRLEEMURRAY](//images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1510928411268-4W3O2BK1W8DKGT7D7NAV/LM_Logo-02.png)
-*MRLEEMURRAY*
 
 ![Carbon_clip_small.gif](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1511515034585-OZ0KL5W9AJRBC1X9NPI8/Carbon_clip_small.gif)
-*Carbon_clip_small.gif*
 
 ![capture9.jpg](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1511101214895-4M4A7MHEW20WNA0WD77E/capture9.jpg)
-*capture9.jpg*
 
 ![capture2 (1).jpg](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1511101250942-XBURFR8WY9TMH5P2WJBX/capture2+%281%29.jpg)
-*capture2 (1).jpg*
 
 ![capture2.jpg](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1511101278659-9JNNRE8XMRT2MCVIM3M9/capture2.jpg)
-*capture2.jpg*
 - **[Full case study](https://movingbrands.com/work/carbon/)**

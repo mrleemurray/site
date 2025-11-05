@@ -44,42 +44,29 @@ Future Cities Catapult
 
 Microsoft, Guide Dogs and Future Cities Catapult have launched the results of the first phase of an exciting project which will revolutionise how people with sight loss, and the sighted, experience the urban landscape, by creating a revolutionary new application of 3D sound.
 
-**[Watch Video](https://www.youtube.com/watch?v=OOgrSvnmhrY)**
 
 ## Gallery
 
-![MRLEEMURRAY](//images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1510928411268-4W3O2BK1W8DKGT7D7NAV/LM_Logo-02.png)
-*MRLEEMURRAY*
 
 ![dogs_clip.gif](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1511527413257-13C3KS3GWG50NBL7HXLZ/dogs_clip.gif)
-*dogs_clip.gif*
 
 ![15641331602_1c89f5962b_o.jpg](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1510917964933-EM2RQEEMT87IIYDKX231/15641331602_1c89f5962b_o.jpg)
-*15641331602_1c89f5962b_o.jpg*
 
 ![15020320903_2c4fdd5239_o.jpg](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1510918028221-0AAF2TD34A6Y680XFMSP/15020320903_2c4fdd5239_o.jpg)
-*15020320903_2c4fdd5239_o.jpg*
 
 ![15453846659_252d7a90b9_o.jpg](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1532880590571-UEYAB5TDGS69AIXKIOMK/15453846659_252d7a90b9_o.jpg)
-*15453846659_252d7a90b9_o.jpg*
 
 ![headsets2.jpg](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1532880357799-D0329LONF0D3Y80TZFMH/headsets2.jpg)
-*headsets2.jpg*
 
 ![IMG_3086.JPG](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1532880622503-DZ1ZSOXLJWDOZAEH68NC/IMG_3086.JPG)
-*IMG_3086.JPG*
 
 ![pcbs.jpg](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1532880642302-469657RJ8SRK78EINL6K/pcbs.jpg)
-*pcbs.jpg*
 
 ![IMG_4367.JPG](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1532880664526-IK42JYE2TGBWMPYSSDHO/IMG_4367.JPG)
-*IMG_4367.JPG*
 
 ![IMG_4685.JPG](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1532880687389-G512VSSGWMJLENPUZMTO/IMG_4685.JPG)
-*IMG_4685.JPG*
 
 ![IMG_4608.jpg](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1532880702665-KGIRGGFWVIQMGAHEFULC/IMG_4608.jpg)
-*IMG_4608.jpg*
 - **[Guide Dogs UK](https://www.guidedogs.org.uk/cities-unlocked/)**
 - **[Future Cities Catapult](https://futurecities.catapult.org.uk/project/cities-unlocked/)**
 - **[- **BBC News**](https://www.bbc.com/news/technology-29913637)**

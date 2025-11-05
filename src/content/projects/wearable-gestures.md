@@ -40,41 +40,28 @@ DirtyPCBs
 
 ## Gallery
 
-![MRLEEMURRAY](//images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1510928411268-4W3O2BK1W8DKGT7D7NAV/LM_Logo-02.png)
-*MRLEEMURRAY*
 
 ![IMG_2355.JPG](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1511543229275-7VRBL0YUAJB1UU785BH3/IMG_2355.JPG)
-*IMG_2355.JPG*
 
 ![graphDescription.png](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1510938947667-XFIENV7I7SL8APLSCMKO/graphDescription.png)
-*graphDescription.png*
 
 ![IMG_1908.JPG](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1540846426888-6G0FMJ6DPIISJ3H06BZA/IMG_1908.JPG)
-*IMG_1908.JPG*
 
 ![IMG_1328.jpg](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1540846084539-KPK0EHBFI1MIAMOXBI9V/IMG_1328.jpg)
-*IMG_1328.jpg*
 
 ![IMG_1478.jpg](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1540846107886-0BYSB5N11JS2WZ9FNOB1/IMG_1478.jpg)
-*IMG_1478.jpg*
 
 ![IMG_1793.jpg](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1540846121388-BEDS2IC7800D3E1YVJNO/IMG_1793.jpg)
-*IMG_1793.jpg*
 
 ![IMG_1832.jpg](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1540846126199-D8RIHNZQ7CULP2W6SOVC/IMG_1832.jpg)
-*IMG_1832.jpg*
 
 ![IMG_2095.jpg](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1540846136102-Z789ILJFTCHGIHDCKA4F/IMG_2095.jpg)
-*IMG_2095.jpg*
 
 ![IMG_1787.JPG](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1540846412040-M6A9JMEOP9J444Q06NEB/IMG_1787.JPG)
-*IMG_1787.JPG*
 
 ![IMG_1740.jpg](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1540846112311-6AO50W27XFEDIN40XQW3/IMG_1740.jpg)
-*IMG_1740.jpg*
 
 ![IMG_2336.JPG](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1540846495888-3BBSWMXBEBEWMQAD4WEU/IMG_2336.JPG)
-*IMG_2336.JPG*
 - **[Arduino](https://www.arduino.cc)**
 - **[Processing](https://processing.org)**
 - **[SolidWorks](https://www.solidworks.com)**
