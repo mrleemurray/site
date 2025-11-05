@@ -4,7 +4,7 @@ title: Boxnet
 subtitle: A novel way to control presentations & interact with digital content.
 description: A novel way to control presentations & interact with digital content.
 category: work
-tags: [AI, Design, Microsoft, SPYSCAPE, Google, Intel]
+tags: [Teensy, Processing, Microsoft Powerpoint]
 image: /images/boxnet/cover.gif
 featured: false
 completedAt: 2024-01-01
@@ -17,12 +17,6 @@ A system of wirelessly networked accelerometers mounted inside of cardboard boxe
 
 🎭 Appeared at Internet Age Media 2016, Barcelona.
 
-**Technology:** Sparkfun Things (ESP8266), Teensy 3.6, C, Processing, Java, Microsoft Powerpoint
-
-## Videos
-
-#MBRnD Research and Development team developed a mini internet of things made (almost entirely) from cardboard boxes.
-
 <iframe title="vimeo-player" src="https://player.vimeo.com/video/167159041?h=966281eac2" width="640" height="360" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"   allowfullscreen></iframe>
 
 ::: info
@@ -33,15 +27,13 @@ A system of wirelessly networked accelerometers mounted inside of cardboard boxe
 
 Chief Design Officer, BBC Design & Engineering
 
-
 **Darren Bowles**
 
 Executive Creative Director, Moving Brands
 
-
-This talk was part of The Futures of Media session at the IAM Weekend 16 in Barcelona, on April 7-10, 2016
-
 <iframe title="vimeo-player" src="https://player.vimeo.com/video/189032542?h=951efd009a" width="640" height="360" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"   allowfullscreen></iframe>
+
+*This talk was part of The Futures of Media session at the IAM Weekend 16 in Barcelona, on April 7-10, 2016*
 
 ![IMG_6483.JPG](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1510911449472-0V4BF94NEGQEONWYOILC/IMG_6483.JPG)
 
