@@ -1,25 +1,17 @@
 ---
 id: light
 title: Light
-subtitle: 60 MINUTE BUILD OF AN ADJUSTABLE LIGHT
-description: 60 MINUTE BUILD OF AN ADJUSTABLE LIGHT
-category: work
-tags: [Arduino, AI]
+subtitle: 60 minute build of an adjustable light
+description: 60 minute build of an adjustable light
+category: experiments
+tags: [Arduino, Neopixels]
 image: /images/light/cover.jpg
 featured: false
-completedAt: 2024-01-01
-duration: 2 weeks
+completedAt: 2015-01-01
+duration: 1 day
 ---
-# Light
 
-LIGHT
-
-60 MINUTE BUILD OF AN ADJUSTABLE LIGHT
-
-⚡ Powered by Arduino, Neopixels
-
-## Gallery
-
+60 minute build of an adjustable light, powered by Arduino & Neopixels.
 
 ![IMG_9097.jpg](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1540837957774-0OV5AODCVIDWB71GOWML/IMG_9097.jpg)
 

@@ -4,26 +4,16 @@ title: Handbell Hero
 subtitle: A festive musical app to get you in the holiday spirit.
 description: A festive musical app to get you in the holiday spirit.
 category: work
-tags: [Mobile, AI, Design, SPYSCAPE, Google, Intel]
+tags: [Windows Phone, C#]
 image: /images/handbell-hero/cover.png
 featured: false
 completedAt: 2024-01-01
 duration: 2 weeks
 ---
-# Handbell Hero
-
-Handbell hero
 
 A festive musical app to get you in the holiday spirit.
 
 A mobile app that uses the accelerometer of a device to play a Christmas song. Shaking the device (like a handbell) plays a note; each note is played sequentially, so it is up to the user to get the rhythm right.
-
-📱 Published on the Windows Store.
-
-**Technology:** Windows Phone 8, C#
-
-## Gallery
-
 
 ![IMG_4621.jpg](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1511524593796-UG5VIGD3MYQVZXWSTH1M/IMG_4621.jpg)
 

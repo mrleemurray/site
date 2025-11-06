@@ -4,27 +4,18 @@ title: Intel Wonderwall
 subtitle: Early concept prototypes for interactive brand experience.
 description: Early concept prototypes for interactive brand experience.
 category: work
-tags: [React, Mobile, AI, Design, Prototype, SPYSCAPE, Google, Intel]
+tags: [Processing, Installation, Prototype, Marketing]
 image: /images/intell-wonderwall/cover.gif
 featured: false
 completedAt: 2024-01-01
 duration: 2 weeks
 ---
-# Intel Wonderwall
-
-Intel Wonderwall
 
 Early concept prototypes for interactive brand experience.
 
 A Processing app that allows graphic designers quickly visualise dynamic animating text which reacts to user input. Users can drop in images to render, change the properties of the grid (resolution, weight & height), rotate the camera & export a frame as a PDF. This work highly influenced the final interactive installation, called Wonderwall, for Intel at Mobile World Congress 2017.
 
-## Videos
-
-
-[![](https://i.vimeocdn.com/video/621649430-a3ac67266d32a3ec96aaa949455dbf7e535e42f44433783a40c36155aebcdc14-d_640)](https://vimeo.com/206585583?embedded=true&source=vimeo_logo&owner=22114583)
-
-## Gallery
-
+<iframe title="vimeo-player" src="https://player.vimeo.com/video/206585583?h=68eb573036" width="640" height="360" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"   allowfullscreen></iframe>
 
 ![1_clip_small.gif](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1511515803455-QILKXG198UKWSV2H3AUH/1_clip_small.gif)
 

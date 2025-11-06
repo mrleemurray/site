@@ -1,28 +1,21 @@
 ---
 id: magic-wand
-title: Magic Wand
-subtitle: A system to help visitors plan & navigate a theme park.
-description: A system to help visitors plan & navigate a theme park.
-category: work
-tags: [Arduino, 3D Printing, AI, Design, SPYSCAPE, Google, Intel]
+title: Theme Park Wand
+subtitle: A device & system to help visitors navigate a theme park.
+description: A device & system to help visitors navigate a theme park.
+category: experiments
+tags: [Arduino, C, Bluetooth, C#, Windows Phone 8, CAD]
 image: /images/magic-wand/cover.jpg
 featured: false
-completedAt: 2024-01-01
-duration: 2 weeks
+completedAt: 2014-01-01
+duration: 3 days
 ---
-# Magic Wand
 
-magic wand
-
-A system to help visitors plan & navigate a theme park.
+A device & system to help visitors navigate a theme park.
 
 A concept for adding delight to navigating theme parks; the user taps their wand on the map to where they want to go & the wand then directs them to their destination, notifying them of any special events on the way.
 
-**Technology:** Arduino, C, Bluetooth, Windows Phone 8, C#
-
-**Manufacturing:** CAD created in Catia
-
-## Gallery
+CAD created in Catia
 
 
 ![wand_clip_small.gif](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1511524463414-G381OIHA8WZH2LOJB26M/wand_clip_small.gif)

@@ -6,7 +6,7 @@ description: Custom hardware to allow the visually impaired navigate towns & cit
 category: work
 tags: [Accessibility, 3D Printing, Electronics]
 image: /images/cities-unlocked/cover.gif
-featured: false
+featured: true
 completedAt: 2015-01-01
 duration: 6 months
 ---

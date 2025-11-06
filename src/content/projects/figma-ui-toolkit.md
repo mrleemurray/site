@@ -13,11 +13,7 @@ completedAt: 2025-09-04
 duration: 1 week
 ---
 
-# Figma Plugin UI Toolkit
-
 A component library for building Figma plugin UI.
-
-![Project Screenshot](/images/simple-template.svg)
 
 ## Overview
 

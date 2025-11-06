@@ -4,15 +4,12 @@ title: Objective 4x
 subtitle: A purpose built panning rig to film everyday objects through a microscope.
 description: A purpose built panning rig to film everyday objects through a microscope.
 category: work
-tags: [Arduino, AI, Design, SPYSCAPE, Google, Intel]
+tags: [Arduino, Laser Cutting, Videography]
 image: /images/objective-4x/cover.gif
 featured: false
-completedAt: 2024-01-01
+completedAt: 2015-11-01
 duration: 2 weeks
 ---
-# Objective 4x
-
-objective 4x
 
 A purpose built panning rig to film everyday objects through a microscope.
 
@@ -27,10 +24,6 @@ Music credit – The Shoes 'Submarine'
 
 [![](https://i.vimeocdn.com/video/557254198_640.jpg)](https://vimeo.com/156284978)
 
-## Gallery
-
-
-![objective_clip_small.gif](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1511518839231-WXB94PQEUSY70TCUC2FK/objective_clip_small.gif)
 
 ![Screen Shot 2017-11-19 at 14.36.34.png](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1511104329644-AWQCZDXT3LR19K3S5MX0/Screen+Shot+2017-11-19+at+14.36.34.png)
 

@@ -11,7 +11,7 @@ completedAt: 2013-01-01
 duration: 2 weeks
 ---
 
-A quick experiment to detect mobile phone colours in a camera feed & relay results to LED array for use in a retail environment. This was the first project I created a custom PCB for, using Eagle CAD & had a lot of fun soldering the components together.
+A quick experiment to detect mobile phone colours in a camera feed & relay results to LED array for use in a retail environment. This was the first project I created a custom PCB for using Eagle CAD & had a lot of fun soldering the components together.
 
 ![camera_light.gif](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1540847577759-WA2LLN0XTNY6JRTP7JTD/camera_light.gif)
 

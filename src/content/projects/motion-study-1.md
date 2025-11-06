@@ -15,7 +15,13 @@ duration: 4 weeks
 
 Using planetary orbits & explosion diagrams to understand complex relationships between resources.
 
-![API Architecture Diagram](/images/motion-study-1/one.gif)
+Using planetary orbits & explosion diagrams to understand complex relationships between cloud resources
+
+![one.gif](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1600005474063-M90ZWONPB1P78RYV2X8B/one.gif)
+
+![three.gif](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1600005362913-SS4YDVZQBFCUG4WNPIKG/three.gif)
+
+![two.gif](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1600005407402-QPWOLJDN9AQGBANUSKOA/two.gif)
 
 ## Overview
 

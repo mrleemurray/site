@@ -1,27 +1,21 @@
 ---
 id: spyscape-special-ops
 title: Special Ops | SPYSCAPE
-subtitle: four unique laser tunnels to test agility & risk taking
-description: four unique laser tunnels to test agility & risk taking
+subtitle: Four unique laser tunnels to test agility & risk taking
+description: Four unique laser tunnels to test agility & risk taking
 category: work
-tags: [AI, Design, SPYSCAPE, Google, Intel]
+tags: [Installation, Design, Museum]
 image: /images/spyscape-special-ops/cover.gif
-featured: false
-completedAt: 2024-01-01
-duration: 2 weeks
+featured: true
+completedAt: 2018-05-01
+duration: 6 months
 ---
-# Special Ops | SPYSCAPE
 
-SPECIAL OPS | SPYSCAPE
-
-four unique laser tunnels to test agility & risk taking
+Four unique laser tunnels to test agility & risk taking
 
 Photo credit - Scott Frances for SPYSCAPE
 
 For the SPYSCAPE NY museum, we designed, developed & commissioned the Special Ops tunnels - 4 rooms that test visitors physical agility & risk taking by making them dodge numerous lasers while hitting as many illuminated buttons as possible, all within a maximum of 60 seconds (as a broken laser beam reduces available time by 5 seconds).
-
-## Gallery
-
 
 ![Special Ops GIF.gif](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1526411671254-Y5S895EI6YQNNYH40YP8/Special+Ops+GIF.gif)
 

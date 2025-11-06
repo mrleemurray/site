@@ -4,52 +4,24 @@ title: Datacatcher
 subtitle: Exposing big data wherever you are.
 description: Exposing big data wherever you are.
 category: work
-tags: [.NET, 3D Printing, Hardware, AI, Design, Microsoft, SPYSCAPE, Google, Intel]
+tags: [Research, .NET Gadgeteer, PCB]
 image: /images/datacatcher/cover.png
+liveUrl: https://eprints.goldsmiths.ac.uk/id/eprint/16242/6/Datacatcher.pdf
+liveUrlLabel: Research paper
 featured: false
-completedAt: 2024-01-01
-duration: 2 weeks
+completedAt: 2013-01-01
+duration: 3 months
 ---
-# Datacatcher
 
-datacatcher
+Exposing big data wherever you are. Datacatchers are custom-built, location-aware devices that stream messages about the area they are in. Derived from a large number of ‘big data’ sources, the messages simultaneously draw attention to the socio-political topology of the lived environment and to the nature of big data itself.
 
-Exposing big data wherever you are.
+I developed firmware & managed PCB production for the Datacatcher devices over a 3 month period. Challenges included bitmap font rendering & message handling / storage.
 
-Developing firmware & managing PCB production for a research tool that allows participants to see publicly available government & social data in their current location. Challenges included bitmap font rendering & message handling/storage.
-
-🌐
-
-http://www.datacatcher.org/
-
-📺
-
-Links to videos
-
-⚡ Powered by
-
-.NET Gadgeteer
-
-🔧 PCB designed in
-
-EagleCAD
-
-, manufactured by
-
-European Circuits Ltd
-
-📖 Featured in
-
-Datacatcher.
-
-Goldsmiths, University of London. ISBN 978-1-906897-35-2
-
-## Gallery
-
-
-![interaction-research-studio-datacatcher-2015-image-courtesy-interaction-research-studio.jpg](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1541105854952-2YC67B77CK5L4T97IJG7/interaction-research-studio-datacatcher-2015-image-courtesy-interaction-research-studio.jpg)
-
-![interaction-research-studio-datacatcher-2015-image-courtesy-interaction-research-studio.jpg](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1541105676663-N76R783XXN1M1VIOJVQG/interaction-research-studio-datacatcher-2015-image-courtesy-interaction-research-studio.jpg)
+- **[Links to videos](http://www.vimeo.com/channels/Datacatcher)**
+- Firmware & hardware powered by **[.NET Gadgeteer](https://www.microsoft.com/en-us/research/project/net-gadgeteer/)**
+- PCB designed in **[EagleCAD](https://www.autodesk.co.uk/products/eagle/free-download)**
+- PCB manufactured by **[European Circuits Ltd](https://european-circuits.co.uk)**
+- Project abstract **[Datacatcher](http://research.gold.ac.uk/18597/)**
 
 ![photo 3.JPG](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1510940397870-2I8W3MK5A154RYSTP9DT/photo+3.JPG)
 
@@ -60,9 +32,8 @@ Goldsmiths, University of London. ISBN 978-1-906897-35-2
 ![IMG_1870.jpg](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1540837339645-THOLJFCHL5GS90L55MWN/IMG_1870.jpg)
 
 ![hyperkit_design_goldsmiths_15.jpg](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1541105714657-GU2HNVZ3RX7FHPA21ST7/hyperkit_design_goldsmiths_15.jpg)
-- **[http://www.datacatcher.org/](http://www.datacatcher.org/)**
-- **[Links to videos](http://www.vimeo.com/channels/Datacatcher)**
-- **[.NET Gadgeteer](https://www.microsoft.com/en-us/research/project/net-gadgeteer/)**
-- **[EagleCAD](https://www.autodesk.co.uk/products/eagle/free-download)**
-- **[European Circuits Ltd](https://european-circuits.co.uk)**
-- **[Datacatcher.](http://research.gold.ac.uk/18597/)**
+
+Datacatcher.
+*Goldsmiths*.
+University of London.
+ISBN 978-1-906897-35-2

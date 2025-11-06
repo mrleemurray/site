@@ -3,21 +3,15 @@ id: drawing-robot
 title: Drawing Robot
 subtitle: Calibration tests & other experiments - WIP
 description: Calibration tests & other experiments - WIP
-category: work
-tags: [AI]
+category: experiments
+tags: [Processing, Robotics, Prototype]
 image: /images/drawing-robot/cover.png
 featured: false
-completedAt: 2024-01-01
-duration: 2 weeks
+completedAt: 2018-05-01
+duration: 1 day
 ---
-# Drawing Robot
-
-DRAWING ROBOT
 
 Calibration tests & other experiments - WIP
-
-## Gallery
-
 
 ![IMG_2643.jpg](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1526415100717-RF65UGMXW54TIJRYK3PM/IMG_2643.jpg)
 

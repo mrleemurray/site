@@ -13,11 +13,7 @@ completedAt: 2020-09-04
 duration: 1 week
 ---
 
-# Figmail
-
 A Figma plugin to create & export email templates for Outlook.
-
-![Project Screenshot](/images/simple-template.svg)
 
 ## Overview
 

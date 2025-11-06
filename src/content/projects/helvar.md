@@ -4,32 +4,22 @@ title: Helvar
 subtitle: Working with an international lighting company to promote intelligent lighting systems.
 description: Working with an international lighting company to promote intelligent lighting systems.
 category: work
-tags: [Mobile, AI, Design, SPYSCAPE, Google, Intel]
+tags: [Installation, Design, Android, Marketing]
 image: /images/helvar/cover.jpg
 featured: false
-completedAt: 2024-01-01
-duration: 2 weeks
+completedAt: 2016-03-01
+duration: 1 month
 ---
-# Helvar
-
-helvar
 
 Working with an international lighting company to promote intelligent lighting systems.
 
 An interactive table that allows users to explore various connected lighting concepts. Users control the on screen character by rocking the table; movement through the floor plan activates the stylised lighting system, which can predict paths, automatically adjust light conditions & surface information about the technology.
 
-🏢 Featured at Light + Building expo 2016.
+Featured at Light + Building expo 2016.
 
 **Manufacturing:** Manufactured by JailMake
 
-**Technology:** Android / Processing
-
-## Gallery
-
-
 ![B30A2598.JPG](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1510915983545-ZK22DODQ2CGUNM1SF55V/B30A2598.JPG)
-
-![B30A2598.JPG](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1510915697716-ZT0XQNO9RH1A2RUILHPW/B30A2598.JPG)
 
 ![B30A2653.JPG](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1510915750967-H79O8EQVVBIJOXNQDA2I/B30A2653.JPG)
 

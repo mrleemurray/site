@@ -4,24 +4,18 @@ title: GIFT
 subtitle: Christmas window display for Moving Brands.
 description: Christmas window display for Moving Brands.
 category: work
-tags: [Web, AI, Design, SPYSCAPE, Google, Intel]
+tags: [Web, Projection Mapping, Installation, GIF]
 image: /images/gift/cover.png
 featured: false
-completedAt: 2024-01-01
+completedAt: 2015-12-01
 duration: 2 weeks
 ---
-# GIFT
-
-Gift
 
 Christmas window display for Moving Brands.
 
-GIFt is a platform that allows anyone to share stories of unwanted Christmas presents in the form of animated GIFs. Users can upload their creations to the dedicated website; submissions are then added to the online gallery & projected onto a three dimensional cube window display, situated at the Moving Brands London studio.
+GIFt is a platform that allows anyone to share stories of unwanted Christmas presents in the form of animated GIFs. Users can upload their creations to the dedicated website; submissions are then added to the online gallery & projected onto a three dimensional cube window display, situated at the Moving Brands London studio. Supporting gift wrap paper & gift tags were also created for client presents.
 
-## Gallery
-
-
-![window.png](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1510916739531-Z74F6LSA71NEVMAEGKHP/window.png)
+The installation was created using a web app that was rear projected on to a frosted glass cube structure built in the window of the Moving Brands London studio.
 
 ![window.png](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1510916573757-XK8RWO2DPLJMT3HU72T9/window.png)
 

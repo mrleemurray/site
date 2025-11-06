@@ -15,11 +15,7 @@ completedAt: 2020-09-06
 duration: 1 week
 ---
 
-# Notebooks
-
 Jupyter Notebooks prototypes for VS Code.
-
-![Project Screenshot](/images/simple-template.svg)
 
 ## Overview
 

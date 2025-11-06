@@ -4,26 +4,17 @@ title: Google Play
 subtitle: Explorations of generative visual design system
 description: Explorations of generative visual design system
 category: work
-tags: [AI, Design, SPYSCAPE, Google, Intel]
+tags: [Processing, Generative Design]
 image: /images/google-play/cover.png
 featured: false
-completedAt: 2024-01-01
+completedAt: 2015-10-01
 duration: 2 weeks
 ---
-# Google Play
-
-Google Play
 
 Explorations of generative visual design system
 
-**Technology:** Processing
-
-## Gallery
-
 
 ![Screen Shot 2016-04-23 at 15.12.25.png](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1540853186055-I4Q23LZ7QFUL688V9ZRF/Screen+Shot+2016-04-23+at+15.12.25.png)
-
-![Screen Shot 2016-04-23 at 15.12.25.png](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1512730015413-JCPBY7H5OQXU6FALOQNR/Screen+Shot+2016-04-23+at+15.12.25.png)
 
 ![Screen Shot 2016-02-23 at 17.50.29.png](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1511101449265-M5UL5E5LSX1BU5525CCN/Screen+Shot+2016-02-23+at+17.50.29.png)
 

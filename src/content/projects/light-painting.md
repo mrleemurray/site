@@ -1,25 +1,17 @@
 ---
 id: light-painting
 title: Light Painting
-subtitle: Experiments with CODE, PERSISTENCE OF VISION & long exposure photography.
-description: Experiments with CODE, PERSISTENCE OF VISION & long exposure photography.
+subtitle: Experiments with code, persistence of vision & long exposure photography.
+description: Experiments with code, persistence of vision & long exposure photography.
 category: work
-tags: [AI]
+tags: [Processing, Photography]
 image: /images/light-painting/cover.gif
 featured: false
-completedAt: 2024-01-01
-duration: 2 weeks
+completedAt: 2018-05-01
+duration: 1 week
 ---
-# Light Painting
 
-LIGHT PAINTING
-
-Experiments with CODE, PERSISTENCE OF VISION & long exposure photography.
-
-## Gallery
-
-
-![Portrait.jpg](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1526412484089-14PXCPSTLLY0YCR2KQTX/Portrait.jpg)
+Experiments with code, persistence of vision & long exposure photography.
 
 ![sparkler_gif.gif](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1526413587276-RZQASHTN18JGUQUDBS2S/sparkler_gif.gif)
 

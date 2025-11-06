@@ -3,21 +3,17 @@ id: particles
 title: Particles
 subtitle: Interacting with particles using a webcam & colour detection.
 description: Interacting with particles using a webcam & colour detection.
-category: work
-tags: [Web, AI]
+category: experiments
+tags: [Processing, Physics]
 image: /images/particles/cover.gif
 featured: false
-completedAt: 2024-01-01
+completedAt: 2015-07-01
 duration: 2 weeks
 ---
+
 # Particles
 
-particles
-
 Interacting with particles using a webcam & colour detection.
-
-## Gallery
-
 
 ![particle_clip_small.gif](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1511537771586-L13540ZEKLCFJ831L81U/particle_clip_small.gif)
 
