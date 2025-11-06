@@ -353,7 +353,7 @@ description: Custom hardware to allow the visually impaired navigate towns & cit
 category: work
 tags: [Accessibility, 3D Printing, Electronics]
 image: /images/cities-unlocked/cover.gif
-featured: false
+featured: true
 completedAt: 2015-01-01
 duration: 6 months
 ---
@@ -614,22 +614,16 @@ title: Elatus
 subtitle: An interactive product booklet to promote the latest pest control from Syngenta.
 description: An interactive product booklet to promote the latest pest control from Syngenta.
 category: work
-tags: [Web, AI, Design, SPYSCAPE, Google, Intel]
+tags: [Sales tool, Web app, Agriculture]
 image: /images/elatus/cover.gif
 featured: false
 completedAt: 2024-01-01
-duration: 2 weeks
+duration: 2 month
 ---
-# Elatus
-
-elatus
 
 An interactive product booklet to promote the latest pest control from Syngenta.
 
 A digital booklet to allow sales representatives to go into the field (literally) & show farmers the benefits of Elatus through interactive graphs, videos & in depth technical content. Built using web technologies.
-
-## Gallery
-
 
 ![graph_clip_small.gif](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1511530730408-8FDI357T8YZ2SSSW460C/graph_clip_small.gif)
 
@@ -638,36 +632,26 @@ A digital booklet to allow sales representatives to go into the field (literally
 ![Screen Shot 2017-11-24 at 13.31.07.png](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1511530660301-6FOPT5DC0HM85C25OMPJ/Screen+Shot+2017-11-24+at+13.31.07.png)
 `,v=`---
 id: encryption-ops-spyscape
-title: Encryption Ops | SPYSCAPE
+title: Encryption Ops
 subtitle: three multi-player tables that teach code breaking & test logic skills
 description: three multi-player tables that teach code breaking & test logic skills
 category: work
-tags: [AI, Design, SPYSCAPE, Google, Intel]
+tags: [Design, Installation, Museum]
 image: /images/encryption-ops-spyscape/cover.png
 featured: false
-completedAt: 2024-01-01
+completedAt: 2018-06-01
 duration: 2 weeks
 ---
-# Encryption Ops | SPYSCAPE
 
-Encryption Ops | SPYSCAPE
-
-three multi-player tables that teach code breaking & test logic skills
+Part of the Encryption gallery at SPYSCAPE - three touch screen tables (with up to 6 players each) that teach code breaking & test logic skills, through a narritive led experience. Connected lighting & sound design help draw visitors in & immerse players in the experience.
 
 Photo credit - Scott Frances for SPYSCAPE
 
-## Gallery
-
-
 ![SFrances_180207_0151_C_TalentOpt.jpg](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1519234759774-FJF2A35EHTLH57AVZ4DO/SFrances_180207_0151_C_TalentOpt.jpg)
-
-![SFrances_180207_0151_C_TalentOpt.jpg](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1519234927051-5HSV08TU0YHLT2MU86EU/SFrances_180207_0151_C_TalentOpt.jpg)
 
 ![IMG_0511.jpg](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1532879267693-VW2V7I9SFJH8O8IXNPQO/IMG_0511.jpg)
 
 ![_DSF6703.jpg](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1532879293481-T0YHO7GZ37WO9YV2G6UK/_DSF6703.jpg)
-
-![_DSF6708.jpg](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1532879303407-8FL1XB1C8AEEHMNOKR8Y/_DSF6708.jpg)
 
 ![Copy of _DSF9708.jpg](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1532879325059-BOAOYQRGDDI5BWIE2ZJM/Copy+of+_DSF9708.jpg)
 `,w=`---
@@ -685,74 +669,7 @@ completedAt: 2025-09-04
 duration: 1 week
 ---
 
-# Figma Plugin UI Toolkit
-
 A component library for building Figma plugin UI.
-
-![Project Screenshot](/images/simple-template.svg)
-
-## Overview
-
-Quick overview of what the project does and why it's valuable.
-
-### Key Features
-
-- **Feature 1**: Main functionality
-- **Feature 2**: Secondary functionality
-- **Feature 3**: Additional features
-
-## Context
-
-### Problem
-
-- Description of the problem being solved
-
-### Solution
-
-Key technical implementation details:
-
-\`\`\`typescript
-// Main code example
-export const mainFunction = () => {
-  // Implementation
-}
-\`\`\`
-
-## Impact
-
-- Metric 1: Achievement
-- Metric 2: Another result
-- User feedback summary
-  
-## Learnings
-
-**Learning 1**: Lessons learned from the project
-**Learning 2**: Additional insights gained
-
-## Links
-
-- **Live Demo**: [project.com](https://example.com)
-- **Source Code**: [github.com/username/project](https://github.com/username/project)
-`,S=`---
-id: figmail
-title: Figmail
-subtitle: Create & export email templates for Outlook.
-description: Create & export email templates for Outlook.
-category: work
-tags: [Typescript, Figma Plugin, Outlook, MJML]
-image: /images/figmail/cover.png
-featured: false
-liveUrl: https://example.com
-sourceUrl: https://github.com/username/project
-completedAt: 2020-09-04
-duration: 1 week
----
-
-# Figmail
-
-A Figma plugin to create & export email templates for Outlook.
-
-![Project Screenshot](/images/simple-template.svg)
 
 ## Overview
 
@@ -797,29 +714,78 @@ export const mainFunction = () => {
 - **Live Demo**: [project.com](https://example.com)
 - **Source Code**: [github.com/username/project](https://github.com/username/project)
 `,A=`---
+id: figmail
+title: Figmail
+subtitle: Create & export email templates for Outlook.
+description: Create & export email templates for Outlook.
+category: work
+tags: [Typescript, Figma Plugin, Outlook, MJML]
+image: /images/figmail/cover.png
+featured: false
+liveUrl: https://example.com
+sourceUrl: https://github.com/username/project
+completedAt: 2020-09-04
+duration: 1 week
+---
+
+A Figma plugin to create & export email templates for Outlook.
+
+## Overview
+
+Quick overview of what the project does and why it's valuable.
+
+### Key Features
+
+- **Feature 1**: Main functionality
+- **Feature 2**: Secondary functionality
+- **Feature 3**: Additional features
+
+## Context
+
+### Problem
+
+- Description of the problem being solved
+
+### Solution
+
+Key technical implementation details:
+
+\`\`\`typescript
+// Main code example
+export const mainFunction = () => {
+  // Implementation
+}
+\`\`\`
+
+## Impact
+
+- Metric 1: Achievement
+- Metric 2: Another result
+- User feedback summary
+  
+## Learnings
+
+**Learning 1**: Lessons learned from the project
+**Learning 2**: Additional insights gained
+
+## Links
+
+- **Live Demo**: [project.com](https://example.com)
+- **Source Code**: [github.com/username/project](https://github.com/username/project)
+`,S=`---
 id: gif-generator
 title: GIF Generator
 subtitle: A tool to create encryption like animations in gif form.
 description: A tool to create encryption like animations in gif form.
 category: work
-tags: [AI]
+tags: [Processing, GIF]
 image: /images/gif-generator/cover.gif
 featured: false
-completedAt: 2024-01-01
+completedAt: 2017-12-01
 duration: 2 weeks
 ---
-# GIF Generator
 
-GIF GENERATOR
-
-A tool to create encryption like animations in gif form.
-
-## Gallery
-
-
-![ENCRYPTION.gif](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1519231410035-GENRZ0BI493JT4VM3NGE/ENCRYPTION.gif)
-
-![ENCRYPTION.gif](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1519231806678-R2G51A8GXBE3JC5T0GUC/ENCRYPTION.gif)
+A tool to create encryption like animations in gif form for use in marketing materials & email footers at SPYSCAPE.
 
 ![top secret.gif](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1519232201736-FJ8F1VTQNK1M245RLJBI/top+secret.gif)
 `,M=`---
@@ -828,24 +794,18 @@ title: GIFT
 subtitle: Christmas window display for Moving Brands.
 description: Christmas window display for Moving Brands.
 category: work
-tags: [Web, AI, Design, SPYSCAPE, Google, Intel]
+tags: [Web, Projection Mapping, Installation, GIF]
 image: /images/gift/cover.png
 featured: false
-completedAt: 2024-01-01
+completedAt: 2015-12-01
 duration: 2 weeks
 ---
-# GIFT
-
-Gift
 
 Christmas window display for Moving Brands.
 
-GIFt is a platform that allows anyone to share stories of unwanted Christmas presents in the form of animated GIFs. Users can upload their creations to the dedicated website; submissions are then added to the online gallery & projected onto a three dimensional cube window display, situated at the Moving Brands London studio.
+GIFt is a platform that allows anyone to share stories of unwanted Christmas presents in the form of animated GIFs. Users can upload their creations to the dedicated website; submissions are then added to the online gallery & projected onto a three dimensional cube window display, situated at the Moving Brands London studio. Supporting gift wrap paper & gift tags were also created for client presents.
 
-## Gallery
-
-
-![window.png](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1510916739531-Z74F6LSA71NEVMAEGKHP/window.png)
+The installation was created using a web app that was rear projected on to a frosted glass cube structure built in the window of the Moving Brands London studio.
 
 ![window.png](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1510916573757-XK8RWO2DPLJMT3HU72T9/window.png)
 
@@ -868,32 +828,23 @@ GIFt is a platform that allows anyone to share stories of unwanted Christmas pre
 ![IMG_5253.JPG](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1526417451817-ZTXR0R3R4N3IO6P51JPC/IMG_5253.JPG)
 
 ![IMG_5232.JPG](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1526417489429-PFPQBN969WOM10S2MKY5/IMG_5232.JPG)
-`,I=`---
+`,P=`---
 id: google-play
 title: Google Play
 subtitle: Explorations of generative visual design system
 description: Explorations of generative visual design system
 category: work
-tags: [AI, Design, SPYSCAPE, Google, Intel]
+tags: [Processing, Generative Design]
 image: /images/google-play/cover.png
 featured: false
-completedAt: 2024-01-01
+completedAt: 2015-10-01
 duration: 2 weeks
 ---
-# Google Play
-
-Google Play
 
 Explorations of generative visual design system
 
-**Technology:** Processing
-
-## Gallery
-
 
 ![Screen Shot 2016-04-23 at 15.12.25.png](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1540853186055-I4Q23LZ7QFUL688V9ZRF/Screen+Shot+2016-04-23+at+15.12.25.png)
-
-![Screen Shot 2016-04-23 at 15.12.25.png](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1512730015413-JCPBY7H5OQXU6FALOQNR/Screen+Shot+2016-04-23+at+15.12.25.png)
 
 ![Screen Shot 2016-02-23 at 17.50.29.png](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1511101449265-M5UL5E5LSX1BU5525CCN/Screen+Shot+2016-02-23+at+17.50.29.png)
 
@@ -906,32 +857,22 @@ Explorations of generative visual design system
 ![Screenshot 2018-10-11 at 21.54.53.png](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1540850519400-VUB1WK5JSMR5GV1C4P4V/Screenshot+2018-10-11+at+21.54.53.png)
 
 ![output.png](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1540850502620-ND9NOID7Y3V1P5IXIRP1/output.png)
-`,P=`---
+`,I=`---
 id: handbell-hero
 title: Handbell Hero
 subtitle: A festive musical app to get you in the holiday spirit.
 description: A festive musical app to get you in the holiday spirit.
 category: work
-tags: [Mobile, AI, Design, SPYSCAPE, Google, Intel]
+tags: [Windows Phone, C#]
 image: /images/handbell-hero/cover.png
 featured: false
 completedAt: 2024-01-01
 duration: 2 weeks
 ---
-# Handbell Hero
-
-Handbell hero
 
 A festive musical app to get you in the holiday spirit.
 
 A mobile app that uses the accelerometer of a device to play a Christmas song. Shaking the device (like a handbell) plays a note; each note is played sequentially, so it is up to the user to get the rhythm right.
-
-📱 Published on the Windows Store.
-
-**Technology:** Windows Phone 8, C#
-
-## Gallery
-
 
 ![IMG_4621.jpg](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1511524593796-UG5VIGD3MYQVZXWSTH1M/IMG_4621.jpg)
 
@@ -946,32 +887,22 @@ title: Helvar
 subtitle: Working with an international lighting company to promote intelligent lighting systems.
 description: Working with an international lighting company to promote intelligent lighting systems.
 category: work
-tags: [Mobile, AI, Design, SPYSCAPE, Google, Intel]
+tags: [Installation, Design, Android, Marketing]
 image: /images/helvar/cover.jpg
 featured: false
-completedAt: 2024-01-01
-duration: 2 weeks
+completedAt: 2016-03-01
+duration: 1 month
 ---
-# Helvar
-
-helvar
 
 Working with an international lighting company to promote intelligent lighting systems.
 
 An interactive table that allows users to explore various connected lighting concepts. Users control the on screen character by rocking the table; movement through the floor plan activates the stylised lighting system, which can predict paths, automatically adjust light conditions & surface information about the technology.
 
-🏢 Featured at Light + Building expo 2016.
+Featured at Light + Building expo 2016.
 
 **Manufacturing:** Manufactured by JailMake
 
-**Technology:** Android / Processing
-
-## Gallery
-
-
 ![B30A2598.JPG](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1510915983545-ZK22DODQ2CGUNM1SF55V/B30A2598.JPG)
-
-![B30A2598.JPG](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1510915697716-ZT0XQNO9RH1A2RUILHPW/B30A2598.JPG)
 
 ![B30A2653.JPG](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1510915750967-H79O8EQVVBIJOXNQDA2I/B30A2653.JPG)
 
@@ -986,59 +917,40 @@ An interactive table that allows users to explore various connected lighting con
 ![IMG_6144.JPG](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1526417204259-MT3B5TS57GGCNNGO9V09/IMG_6144.JPG)
 
 ![IMG_6150.JPG](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1526417208718-49WAAD9U6K1CQN489SMH/IMG_6150.JPG)
-`,T=`---
+`,k=`---
 id: instrument-1
 title: Instrument 1
-subtitle: QUICK PROTOTYPE TURNING COLOURED SQUARES INTO MUSICAL NOTES.
-description: QUICK PROTOTYPE TURNING COLOURED SQUARES INTO MUSICAL NOTES.
+subtitle: Turning coloured squares into musical notes.
+description: Turning coloured squares into musical notes.
 category: work
-tags: [Arduino, AI, Prototype]
+tags: [Arduino]
 image: /images/instrument-1/cover.gif
 featured: false
-completedAt: 2024-01-01
-duration: 2 weeks
+completedAt: 2017-10-01
+duration: 1 day
 ---
-# Instrument 1
 
-MIDI INSTRUMENT 1
-
-QUICK PROTOTYPE TURNING COLOURED SQUARES INTO MUSICAL NOTES.
-
-**Technology:** Arduino, C
-
-## Gallery
-
+Turning coloured squares into musical notes.
 
 ![musical instrument.gif](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1540851859163-JN9X1C0FI2U31Z1U18LZ/musical+instrument.gif)
-
-![musical instrument.gif](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1540851997578-JHXZCL1WBEZV3ACK1HK0/musical+instrument.gif)
-`,E=`---
+`,T=`---
 id: intell-wonderwall
 title: Intel Wonderwall
 subtitle: Early concept prototypes for interactive brand experience.
 description: Early concept prototypes for interactive brand experience.
 category: work
-tags: [React, Mobile, AI, Design, Prototype, SPYSCAPE, Google, Intel]
+tags: [Processing, Installation, Prototype, Marketing]
 image: /images/intell-wonderwall/cover.gif
 featured: false
 completedAt: 2024-01-01
 duration: 2 weeks
 ---
-# Intel Wonderwall
-
-Intel Wonderwall
 
 Early concept prototypes for interactive brand experience.
 
 A Processing app that allows graphic designers quickly visualise dynamic animating text which reacts to user input. Users can drop in images to render, change the properties of the grid (resolution, weight & height), rotate the camera & export a frame as a PDF. This work highly influenced the final interactive installation, called Wonderwall, for Intel at Mobile World Congress 2017.
 
-## Videos
-
-
-[![](https://i.vimeocdn.com/video/621649430-a3ac67266d32a3ec96aaa949455dbf7e535e42f44433783a40c36155aebcdc14-d_640)](https://vimeo.com/206585583?embedded=true&source=vimeo_logo&owner=22114583)
-
-## Gallery
-
+<iframe title="vimeo-player" src="https://player.vimeo.com/video/206585583?h=68eb573036" width="640" height="360" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"   allowfullscreen></iframe>
 
 ![1_clip_small.gif](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1511515803455-QILKXG198UKWSV2H3AUH/1_clip_small.gif)
 
@@ -1047,32 +959,25 @@ A Processing app that allows graphic designers quickly visualise dynamic animati
 ![Screen Shot 2016-03-30 at 12.05.57.png](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1511101110077-8YN3DUCMFY40IVSU9OU8/Screen+Shot+2016-03-30+at+12.05.57.png)
 
 ![Screen Shot 2016-03-30 at 16.05.55.png](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1511101141209-BJ8Z3SLPNCVCEUO6HTQC/Screen+Shot+2016-03-30+at+16.05.55.png)
-`,k=`---
+`,E=`---
 id: interrogation-ops-spyscape
 title: Interrogation Ops | SPYSCAPE
 subtitle: Twelve interrogation booths to test & teach deception skills.
 description: Twelve interrogation booths to test & teach deception skills.
 category: work
-tags: [AI, Design, SPYSCAPE, Google, Intel]
+tags: [Installation, Design, Museum]
 image: /images/interrogation-ops-spyscape/cover.gif
 featured: false
-completedAt: 2024-01-01
-duration: 2 weeks
+completedAt: 2018-05-01
+duration: 6 months
 ---
-# Interrogation Ops | SPYSCAPE
-
-Interrogation Ops | SPYSCAPE
 
 Twelve interrogation booths to test & teach deception skills.
 
 Photo credit - Scott Frances for SPYSCAPE
 
-## Gallery
-
-
 ![Deception GIF.gif](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1526411796658-T85ZWH1FLAGX6U5QDPU7/Deception+GIF.gif)
 
-![SFrances_180207_0360_C_TalentOpt.jpg](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1519236894253-YL8Z8FT9UCQWDD87NH43/SFrances_180207_0360_C_TalentOpt.jpg)
 
 ![_DSF6575.jpg](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1532878238424-0X46SQYC0T586C4BTFXP/_DSF6575.jpg)
 
@@ -1082,58 +987,41 @@ Photo credit - Scott Frances for SPYSCAPE
 
 ![Untitled_Panorama6.jpg](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1532878687773-6K5WOI6IRW5M4XAUSXVQ/Untitled_Panorama6.jpg)
 
-![_DSF6728.jpg](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1532878705099-TWNZVSRYV7QKGUUI6GTS/_DSF6728.jpg)
-
 ![IMG_0712.jpg](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1532878737281-ABL9KW9HSQGGHZNWLEN9/IMG_0712.jpg)
-`,C=`---
+`,_=`---
 id: keyshot
 title: Keyshot
 subtitle: Experiments with light & textures in Keyshot.
 description: Experiments with light & textures in Keyshot.
-category: work
+category: experiments
 tags: [AI]
 image: /images/keyshot/cover.jpg
 featured: false
 completedAt: 2024-01-01
 duration: 2 weeks
 ---
-# Keyshot
 
-KEYSHOT
-
-PLAYING WITH LIGHT & TEXTURES
-
-## Gallery
+Experiments with light & textures in Keyshot during a training course.
 
 ![IMG_2776.jpg](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1540836682779-0W6OBSBXIW474GNP2ZUL/IMG_2776.jpg)
 
 ![IMG_2778.jpg](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1540836739560-429VI1N8TVYSJ19ER9P1/IMG_2778.jpg)
 
 ![IMG_2779.jpg](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1540836768590-EY4JS2G754LUWGGWWRXF/IMG_2779.jpg)
-
-![IMG_2776.jpg](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1540837155908-U1TUZODT5984RZ017UL3/IMG_2776.jpg)
-`,_=`---
+`,C=`---
 id: light-painting
 title: Light Painting
-subtitle: Experiments with CODE, PERSISTENCE OF VISION & long exposure photography.
-description: Experiments with CODE, PERSISTENCE OF VISION & long exposure photography.
+subtitle: Experiments with code, persistence of vision & long exposure photography.
+description: Experiments with code, persistence of vision & long exposure photography.
 category: work
-tags: [AI]
+tags: [Processing, Photography]
 image: /images/light-painting/cover.gif
 featured: false
-completedAt: 2024-01-01
-duration: 2 weeks
+completedAt: 2018-05-01
+duration: 1 week
 ---
-# Light Painting
 
-LIGHT PAINTING
-
-Experiments with CODE, PERSISTENCE OF VISION & long exposure photography.
-
-## Gallery
-
-
-![Portrait.jpg](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1526412484089-14PXCPSTLLY0YCR2KQTX/Portrait.jpg)
+Experiments with code, persistence of vision & long exposure photography.
 
 ![sparkler_gif.gif](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1526413587276-RZQASHTN18JGUQUDBS2S/sparkler_gif.gif)
 
@@ -1143,7 +1031,8 @@ Experiments with CODE, PERSISTENCE OF VISION & long exposure photography.
 
 ![DSC01479.JPG](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1526412707686-GJ8VYSUEI6G4WLYRO5RK/DSC01479.JPG)
 
-![](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1526412769406-CK6M88AGSA97TO15ZURD/image-asset.jpeg)`,j=`---
+![](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1526412769406-CK6M88AGSA97TO15ZURD/image-asset.jpeg)
+`,j=`---
 id: light
 title: Light
 subtitle: 60 MINUTE BUILD OF AN ADJUSTABLE LIGHT
@@ -1448,7 +1337,7 @@ The enhanced markdown features are optimized for:
 
 ---
 
-`,O=`---
+`,B=`---
 id: motion-study-1
 title: Motion Study #1
 subtitle: Robust RESTful API for online stores
@@ -1934,7 +1823,7 @@ export const mainFunction = () => {
 
 - **Live Demo**: [project.com](https://example.com)
 - **Source Code**: [github.com/username/project](https://github.com/username/project)
-`,B=`---
+`,O=`---
 id: objective-4x
 title: Objective 4x
 subtitle: A purpose built panning rig to film everyday objects through a microscope.
@@ -2066,7 +1955,7 @@ Interacting with particles using a webcam & colour detection.
 ![particle_clip_small.gif](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1511537771586-L13540ZEKLCFJ831L81U/particle_clip_small.gif)
 
 ![particle_clip_small.gif](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1511537950436-2Z0S2ONGD7N23PGVQMW9/particle_clip_small.gif)
-`,N=`---
+`,x=`---
 id: pattern-tool-4
 title: Pattern Tool #4
 subtitle: Pattern generator for visual brand exploration.
@@ -2102,7 +1991,7 @@ Pattern generator for visual brand exploration.
 ![download (6).png](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1586697614194-NPUJCH4T129DPJP4WEQI/download+%286%29.png)
 
 ![download (14).png](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1586697609294-JUHFS1VVZAJLNNELFQ83/download+%2814%29.png)
-`,x=`---
+`,J=`---
 id: physical-onenote
 title: Physical OneNote
 subtitle: A concept for an organisational product.
@@ -2140,7 +2029,7 @@ Microsoft OneNote
 ![](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1510931514108-SUOATGO36G81KUMOFGI9/Physical+Onenote+Sample3-01.png)
 
 ![physical onenote.jpg](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1510931572461-60FB3Z0AGLWYDIVBGCC3/physical+onenote.jpg)
-- **[Microsoft OneNote](https://www.microsoft.com/en-us/microsoft-365/onenote/digital-note-taking-app)**`,J=`---
+- **[Microsoft OneNote](https://www.microsoft.com/en-us/microsoft-365/onenote/digital-note-taking-app)**`,N=`---
 id: presence
 title: Presence
 subtitle: IoT devices to communicate social availability in physical space
@@ -2235,7 +2124,7 @@ Learning a new prototyping tool.
 
 ![](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/7b605400-4c29-4181-852f-99e7bed71e8b/protopie_docking_demo.gif)
 
-![](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/9a994d08-1d5a-41e5-8a1c-3044070c7caa/protopie_nesting_demo.gif)`,Y=`---
+![](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/9a994d08-1d5a-41e5-8a1c-3044070c7caa/protopie_nesting_demo.gif)`,W=`---
 id: real-time-clock
 title: Real Time Clock
 subtitle: Add live time & date information to any design, presentation, or prototype.
@@ -2299,7 +2188,7 @@ export const mainFunction = () => {
 
 - **Live Demo**: [project.com](https://example.com)
 - **Source Code**: [github.com/username/project](https://github.com/username/project)
-`,W=`---
+`,Y=`---
 id: rfid-rings
 title: RFID Rings
 subtitle: Concepts for integrating RFID tags into jewellery.
@@ -2664,27 +2553,21 @@ Tom Dixon
 - **[Dock Kitchen](https://www.tomdixon.net/en/story/post/dock-kitchen)**`,$=`---
 id: spyscape-special-ops
 title: Special Ops | SPYSCAPE
-subtitle: four unique laser tunnels to test agility & risk taking
-description: four unique laser tunnels to test agility & risk taking
+subtitle: Four unique laser tunnels to test agility & risk taking
+description: Four unique laser tunnels to test agility & risk taking
 category: work
-tags: [AI, Design, SPYSCAPE, Google, Intel]
+tags: [Installation, Design, Museum]
 image: /images/spyscape-special-ops/cover.gif
-featured: false
-completedAt: 2024-01-01
-duration: 2 weeks
+featured: true
+completedAt: 2018-05-01
+duration: 6 months
 ---
-# Special Ops | SPYSCAPE
 
-SPECIAL OPS | SPYSCAPE
-
-four unique laser tunnels to test agility & risk taking
+Four unique laser tunnels to test agility & risk taking
 
 Photo credit - Scott Frances for SPYSCAPE
 
 For the SPYSCAPE NY museum, we designed, developed & commissioned the Special Ops tunnels - 4 rooms that test visitors physical agility & risk taking by making them dodge numerous lasers while hitting as many illuminated buttons as possible, all within a maximum of 60 seconds (as a broken laser beam reduces available time by 5 seconds).
-
-## Gallery
-
 
 ![Special Ops GIF.gif](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1526411671254-Y5S895EI6YQNNYH40YP8/Special+Ops+GIF.gif)
 
@@ -3821,4 +3704,4 @@ export const mainFunction = () => {
 
 - **Live Demo**: [project.com](https://example.com)
 - **Source Code**: [github.com/username/project](https://github.com/username/project)
-`,Se={activity:e,aether:n,"chat-bot":t,"smart-speaker":a,beacons:o,"bird-fm":s,boxnet:i,"breaking-news":r,carbon:c,"cinema-poster":p,"cities-unlocked":l,"color-mapper":d,"colour-detection":g,concrete:m,"crit-card":u,datacatcher:h,"debrief-spyscape":f,"drawing-robot":b,elatus:y,"encryption-ops-spyscape":v,"figma-ui-toolkit":w,figmail:S,"gif-generator":A,gift:M,"google-play":I,"handbell-hero":P,helvar:G,"instrument-1":T,"intell-wonderwall":E,"interrogation-ops-spyscape":k,keyshot:C,"light-painting":_,light:j,"magic-wand":D,magnetism:L,"markdown-features-demo":F,"motion-study-1":O,notebooks:R,"objective-4x":B,observer:q,particles:U,"pattern-tool-4":N,"physical-onenote":x,presence:J,protopie:H,"real-time-clock":Y,"rfid-rings":W,"rfid-spyscape":V,"sf-symbol-creator":K,skew:Q,"slug-and-chip":Z,"social-radio":X,"spring-table":z,"spyscape-special-ops":$,spyscape:ee,"status-board":ne,"storymaker-storyteller-portfolio":te,"storymaker-storyteller":ae,"surveillance-ops-spyscape":oe,swisscom:se,switchboard:ie,"syntax-highlighter":re,teacake:ce,"test-callouts":pe,"the-alarming-clock":le,"theme-importer":de,"top-hat":ge,toroid:me,"universal-compass":ue,vitra:he,"vs-code-codicons":fe,"wearable-gestures":be,"weather-station-portfolio":ye,"weather-station":ve,"word-clouds":we};export{Se as MARKDOWN_CONTENT};
+`,Ae={activity:e,aether:n,"chat-bot":t,"smart-speaker":a,beacons:o,"bird-fm":s,boxnet:i,"breaking-news":r,carbon:c,"cinema-poster":p,"cities-unlocked":l,"color-mapper":d,"colour-detection":g,concrete:m,"crit-card":u,datacatcher:h,"debrief-spyscape":f,"drawing-robot":b,elatus:y,"encryption-ops-spyscape":v,"figma-ui-toolkit":w,figmail:A,"gif-generator":S,gift:M,"google-play":P,"handbell-hero":I,helvar:G,"instrument-1":k,"intell-wonderwall":T,"interrogation-ops-spyscape":E,keyshot:_,"light-painting":C,light:j,"magic-wand":D,magnetism:L,"markdown-features-demo":F,"motion-study-1":B,notebooks:R,"objective-4x":O,observer:q,particles:U,"pattern-tool-4":x,"physical-onenote":J,presence:N,protopie:H,"real-time-clock":W,"rfid-rings":Y,"rfid-spyscape":V,"sf-symbol-creator":K,skew:Q,"slug-and-chip":Z,"social-radio":X,"spring-table":z,"spyscape-special-ops":$,spyscape:ee,"status-board":ne,"storymaker-storyteller-portfolio":te,"storymaker-storyteller":ae,"surveillance-ops-spyscape":oe,swisscom:se,switchboard:ie,"syntax-highlighter":re,teacake:ce,"test-callouts":pe,"the-alarming-clock":le,"theme-importer":de,"top-hat":ge,toroid:me,"universal-compass":ue,vitra:he,"vs-code-codicons":fe,"wearable-gestures":be,"weather-station-portfolio":ye,"weather-station":ve,"word-clouds":we};export{Ae as MARKDOWN_CONTENT};
