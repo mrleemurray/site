@@ -593,21 +593,15 @@ id: drawing-robot
 title: Drawing Robot
 subtitle: Calibration tests & other experiments - WIP
 description: Calibration tests & other experiments - WIP
-category: work
-tags: [AI]
+category: experiments
+tags: [Processing, Robotics, Prototype]
 image: /images/drawing-robot/cover.png
 featured: false
-completedAt: 2024-01-01
-duration: 2 weeks
+completedAt: 2018-05-01
+duration: 1 day
 ---
-# Drawing Robot
-
-DRAWING ROBOT
 
 Calibration tests & other experiments - WIP
-
-## Gallery
-
 
 ![IMG_2643.jpg](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1526415100717-RF65UGMXW54TIJRYK3PM/IMG_2643.jpg)
 
@@ -739,7 +733,7 @@ export const mainFunction = () => {
 
 - **Live Demo**: [project.com](https://example.com)
 - **Source Code**: [github.com/username/project](https://github.com/username/project)
-`,A=`---
+`,S=`---
 id: figmail
 title: Figmail
 subtitle: Create & export email templates for Outlook.
@@ -802,7 +796,7 @@ export const mainFunction = () => {
 
 - **Live Demo**: [project.com](https://example.com)
 - **Source Code**: [github.com/username/project](https://github.com/username/project)
-`,S=`---
+`,A=`---
 id: gif-generator
 title: GIF Generator
 subtitle: A tool to create encryption like animations in gif form.
@@ -828,7 +822,7 @@ A tool to create encryption like animations in gif form.
 ![ENCRYPTION.gif](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1519231806678-R2G51A8GXBE3JC5T0GUC/ENCRYPTION.gif)
 
 ![top secret.gif](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1519232201736-FJ8F1VTQNK1M245RLJBI/top+secret.gif)
-`,I=`---
+`,M=`---
 id: gift
 title: GIFT
 subtitle: Christmas window display for Moving Brands.
@@ -874,7 +868,7 @@ GIFt is a platform that allows anyone to share stories of unwanted Christmas pre
 ![IMG_5253.JPG](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1526417451817-ZTXR0R3R4N3IO6P51JPC/IMG_5253.JPG)
 
 ![IMG_5232.JPG](https://images.squarespace-cdn.com/content/v1/5a0ea923f9a61ec9b5f954f2/1526417489429-PFPQBN969WOM10S2MKY5/IMG_5232.JPG)
-`,M=`---
+`,I=`---
 id: google-play
 title: Google Play
 subtitle: Explorations of generative visual design system
@@ -3827,4 +3821,4 @@ export const mainFunction = () => {
 
 - **Live Demo**: [project.com](https://example.com)
 - **Source Code**: [github.com/username/project](https://github.com/username/project)
-`,Ae={activity:e,aether:n,"chat-bot":t,"smart-speaker":a,beacons:o,"bird-fm":s,boxnet:i,"breaking-news":r,carbon:c,"cinema-poster":p,"cities-unlocked":l,"color-mapper":d,"colour-detection":g,concrete:m,"crit-card":u,datacatcher:h,"debrief-spyscape":f,"drawing-robot":b,elatus:y,"encryption-ops-spyscape":v,"figma-ui-toolkit":w,figmail:A,"gif-generator":S,gift:I,"google-play":M,"handbell-hero":P,helvar:G,"instrument-1":T,"intell-wonderwall":E,"interrogation-ops-spyscape":k,keyshot:C,"light-painting":_,light:j,"magic-wand":D,magnetism:L,"markdown-features-demo":F,"motion-study-1":O,notebooks:R,"objective-4x":B,observer:q,particles:U,"pattern-tool-4":N,"physical-onenote":x,presence:J,protopie:H,"real-time-clock":Y,"rfid-rings":W,"rfid-spyscape":V,"sf-symbol-creator":K,skew:Q,"slug-and-chip":Z,"social-radio":X,"spring-table":z,"spyscape-special-ops":$,spyscape:ee,"status-board":ne,"storymaker-storyteller-portfolio":te,"storymaker-storyteller":ae,"surveillance-ops-spyscape":oe,swisscom:se,switchboard:ie,"syntax-highlighter":re,teacake:ce,"test-callouts":pe,"the-alarming-clock":le,"theme-importer":de,"top-hat":ge,toroid:me,"universal-compass":ue,vitra:he,"vs-code-codicons":fe,"wearable-gestures":be,"weather-station-portfolio":ye,"weather-station":ve,"word-clouds":we};export{Ae as MARKDOWN_CONTENT};
+`,Se={activity:e,aether:n,"chat-bot":t,"smart-speaker":a,beacons:o,"bird-fm":s,boxnet:i,"breaking-news":r,carbon:c,"cinema-poster":p,"cities-unlocked":l,"color-mapper":d,"colour-detection":g,concrete:m,"crit-card":u,datacatcher:h,"debrief-spyscape":f,"drawing-robot":b,elatus:y,"encryption-ops-spyscape":v,"figma-ui-toolkit":w,figmail:S,"gif-generator":A,gift:M,"google-play":I,"handbell-hero":P,helvar:G,"instrument-1":T,"intell-wonderwall":E,"interrogation-ops-spyscape":k,keyshot:C,"light-painting":_,light:j,"magic-wand":D,magnetism:L,"markdown-features-demo":F,"motion-study-1":O,notebooks:R,"objective-4x":B,observer:q,particles:U,"pattern-tool-4":N,"physical-onenote":x,presence:J,protopie:H,"real-time-clock":Y,"rfid-rings":W,"rfid-spyscape":V,"sf-symbol-creator":K,skew:Q,"slug-and-chip":Z,"social-radio":X,"spring-table":z,"spyscape-special-ops":$,spyscape:ee,"status-board":ne,"storymaker-storyteller-portfolio":te,"storymaker-storyteller":ae,"surveillance-ops-spyscape":oe,swisscom:se,switchboard:ie,"syntax-highlighter":re,teacake:ce,"test-callouts":pe,"the-alarming-clock":le,"theme-importer":de,"top-hat":ge,toroid:me,"universal-compass":ue,vitra:he,"vs-code-codicons":fe,"wearable-gestures":be,"weather-station-portfolio":ye,"weather-station":ve,"word-clouds":we};export{Se as MARKDOWN_CONTENT};
